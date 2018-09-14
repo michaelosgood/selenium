@@ -8,13 +8,12 @@ driver.get('https://web.prescribewellness.com/');
 
 inputField = driver.findElement(webdriver.By.id('mbr-uid'));
 
-var useremail = "mosgood@prescribewellness.com";
+var useremail = "h3n2@prescribewellness.com";
 
 inputField.sendKeys(useremail);
 
-var password = "TestPW";
+var password = "Influenza123!!";
 
 inputField = driver.findElement(webdriver.By.id('mbr-pwd'));
 
 inputField.sendKeys(password);
-
