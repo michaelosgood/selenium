@@ -18,6 +18,7 @@
   "homepage": "https://github.com/michaelosgood/selenium#readme",
   "dependencies": {
     "chromedriver": "^2.41.0",
+    "geckodriver": "^1.12.2",
     "selenium-webdriver": "^4.0.0-alpha.1"
   }
 }
