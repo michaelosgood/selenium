@@ -13,7 +13,7 @@ var useremail = "h3n2@prescribewellness.com";
 
 inputField.sendKeys(useremail);
 
-var password = "Influenza123!";
+var password = "Influenza123!#";
 
 inputField = driver.findElement(webdriver.By.id('mbr-pwd'));
 
