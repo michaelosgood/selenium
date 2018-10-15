@@ -5,16 +5,15 @@ var driver = new webdriver.Builder()
     .build();
 var assert = require ('assert');
 
-test.describe('User Authentication', function () {
+describe('User Authentication', function () {
 
-    test.it('User can sign in', function () {
+    it('User can sign in', function () {
         driver.get('https://web.prescribewellness.com/');
-        inputField = driver.findElement(webdriver.By.id('mbr-uid'));
-        var useremail = "h3n2@prescribewellness.com";
-        inputField.sendKeys(useremail);
-        var password = "Influenza123!";
-        inputField = driver.findElement(webdriver.By.id('mbr-pwd'));
-         inputField.sendKeys(password);
+        driver.findElement(webdriver.By.id('mbr-uid')).sendKeys('h3n2@prescribewellness.com');
+        driver.findElement(webdriver.By.id('mbr-pwd')).sendKeys('Influenza123!#');
         driver.findElement(webdriver.By.id('login')).click();
+        driver.getTitle().then (function(the_title){
+            assert.equal("Agile Travel", the_title);
+        });
     });
 });
