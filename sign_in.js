@@ -19,4 +19,4 @@ inputField = driver.findElement(webdriver.By.id('mbr-pwd'));
 
 inputField.sendKeys(password);
 
-driver.findElement(webdriver.By.id('login')).click();
+driver.findElement(webdriver.By.id("login")).click();
