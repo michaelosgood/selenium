@@ -6,20 +6,6 @@ const driver = new webdriver.Builder()
 const assert = require ('assert');
 
 driver.get('https://web.prescribewellness.com/');
-
-inputField = driver.findElement(webdriver.By.id('mbr-uid'));
-
-const useremail = "h3n2@prescribewellness.com";
-
-inputField.sendKeys(useremail);
-
-const password = "Influenza123!#";
-
-inputField = driver.findElement(webdriver.By.id('mbr-pwd'));
-
-inputField.sendKeys(password);
-
-driver.findElement(webdriver.By.id("login")).click();
-
- 
-// driver.findElement(webdriver.By.id("pwTopGearIcon")).click();
+driver.findElement(webdriver.By.id('mbr-uid')).sendKeys('h3n2@prescribewellness.com');
+driver.findElement(webdriver.By.id('mbr-pwd')).sendKeys('Influenza123!#');
+driver.findElement(webdriver.By.id('login')).click();
