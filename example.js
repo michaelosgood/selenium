@@ -6,7 +6,7 @@ const {Builder, By, Key, until} = require('selenium-webdriver');
     await driver.get('https://web.prescribewellness.com');
     await driver.findElement(By.id('mbr-uid')).sendKeys('h3n2@prescribewellness.com');
     await driver.findElement(By.id('mbr-pwd')).sendKeys('Influenza123!#', Key.RETURN);
-    await driver.wait(until.titleIs('webdriver - Google Search'), 3000);
+    await driver.findElement(By.id('pwTopGearIcon', Key.RETURN));
   } finally {
     await driver.quit();
   }
