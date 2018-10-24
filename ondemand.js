@@ -14,7 +14,7 @@ const {Builder, By, Key, until} = require('selenium-webdriver');
     await driver.findElement(By.css('.btn-pw')).click();
   } finally {
     // Uncomment out when test script is complete
-    console.log("OnDemand Sent");
+    return "OnDemand Sent";
     // await driver.quit();
   }
 })();
