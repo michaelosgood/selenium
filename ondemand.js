@@ -10,7 +10,7 @@ const {Builder, By, Key, until} = require('selenium-webdriver');
     await driver.findElement(By.linkText('OnDemand')).click();
     await driver.findElement(By.id('phone_numbers')).sendKeys('3036534679');
     await driver.findElement(By.css('.btn-pw')).click();
-    await driver.findElement(By.css('.btn-select-campaign')).click();
+    await driver.findElement(By.css('.btn.btn-pw.btn-select-campaign')).click();
     await driver.findElement(By.css('.btn-pw')).click();
   } finally {
     // Uncomment out when test script is complete
