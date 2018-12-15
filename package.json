@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/michaelosgood/selenium#readme",
   "dependencies": {
+    "chai": "^4.2.0",
     "chromedriver": "^2.44.1",
     "geckodriver": "^1.14.1",
     "mocha": "^5.2.0",
