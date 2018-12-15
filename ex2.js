@@ -1,6 +1,6 @@
 const {Builder, By, Key, until} = require('selenium-webdriver');
 
-(async function example() {
+(async function SignIn() {
   let driver = await new Builder().forBrowser('chrome').build();
   try {
     await driver.get('https://web.prescribewellness.com');
