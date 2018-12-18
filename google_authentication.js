@@ -7,10 +7,9 @@ describe('Google Authentication Test', () => {
 
     it('should go to https://web.prescribewellness.com and check the title', async () => {
         await driver.get('https://web.prescribewellness.com');
-        await driver.sleep(20000);
-        await driver.findElement(By.id('mbr-uid')).sendKeys('h3n2@prescribewellness.com');
-        await driver.findElement(By.id('mbr-pwd')).sendKeys('Influenza123!#');
-        await driver.findElement(By.id('login')).click();
+        await driver.wait(until.elementLocated(By.id('mbr-uid')).sendKeys('h3n2@prescribewellness.com'));
+        await driver.wait(until.elementLocated(By.id('mbr-pwd')).sendKeys('Influenza123!#'));
+        await driver.wait(until.elementLocated(By.id('login')).click());
        
         const title = await driver.getTitle();
 
