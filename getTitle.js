@@ -1,10 +1,8 @@
 var webdriver = require("selenium-webdriver");
 var mocha = require('mocha');
-var describe = mocha.describe;
-var it = mocha.it;
 var assert = require("chai").assert;
 
-    describe("Demonstrating webdriver promises", function() {
+    describe("Get Title for www.prescribewellness.com/business/company", function() {
         this.timeout(30000);
         var driver;
 
@@ -16,14 +14,14 @@ var assert = require("chai").assert;
             driver.quit();
         });
 
-        it("I open the blog website", function() {
-            driver.get("http://www.scottlogic.com/blog");
+        it("should open the company page within the WWW site", function() {
+            driver.get("https://www.prescribewellness.com/business/company");
         });
 
-        it("The title is 'Scott Logic Blog'", function() {
+        it("The title is 'Company | PrescribeWellness'", function() {
             // Since we want the title from the page, we need to manually handle the Promise
             driver.getTitle().then(function(title) {
-                assert.equal(title, "Scot Logic Blog");
+                assert.equal(title, "Company | PrescribeWellness");
             });
         });
     });
