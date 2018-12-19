@@ -15,6 +15,6 @@ const {Builder, By, Key, until} = require('selenium-webdriver');
     await driver.findElement(By.xpath('//*[@id="onDemandModalWindowArea"]/div/div[2]/div/div/div[3]/div[3]/div[2]/div[1]/div[3]/button')).click();
   } finally {
     // Uncomment out when test script is complete
-    await driver.quit();
+    // await driver.quit();
   }
 })();

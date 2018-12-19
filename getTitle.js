@@ -1,5 +1,5 @@
+// type 'mocha getTitle.js' in the command line to run test
 var webdriver = require("selenium-webdriver");
-var mocha = require('mocha');
 var assert = require("chai").assert;
 
     describe("Get Title for www.prescribewellness.com/business/company", function() {

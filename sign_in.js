@@ -1,9 +1,8 @@
 const webdriver = require('selenium-webdriver');
-const test = require('selenium-webdriver/testing');
+
 const driver = new webdriver.Builder()
     .forBrowser('chrome')
     .build();
-let assert = require ('assert');
 
 driver.get('https://web.prescribewellness.com/');
 
