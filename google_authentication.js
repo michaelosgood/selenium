@@ -1,15 +1,17 @@
 // Updated Test
 const { Builder, By, Key, until } = require('selenium-webdriver');
+let credentials = require('./credentials.js');
+let environment = require('./environment.js');
 const { expect } = require('chai');
 
 describe('Google Authentication Test', () => {
     const driver = new Builder().forBrowser('chrome').build();
 
     it('should go to https://web.prescribewellness.com and check the title', async () => {
-        await driver.get('https://web.prescribewellness.com');
+        await driver.get(environment.prod);
         await driver.sleep(200000);
-        await driver.findElement(By.id('mbr-uid')).sendKeys('h3n2@prescribewellness.com');
-        await driver.findElement(By.id('mbr-pwd')).sendKeys('Influenza123!#', Key.RETURN);
+        await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.customer_user);
+        await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.customer_password, Key.RETURN);
        
         const title = await driver.getTitle();
 
