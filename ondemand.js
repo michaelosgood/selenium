@@ -1,11 +1,13 @@
 const {Builder, By, Key, until} = require('selenium-webdriver');
+let credentials = require('./credentials.js');
+let environment = require('./environment.js');
 
 (async function ondemand() {
   let driver = await new Builder().forBrowser('chrome').build();
   try {
-    await driver.get('https://web.prescribewellness.com');
-    await driver.findElement(By.id('mbr-uid')).sendKeys('h3n2@prescribewellness.com');
-    await driver.findElement(By.id('mbr-pwd')).sendKeys('Influenza123!#', Key.RETURN);
+    await driver.get(environment.prod);
+    await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.customer_user);
+    await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.customer_password, Key.RETURN);
     await console.log('Login Successful');
     await driver.findElement(By.id('pwTopGearIcon')).click();
     await driver.findElement(By.linkText('OnDemand')).click();
