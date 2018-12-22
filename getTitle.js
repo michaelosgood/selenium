@@ -2,7 +2,7 @@
 var webdriver = require("selenium-webdriver");
 var assert = require("chai").assert;
 
-    describe("Get Title for www.prescribewellness.com/business/company", function() {
+    describe("Get Title for www.prescribewellness.com/", function() {
         this.timeout(30000);
         var driver;
 
@@ -14,7 +14,7 @@ var assert = require("chai").assert;
             driver.quit();
         });
 
-        it("should open the company page within the WWW site", function() {
+        it("should open the WWW site", function() {
             driver.get("https://www.prescribewellness.com/business/company");
         });
 

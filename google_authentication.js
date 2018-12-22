@@ -1,38 +1,26 @@
 // Updated Test
-const { Builder, By, Key, until } = require('selenium-webdriver');
-let credentials = require('./credentials.js');
-let environment = require('./environment.js');
+const webdriver = require("selenium-webdriver");
 const { expect } = require('chai');
 
-describe('Google Authentication Test', () => {
-    const driver = new Builder().forBrowser('chrome').build();
+describe('Get Title Test', function() {
+    this.timeout(30000);
+    var driver;
 
-    it('should go to https://web.prescribewellness.com and check the title', async () => {
-        await driver.get(environment.prod);
-        await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.customer_user);
-        await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.customer_password, Key.RETURN);
-       
-        const title = await driver.getTitle();
-
-        expect(title).to.equal('Pharmacy Dashboard - Pharmacy Portal  - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2');
+    before(function() {
+        driver = new webdriver.Builder().withCapabilities(webdriver.Capabilities.chrome()).build();
     });
 
-    // after(async () => driver.quit());
+    after(function() {
+        driver.quit();
+    });
 
+    it('should go to https://www.prescribewellness.com and check the title', async () => {
+        await driver.get('https://www.prescribewellness.com');   
+        const title = await driver.getTitle();
+
+        expect(title).to.equal('Home | PrescribeWellness');
+        return title;
+    });
+   
+ 
 });
-
-// Updated Updated Tests
-// const {Builder, By, until} = require('selenium-webdriver');
-
-// (async function example() {
-//     const driver = await new Builder().forBrowser('chrome').build();
-
-//     try {
-//         await driver.get('https://web.prescribewellness.com');
-//         await driver.findElement(By.id('mbr-uid')).sendKeys('h3n2@prescribewellness.com');
-//         await driver.findElement(By.id('mbr-pwd')).sendKeys('Influenza123!#', Key.RETURN);
-//         await driver.wait(until.titleIs('Pharmacy Dashboard - Pharmacy Portal  - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2'));
-//     } finally {
-//         await driver.quit();
-//     }
-// })();
