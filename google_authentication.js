@@ -9,7 +9,6 @@ describe('Google Authentication Test', () => {
 
     it('should go to https://web.prescribewellness.com and check the title', async () => {
         await driver.get(environment.prod);
-        await driver.sleep(200000);
         await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.customer_user);
         await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.customer_password, Key.RETURN);
        
@@ -18,7 +17,7 @@ describe('Google Authentication Test', () => {
         expect(title).to.equal('Pharmacy Dashboard - Pharmacy Portal  - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2');
     });
 
-    after(async () => driver.quit());
+    // after(async () => driver.quit());
 
 });
 
