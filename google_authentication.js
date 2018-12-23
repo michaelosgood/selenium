@@ -4,7 +4,7 @@ const { expect } = require('chai');
 
 describe('Get Title Test', function() {
     this.timeout(30000);
-    var driver;
+    let driver;
 
     before(function() {
         driver = new webdriver.Builder().withCapabilities(webdriver.Capabilities.chrome()).build();
@@ -19,8 +19,6 @@ describe('Get Title Test', function() {
         const title = await driver.getTitle();
 
         expect(title).to.equal('Home | PrescribeWellness');
-        return title;
+        
     });
-   
- 
 });
