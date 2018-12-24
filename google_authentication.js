@@ -1,5 +1,6 @@
 // Updated Test
 const webdriver = require("selenium-webdriver");
+let environment = require('./environment.js');
 const { expect } = require('chai');
 
 describe('Get Title Test', function() {
@@ -15,7 +16,7 @@ describe('Get Title Test', function() {
     });
 
     it('should go to https://www.prescribewellness.com and check the title', async () => {
-        await driver.get('https://www.prescribewellness.com');   
+        await driver.get(environment.public);   
         const title = await driver.getTitle();
 
         expect(title).to.equal('Home | PrescribeWellness');
