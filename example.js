@@ -5,7 +5,7 @@ let environment = require('./environment.js');
 (async function example() {
   let driver = await new Builder().forBrowser('chrome').build();
   try {
-    await driver.get(environment.stg);
+    await driver.get(environment.dev);
     await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.internal_user);
     await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.internal_password, Key.RETURN);
     await driver.findElement(By.id('pwTopGearIcon')).click();
