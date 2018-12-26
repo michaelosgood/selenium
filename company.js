@@ -7,7 +7,7 @@ let driver = new Builder().forBrowser('chrome').build();
 describe('Go to Public Site and Verify Title for the Company page', function() {
 
   it('should allow users to navigate to: "www.prescribewellness.com/business/company Page"', function () {
-    driver.get('https://www.prescribewellness.com/business/company');
+    driver.get(environment.company);
   })
   it('should verify the title displays as: "Company | PrescribeWellness"', function() {
     driver.getTitle().then(function(title) {
