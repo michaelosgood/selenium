@@ -1,25 +1,21 @@
 // Updated Test
-const webdriver = require("selenium-webdriver");
+const {Builder, By, Key, until} = require('selenium-webdriver');
 let environment = require('./environment.js');
-const { expect } = require('chai');
+let credentials = require('./credentials.js');
+let assert = require('assert');
+let driver = new Builder().forBrowser('chrome').build();
 
-describe('Get Title Test', function() {
-    this.timeout(30000);
-    let driver;
-
-    before(function() {
-        driver = new webdriver.Builder().withCapabilities(webdriver.Capabilities.chrome()).build();
-    });
-
-    after(function() {
-        driver.quit();
-    });
-
-    it('should go to https://www.prescribewellness.com and check the title', async () => {
-        await driver.get(environment.public);   
-        const title = await driver.getTitle();
-
-        expect(title).to.equal('Home | PrescribeWellness');
-        
-    });
-});
+describe('Login to PROD using Google Chrome as the Browser', function() {
+    
+    it('should navigate to "https://web.prescribewellness.com"', function () {
+        driver.get(environment.prod)
+    })
+    it('should input user name & password, then click on the login button', function(){ 
+        driver.findElement(By.id('mbr-uid')).sendKeys(credentials.customer_user);
+        driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.customer_password, Key.RETURN);
+    })
+    it('should click on the "gear" icon and select "Logout"', function() {
+        driver.findElement(By.id('pwTopGearIcon')).click();
+        driver.findElement(By.linkText('Logout')).click();
+    })
+})
