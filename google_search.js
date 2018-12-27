@@ -6,6 +6,7 @@ const {Builder, By, Key, until} = require('selenium-webdriver');
     await driver.get('http://www.google.com/ncr');
     await driver.findElement(By.name('q')).sendKeys('cheese', Key.RETURN);
     await driver.wait(until.titleIs('cheese - Google Search'), 1000);
+    await console.log("The title is: 'cheese - Google Search'");
   } finally {
     await driver.quit();
   }
