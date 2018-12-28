@@ -1,20 +1,36 @@
-const webdriver = require('selenium-webdriver');
+//-----CROSS BROWSER SIGN IN TEST -------------//
+
+const assert = require('assert');
+
+const {Browser, By, Key, until} = require('selenium-webdriver');
+const {ignore, suite} = require('./node_modules/selenium-webdriver/testing');
 let credentials = require('./credentials.js');
 let environment = require('./environment.js');
 
-const driver = new webdriver.Builder()
-    .forBrowser('chrome')
-    .build();
+suite(function(env) {
+  describe('Sign in to Staging', function() {
+    let driver;
 
-driver.get(environment.stg);
+    before(async function() {
+      // env.builder() returns a Builder instance preconfigured for the
+      // envrionment's target browser (you may still define browser specific
+      // options if necessary (i.e. firefox.Options or chrome.Options)).
+      driver = await env.builder().build();
+    });
 
-inputField = driver.findElement(webdriver.By.id('mbr-uid'));
+    it('demo 1: Go to Staging, seach for webdriver, wait until the title updates', async function() {
+      await driver.get(environment.stg);
+      await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.customer_user);
+      await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.customer_password, Key.RETURN);
+      await driver.wait(until.titleIs('Login - PrescribeWellness'), 1000);
+    });
 
-inputField.sendKeys(credentials.internal_user);
+    // it('demo 2: Go to google.com and verify title', async function() {
+    //   await driver.get('https://www.google.com/');
+    //   let url = await driver.getCurrentUrl();
+    //   assert.equal(url, 'https://www.google.com/');
+    // });
 
-inputField = driver.findElement(webdriver.By.id('mbr-pwd'));
-
-inputField.sendKeys(credentials.internal_password);
-
-driver.findElement(webdriver.By.id("login")).click();
-
+    after(() => driver && driver.quit());
+  });
+});
