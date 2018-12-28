@@ -51,7 +51,7 @@ suite(function(env) {
     });
 
     it('demo', async function() {
-      await driver.get('https://www.google.com/ncr');
+      await driver.get('https://www.google.com/');
       await driver.findElement(By.name('q')).sendKeys('webdriver', Key.RETURN);
       await driver.wait(until.titleIs('webdriver - Google Search'), 10000);
     });
@@ -63,10 +63,10 @@ suite(function(env) {
     // specified browsers.
     //
     // This example is always configured to skip Chrome.
-    ignore(env.browsers(Browser.CHROME)).it('demo 2', async function() {
-      await driver.get('http://www.google.com/ncr');
+    it('demo 2', async function() {
+      await driver.get('https://www.google.com/');
       let url = await driver.getCurrentUrl();
-      assert.equal(url, 'https://www.google.com/ncr');
+      assert.equal(url, 'https://www.google.com/');
     });
 
     after(() => driver && driver.quit());
