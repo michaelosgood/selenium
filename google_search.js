@@ -50,10 +50,10 @@ suite(function(env) {
       driver = await env.builder().build();
     });
 
-    it('demo', async function() {
+    it('demo 1: Go to google, seach for webdriver, wait until the title updates', async function() {
       await driver.get('https://www.google.com/');
       await driver.findElement(By.name('q')).sendKeys('webdriver', Key.RETURN);
-      await driver.wait(until.titleIs('webdriver - Google Search'), 10000);
+      await driver.wait(until.titleIs('webdriver - Google Search'), 1000);
     });
 
     // The ignore function returns wrappers around describe & it that will
@@ -63,7 +63,7 @@ suite(function(env) {
     // specified browsers.
     //
     // This example is always configured to skip Chrome.
-    it('demo 2', async function() {
+    it('demo 2: Go to google.com and verify title', async function() {
       await driver.get('https://www.google.com/');
       let url = await driver.getCurrentUrl();
       assert.equal(url, 'https://www.google.com/');
