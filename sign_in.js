@@ -8,7 +8,7 @@ let credentials = require('./credentials.js');
 let environment = require('./environment.js');
 
 suite(function(env) {
-  describe('Sign in to Staging', function() {
+  describe('Sign in to Staging', async function() {
     let driver;
 
     before(async function() {
@@ -22,7 +22,6 @@ suite(function(env) {
       await driver.get(environment.stg);
       await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.customer_user);
       await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.customer_password, Key.RETURN);
-      await driver.wait(until.titleIs('Login - PrescribeWellness'), 1000);
     });
 
     // it('demo 2: Go to google.com and verify title', async function() {
@@ -31,6 +30,6 @@ suite(function(env) {
     //   assert.equal(url, 'https://www.google.com/');
     // });
 
-    after(() => driver && driver.quit());
+    //after(() => driver && driver.quit());
   });
 });
