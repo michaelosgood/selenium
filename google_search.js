@@ -69,6 +69,6 @@ suite(function(env) {
       assert.equal(url, 'https://www.google.com/');
     });
 
-    after(() => driver && driver.quit());
+    // after(() => driver && driver.quit());
   });
 });
