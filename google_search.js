@@ -61,13 +61,13 @@ suite(function(env) {
     // any synchronous predicate. The env.browsers(...) function generates a
     // predicate that will suppress tests if the  env targets one of the
     // specified browsers.
-    //
+    
     // This example is always configured to skip Chrome.
-    it('demo 2: Go to google.com and verify title', async function() {
-      await driver.get('https://www.google.com/');
-      let url = await driver.getCurrentUrl();
-      assert.equal(url, 'https://www.google.com/');
-    });
+    // it('demo 2: Go to google.com and verify title', async function() {
+    //   await driver.get('https://www.google.com/');
+    //   let url = await driver.getCurrentUrl();
+    //   assert.equal(url, 'https://www.google.com/');
+    // });
 
     // after(() => driver && driver.quit());
   });
