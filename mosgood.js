@@ -11,6 +11,6 @@ async function mosgood() {
   await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.internal_user)
   await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.internal_password, Key.RETURN)
   await driver.findElement(By.id('pwTopGearIcon')).click()
-  await driver.findElement(By.linkText('Logout')).click()
+  // await driver.findElement(By.linkText('Logout')).click()
 }
 mosgood();
