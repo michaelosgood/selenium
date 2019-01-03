@@ -3,7 +3,7 @@ let credentials = require('./credentials.js');
 let environment = require('./environment.js');
 
 (async function SignIn() {
-  let driver = await new Builder().forBrowser('firefox').build();
+  let driver = await new Builder().forBrowser('safari').build();
     try {
         await driver.get(environment.stg);
         await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.internal_user);
