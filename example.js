@@ -7,9 +7,10 @@ async function example() {
   .forBrowser('chrome')
   .build();
 
-  await driver.get(environment.dev)
+  await driver.get(environment.prod)
   await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.internal_user)
   await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.internal_password, Key.RETURN)
   await driver.findElement(By.id('pwTopGearIcon')).click()
+  await takeScreenshot()
 }
 example();
