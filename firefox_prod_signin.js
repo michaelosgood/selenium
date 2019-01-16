@@ -6,6 +6,7 @@ let environment = require('./environment.js');
   let driver = await new Builder().forBrowser('firefox').build();
     try {
         await driver.get(environment.prod);
+        await driver.manage().window().maximize();
         await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.internal_user);
         await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.internal_password, Key.RETURN);
         await driver.findElement(By.id('pwTopGearIcon')).click();
