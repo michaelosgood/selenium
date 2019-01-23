@@ -12,6 +12,6 @@ let environment = require('./environment.js');
         //await driver.findElement(By.id('pwTopGearIcon')).click();
     } 
     catch(err) {
-        console.log(err);
-    }
+        //console.log(err);
+   }
 })();
