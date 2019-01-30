@@ -13,4 +13,7 @@ let environment = require('./environment.js');
     catch(err) {
         console.log(err);
     }
+    finally {
+        console.log("Partner Signed In")
+    }
 })();
