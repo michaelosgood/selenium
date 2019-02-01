@@ -14,6 +14,6 @@ let environment = require('./environment.js');
         console.log(err);
     }
     finally {
-        console.log("Customer user signed into Staging with Firefox");
+        console.log("Internal 5 user signed into Staging with Firefox");
     }
 })();
