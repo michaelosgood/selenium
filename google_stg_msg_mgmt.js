@@ -3,7 +3,7 @@ let fs = require('fs');
 let credentials = require('./credentials.js');
 let environment = require('./environment.js');
 
-(async function CustomerSignIn() {
+(async function msgMgmtTotal() {
   let driver = await new Builder().forBrowser('chrome').build();
     try {
         await driver.get(environment.stg);
@@ -13,8 +13,9 @@ let environment = require('./environment.js');
         await driver.findElement(By.id('pwTopGearIcon')).click();
         await driver.findElement(By.linkText('Message Management')).click();
         await driver.findElement(By.className('k-pager-info k-label'));
-        await driver.takeScreenshot().then(function(data) {
-            fs.writeFileSync(__dirname + "/tmp/screenshot1.png", data, 'base64');
+        await driver.sleep(4000);
+        await driver.takeScreenshot().then(function(data) { // Take Screenshot
+            fs.writeFileSync(__dirname + "/tmp/screenshot1.png", data, 'base64'); // Save screenshot to tmp folder
         });
     } 
     catch(err) {
