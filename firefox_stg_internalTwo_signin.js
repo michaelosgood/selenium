@@ -7,13 +7,13 @@ let environment = require('./environment.js');
     try {
         await driver.get(environment.stg);
         await driver.manage().window().maximize();
-        await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.internalOne_user);
-        await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.internalOne_password, Key.RETURN);
+        await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.internalTwo_user);
+        await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.internalTwo_password, Key.RETURN);
     } 
     catch(err) {
         console.log(err);
     }
     finally {
-        console.log("Internal 1 user signed into Staging with Firefox");
+        console.log("Internal 2 user signed into Staging with Firefox");
     }
 })();
