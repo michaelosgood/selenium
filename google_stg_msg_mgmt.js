@@ -1,4 +1,4 @@
-const {Builder, By, Key, until} = require('selenium-webdriver');
+const {Builder, By, Key, actions, until} = require('selenium-webdriver');
 let fs = require('fs');
 let credentials = require('./credentials.js');
 let environment = require('./environment.js');
@@ -13,7 +13,7 @@ let environment = require('./environment.js');
         await driver.findElement(By.id('pwTopGearIcon')).click();
         await driver.findElement(By.linkText('Message Management')).click();
         await driver.findElement(By.className('k-pager-info k-label'));
-        await driver.sleep(4000);
+        await driver.sleep(6000); // Wait for page to load
         await driver.takeScreenshot().then(function(data) { // Take Screenshot
             fs.writeFileSync(__dirname + "/tmp/screenshot1.png", data, 'base64'); // Save screenshot to tmp folder
         });
