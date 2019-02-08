@@ -21,8 +21,10 @@ let environment = require('./environment.js');
         console.log("6. Selected 'Message Management'");
         await driver.findElement(By.className('k-pager-info k-label'));
         await driver.sleep(6000); // Wait for page to load
+        console.log("7. Waited a couple seconds");
         await driver.takeScreenshot().then(function(data) { // Take Screenshot
             fs.writeFileSync(__dirname + "/tmp/screenshot1.png", data, 'base64'); // Save screenshot to tmp folder
+            console.log("8. Took screenshot");
         });
     } 
     catch(err) {
