@@ -3,14 +3,14 @@ let fs = require('fs');
 let credentials = require('./credentials.js');
 let environment = require('./environment.js');
 
-(async function msgMgmtTotal() {
+(async function Msgmgmtscreenshot() {
   let driver = await new Builder().forBrowser('chrome').build();
     try {
         console.log("Initiating Message Management Test");
         await driver.get(environment.stg);
         console.log("1. Went to Staging");
-        await driver.manage().window().maximize();
-        console.log("2. Maximized the window");
+        // await driver.manage().window().maximize();
+        // console.log("2. Maximized the window");
         await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.internalTwo_user);
         console.log("3. Entered internal two username");
         await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.internalTwo_password, Key.RETURN);
@@ -32,5 +32,6 @@ let environment = require('./environment.js');
     }
     finally {
         console.log("Results: Internal 2 user went to Message Managment in Staging using Chrome");
+        await driver.quit()
     }
 })();
