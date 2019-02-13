@@ -9,7 +9,7 @@ let environment = require('./environment.js');
         await driver.get(environment.stg);
         console.log("1. Went to Staging √");
         await driver.manage().window().maximize();
-        console.log("2.Maximized the window √");
+        console.log("2. Maximized the window √");
         await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.internal_user);
         console.log("3 Entered username √");
         await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.internal_password, Key.RETURN);
