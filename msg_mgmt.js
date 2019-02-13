@@ -22,7 +22,8 @@ let assert = require("chai").assert;
         await driver.sleep(6000); // Wait for page to load
         console.log("6. Waited a couple seconds");
         await driver.getTitle().then(function(title) {
-            assert.equal(title, "Message Management - Pharmacy Portal  - mosgood");
+            assert.equal(title, "Message Management - Pharmacy Portal - mosgood");
+            console.log("Title for Message Managment is: " + title );
         });
     } 
     catch(err) {
