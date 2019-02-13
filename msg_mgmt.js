@@ -30,7 +30,7 @@ let assert = require("chai").assert;
         console.log(err);
     }
     finally {
-        console.log("Results: Internal 2 user went to Message Managment in Staging using Chrome");
+        console.log("TEST RESULTS: Internal 2 user went to Message Managment in Staging using Chrome");
         await driver.quit()
     }
 })();
