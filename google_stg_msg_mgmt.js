@@ -6,7 +6,7 @@ let assert = require("chai").assert;
 (async function Msgmgmt() {
   let driver = await new Builder().forBrowser('chrome').build();
     try {
-        console.log("Initiating Message Management Test");
+        console.log("Initiating Message Management Test in Chrome");
         await driver.get(environment.stg);
         console.log("1. Went to Staging: √");
         await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.internal_user);
@@ -29,7 +29,7 @@ let assert = require("chai").assert;
         console.log(err);
     }
     finally {
-        console.log("TEST RESULTS: Title page for 'Message Management' has been verified - Passed QA!");
+        console.log("TEST RESULTS: Title page for 'Message Management' has been verified - √ Passed QA!");
         await driver.quit()
     }
 })();
