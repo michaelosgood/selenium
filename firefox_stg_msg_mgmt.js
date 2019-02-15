@@ -1,11 +1,10 @@
 const {Builder, By, Key, actions, until} = require('selenium-webdriver');
-let fs = require('fs');
 let credentials = require('./credentials.js');
 let environment = require('./environment.js');
 let assert = require("chai").assert;
 
 (async function Msgmgmt() {
-  let driver = await new Builder().forBrowser('chrome').build();
+  let driver = await new Builder().forBrowser('firefox').build();
     try {
         console.log("Initiating Message Management Test");
         await driver.get(environment.stg);
