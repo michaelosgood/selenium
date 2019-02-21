@@ -4,7 +4,7 @@ let environment = require('./environment.js');
 let assert = require("chai").assert;
 
 
-(async function Msgmgmt() {
+(async function CampMgmt() {
   let driver = await new Builder().forBrowser('chrome').build();
     try {
         console.log("Initiating Campaign Management Test in Chrome");
