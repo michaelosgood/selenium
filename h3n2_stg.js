@@ -14,6 +14,7 @@ describe("Login to web.prescribewellness.com", function() {
     });
 
     after(function() {
+        driver.sleep(6000); // Wait 6 s for page to load
         driver.findElement(By.id('pwTopGearIcon')).click()
         console.log("test completed");
         //driver.quit();
