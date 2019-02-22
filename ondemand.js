@@ -1,4 +1,5 @@
 const {Builder, By, Key, until} = require('selenium-webdriver');
+let fs = require('fs');
 let credentials = require('./credentials.js');
 let environment = require('./environment.js');
 
@@ -29,6 +30,11 @@ let environment = require('./environment.js');
     await driver.sleep(6000); // Wait for page to load
     await driver.findElement(By.css('.fright')).click();
     console.log("9. Clicked on 'Send Message' button");
+    await driver.sleep(2000); // Wait for page to load
+    await driver.takeScreenshot().then(function(data) { // Take Screenshot
+      fs.writeFileSync(__dirname + "/tmp/OnDemand_screenshot.png", data, 'base64'); // Save screenshot to tmp folder
+      console.log("10. Took screenshot");
+  });
 
   } 
   catch(err) {
@@ -37,6 +43,6 @@ let environment = require('./environment.js');
   finally {
     await driver.sleep(6000); // Wait for page to load
     console.log("TEST RESULTS: OnDemand SMS has been sent!! √ Passed QA!");
-    //await driver.quit()
+    await driver.quit()
   }
 })();
