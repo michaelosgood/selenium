@@ -4,7 +4,7 @@ let credentials = require('./credentials.js');
 let environment = require('./environment.js');
 
 (async function ondemand() {
-  let driver = await new Builder().forBrowser('firefox').build();
+  let driver = await new Builder().forBrowser('chrome').build();
   try {
     console.log("Initiating OnDemand Test in Firefox");
     await driver.get(environment.stg);
@@ -32,7 +32,7 @@ let environment = require('./environment.js');
     console.log("9. Clicked on 'Send Message' button");
     await driver.sleep(2000); // Wait for page to load
     await driver.takeScreenshot().then(function(data) { // Take Screenshot
-      fs.writeFileSync(__dirname + "/tmp/OnDemand_firefox_screenshot.png", data, 'base64'); // Save screenshot to tmp folder
+      fs.writeFileSync(__dirname + "/tmp/screenshot2.png", data, 'base64'); // Save screenshot to tmp folder
       console.log("10. Took screenshot");
   });
 
