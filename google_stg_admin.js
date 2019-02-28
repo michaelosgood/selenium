@@ -50,18 +50,29 @@ let assert = require("chai").assert;
             console.log("Title for 'Login As' page is: " + title );
         });
         // Template Managment
-           await driver.findElement(By.id('pwTopGearIcon')).click();
-           console.log("10. Clicked on the gear icon √");
-           await driver.findElement(By.linkText('Template Management')).click();
-           console.log("11. Selected 'Template Management' √");
-           await driver.findElement(By.className('k-pager-info k-label'));
-           await driver.sleep(6000); // Wait for page to load
-           console.log("12. Waited a couple seconds");
-           await driver.getTitle().then(function(title) {
-               assert.equal(title, "Communication Templates - Pharmacy Portal - mosgood");
-               console.log("Title for 'Template Management' page is: " + title );
-           });
-           
+        await driver.findElement(By.id('pwTopGearIcon')).click();
+        console.log("13. Clicked on the gear icon √");
+        await driver.findElement(By.linkText('Template Management')).click();
+        console.log("14. Selected 'Template Management' √");
+        await driver.findElement(By.className('k-pager-info k-label'));
+        await driver.sleep(6000); // Wait for page to load
+        console.log("15. Waited a couple seconds");
+        await driver.getTitle().then(function(title) {
+            assert.equal(title, "Communication Templates - Pharmacy Portal - mosgood");
+            console.log("Title for 'Template Management' page is: " + title );
+        });
+        // Template Managment
+        await driver.findElement(By.id('pwTopGearIcon')).click();
+        console.log("10. Clicked on the gear icon √");
+        await driver.findElement(By.linkText('Template Management')).click();
+        console.log("11. Selected 'Template Management' √");
+        await driver.findElement(By.className('k-pager-info k-label'));
+        await driver.sleep(6000); // Wait for page to load
+        console.log("12. Waited a couple seconds");
+        await driver.getTitle().then(function(title) {
+            assert.equal(title, "Communication Templates - Pharmacy Portal - mosgood");
+            console.log("Title for 'Template Management' page is: " + title );
+        }); 
     } 
     catch(err) {
         console.log(err);
