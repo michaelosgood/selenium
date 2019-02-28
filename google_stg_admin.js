@@ -6,7 +6,7 @@ let assert = require("chai").assert;
 (async function AdminTest() {
   let driver = await new Builder().forBrowser('chrome').build();
     try {
-        console.log("Initiating Message Management Test in Chrome");
+        console.log("Initiating Admin Test in Chrome");
         await driver.get(environment.stg);
         console.log("1. Went to Staging √");
         await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.internal_user);
