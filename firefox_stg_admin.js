@@ -13,6 +13,7 @@ let assert = require("chai").assert;
         console.log("2. Entered internal username √");
         await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.internal_password, Key.RETURN);
         console.log("3. Entered password and clicked 'Enter' √");
+        await driver.sleep(6000); // Wait for page to load
         // Message Management Test
         await driver.findElement(By.id('pwTopGearIcon')).click();
         console.log("4. Clicked on the gear icon √");
