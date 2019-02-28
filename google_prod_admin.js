@@ -7,8 +7,8 @@ let assert = require("chai").assert;
   let driver = await new Builder().forBrowser('chrome').build();
     try {
         console.log("Initiating Message Management Test in Chrome");
-        await driver.get(environment.stg);
-        console.log("1. Went to Staging √");
+        await driver.get(environment.prod);
+        console.log("1. Went to Production √");
         await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.internal_user);
         console.log("2. Entered internal username √");
         await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.internal_password, Key.RETURN);
@@ -49,25 +49,12 @@ let assert = require("chai").assert;
             assert.equal(title, "Login As - Pharmacy Portal - mosgood");
             console.log("Title for 'Login As' page is: " + title );
         });
-        // Template Managment
-           await driver.findElement(By.id('pwTopGearIcon')).click();
-           console.log("10. Clicked on the gear icon √");
-           await driver.findElement(By.linkText('Template Management')).click();
-           console.log("11. Selected 'Template Management' √");
-           await driver.findElement(By.className('k-pager-info k-label'));
-           await driver.sleep(6000); // Wait for page to load
-           console.log("12. Waited a couple seconds");
-           await driver.getTitle().then(function(title) {
-               assert.equal(title, "Template Management - Pharmacy Portal - mosgood");
-               console.log("Title for 'Template Management' page is: " + title );
-           });
-           
     } 
     catch(err) {
         console.log(err);
     }
     finally {
-        console.log("TEST RESULTS: Titles for Admin Pages have been verified - √ Passed QA!");
+        console.log("TEST RESULTS: Title page for Admin Pages have been verified - √ Passed QA!");
         await driver.quit()
     }
 })();
