@@ -4,9 +4,9 @@ let environment = require('./environment.js');
 let assert = require("chai").assert;
 
 (async function AdminTest() {
-  let driver = await new Builder().forBrowser('chrome').build();
+  let driver = await new Builder().forBrowser('firefox').build();
     try {
-        console.log("Initiating Message Management Test in Chrome");
+        console.log("Initiating Message Management Test in Firefox");
         await driver.get(environment.stg);
         console.log("1. Went to Staging √");
         await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.internal_user);
