@@ -8,14 +8,13 @@ let credentials = require('./credentials.js');
 let environment = require('./environment.js');
 
 suite(function(env) {
-    describe('Sign in to Staging', async function() {
+    describe('Sign in to Production, go to msg mgmt, & verify title', async function() {
         beforeEach(function(done) {
             this.timeout(30000); // A very long environment setup.
             setTimeout(done, 2500);
           });
           let driver = await env.builder().build();
           try {
-            //it('DEMO 1: CROSS BROWSER TEST', async function() {
             console.log("INITIATING CROSS BROWSER TEST");
             await driver.get(environment.prod);
             console.log("1. Went to PROD √");
@@ -35,7 +34,6 @@ suite(function(env) {
                 assert.equal(title, "Message Management - Pharmacy Portal - mosgood");
                 console.log("Title for Message Managment is: " + title );
                 });
-            //});
           }
           catch(err) {
             console.log(err);
