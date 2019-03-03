@@ -1,17 +1,19 @@
-const { Builder, By, Key, until } = require('selenium-webdriver');
-const { expect } = require('chai');
+const {Builder, By, Key, until} = require('selenium-webdriver');
+let environment = require('./environment.js');
+let assert = require('assert');
+let driver = new Builder().forBrowser('chrome').build();
 
-describe('MochaTest', () => {
-    const driver = new Builder().forBrowser('chrome').build();
+describe('Go to Public Site and Verify Title', function() {
 
-    it('should go to www.google.com/ncr, search for "cheese", and verify the title', async () => {
-        await driver.get('https://www.google.com/ncr');
-        await driver.findElement(By.name('q')).sendKeys('cheese', Key.RETURN);
-        const title = await driver.getTitle();
-
-        expect(title).to.equal('cheese - Google Search');
-        await console.log("The title is: 'cheese - Google Search'");
-    });
-
-    after(async () => driver.quit());
-});
+    it('should navigate to WWW Page', function () {
+      driver.get(environment.public);
+    })
+    it('should verify the title displays: "Home | PrescribeWellness"', function() {
+      driver.getTitle().then(function(title) {
+        assert.equal(title, "Home | PrescribeWellness")
+      })
+    })
+    it('should quit webdriver after verifying title', function() {
+      driver.quit();
+    })
+  })
