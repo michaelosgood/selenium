@@ -9,13 +9,12 @@ let assert = require("chai").assert;
         console.log("Initiating Login Test in Chrome");
         await driver.get(environment.prod);
         console.log("1. Went to Production: √");
-        await driver.manage().window().maximize();
-        await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.customer_user);
+        await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.sample_user);
         console.log("2. Entered internal username: √");
-        await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.customer_password, Key.RETURN);
+        await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.sample_password, Key.RETURN);
         console.log("3. Entered password and clicked 'Enter': √");
         await driver.getTitle().then(function(title) {
-            assert.equal(title, "Pharmacy Dashboard - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
+            assert.equal(title, "Pharmacy Dashboard - Pharmacy Portal - Account: 86362 - NPI: 1234934850 - NCPDP: 8888888 - SampUser");
             console.log("Asserted title is: " + title );
         });
         await driver.findElement(By.id('pwTopGearIcon')).click();
