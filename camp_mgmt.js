@@ -19,12 +19,18 @@ let assert = require("chai").assert;
         await driver.findElement(By.linkText('Campaign Management')).click();
         console.log("5. Selected 'Campaign Management': √");
         await driver.findElement(By.className('k-pager-info k-label'));
-        await driver.sleep(6000); // Wait for page to load
+        await driver.sleep(3000); // Wait for page to load
         console.log("6. Waited a couple seconds");
         await driver.getTitle().then(function(title) {
             assert.equal(title, "Campaign Management - Pharmacy Portal - mosgood");
             console.log("Title for Campaign Managment is: " + title );
         });
+        await driver.sleep(3000); // Wait for page to load
+        console.log("7. Waited a couple seconds");
+        await driver.findElement(By.className('k-link')).getText().then(function(header_text) {
+            assert.equal(header_text, 'CAMPAIGN OCCURENCE ID');
+            console.log("Table Header displays: "+ header_text);
+        })
     } 
     catch(err) {
         console.log(err);
