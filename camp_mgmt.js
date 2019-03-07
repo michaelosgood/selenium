@@ -28,9 +28,9 @@ let assert = require("chai").assert;
         await driver.sleep(3000); // Wait for page to load
         console.log("7. Waited a couple seconds");
         await driver.findElement(By.className('k-link')).getText().then(function(header_text) {
-            assert.equal(header_text, 'CAMPAIGN OCCURENCE ID');
+            assert.equal(header_text, 'CAMPAIGN OCCURRENCE ID');
             console.log("Table Header displays: "+ header_text);
-        })
+        });
     } 
     catch(err) {
         console.log(err);
