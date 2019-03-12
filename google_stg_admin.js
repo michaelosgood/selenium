@@ -6,7 +6,7 @@ let assert = require("chai").assert;
 (async function AdminTest() {
   let driver = await new Builder().forBrowser('chrome').build();
     try {
-        console.log("Initiating Admin Test in Chrome");
+        console.log("Starting Admin Test in Chrome");
         await driver.get(environment.stg);
         console.log("1. Went to Staging √");
         await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.internal_user);
@@ -23,7 +23,7 @@ let assert = require("chai").assert;
         console.log("6. Waited a couple seconds");
         await driver.getTitle().then(function(title) {
             assert.equal(title, "Message Management - Pharmacy Portal - mosgood");
-            console.log("Title for Message Managment is: " + title );
+            console.log("Asserted title for Message Managment is: " + title );
         });
         // Campaign Management Test
         await driver.findElement(By.id('pwTopGearIcon')).click();
@@ -35,7 +35,7 @@ let assert = require("chai").assert;
         console.log("9. Waited a couple seconds");
         await driver.getTitle().then(function(title) {
             assert.equal(title, "Campaign Management - Pharmacy Portal - mosgood");
-            console.log("Title for 'Campaign Managment' page is: " + title );
+            console.log("Asserted title for 'Campaign Managment' page is: " + title );
         });
         // Login As Test
         await driver.findElement(By.id('pwTopGearIcon')).click();
@@ -47,7 +47,7 @@ let assert = require("chai").assert;
         console.log("12. Waited a couple seconds");
         await driver.getTitle().then(function(title) {
             assert.equal(title, "Login As - Pharmacy Portal - mosgood");
-            console.log("Title for 'Login As' page is: " + title );
+            console.log("Asserted title for 'Login As' page is: " + title );
         });
         // Template Managment
         await driver.findElement(By.id('pwTopGearIcon')).click();
@@ -59,7 +59,7 @@ let assert = require("chai").assert;
         console.log("15. Waited a couple seconds");
         await driver.getTitle().then(function(title) {
             assert.equal(title, "Communication Templates - Pharmacy Portal - mosgood");
-            console.log("Title for 'Template Management' page is: " + title );
+            console.log("Asserted title for 'Template Management' page is: " + title );
         });
         // User Managment
         await driver.findElement(By.id('pwTopGearIcon')).click();
@@ -71,7 +71,7 @@ let assert = require("chai").assert;
         console.log("18. Waited a couple seconds");
         await driver.getTitle().then(function(title) {
             assert.equal(title, "User Management - Pharmacy Portal - mosgood");
-            console.log("Title for 'User Management' page is: " + title );
+            console.log("Asserted title for 'User Management' page is: " + title );
         }); 
          // Account Managment
          await driver.findElement(By.id('pwTopGearIcon')).click();
@@ -95,7 +95,7 @@ let assert = require("chai").assert;
         console.log("24. Waited a couple seconds");
         await driver.getTitle().then(function(title) {
             assert.equal(title, "Partner Management - Pharmacy Portal - mosgood");
-            console.log("Title for 'Partner Management' page is: " + title );
+            console.log("Asserted title for 'Partner Management' page is: " + title );
         }); 
     } 
     catch(err) {
