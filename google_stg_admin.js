@@ -97,12 +97,27 @@ let assert = require("chai").assert;
             assert.equal(title, "Partner Management - Pharmacy Portal - mosgood");
             console.log("Asserted title for 'Partner Management' page is: " + title );
         }); 
-    } 
+
+        // Logout Test
+        await driver.findElement(By.id('pwTopGearIcon')).click();
+        console.log("10. Clicked on the gear icon √");
+        await driver.findElement(By.linkText('Logout')).click();
+        console.log("11. Selected 'Logout' √");
+        console.log("12. Waited a couple seconds");
+
+        // Loging to H3N2
+        await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.customer_user);
+        console.log("2. Entered username: √");
+        await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.customer_password, Key.RETURN);
+        console.log("3. Entered password and clicked 'Enter': √");
+        await driver.findElement(By.id('pwTopGearIcon')).click();
+        console.log("4. Clicked on the gear icon: √");
+        }
     catch(err) {
         console.log(err);
     }
     finally {
         console.log("TEST RESULTS: Titles for Admin Pages have been verified - √ Passed QA!");
-        await driver.quit()
+        //await driver.quit()
     }
 })();
