@@ -109,34 +109,38 @@ let assert = require("chai").assert;
 
         // Login to H3N2
         await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.customer_user);
-        console.log("2. Entered username: √");
+        console.log("Entered username: √");
         await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.customer_password, Key.RETURN);
-        console.log("3. Entered password and clicked 'Enter': √");
+        console.log("Entered password and clicked 'Enter': √");
+        await driver.getTitle().then(function(title) {
+            assert.equal(title, "Pharmacy Dashboard - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
+            console.log("Asserted title is: " + title );
+        });
 
         // Send OnDemand via gear icon
         await driver.findElement(By.id('pwTopGearIcon')).click();
-        console.log("4. Clicked on the gear icon: √");
+        console.log("Clicked on the gear icon: √");
         await driver.findElement(By.linkText('OnDemand')).click();
-        console.log("5. Selected 'OnDemand' √");
+        console.log("Selected 'OnDemand' √");
         await driver.sleep(6000); // Wait for page to load
         await driver.findElement(By.id('phone_numbers')).sendKeys('3036534679');
-        console.log("6. Entered a phone number √");
+        console.log("Entered a phone number √");
         await driver.sleep(6000); // Wait for page to load
         await driver.findElement(By.css('.btn-pw')).click();
-        console.log("7. Clicked on 'Next' button");
+        console.log("Clicked on 'Next' button");
         await driver.sleep(6000); // Wait for page to load
         await driver.findElement(By.css('.btn-select-campaign')).click();
-        console.log("8. Clicked on 'Select' button");
+        console.log("Clicked on 'Select' button");
         await driver.sleep(6000); // Wait for page to load
         await driver.findElement(By.css('.fright')).click();
-        console.log("9. Clicked on 'Send Message' button");
+        console.log("Clicked on 'Send Message' button");
 
         }
     catch(err) {
         console.log(err);
     }
     finally {
-        console.log("TEST RESULTS: Titles for Admin Pages have been verified - √ Passed QA!");
+        console.log("Test Completed!!");
         //await driver.quit()
     }
 })();
