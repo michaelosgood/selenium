@@ -8,83 +8,86 @@ let assert = require("chai").assert;
     try {
         console.log("Starting Admin Test in Chrome");
         await driver.get(environment.stg);
-        console.log("1. Went to Staging √");
+        console.log("Went to Staging √");
         await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.internal_user);
-        console.log("2. Entered internal username √");
+        console.log("Entered internal username √");
         await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.internal_password, Key.RETURN);
-        console.log("3. Entered password and clicked 'Enter' √");
+        console.log("Entered password and clicked 'Enter' √");
         // Message Management Test
         await driver.findElement(By.id('pwTopGearIcon')).click();
-        console.log("4. Clicked on the gear icon √");
+        console.log("Clicked on the gear icon √");
         await driver.findElement(By.linkText('Message Management')).click();
-        console.log("5. Selected 'Message Management' √");
+        console.log("Selected 'Message Management' √");
         await driver.findElement(By.className('k-pager-info k-label'));
         await driver.sleep(6000); // Wait for page to load
-        console.log("6. Waited a couple seconds");
+        console.log("Waited a couple seconds");
         await driver.getTitle().then(function(title) {
             assert.equal(title, "Message Management - Pharmacy Portal - mosgood");
             console.log("Asserted title for Message Managment is: " + title );
         });
         // Campaign Management Test
         await driver.findElement(By.id('pwTopGearIcon')).click();
-        console.log("7. Clicked on the gear icon √");
+        console.log("Clicked on the gear icon √");
         await driver.findElement(By.linkText('Campaign Management')).click();
-        console.log("8. Selected 'Campaign Managment' √");
+        console.log("Selected 'Campaign Managment' √");
         await driver.findElement(By.className('k-pager-info k-label'));
         await driver.sleep(6000); // Wait for page to load
-        console.log("9. Waited a couple seconds");
+        console.log("Waited a couple seconds");
         await driver.getTitle().then(function(title) {
             assert.equal(title, "Campaign Management - Pharmacy Portal - mosgood");
             console.log("Asserted title for 'Campaign Managment' page is: " + title );
         });
+        
         // Login As Test
         await driver.findElement(By.id('pwTopGearIcon')).click();
-        console.log("10. Clicked on the gear icon √");
+        console.log("Clicked on the gear icon √");
         await driver.findElement(By.linkText('Login As')).click();
-        console.log("11. Selected 'Login As' √");
+        console.log("Selected 'Login As' √");
         await driver.findElement(By.className('k-pager-info k-label'));
         await driver.sleep(6000); // Wait for page to load
-        console.log("12. Waited a couple seconds");
+        console.log("Waited a couple seconds");
         await driver.getTitle().then(function(title) {
             assert.equal(title, "Login As - Pharmacy Portal - mosgood");
             console.log("Asserted title for 'Login As' page is: " + title );
         });
+
         // Template Managment
         await driver.findElement(By.id('pwTopGearIcon')).click();
-        console.log("13. Clicked on the gear icon √");
+        console.log("Clicked on the gear icon √");
         await driver.findElement(By.linkText('Template Management')).click();
-        console.log("14. Selected 'Template Management' √");
+        console.log("Selected 'Template Management' √");
         await driver.findElement(By.className('k-pager-info k-label'));
         await driver.sleep(6000); // Wait for page to load
-        console.log("15. Waited a couple seconds");
+        console.log("Waited a couple seconds");
         await driver.getTitle().then(function(title) {
             assert.equal(title, "Communication Templates - Pharmacy Portal - mosgood");
             console.log("Asserted title for 'Template Management' page is: " + title );
         });
         // User Managment
         await driver.findElement(By.id('pwTopGearIcon')).click();
-        console.log("16. Clicked on the gear icon √");
+        console.log("Clicked on the gear icon √");
         await driver.findElement(By.linkText('User Management')).click();
-        console.log("17. Selected 'User Management' √");
+        console.log("Selected 'User Management' √");
         await driver.findElement(By.className('k-pager-info k-label'));
         await driver.sleep(6000); // Wait for page to load
-        console.log("18. Waited a couple seconds");
+        console.log("Waited a couple seconds");
         await driver.getTitle().then(function(title) {
             assert.equal(title, "User Management - Pharmacy Portal - mosgood");
             console.log("Asserted title for 'User Management' page is: " + title );
         }); 
          // Account Managment
          await driver.findElement(By.id('pwTopGearIcon')).click();
-         console.log("19. Clicked on the gear icon √");
+         console.log("Clicked on the gear icon √");
          await driver.findElement(By.linkText('Account Management')).click();
-         console.log("20. Selected 'Account Management' √");
+         console.log("Selected 'Account Management' √");
          await driver.findElement(By.className('k-pager-info k-label'));
          await driver.sleep(6000); // Wait for page to load
-         console.log("21. Waited a couple seconds");
+         console.log("Waited a couple seconds");
          await driver.getTitle().then(function(title) {
              assert.equal(title, "Account Management - Pharmacy Portal - mosgood");
-             console.log("Title for 'Account Management' page is: " + title );
+             console.log("Asserted title for 'Account Management' page is: " + title );
          }); 
+
         // Partner Managment
         await driver.findElement(By.id('pwTopGearIcon')).click();
         console.log("22. Clicked on the gear icon √");
@@ -103,7 +106,6 @@ let assert = require("chai").assert;
         console.log("10. Clicked on the gear icon √");
         await driver.findElement(By.linkText('Logout')).click();
         console.log("11. Selected 'Logout' √");
-        console.log("12. Waited a couple seconds");
 
         // Loging to H3N2
         await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.customer_user);
