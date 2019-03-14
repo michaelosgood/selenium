@@ -37,7 +37,7 @@ let assert = require("chai").assert;
             assert.equal(title, "Campaign Management - Pharmacy Portal - mosgood");
             console.log("Asserted title for 'Campaign Managment' page is: " + title );
         });
-        
+
         // Login As Test
         await driver.findElement(By.id('pwTopGearIcon')).click();
         console.log("Clicked on the gear icon √");
@@ -90,12 +90,12 @@ let assert = require("chai").assert;
 
         // Partner Managment
         await driver.findElement(By.id('pwTopGearIcon')).click();
-        console.log("22. Clicked on the gear icon √");
+        console.log("Clicked on the gear icon √");
         await driver.findElement(By.linkText('Partner Management')).click();
-        console.log("23. Selected 'Partner Management' √");
+        console.log("Selected 'Partner Management' √");
         await driver.findElement(By.className('k-pager-info k-label'));
         await driver.sleep(6000); // Wait for page to load
-        console.log("24. Waited a couple seconds");
+        console.log("Waited a couple seconds");
         await driver.getTitle().then(function(title) {
             assert.equal(title, "Partner Management - Pharmacy Portal - mosgood");
             console.log("Asserted title for 'Partner Management' page is: " + title );
@@ -103,17 +103,34 @@ let assert = require("chai").assert;
 
         // Logout Test
         await driver.findElement(By.id('pwTopGearIcon')).click();
-        console.log("10. Clicked on the gear icon √");
+        console.log("Clicked on the gear icon √");
         await driver.findElement(By.linkText('Logout')).click();
-        console.log("11. Selected 'Logout' √");
+        console.log("Selected 'Logout' √");
 
-        // Loging to H3N2
+        // Login to H3N2
         await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.customer_user);
         console.log("2. Entered username: √");
         await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.customer_password, Key.RETURN);
         console.log("3. Entered password and clicked 'Enter': √");
+
+        // Send OnDemand via gear icon
         await driver.findElement(By.id('pwTopGearIcon')).click();
         console.log("4. Clicked on the gear icon: √");
+        await driver.findElement(By.linkText('OnDemand')).click();
+        console.log("5. Selected 'OnDemand' √");
+        await driver.sleep(6000); // Wait for page to load
+        await driver.findElement(By.id('phone_numbers')).sendKeys('3036534679');
+        console.log("6. Entered a phone number √");
+        await driver.sleep(6000); // Wait for page to load
+        await driver.findElement(By.css('.btn-pw')).click();
+        console.log("7. Clicked on 'Next' button");
+        await driver.sleep(6000); // Wait for page to load
+        await driver.findElement(By.css('.btn-select-campaign')).click();
+        console.log("8. Clicked on 'Select' button");
+        await driver.sleep(6000); // Wait for page to load
+        await driver.findElement(By.css('.fright')).click();
+        console.log("9. Clicked on 'Send Message' button");
+
         }
     catch(err) {
         console.log(err);
