@@ -14,7 +14,7 @@ let assert = require("chai").assert;
         console.log("Entered internal username √");
         await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.internal_password, Key.RETURN);
         console.log("Entered password and clicked 'Enter' √");
-        await driver.sleep(3000); // Wait for page to load
+        await driver.sleep(6000); // Wait for page to load
         await driver.getTitle().then(function(title) {
             assert.equal(title, "Pharmacy Group Dashboard - Pharmacy Portal - mosgood");
             console.log("Asserted title is: " + title );
@@ -119,7 +119,7 @@ let assert = require("chai").assert;
         console.log("Entered username: √");
         await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.customer_password, Key.RETURN);
         console.log("Entered password and clicked 'Enter': √");
-        await driver.sleep(3000); // Wait for page to load
+        await driver.sleep(6000); // Wait for page to load
         console.log("Waited a couple seconds");
         await driver.getTitle().then(function(title) {
             assert.equal(title, "Pharmacy Dashboard - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
@@ -134,7 +134,7 @@ let assert = require("chai").assert;
         await driver.sleep(6000); // Wait for page to load
         await driver.findElement(By.id('phone_numbers')).sendKeys('9494158370');
         console.log("Entered a phone number √");
-        await driver.sleep(6000); // Wait for page to load
+        await driver.sleep(4000); // Wait for page to load
         await driver.findElement(By.css('.btn-pw')).click();
         console.log("Clicked on 'Next' button");
         await driver.sleep(6000); // Wait for page to load
