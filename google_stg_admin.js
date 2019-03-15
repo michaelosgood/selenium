@@ -146,9 +146,20 @@ let assert = require("chai").assert;
         await driver.findElement(By.className('fa-calendar')).click();
         console.log("Clicked on the calendar icon √");
         await driver.findElement(By.linkText('Clinical Calendar')).click();
+        console.log("Selected 'Clinical Calendar' icon √");
         await driver.getTitle().then(function(title) {
             assert.equal(title, "Pharmacy Calendar - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
-            console.log("Asserted title is: " + title );
+            console.log("Asserted title for 'Clinical Calendar' page is: " + title );
+        });
+
+          // Verify Title for Social Calendar
+          await driver.findElement(By.className('fa-calendar')).click();
+          console.log("Clicked on the calendar icon √");
+          await driver.findElement(By.linkText('Social Calendar')).click();
+          console.log("Selected 'Social Calendar' icon √");
+          await driver.getTitle().then(function(title) {
+            assert.equal(title, "Pharmacy Calendar - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - mosgood as H3N2");
+            console.log("Asserted title for 'Social Calendar' page is: " + title );
         });
 
         }
