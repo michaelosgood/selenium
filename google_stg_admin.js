@@ -129,7 +129,7 @@ let assert = require("chai").assert;
         await driver.findElement(By.linkText('OnDemand')).click();
         console.log("Selected 'OnDemand' √");
         await driver.sleep(6000); // Wait for page to load
-        await driver.findElement(By.id('phone_numbers')).sendKeys('3036534679');
+        await driver.findElement(By.id('phone_numbers')).sendKeys('9494158370');
         console.log("Entered a phone number √");
         await driver.sleep(6000); // Wait for page to load
         await driver.findElement(By.css('.btn-pw')).click();
@@ -152,15 +152,19 @@ let assert = require("chai").assert;
             console.log("Asserted title for 'Clinical Calendar' page is: " + title );
         });
 
-          // Verify Title for Social Calendar
-          await driver.findElement(By.className('fa-calendar')).click();
-          console.log("Clicked on the calendar icon √");
-          await driver.findElement(By.linkText('Social Calendar')).click();
-          console.log("Selected 'Social Calendar' icon √");
-          await driver.getTitle().then(function(title) {
-            assert.equal(title, "Pharmacy Calendar - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - mosgood as H3N2");
+        // Verify Title for Social Calendar
+        await driver.findElement(By.className('fa-calendar')).click();
+        console.log("Clicked on the calendar icon √");
+        await driver.findElement(By.linkText('Social Calendar')).click();
+        console.log("Selected 'Social Calendar' icon √");
+        await driver.getTitle().then(function(title) {
+            assert.equal(title, "Pharmacy Calendar - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
             console.log("Asserted title for 'Social Calendar' page is: " + title );
         });
+
+        // Verify Title for 'Growth Pt List
+        await driver.findElement(By.linkText('Growth')).click();
+        console.log("Selected 'Growth' √");
 
         }
     catch(err) {
@@ -168,6 +172,6 @@ let assert = require("chai").assert;
     }
     finally {
         console.log("Test Completed!!");
-        await driver.quit()
+        //await driver.quit()
     }
 })();
