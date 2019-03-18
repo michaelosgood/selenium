@@ -187,7 +187,7 @@ let assert = require("chai").assert;
         console.log("Selected 'StarWellness' √");
         await driver.findElement(By.linkText('Synchronization')).click();
         await driver.getTitle().then(function(title) {
-            assert.equal(title, "StarWellness: Synchronization - Pharmacy Portal  - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
+            assert.equal(title, "StarWellness: Synchronization - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
             console.log("Asserted title for 'StarWellness Synchronization' page is: " + title );
         });
 
