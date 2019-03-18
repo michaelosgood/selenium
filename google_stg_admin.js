@@ -124,6 +124,7 @@ let assert = require("chai").assert;
         });
 
         // Send OnDemand via gear icon
+        /* 
         await driver.findElement(By.id('pwTopGearIcon')).click();
         console.log("Clicked on the gear icon: √");
         await driver.findElement(By.linkText('OnDemand')).click();
@@ -141,6 +142,7 @@ let assert = require("chai").assert;
         await driver.findElement(By.css('.fright')).click();
         console.log("Clicked on 'Send Message' button");
         await driver.sleep(6000); // Wait for page to load
+        */
 
         // Verify Title for Clinical Calendar
         await driver.findElement(By.className('fa-calendar')).click();
@@ -162,10 +164,24 @@ let assert = require("chai").assert;
             console.log("Asserted title for 'Social Calendar' page is: " + title );
         });
 
+        // Verify Title for Custom Calendar
+        await driver.findElement(By.className('fa-calendar')).click();
+        console.log("Clicked on the calendar icon √");
+        await driver.findElement(By.linkText('Custom Calendar')).click();
+        console.log("Selected 'Custom Calendar' icon √");
+        await driver.getTitle().then(function(title) {
+            assert.equal(title, "Pharmacy Calendar - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
+            console.log("Asserted title for 'Social Calendar' page is: " + title );
+        });
+
         // Verify Title for 'Growth Pt List
         await driver.findElement(By.linkText('Growth')).click();
         console.log("Selected 'Growth' √");
-
+        await driver.getTitle().then(function(title) {
+            assert.equal(title, "Pharmacy Calendar - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
+            console.log("Asserted title for 'Growth' page is: " + title );
+        });
+        
         }
     catch(err) {
         console.log(err);
