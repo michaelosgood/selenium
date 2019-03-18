@@ -8,7 +8,6 @@ let environment = require('./environment.js');
         console.log("Initiating Login Test in Chrome");
         await driver.get(environment.prod);
         console.log("1. Went to Production: √");
-        await driver.manage().window().maximize();
         await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.internal_user);
         console.log("2. Entered internal username: √");
         await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.internal_password, Key.RETURN);
