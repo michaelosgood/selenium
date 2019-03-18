@@ -174,20 +174,53 @@ let assert = require("chai").assert;
             console.log("Asserted title for 'Social Calendar' page is: " + title );
         });
 
-        // Verify Title for 'Growth Pt List
+        // Verify Title for 'Growth' Pt List
         await driver.findElement(By.linkText('Growth')).click();
         console.log("Selected 'Growth' √");
         await driver.getTitle().then(function(title) {
-            assert.equal(title, "Pharmacy Calendar - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
+            assert.equal(title, "Growth: Patients - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
             console.log("Asserted title for 'Growth' page is: " + title );
         });
+
+        // Verify Title for 'StarWellness' Pt List
+        await driver.findElement(By.linkText('StarWellness')).click();
+        console.log("Selected 'StarWellness' √");
+        await driver.findElement(By.linkText('Synchronization')).click();
+        await driver.getTitle().then(function(title) {
+            assert.equal(title, "StarWellness: Synchronization - Pharmacy Portal  - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
+            console.log("Asserted title for 'StarWellness Synchronization' page is: " + title );
+        });
+
+        // Verify Title for 'VaccineComplete' Pt List
+        await driver.findElement(By.linkText('VaccineComplete')).click();
+        console.log("Selected 'VaccineComplete' √");
+        await driver.getTitle().then(function(title) {
+            assert.equal(title, "Vaccine Patient List - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
+            console.log("Asserted title for 'VaccineComplete' page is: " + title );
+        });
+
+        // Verify Title for 'PrescribeMedicare' Pt List
+        await driver.findElement(By.linkText('PrescribeMedicare')).click();
+        console.log("Selected 'PrescribeMedicare' √");
+        await driver.getTitle().then(function(title) {
+            assert.equal(title, "Medicare Patient List - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
+            console.log("Asserted title for 'PrescribeMedicare' page is: " + title );
+        });
+
+        // Verify Title for 'PrescribeCare' Pt List
+        await driver.findElement(By.linkText('PrescribeCare')).click();
+        console.log("Selected 'PrescribeCare' √");
+        await driver.getTitle().then(function(title) {
+            assert.equal(title, "PrescribeCare: Patients with Encounters - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
+            console.log("Asserted title for 'PrescribeCare' page is: " + title );
+        });
         
-        }
+    }
     catch(err) {
         console.log(err);
     }
     finally {
         console.log("Test Completed!!");
-        //await driver.quit()
+        await driver.quit()
     }
 })();
