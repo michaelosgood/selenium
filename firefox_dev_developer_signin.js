@@ -11,6 +11,8 @@ let environment = require('./environment.js');
     console.log("Entered username");
     await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.dev_password, Key.RETURN);
     console.log("Entered password and pressed 'Enter'");
+    await driver.sleep(3000); // Wait for page to load
+    console.log("Waited a couple seconds");
     await driver.get(environment.chain);
     console.log("Went to Chain CDN");
     } 
