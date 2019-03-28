@@ -23,11 +23,9 @@ describe("Inner Suite 1", async function(){
  
     after(async function(){
         try {
-            console.log("AFTER");
-            await driver.findElement(By.id('pwTopGearIcon')).click();
-            console.log("Clicked on the gear icon √");
-            await driver.findElement(By.linkText('Logout')).click();
-            console.log("Selected 'Logout' √");
+            console.log("AFTER EACH");
+            console.log("Driver Quit");
+        await driver.quit()
         } catch(error) {
             console.error(error);
         }
@@ -46,9 +44,11 @@ describe("Inner Suite 1", async function(){
  
     afterEach(async function(){
         try {
-            console.log("AFTER EACH");
-            console.log("Driver Quit");
-        await driver.quit()
+            console.log("AFTER");
+            await driver.findElement(By.id('pwTopGearIcon')).click();
+            console.log("Clicked on the gear icon √");
+            await driver.findElement(By.linkText('Logout')).click();
+            console.log("Selected 'Logout' √");
         } catch(error) {
             console.error(error);
         }
