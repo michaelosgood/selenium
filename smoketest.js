@@ -6,8 +6,9 @@ let driver = new Builder().forBrowser('chrome').build();
 
 
 describe("Inner Suite 1", async function(){
-    
+    this.slow(300000);
     before(async function(){
+        this.slow(300000);
         try {
             console.log("BEFORE");
             console.log("Starting Smoke Test in Chrome");
@@ -19,6 +20,7 @@ describe("Inner Suite 1", async function(){
     });
 
     after(async function(){
+        this.slow(300000);
         try {
             console.log("AFTER EACH");
             console.log("Driver Quit");
@@ -31,6 +33,7 @@ describe("Inner Suite 1", async function(){
     
     
     beforeEach(async function(){
+        this.slow(300000);
         try {
             console.log("BEFORE EACH");
             await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.internal_user);
@@ -42,6 +45,7 @@ describe("Inner Suite 1", async function(){
     });
 
     afterEach(async function(){
+        this.slow(300000);
         try {
             console.log("AFTER");
             await driver.findElement(By.id('pwTopGearIcon')).click();
@@ -54,6 +58,7 @@ describe("Inner Suite 1", async function(){
     });
 
     it("Test-1", async function(){
+        this.slow(300000);
         try {
             console.log("TEST 1");
             await driver.findElement(By.id('pwTopGearIcon')).click();
