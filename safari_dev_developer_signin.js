@@ -3,7 +3,7 @@ let credentials = require('./credentials.js');
 let environment = require('./environment.js');
 
 (async function SignIn() {
-  let driver = await new Builder().forBrowser('firefox').build();
+  let driver = await new Builder().forBrowser('safari').build();
   try {
     await driver.get(environment.dev);
     console.log("Went to DEV");
@@ -11,7 +11,7 @@ let environment = require('./environment.js');
     console.log("Entered username");
     await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.dev_password, Key.RETURN);
     console.log("Entered password and pressed 'Enter'");
-    await driver.sleep(3000); // Wait for page to load
+    await driver.sleep(10000); // Wait for page to load
     console.log("Waited a couple seconds");
     await driver.get(environment.chain);
     console.log("Went to Chain CDN");
@@ -20,6 +20,6 @@ let environment = require('./environment.js');
         console.log(err);
     }
     finally {
-        console.log("User signed into Dev with Firefox");
+        console.log("USER signed into Dev with Safari");
     }
 })();
