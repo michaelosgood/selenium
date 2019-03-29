@@ -5,7 +5,7 @@ let assert = require("chai").assert;
 // let driver = new Builder().forBrowser('chrome').build();
 
 
-describe("Inner Suite 1", async function(){
+describe("Test Suite 1", async function(){
     
     before(async function(){
         try {
@@ -17,11 +17,10 @@ describe("Inner Suite 1", async function(){
 
     after(async function(){
         try {
-            console.log("AFTER EACH");
+            console.log("AFTER");
         } catch(error) {
             console.error(error);
         }
-        
     });
     
     
@@ -35,7 +34,7 @@ describe("Inner Suite 1", async function(){
 
     afterEach(async function(){
         try {
-            console.log("AFTER");
+            console.log("AFTER EACH");
         } catch(error) {
             console.error(error);
         }
@@ -43,8 +42,7 @@ describe("Inner Suite 1", async function(){
 
     it("Test-1", async function(){
         try {
-            console.log("TEST 1");
-         
+            console.log("TEST 1"); 
         } catch(error) {
             console.error(error);
         }
@@ -53,7 +51,6 @@ describe("Inner Suite 1", async function(){
     it("Test-2", async function(){  
         try {
             console.log("TEST 2");
-         
         } catch(error) {
             console.error(error);
         }
@@ -62,7 +59,6 @@ describe("Inner Suite 1", async function(){
     it("Test-3", async function(){  
         try {
             console.log("TEST 3");
-         
         } catch(error) {
             console.error(error);
         }
