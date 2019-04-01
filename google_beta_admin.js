@@ -10,9 +10,9 @@ let assert = require("chai").assert;
         console.log("Starting Admin Test in Chrome");
         await driver.get(environment.beta);
         console.log("Went to Beta");
-        await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.internal_user);
+        await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.beta_user);
         console.log("Entered internal username √");
-        await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.internal_password, Key.RETURN);
+        await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.beta_password, Key.RETURN);
         console.log("Entered password and clicked 'Enter' √");
         await driver.getTitle().then(function(title) {
             assert.equal(title, "Enterprise Dashboard");
