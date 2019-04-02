@@ -9,11 +9,11 @@ let assert = require("chai").assert;
         // Login to Admin User and Verify Title
         console.log("Starting Admin Test in Firefox");
         await driver.get(environment.stg);
-        console.log("Went to Staging √");
+        console.log("Went to STG");
         await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.internal_user);
-        console.log("Entered internal username √");
+        console.log("Entered internal username");
         await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.internal_password, Key.RETURN);
-        console.log("Entered password and clicked 'Enter' √");
+        console.log("Entered password and clicked 'Enter'");
         await driver.sleep(6000); // Wait for page to load
         await driver.getTitle().then(function(title) {
             assert.equal(title, "Pharmacy Group Dashboard - Pharmacy Portal - mosgood");
@@ -22,9 +22,9 @@ let assert = require("chai").assert;
         
         // Message Management Verify Title
         await driver.findElement(By.id('pwTopGearIcon')).click();
-        console.log("Clicked on the gear icon √");
+        console.log("Clicked on the gear icon");
         await driver.findElement(By.linkText('Message Management')).click();
-        console.log("Selected 'Message Management' √");
+        console.log("Selected 'Message Management'");
         await driver.findElement(By.className('k-pager-info k-label'));
         await driver.sleep(3000); // Wait for page to load
         console.log("Waited a couple seconds");
@@ -34,9 +34,9 @@ let assert = require("chai").assert;
         });
         // Campaign Management Verify Title
         await driver.findElement(By.id('pwTopGearIcon')).click();
-        console.log("Clicked on the gear icon √");
+        console.log("Clicked on the gear icon");
         await driver.findElement(By.linkText('Campaign Management')).click();
-        console.log("Selected 'Campaign Managment' √");
+        console.log("Selected 'Campaign Managment'");
         await driver.findElement(By.className('k-pager-info k-label'));
         await driver.sleep(3000); // Wait for page to load
         console.log("Waited a couple seconds");
@@ -47,9 +47,9 @@ let assert = require("chai").assert;
 
         // Login As Verify Title
         await driver.findElement(By.id('pwTopGearIcon')).click();
-        console.log("Clicked on the gear icon √");
+        console.log("Clicked on the gear icon");
         await driver.findElement(By.linkText('Login As')).click();
-        console.log("Selected 'Login As' √");
+        console.log("Selected 'Login As'");
         await driver.findElement(By.className('k-pager-info k-label'));
         await driver.sleep(3000); // Wait for page to load
         console.log("Waited a couple seconds");
@@ -60,9 +60,9 @@ let assert = require("chai").assert;
 
         // Template Managment Verify Title
         await driver.findElement(By.id('pwTopGearIcon')).click();
-        console.log("Clicked on the gear icon √");
+        console.log("Clicked on the gear icon");
         await driver.findElement(By.linkText('Template Management')).click();
-        console.log("Selected 'Template Management' √");
+        console.log("Selected 'Template Management'");
         await driver.findElement(By.className('k-pager-info k-label'));
         await driver.sleep(3000); // Wait for page to load
         console.log("Waited a couple seconds");
@@ -72,9 +72,9 @@ let assert = require("chai").assert;
         });
         // User Managment Verify Title
         await driver.findElement(By.id('pwTopGearIcon')).click();
-        console.log("Clicked on the gear icon √");
+        console.log("Clicked on the gear icon");
         await driver.findElement(By.linkText('User Management')).click();
-        console.log("Selected 'User Management' √");
+        console.log("Selected 'User Management'");
         await driver.findElement(By.className('k-pager-info k-label'));
         await driver.sleep(3000); // Wait for page to load
         console.log("Waited a couple seconds");
@@ -84,9 +84,9 @@ let assert = require("chai").assert;
         }); 
          // Account Managment Verify Title
          await driver.findElement(By.id('pwTopGearIcon')).click();
-         console.log("Clicked on the gear icon √");
+         console.log("Clicked on the gear icon");
          await driver.findElement(By.linkText('Account Management')).click();
-         console.log("Selected 'Account Management' √");
+         console.log("Selected 'Account Management'");
          await driver.findElement(By.className('k-pager-info k-label'));
          await driver.sleep(6000); // Wait for page to load
          console.log("Waited a couple seconds");
@@ -97,9 +97,9 @@ let assert = require("chai").assert;
 
         // Partner Managment Verify Title
         await driver.findElement(By.id('pwTopGearIcon')).click();
-        console.log("Clicked on the gear icon √");
+        console.log("Clicked on the gear icon");
         await driver.findElement(By.linkText('Partner Management')).click();
-        console.log("Selected 'Partner Management' √");
+        console.log("Selected 'Partner Management'");
         await driver.findElement(By.className('k-pager-info k-label'));
         await driver.sleep(6000); // Wait for page to load
         console.log("Waited a couple seconds");
@@ -110,16 +110,16 @@ let assert = require("chai").assert;
 
         // Logout of Admin
         await driver.findElement(By.id('pwTopGearIcon')).click();
-        console.log("Clicked on the gear icon √");
+        console.log("Clicked on the gear icon");
         await driver.findElement(By.linkText('Logout')).click();
-        console.log("Selected 'Logout' √");
+        console.log("Selected 'Logout'");
 
         
         // Login to H3N2 and Verify Title
         await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.customer_user);
-        console.log("Entered username: √");
+        console.log("Entered username");
         await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.customer_password, Key.RETURN);
-        console.log("Entered password and clicked 'Enter': √");
+        console.log("Entered password and clicked 'Enter'");
         await driver.sleep(6000); // Wait for page to load
         console.log("Waited a couple seconds");
         await driver.getTitle().then(function(title) {
@@ -129,9 +129,9 @@ let assert = require("chai").assert;
 
         // Verify Title for Clinical Calendar
         await driver.findElement(By.className('fa-calendar')).click();
-        console.log("Clicked on the calendar icon √");
+        console.log("Clicked on the calendar icon");
         await driver.findElement(By.linkText('Clinical Calendar')).click();
-        console.log("Selected 'Clinical Calendar' icon √");
+        console.log("Selected 'Clinical Calendar' icon");
         await driver.sleep(6000); // Wait for page to load
         console.log("Waited a couple seconds");
         await driver.getTitle().then(function(title) {
@@ -141,11 +141,11 @@ let assert = require("chai").assert;
 
         // Verify Title for Social Calendar
         await driver.findElement(By.className('fa-calendar')).click();
-        console.log("Clicked on the calendar icon √");
+        console.log("Clicked on the calendar icon");
         await driver.findElement(By.linkText('Social Calendar')).click();
         await driver.sleep(6000); // Wait for page to load
         console.log("Waited a couple seconds");
-        console.log("Selected 'Social Calendar' icon √");
+        console.log("Selected 'Social Calendar' icon");
         await driver.getTitle().then(function(title) {
             assert.equal(title, "Pharmacy Calendar - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
             console.log("Asserted title for 'Social Calendar' page is: " + title );
@@ -157,7 +157,7 @@ let assert = require("chai").assert;
         await driver.findElement(By.linkText('Custom Calendar')).click();
         await driver.sleep(6000); // Wait for page to load
         console.log("Waited a couple seconds");
-        console.log("Selected 'Custom Calendar' icon √");
+        console.log("Selected 'Custom Calendar' icon");
         await driver.getTitle().then(function(title) {
             assert.equal(title, "Pharmacy Calendar - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
             console.log("Asserted title for 'Social Calendar' page is: " + title );
@@ -165,7 +165,7 @@ let assert = require("chai").assert;
 
         // Verify Title for 'Growth' Pt List
         await driver.findElement(By.linkText('Growth')).click();
-        console.log("Selected 'Growth' √");
+        console.log("Selected 'Growth'");
         await driver.sleep(6000); // Wait for page to load
         console.log("Waited a couple seconds");
         await driver.getTitle().then(function(title) {
@@ -175,7 +175,7 @@ let assert = require("chai").assert;
 
         // Verify Title for 'StarWellness' Pt List
         await driver.findElement(By.linkText('StarWellness')).click();
-        console.log("Selected 'StarWellness' √");
+        console.log("Selected 'StarWellness'");
         await driver.findElement(By.linkText('Synchronization')).click();
         await driver.sleep(6000); // Wait for page to load
         console.log("Waited a couple seconds");
@@ -186,7 +186,7 @@ let assert = require("chai").assert;
 
         // Verify Title for 'VaccineComplete' Pt List
         await driver.findElement(By.linkText('VaccineComplete')).click();
-        console.log("Selected 'VaccineComplete' √");
+        console.log("Selected 'VaccineComplete'");
         await driver.sleep(6000); // Wait for page to load
         console.log("Waited a couple seconds");
         await driver.getTitle().then(function(title) {
@@ -196,7 +196,7 @@ let assert = require("chai").assert;
 
         // Verify Title for 'PrescribeMedicare' Pt List
         await driver.findElement(By.linkText('PrescribeMedicare')).click();
-        console.log("Selected 'PrescribeMedicare' √");
+        console.log("Selected 'PrescribeMedicare'");
         await driver.sleep(6000); // Wait for page to load
         console.log("Waited a couple seconds");
         await driver.getTitle().then(function(title) {
@@ -206,7 +206,7 @@ let assert = require("chai").assert;
 
         // Verify Title for 'PrescribeCare' Pt List
         await driver.findElement(By.linkText('PrescribeCare')).click();
-        console.log("Selected 'PrescribeCare' √");
+        console.log("Selected 'PrescribeCare'");
         await driver.sleep(6000); // Wait for page to load
         console.log("Waited a couple seconds");
         await driver.getTitle().then(function(title) {
@@ -216,12 +216,12 @@ let assert = require("chai").assert;
 
         // Send OnDemand via gear icon 
         await driver.findElement(By.id('pwTopGearIcon')).click();
-        console.log("Clicked on the gear icon: √");
+        console.log("Clicked on the gear icon");
         await driver.findElement(By.linkText('OnDemand')).click();
-        console.log("Selected 'OnDemand' √");
+        console.log("Selected 'OnDemand'");
         await driver.sleep(6000); // Wait for page to load
         await driver.findElement(By.id('phone_numbers')).sendKeys('9494158370');
-        console.log("Entered a phone number √");
+        console.log("Entered a phone number");
         await driver.sleep(6000); // Wait for page to load
         await driver.findElement(By.css('.btn-pw')).click();
         console.log("Clicked on 'Next' button");
