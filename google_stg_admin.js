@@ -122,6 +122,51 @@ let assert = require("chai").assert;
             assert.equal(title, "Pharmacy Dashboard - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
             console.log("Asserted title is: " + title );
         });
+        
+        // Verify Title for Active Patients page
+        await driver.findElement(By.linkText('Active Patients')).click();
+        console.log("Clicked on 'Active Patients'");
+        await driver.sleep(6000); // Wait for page to load
+        await driver.getTitle().then(function(title) {
+            assert.equal(title, "Pharmacy Dashboard - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
+            console.log("Asserted title is: " + title );
+        });
+
+        // Verify Title for Drugs page
+        await driver.findElement(By.linkText('Drugs')).click();
+        console.log("Clicked on 'Drugs'");
+        await driver.sleep(6000); // Wait for page to load
+        await driver.getTitle().then(function(title) {
+            assert.equal(title, "Pharmacy Dashboard - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
+            console.log("Asserted title is: " + title );
+        });
+
+        // Verify Title for Diseases page
+        await driver.findElement(By.linkText('Diseases')).click();
+        console.log("Clicked on 'Diseases'");
+        await driver.sleep(6000); // Wait for page to load
+        await driver.getTitle().then(function(title) {
+            assert.equal(title, "Pharmacy Dashboard - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
+            console.log("Asserted title is: " + title );
+        });
+
+         // Verify Title for Physicians page
+         await driver.findElement(By.linkText('Physicians')).click();
+         console.log("Clicked on 'Physicians'");
+         await driver.sleep(6000); // Wait for page to load
+         await driver.getTitle().then(function(title) {
+             assert.equal(title, "Pharmacy Dashboard - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
+             console.log("Asserted title is: " + title );
+         });
+
+         // Verify Title for Physician Groups page
+         await driver.findElement(By.linkText('Physician Groups')).click();
+         console.log("Clicked on 'Physician Groups'");
+         await driver.sleep(6000); // Wait for page to load
+         await driver.getTitle().then(function(title) {
+             assert.equal(title, "Pharmacy Dashboard - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
+             console.log("Asserted title is: " + title );
+         });
 
         // Verify Title for Clinical Calendar
         await driver.findElement(By.className('fa-calendar')).click();
