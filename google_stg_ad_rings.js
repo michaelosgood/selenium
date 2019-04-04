@@ -3,14 +3,16 @@ let credentials = require('./credentials.js');
 let environment = require('./environment.js');
 let assert = require("chai").assert;
 
-(async function AdminTest() {
+(async function AdhRingsTest() {
   let driver = await new Builder().forBrowser('chrome').build();
     try {
-        // Login to H3N2 and Verify Title
+        console.log("Initiating Test in Chrome");
+        await driver.get(environment.stg);
+        console.log("1. Went to Staging");
         await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.sample_user);
-        console.log("Entered username: √");
+        console.log("2. Entered internal username");
         await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.sample_password, Key.RETURN);
-        console.log("Entered password and clicked 'Enter': √");
+        console.log("3. Entered password and clicked 'Enter'");
     }
     catch(err) {
         console.log(err);
