@@ -1,8 +1,9 @@
 const {Builder, By, until} = require('selenium-webdriver');
+let credentials = require('./credentials.js');
+let environment = require('./environment.js');
+let assert = require('assert');
 
-promise.USE_PROMISE_MANAGER = false;
-
-describe('Google Search', function() {
+describe('Async Example', function() {
   let driver;
 
   beforeEach(async function() {
@@ -14,11 +15,7 @@ describe('Google Search', function() {
   });
 
   it('example', async function() {
-    await driver.get('https://www.google.com/ncr');
-
-    await driver.findElement(By.name('q')).sendKeys('webdriver');
-    await driver.findElement(By.name('btnK')).click();
-
-    await driver.wait(until.titleIs('webdriver - Google Search'), 1000);
+    await driver.get(environment.company);
+    await driver.wait(until.titleIs('Company | PrescribeWellness'), 30000);
   });
 });
