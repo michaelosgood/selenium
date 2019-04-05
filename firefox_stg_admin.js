@@ -3,7 +3,7 @@ let credentials = require('./credentials.js');
 let environment = require('./environment.js');
 let assert = require("chai").assert;
 
-(async function AdminTest() {
+(async function FirefoxAdminTest() {
   let driver = await new Builder().forBrowser('firefox').build();
     try {
         // Login to Admin User and Verify Title
