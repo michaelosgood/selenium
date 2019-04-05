@@ -14,11 +14,13 @@ let assert = require("chai").assert;
         await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.internal_password, Key.RETURN);
         console.log("3. Entered password and clicked 'Enter' √");
         await driver.sleep(10000); // Wait for page to load
+        
         // Message Management Test
         await driver.findElement(By.id('pwTopGearIcon')).click();
         console.log("4. Clicked on the gear icon √");
         await driver.findElement(By.linkText('Message Management')).click();
         console.log("5. Selected 'Message Management' √");
+        await driver.sleep(10000); // Wait for page to load
         await driver.findElement(By.className('k-pager-info k-label'));
         await driver.sleep(10000); // Wait for page to load
         console.log("6. Waited a couple seconds");
@@ -105,7 +107,7 @@ let assert = require("chai").assert;
         await driver.sleep(10000); // Wait for page to load
         await driver.findElement(By.linkText('Logout')).click();
         console.log("Selected 'Logout'");
-
+        await driver.sleep(10000); // Wait for page to load
         
         // Login to H3N2 and Verify Title
         await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.customer_user);
