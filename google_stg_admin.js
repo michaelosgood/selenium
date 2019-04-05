@@ -9,7 +9,7 @@ let assert = require("chai").assert;
         // Login to Admin User and Verify Title
         console.log("Starting Admin Test in Chrome");
         await driver.get(environment.stg);
-        console.log("Went to Staging √");
+        console.log("Went to Staging ");
         await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.internal_user);
         console.log("Entered internal username √");
         await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.internal_password, Key.RETURN);
@@ -170,9 +170,10 @@ let assert = require("chai").assert;
 
         // Verify Title for Clinical Calendar
         await driver.findElement(By.className('fa-calendar')).click();
-        console.log("Clicked on the calendar icon √");
+        console.log("Clicked on the calendar icon");
         await driver.findElement(By.linkText('Clinical Calendar')).click();
-        console.log("Selected 'Clinical Calendar' icon √");
+        console.log("Selected 'Clinical Calendar' icon");
+        await driver.sleep(6000); // Wait for page to load
         await driver.getTitle().then(function(title) {
             assert.equal(title, "Pharmacy Calendar - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
             console.log("Asserted title for 'Clinical Calendar' page is: " + title );
@@ -180,9 +181,10 @@ let assert = require("chai").assert;
 
         // Verify Title for Social Calendar
         await driver.findElement(By.className('fa-calendar')).click();
-        console.log("Clicked on the calendar icon √");
+        console.log("Clicked on the calendar icon");
         await driver.findElement(By.linkText('Social Calendar')).click();
-        console.log("Selected 'Social Calendar' icon √");
+        console.log("Selected 'Social Calendar' icon");
+        await driver.sleep(6000); // Wait for page to load
         await driver.getTitle().then(function(title) {
             assert.equal(title, "Pharmacy Calendar - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
             console.log("Asserted title for 'Social Calendar' page is: " + title );
@@ -190,9 +192,10 @@ let assert = require("chai").assert;
 
         // Verify Title for Custom Calendar
         await driver.findElement(By.className('fa-calendar')).click();
-        console.log("Clicked on the calendar icon √");
+        console.log("Clicked on the calendar icon");
         await driver.findElement(By.linkText('Custom Calendar')).click();
-        console.log("Selected 'Custom Calendar' icon √");
+        console.log("Selected 'Custom Calendar' icon");
+        await driver.sleep(6000); // Wait for page to load
         await driver.getTitle().then(function(title) {
             assert.equal(title, "Pharmacy Calendar - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
             console.log("Asserted title for 'Social Calendar' page is: " + title );
@@ -200,7 +203,8 @@ let assert = require("chai").assert;
 
         // Verify Title for 'Growth' Pt List
         await driver.findElement(By.linkText('Growth')).click();
-        console.log("Selected 'Growth' √");
+        console.log("Selected 'Growth'");
+        await driver.sleep(6000); // Wait for page to load
         await driver.getTitle().then(function(title) {
             assert.equal(title, "Growth: Patients - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
             console.log("Asserted title for 'Growth' page is: " + title );
@@ -208,8 +212,9 @@ let assert = require("chai").assert;
 
         // Verify Title for 'StarWellness' Pt List
         await driver.findElement(By.linkText('StarWellness')).click();
-        console.log("Selected 'StarWellness' √");
+        console.log("Selected 'StarWellness'");
         await driver.findElement(By.linkText('Synchronization')).click();
+        await driver.sleep(6000); // Wait for page to load
         await driver.getTitle().then(function(title) {
             assert.equal(title, "StarWellness: Synchronization - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
             console.log("Asserted title for 'StarWellness Synchronization' page is: " + title );
@@ -217,7 +222,8 @@ let assert = require("chai").assert;
 
         // Verify Title for 'VaccineComplete' Pt List
         await driver.findElement(By.linkText('VaccineComplete')).click();
-        console.log("Selected 'VaccineComplete' √");
+        console.log("Selected 'VaccineComplete'");
+        await driver.sleep(6000); // Wait for page to load
         await driver.getTitle().then(function(title) {
             assert.equal(title, "Vaccine Patient List - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
             console.log("Asserted title for 'VaccineComplete' page is: " + title );
@@ -225,7 +231,8 @@ let assert = require("chai").assert;
 
         // Verify Title for 'PrescribeMedicare' Pt List
         await driver.findElement(By.linkText('PrescribeMedicare')).click();
-        console.log("Selected 'PrescribeMedicare' √");
+        console.log("Selected 'PrescribeMedicare'");
+        await driver.sleep(6000); // Wait for page to load
         await driver.getTitle().then(function(title) {
             assert.equal(title, "Medicare Patient List - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
             console.log("Asserted title for 'PrescribeMedicare' page is: " + title );
@@ -233,7 +240,8 @@ let assert = require("chai").assert;
 
         // Verify Title for 'PrescribeCare' Pt List
         await driver.findElement(By.linkText('PrescribeCare')).click();
-        console.log("Selected 'PrescribeCare' √");
+        console.log("Selected 'PrescribeCare'");
+        await driver.sleep(6000); // Wait for page to load
         await driver.getTitle().then(function(title) {
             assert.equal(title, "PrescribeCare: Patients with Encounters - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
             console.log("Asserted title for 'PrescribeCare' page is: " + title );
@@ -258,7 +266,6 @@ let assert = require("chai").assert;
         console.log("Clicked on 'Send Message' button");
         await driver.sleep(6000); // Wait for page to load
 
-        
     }
     catch(err) {
         console.log(err);
