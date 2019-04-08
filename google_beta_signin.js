@@ -7,13 +7,13 @@ let environment = require('./environment.js');
     try {
         console.log("Initiating Login Test in Chrome");
         await driver.get(environment.beta);
-        console.log("1. Went to Production");
-        await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.beta_user);
-        console.log("2. Entered internal username");
-        await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.beta_password, Key.RETURN);
-        console.log("3. Entered password and clicked 'Enter'");
+        console.log("Went to BETA");
+        await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.betaPartner_user);
+        console.log("Entered internal username");
+        await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.betaPartner_password, Key.RETURN);
+        console.log("Entered password and clicked 'Enter'");
         await driver.findElement(By.id('pwTopGearIcon')).click();
-        console.log("4. Clicked on the gear icon");
+        console.log("Clicked on the gear icon");
     } 
     catch(err) {
         console.log(err);
