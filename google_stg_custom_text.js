@@ -21,33 +21,6 @@ let assert = require("chai").assert;
             console.log("Asserted title is: " + title );
         });
         
-        // Verify Title for Active Patients page
-        await driver.findElement(By.linkText('Active Patients')).click();
-        console.log("Clicked on 'Active Patients'");
-        await driver.sleep(6000); // Wait for page to load
-        await driver.getTitle().then(function(title) {
-            assert.equal(title, "Pharmacy Dashboard - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
-            console.log("Asserted title is: " + title );
-        });
-
-        // Verify Title for Drugs page
-        await driver.findElement(By.linkText('Drugs')).click();
-        console.log("Clicked on 'Drugs'");
-        await driver.sleep(6000); // Wait for page to load
-        await driver.getTitle().then(function(title) {
-            assert.equal(title, "Pharmacy Dashboard - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
-            console.log("Asserted title is: " + title );
-        });
-
-        // Verify Title for Diseases page
-        await driver.findElement(By.linkText('Diseases')).click();
-        console.log("Clicked on 'Diseases'");
-        await driver.sleep(6000); // Wait for page to load
-        await driver.getTitle().then(function(title) {
-            assert.equal(title, "Pharmacy Dashboard - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
-            console.log("Asserted title is: " + title );
-        });
-
         // Send Custom OnDemand SMS via gear icon 
         await driver.findElement(By.id('pwTopGearIcon')).click();
         console.log("Clicked on the gear icon: √");
@@ -73,6 +46,6 @@ let assert = require("chai").assert;
     }
     finally {
         console.log("Test Completed!!");
-        await driver.quit()
+        //await driver.quit()
     }
 })();
