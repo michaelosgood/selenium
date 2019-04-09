@@ -2,18 +2,16 @@ const {Builder, By, Key, until} = require('selenium-webdriver');
 let credentials = require('./credentials.js');
 let environment = require('./environment.js');
 
-(async function SignIn() {
+(async function BetaPartnerSignIn() {
   let driver = await new Builder().forBrowser('chrome').build();
     try {
         console.log("Initiating Login Test in Chrome");
         await driver.get(environment.beta);
         console.log("Went to BETA");
         await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.betaPartner_user);
-        console.log("Entered internal username");
+        console.log("Entered username");
         await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.betaPartner_password, Key.RETURN);
         console.log("Entered password and clicked 'Enter'");
-        await driver.findElement(By.id('pwTopGearIcon')).click();
-        console.log("Clicked on the gear icon");
     } 
     catch(err) {
         console.log(err);
