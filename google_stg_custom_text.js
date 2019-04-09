@@ -9,6 +9,9 @@ let assert = require("chai").assert;
        
 
         // Login to H3N2 and Verify Title
+        console.log("Starting Admin Test in Chrome");
+        await driver.get(environment.stg);
+        console.log("Went to Staging ");
         await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.customer_user);
         console.log("Entered username: √");
         await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.customer_password, Key.RETURN);
@@ -57,8 +60,8 @@ let assert = require("chai").assert;
         await driver.findElement(By.css('.btn-pw')).click();
         console.log("Clicked on 'Next' button");
         await driver.sleep(6000); // Wait for page to load
-        await driver.findElement(By.css('.btn-select-campaign')).click();
-        console.log("Clicked on 'Select' button");
+        await driver.findElement(By.linkText('+ Create New SMS')).click();
+        console.log("Clicked on '+ Create New SMS' button");
         await driver.sleep(6000); // Wait for page to load
         await driver.findElement(By.css('.fright')).click();
         console.log("Clicked on 'Send Message' button");
