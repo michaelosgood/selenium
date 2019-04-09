@@ -22,6 +22,7 @@ let assert = require("chai").assert;
         });
         
         // Send Custom OnDemand SMS via gear icon 
+        await driver.sleep(6000); // Wait for page to load
         await driver.findElement(By.id('pwTopGearIcon')).click();
         console.log("Clicked on the gear icon: √");
         await driver.findElement(By.linkText('OnDemand')).click();
