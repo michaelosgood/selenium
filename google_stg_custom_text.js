@@ -34,10 +34,10 @@ let assert = require("chai").assert;
         await driver.findElement(By.css('.btn-pw')).click();
         console.log("Clicked on 'Next' button");
         await driver.sleep(6000); // Wait for page to load
-        await driver.findElement(By.linkText('+ Create New SMS')).click();
+        await driver.findElement(By.css('.create-new-sms-btn')).click();
         console.log("Clicked on '+ Create New SMS' button");
         await driver.sleep(6000); // Wait for page to load
-        await driver.findElement(By.css('.fright')).click();
+        await driver.findElement(By.css('.form-control sms')).sendKeys('QA Automated Test SMS');
         console.log("Clicked on 'Send Message' button");
         await driver.sleep(6000); // Wait for page to load
 
