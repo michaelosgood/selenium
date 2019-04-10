@@ -9,13 +9,13 @@ let assert = require("chai").assert;
        
 
         // Login to H3N2 and Verify Title
-        console.log("Starting Admin Test in Chrome");
+        console.log("Starting Custom Text OnDemand Test");
         await driver.get(environment.stg);
         console.log("Went to Staging ");
         await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.customer_user);
-        console.log("Entered username: √");
+        console.log("Entered username");
         await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.customer_password, Key.RETURN);
-        console.log("Entered password and clicked 'Enter': √");
+        console.log("Entered password and clicked 'Enter' √");
         await driver.getTitle().then(function(title) {
             assert.equal(title, "Pharmacy Dashboard - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
             console.log("Asserted title is: " + title );
@@ -42,8 +42,9 @@ let assert = require("chai").assert;
         await driver.findElement(By.className('btn btn-pw fright')).click();
         console.log("Clicked on 'Create' button");
         await driver.sleep(3000); // Wait for page to load
-        await driver.findElement(By.css('.btn-select-campaign')).click();
+        await driver.findElement(By.className('btn btn-pw btn-select-campaign')).click();
         console.log("Clicked on 'Select' button");
+        await driver.sleep(3000); // Wait for page to load
         await driver.findElement(By.css('.fright')).click();
         console.log("Clicked on 'Send Message' button");
         await driver.sleep(6000); // Wait for page to load
@@ -54,6 +55,6 @@ let assert = require("chai").assert;
     }
     finally {
         console.log("Test Completed!!");
-        //await driver.quit()
+        await driver.quit()
     }
 })();
