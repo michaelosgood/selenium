@@ -8,7 +8,7 @@ let assert = require("chai").assert;
   let driver = await new Builder().forBrowser('chrome').build();
     try {
         console.log("Initiating Message Management Test");
-        await driver.get(environment.stg);
+        await driver.get(environment.prod);
         console.log("1. Went to Staging: √");
         await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.internal_user);
         console.log("2. Entered internal username: √");

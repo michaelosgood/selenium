@@ -3,7 +3,7 @@ let credentials = require('./credentials.js');
 let environment = require('./environment.js');
 let assert = require("chai").assert;
 
-(async function CustomSmsOnDemandTest() {
+(async function customSmsOnDemandTest() {
   let driver = await new Builder().forBrowser('chrome').build();
     try {
        
