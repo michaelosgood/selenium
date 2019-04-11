@@ -32,7 +32,7 @@ let environment = require('../environment.js');
     console.log("9. Clicked on 'Send Message' button");
     await driver.sleep(2000); // Wait for page to load
     await driver.takeScreenshot().then(function(data) { // Take Screenshot
-      fs.writeFileSync(__dirname + "/tmp/screenshot2.png", data, 'base64'); // Save screenshot to tmp folder
+      fs.writeFileSync(__dirname + "/screenshots/screenshot2.png", data, 'base64'); // Save screenshot to tmp folder
       console.log("10. Took screenshot");
   });
 
