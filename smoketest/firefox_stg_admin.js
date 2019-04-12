@@ -277,8 +277,8 @@ let assert = require("chai").assert;
         await driver.findElement(By.css('.fright')).click();
         console.log("Clicked on 'Send Message' button");
         await driver.sleep(6000); // Wait for page to load
+    }
 
-        }
     catch(err) {
         console.log(err);
     }
