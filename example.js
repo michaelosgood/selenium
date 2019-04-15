@@ -1,9 +1,14 @@
 const {Builder, By, Key, until} = require('selenium-webdriver');
+let fs = require("fs");
 let credentials = require('./credentials.js');
 let environment = require('./environment.js');
 let assert = require("chai").assert;
 
 const example = async function() {
+  fs.appendFile('/logs/tests.txt', 'Initiating Example Test', function (err){
+      if (err) throw err;
+      console.log('Test Saved!')
+  })
   let driver = await new Builder().forBrowser('chrome').build();
   try {
     // Login to Admin User and Verify Title
