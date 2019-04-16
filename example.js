@@ -13,38 +13,44 @@ const example = async function() {
   let driver = await new Builder().forBrowser('chrome').build();
   try {
 
-    // Login to Admin User and Verify Title
-    await driver.get(environment.stg);
-    await fs.appendFile('../logs/tests.txt', '\nSTEP 1: Went to Staging', function (err){
+      // Login to Admin User and Verify Title
+      await driver.get(environment.stg);
+      await fs.appendFile('../logs/tests.txt', '\nSTEP 1: Went to Staging', function (err){
         if (err) throw err;
         console.log('STEP 1: Went to Staging')
-    });
-    // Enter Username
-    await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.internal_user);
-    await fs.appendFile('../logs/tests.txt', '\nSTEP 2: Entered internal username', function (err){
-      if (err) throw err;
-      console.log('STEP 2: Entered internal username')
-    });
-    // Enter Password & Press Enter
-    await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.internal_password, Key.RETURN);
-    await fs.appendFile('../logs/tests.txt', '\nSTEP 3: Entered password and clicked Enter', function (err){
-      if (err) throw err;
-      console.log('STEP 3: Entered password and clicked Enter')
-    });
-    // Assert Title
-    await driver.getTitle().then(function(title) {
-        assert.equal(title, "Pharmacy Group Dashboard - Pharmacy Portal - mosgood");
-        console.log("STEP 4: Asserted title is:" + title );
-    });
-    await fs.appendFile('../logs/tests.txt', '\nSTEP 4: Asserted title is: "Pharmacy Group Dashboard - Pharmacy Portal - mosgood"', function (err){
-      if (err) throw err;
-    });
+      });
+      // Enter Username
+      await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.internal_user);
+      await fs.appendFile('../logs/tests.txt', '\nSTEP 2: Entered internal username', function (err){
+        if (err) throw err;
+        console.log('STEP 2: Entered internal username')
+      });
+      // Enter Password & Press Enter
+      await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.internal_password, Key.RETURN);
+      await fs.appendFile('../logs/tests.txt', '\nSTEP 3: Entered password and clicked Enter', function (err){
+        if (err) throw err;
+        console.log('STEP 3: Entered password and clicked Enter')
+      });
+      // Assert Title
+      await driver.getTitle().then(function(title) {
+          assert.equal(title, "Pharmacy Group Dashboard - Pharmacy Portal - mosgood");
+          console.log("STEP 4: Asserted title is:" + title );
+      });
+      await fs.appendFile('../logs/tests.txt', '\nSTEP 4: Asserted title is: "Pharmacy Group Dashboard - Pharmacy Portal - mosgood"', function (err){
+        if (err) throw err;
+      });
     
-    // Message Management Verify Title
-    // await driver.findElement(By.id('pwTopGearIcon')).click();
-    // console.log("Clicked on the gear icon √");
-    // await driver.findElement(By.linkText('Message Management')).click();
-    // console.log("Selected 'Message Management' √");
+      // Message Management Verify Title
+      await driver.findElement(By.id('pwTopGearIcon')).click();
+      await fs.appendFile('../logs/tests.txt', '\nSTEP 5: Clicked on the gear icon', function (err){
+        if (err) throw err;
+        console.log('STEP 5: Clicked on the gear icon')
+      });
+      await driver.findElement(By.linkText('Message Management')).click();
+      await fs.appendFile('../logs/tests.txt', '\nSTEP 6: Selected Message Management', function (err){
+        if (err) throw err;
+        console.log('STEP 6: Selected Message Management')
+      });
     // await driver.findElement(By.className('k-pager-info k-label'));
     // await driver.sleep(6000); // Wait for page to load
     // console.log("Waited a couple seconds");
