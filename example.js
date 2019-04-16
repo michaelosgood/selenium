@@ -31,6 +31,10 @@ const example = async function() {
         assert.equal(title, "Pharmacy Group Dashboard - Pharmacy Portal - mosgood");
         console.log("Asserted title is: " + title );
     });
+    await fs.appendFile('../logs/tests.txt', '\nSTEP 4: Asserted title is: "Pharmacy Group Dashboard - Pharmacy Portal - mosgood"', function (err){
+      if (err) throw err;
+      console.log('STEP 4: Asserted title is: "Pharmacy Group Dashboard - Pharmacy Portal - mosgood"')
+    });
     
     // Message Management Verify Title
     // await driver.findElement(By.id('pwTopGearIcon')).click();
