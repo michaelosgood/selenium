@@ -6,28 +6,32 @@ let assert = require("chai").assert;
 let date = new Date();
 
 const example = async function() {
-  fs.appendFile('../logs/tests.txt', '\nInitiating Test Example on: ' + date, function (err){
+  fs.appendFile('../logs/tests.txt', '\n___Initiating Test Example on: ' + date +'___', function (err){
       if (err) throw err;
       console.log('Initiating Example Test on: '+ date)
   });
   let driver = await new Builder().forBrowser('chrome').build();
   try {
+
     // Login to Admin User and Verify Title
     await driver.get(environment.stg);
     await fs.appendFile('../logs/tests.txt', '\nSTEP 1: Went to Staging', function (err){
         if (err) throw err;
         console.log('STEP 1: Went to Staging')
     });
+    // Enter Username
     await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.internal_user);
     await fs.appendFile('../logs/tests.txt', '\nSTEP 2: Entered internal username', function (err){
       if (err) throw err;
       console.log('STEP 2: Entered internal username')
     });
+    // Enter Password & Press Enter
     await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.internal_password, Key.RETURN);
     await fs.appendFile('../logs/tests.txt', '\nSTEP 3: Entered password and clicked Enter', function (err){
       if (err) throw err;
       console.log('STEP 3: Entered password and clicked Enter')
     });
+    // Assert Title
     await driver.getTitle().then(function(title) {
         assert.equal(title, "Pharmacy Group Dashboard - Pharmacy Portal - mosgood");
         console.log("STEP 4: Asserted title is:" + title );

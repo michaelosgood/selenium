@@ -9,3 +9,8 @@ STEP 1: Went to Staging
 STEP 2: Entered internal username
 STEP 3: Entered password and clicked Enter
 STEP 4: Asserted title is: "Pharmacy Group Dashboard - Pharmacy Portal - mosgood"
+___Initiating Test Example on: Tue Apr 16 2019 12:57:40 GMT-0700 (Pacific Daylight Time)___
+STEP 1: Went to Staging
+STEP 2: Entered internal username
+STEP 3: Entered password and clicked Enter
+STEP 4: Asserted title is: "Pharmacy Group Dashboard - Pharmacy Portal - mosgood"
