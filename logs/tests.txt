@@ -1,1 +1,4 @@
-Initiating Example Test
+
+Initiating Test Example
+TEST STEP 1: Went to Staging
+TEST STEP 2: Entered internal username

@@ -5,7 +5,7 @@ let environment = require('./environment.js');
 let assert = require("chai").assert;
 
 const example = async function() {
-  fs.appendFile('../logs/tests.txt', 'Initiating Example Test', function (err){
+  fs.appendFile('../logs/tests.txt', '\nInitiating Test Example', function (err){
       if (err) throw err;
       console.log('Initiating Example Test')
   });
@@ -13,14 +13,20 @@ const example = async function() {
   try {
     // Login to Admin User and Verify Title
     await driver.get(environment.stg);
-    await fs.appendFile('../logs/tests.txt', 'TEST STEP: Went to Staging', function (err){
+    await fs.appendFile('../logs/tests.txt', '\nSTEP 1: Went to Staging', function (err){
         if (err) throw err;
-        console.log('TEST STEP: Went to Staging')
+        console.log('STEP 1: Went to Staging')
     });
     await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.internal_user);
-    console.log("Entered internal username √");
+    await fs.appendFile('../logs/tests.txt', '\nSTEP 2: Entered internal username', function (err){
+      if (err) throw err;
+      console.log('STEP 2: Entered internal username')
+    });
     await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.internal_password, Key.RETURN);
-    console.log("Entered password and clicked 'Enter' √");
+    await fs.appendFile('../logs/tests.txt', '\nSTEP 3: Entered password and clicked Enter', function (err){
+      if (err) throw err;
+      console.log('STEP 3: Entered password and clicked Enter')
+    });
     await driver.getTitle().then(function(title) {
         assert.equal(title, "Pharmacy Group Dashboard - Pharmacy Portal - mosgood");
         console.log("Asserted title is: " + title );
