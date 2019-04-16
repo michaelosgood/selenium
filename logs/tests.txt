@@ -1,4 +1,5 @@
 
 Initiating Test Example
-TEST STEP 1: Went to Staging
-TEST STEP 2: Entered internal username
+STEP 1: Went to Staging
+STEP 2: Entered internal username
+STEP 3: Entered password and clicked Enter
