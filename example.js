@@ -3,11 +3,12 @@ let fs = require("fs");
 let credentials = require('./credentials.js');
 let environment = require('./environment.js');
 let assert = require("chai").assert;
+let date = new Date();
 
 const example = async function() {
-  fs.appendFile('../logs/tests.txt', '\nInitiating Test Example', function (err){
+  fs.appendFile('../logs/tests.txt', '\nInitiating Test Example on: ' + date, function (err){
       if (err) throw err;
-      console.log('Initiating Example Test')
+      console.log('Initiating Example Test on: '+ date)
   });
   let driver = await new Builder().forBrowser('chrome').build();
   try {
@@ -29,11 +30,10 @@ const example = async function() {
     });
     await driver.getTitle().then(function(title) {
         assert.equal(title, "Pharmacy Group Dashboard - Pharmacy Portal - mosgood");
-        console.log("Asserted title is: " + title );
+        console.log("STEP 4: Asserted title is:" + title );
     });
     await fs.appendFile('../logs/tests.txt', '\nSTEP 4: Asserted title is: "Pharmacy Group Dashboard - Pharmacy Portal - mosgood"', function (err){
       if (err) throw err;
-      console.log('STEP 4: Asserted title is: "Pharmacy Group Dashboard - Pharmacy Portal - mosgood"')
     });
     
     // Message Management Verify Title
