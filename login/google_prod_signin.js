@@ -7,13 +7,13 @@ let environment = require('../environment.js');
     try {
         console.log("Initiating Login Test in Chrome");
         await driver.get(environment.prod);
-        console.log("1. Went to Production: √");
+        console.log("Went to Production");
         await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.internal_user);
-        console.log("2. Entered internal username: √");
+        console.log("Entered internal username");
         await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.internal_password, Key.RETURN);
-        console.log("3. Entered password and clicked 'Enter': √");
+        console.log("Entered password and clicked 'Enter'");
         await driver.findElement(By.id('pwTopGearIcon')).click();
-        console.log("4. Clicked on the gear icon: √");
+        console.log("Clicked on the gear icon");
     } 
     catch(err) {
         console.log(err);
