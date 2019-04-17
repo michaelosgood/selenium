@@ -20,6 +20,6 @@ let environment = require('../environment.js');
         console.log(err);
     }
     finally {
-        console.log("USER signed into Dev with Safari");
+        console.log("User signed into Dev with Safari");
     }
 })();

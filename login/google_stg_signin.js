@@ -18,6 +18,6 @@ let environment = require('../environment.js');
         console.log(err);
     }
     finally {
-        console.log("TEST RESULTS: Internal user successfully signed into Staging with Chrome");
+        console.log("Internal user signed into Staging with Chrome");
     }
 })();
