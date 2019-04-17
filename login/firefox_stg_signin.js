@@ -7,21 +7,19 @@ let environment = require('../environment.js');
     try {
         console.log("Initiating Firefox Staging Test");
         await driver.get(environment.stg);
-        console.log("1. Went to Staging √");
-        await driver.manage().window().maximize();
-        console.log("2. Maximized the window √");
+        console.log("Went to Staging");
         await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.internal_user);
-        console.log("3 Entered username √");
+        console.log("Entered username");
         await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.internal_password, Key.RETURN);
-        console.log("4. Entered password and clicked 'return' √");
+        console.log("Entered password and pressed 'Enter'");
         await driver.sleep(6000); // Wait for page to load
         await driver.findElement(By.id('pwTopGearIcon')).click();
-        console.log("5. Clicked on the gear icon: √");
+        console.log("Clicked on the gear icon");
     } 
     catch(err) {
         console.log(err);
     }
     finally {
-        console.log("TEST RESULTS: Internal successfully signed into Staging using Firefox");
+        console.log("Internal user signed into STG using Firefox");
     }
 })();
