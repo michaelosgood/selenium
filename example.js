@@ -6,7 +6,7 @@ let assert = require("chai").assert;
 let date = new Date();
 
 const smoketest = async function() {
-  fs.appendFile('../logs/tests.txt', '\n___Test Conducted on: ' + date +'___', function (err){
+  fs.appendFile('../logs/tests.txt', '\n\n___Test Conducted on: ' + date +'___', function (err){
       if (err) throw err;
       console.log('Test Conducted on: '+ date)
   });
@@ -132,8 +132,10 @@ const smoketest = async function() {
       console.log('STEP 17: Clicked on the gear icon')
     });
     await driver.findElement(By.linkText('Template Management')).click();
-    console.log("Selected 'Template Management' √");
-    await driver.findElement(By.className('k-pager-info k-label'));
+    await fs.appendFile('../logs/tests.txt', '\nSTEP 18: Selected Template Management', function (err){
+      if (err) throw err;
+      console.log('STEP 18: Selected Template Management')
+    });  
     await driver.sleep(6000); // Wait for page to load
     console.log("Waited a couple seconds");
     await driver.getTitle().then(function(title) {
@@ -145,8 +147,7 @@ const smoketest = async function() {
     await driver.findElement(By.id('pwTopGearIcon')).click();
     console.log("Clicked on the gear icon √");
     await driver.findElement(By.linkText('User Management')).click();
-    console.log("Selected 'User Management' √");
-    await driver.findElement(By.className('k-pager-info k-label'));
+    console.log("Selected 'User Management' √"); 
     await driver.sleep(6000); // Wait for page to load
     console.log("Waited a couple seconds");
     await driver.getTitle().then(function(title) {
@@ -159,7 +160,6 @@ const smoketest = async function() {
      console.log("Clicked on the gear icon √");
      await driver.findElement(By.linkText('Account Management')).click();
      console.log("Selected 'Account Management' √");
-     await driver.findElement(By.className('k-pager-info k-label'));
      await driver.sleep(6000); // Wait for page to load
      console.log("Waited a couple seconds");
      await driver.getTitle().then(function(title) {
@@ -172,7 +172,6 @@ const smoketest = async function() {
     console.log("Clicked on the gear icon √");
     await driver.findElement(By.linkText('Partner Management')).click();
     console.log("Selected 'Partner Management' √");
-    await driver.findElement(By.className('k-pager-info k-label'));
     await driver.sleep(6000); // Wait for page to load
     console.log("Waited a couple seconds");
     await driver.getTitle().then(function(title) {
