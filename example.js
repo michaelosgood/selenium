@@ -31,21 +31,22 @@ const example = async function() {
         if (err) throw err;
         console.log('STEP 3: Entered password and clicked Enter')
       });
-      // Assert Title
+      // Assert Title for Home Page
       await driver.getTitle().then(function(title) {
           assert.equal(title, "Pharmacy Group Dashboard - Pharmacy Portal - mosgood");
-          console.log("STEP 4: Asserted title is:" + title );
-      });
-      await fs.appendFile('../logs/tests.txt', '\nSTEP 4: Asserted title is: "Pharmacy Group Dashboard - Pharmacy Portal - mosgood"', function (err){
-        if (err) throw err;
+          console.log("STEP 4: Asserted title is: " + title);
+          fs.appendFile('../logs/tests.txt', '\nSTEP 4: Asserted title is: ' + title, function (err) {
+            if (err) throw err;
+          });
       });
     
-      // Message Management Verify Title
+      // Click on Gear Icon
       await driver.findElement(By.id('pwTopGearIcon')).click();
       await fs.appendFile('../logs/tests.txt', '\nSTEP 5: Clicked on the gear icon', function (err){
         if (err) throw err;
         console.log('STEP 5: Clicked on the gear icon')
       });
+      // Select Message Management
       await driver.findElement(By.linkText('Message Management')).click();
       await fs.appendFile('../logs/tests.txt', '\nSTEP 6: Selected Message Management', function (err){
         if (err) throw err;
@@ -55,13 +56,16 @@ const example = async function() {
       await driver.sleep(6000); // Wait for page to load
       await fs.appendFile('../logs/tests.txt', '\nSTEP 7: Wait for page to load', function (err){
         if (err) throw err;
-        console.log('STEP 6: Selected Message Management')
+        console.log('STEP 7: Wait for page to load')
       });
-    // console.log("Waited a couple seconds");
-    // await driver.getTitle().then(function(title) {
-    //     assert.equal(title, "Message Management - Pharmacy Portal - mosgood");
-    //     console.log("Asserted title for Message Managment is: " + title );
-    // });
+      
+      await driver.getTitle().then(function(title) {
+        assert.equal(title, "Message Management - Pharmacy Portal - mosgood");
+        console.log("Asserted title for Message Managment is: " + title);
+        fs.appendFile('../logs/tests.txt', '\nSTEP 9: Asserted title is: ' + title, function (err){
+          if (err) throw err;
+         });
+      });
 
     // Campaign Management Verify Title
     // await driver.findElement(By.id('pwTopGearIcon')).click();

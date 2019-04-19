@@ -9,4 +9,4 @@
 /credentials.js
 /environment.js
 /tmp
-/logs/tests.txt
+*.txt
