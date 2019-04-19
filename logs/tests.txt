@@ -57,3 +57,21 @@ STEP 5: Clicked on the gear icon
 STEP 6: Selected Message Management
 STEP 7: Wait for page to load
 STEP 9: Asserted title is: Message Management - Pharmacy Portal - mosgood
+___Test Conducted on: Thu Apr 18 2019 21:20:18 GMT-0700 (Pacific Daylight Time)___
+STEP 1: Went to Staging
+STEP 2: Entered internal username
+STEP 3: Entered password and clicked Enter
+STEP 4: Asserted title is: Pharmacy Group Dashboard - Pharmacy Portal - mosgood
+STEP 5: Clicked on the gear icon
+STEP 6: Selected Message Management
+STEP 7: Wait for page to load
+STEP 8: Asserted title is: Message Management - Pharmacy Portal - mosgood
+STEP 9: Clicked on the gear icon
+STEP 10: Selected Campaign Management
+STEP 11: Wait for page to load
+STEP 12: Asserted title is: Campaign Management - Pharmacy Portal - mosgood
+STEP 13: Clicked on the gear icon
+STEP 14: Selected Login As
+STEP 15: Wait for page to load
+STEP 16: Asserted title is: Login As - Pharmacy Portal - mosgood
+STEP 17: Clicked on the gear icon

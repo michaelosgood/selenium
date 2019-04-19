@@ -1,2 +1,2 @@
-let example = require('../example.js');
-example();
+let smoketest = require('../example.js');
+smoketest();

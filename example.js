@@ -5,15 +5,15 @@ let environment = require('./environment.js');
 let assert = require("chai").assert;
 let date = new Date();
 
-const example = async function() {
-  fs.appendFile('../logs/tests.txt', '\n___Initiating Test Example on: ' + date +'___', function (err){
+const smoketest = async function() {
+  fs.appendFile('../logs/tests.txt', '\n___Test Conducted on: ' + date +'___', function (err){
       if (err) throw err;
-      console.log('Initiating Example Test on: '+ date)
+      console.log('Test Conducted on: '+ date)
   });
   let driver = await new Builder().forBrowser('chrome').build();
   try {
 
-      // Login to Admin User and Verify Title
+      // Go to STG
       await driver.get(environment.stg);
       await fs.appendFile('../logs/tests.txt', '\nSTEP 1: Went to Staging', function (err){
         if (err) throw err;
@@ -31,7 +31,7 @@ const example = async function() {
         if (err) throw err;
         console.log('STEP 3: Entered password and clicked Enter')
       });
-      // Assert Title for Home Page
+      // Assert Title for Landing Page
       await driver.getTitle().then(function(title) {
           assert.equal(title, "Pharmacy Group Dashboard - Pharmacy Portal - mosgood");
           console.log("STEP 4: Asserted title is: " + title);
@@ -39,7 +39,8 @@ const example = async function() {
             if (err) throw err;
           });
       });
-    
+
+      // 'Message Management' Verify Title
       // Click on Gear Icon
       await driver.findElement(By.id('pwTopGearIcon')).click();
       await fs.appendFile('../logs/tests.txt', '\nSTEP 5: Clicked on the gear icon', function (err){
@@ -52,98 +53,132 @@ const example = async function() {
         if (err) throw err;
         console.log('STEP 6: Selected Message Management')
       });
-
-      await driver.sleep(6000); // Wait for page to load
+      // Wait for page to load
+      await driver.sleep(6000); 
       await fs.appendFile('../logs/tests.txt', '\nSTEP 7: Wait for page to load', function (err){
         if (err) throw err;
         console.log('STEP 7: Wait for page to load')
       });
-      
+      // Assert Title for Msg Mgmt
       await driver.getTitle().then(function(title) {
         assert.equal(title, "Message Management - Pharmacy Portal - mosgood");
-        console.log("Asserted title for Message Managment is: " + title);
-        fs.appendFile('../logs/tests.txt', '\nSTEP 9: Asserted title is: ' + title, function (err){
+        console.log("\nSTEP 8:Asserted title for Message Management is: " + title);
+        fs.appendFile('../logs/tests.txt', '\nSTEP 8: Asserted title is: ' + title, function (err){
           if (err) throw err;
          });
       });
 
-    // Campaign Management Verify Title
-    // await driver.findElement(By.id('pwTopGearIcon')).click();
-    // console.log("Clicked on the gear icon √");
-    // await driver.findElement(By.linkText('Campaign Management')).click();
-    // console.log("Selected 'Campaign Managment' √");
-    // await driver.findElement(By.className('k-pager-info k-label'));
-    // await driver.sleep(6000); // Wait for page to load
-    // console.log("Waited a couple seconds");
-    // await driver.getTitle().then(function(title) {
-    //     assert.equal(title, "Campaign Management - Pharmacy Portal - mosgood");
-    //     console.log("Asserted title for 'Campaign Managment' page is: " + title );
-    // });
+      // 'Campaign Management' Verify Title
+      // Click on Gear Icon
+      await driver.findElement(By.id('pwTopGearIcon')).click();
+      await fs.appendFile('../logs/tests.txt', '\nSTEP 9: Clicked on the gear icon', function (err){
+        if (err) throw err;
+        console.log('STEP 9: Clicked on the gear icon')
+      });
+      // Select Campaign Management
+      await driver.findElement(By.linkText('Campaign Management')).click();
+      await fs.appendFile('../logs/tests.txt', '\nSTEP 10: Selected Campaign Management', function (err){
+        if (err) throw err;
+        console.log('STEP 10: Selected Campaign Management')
+      });
+      // Wait for page to load
+      await driver.sleep(6000); 
+      await fs.appendFile('../logs/tests.txt', '\nSTEP 11: Wait for page to load', function (err){
+        if (err) throw err;
+        console.log('STEP 11: Wait for page to load')
+      });
+      // Assert Title for Campaign Mgmt
+      await driver.getTitle().then(function(title) {
+          assert.equal(title, "Campaign Management - Pharmacy Portal - mosgood");
+          console.log("STEP 12: Asserted title for 'Campaign Management' page is: " + title );
+          fs.appendFile('../logs/tests.txt', '\nSTEP 12: Asserted title is: ' + title, function (err){
+            if (err) throw err;
+          });
+      });
 
-    // Login As Verify Title
-    // await driver.findElement(By.id('pwTopGearIcon')).click();
-    // console.log("Clicked on the gear icon √");
-    // await driver.findElement(By.linkText('Login As')).click();
-    // console.log("Selected 'Login As' √");
-    // await driver.findElement(By.className('k-pager-info k-label'));
-    // await driver.sleep(6000); // Wait for page to load
-    // console.log("Waited a couple seconds");
-    // await driver.getTitle().then(function(title) {
-    //     assert.equal(title, "Login As - Pharmacy Portal - mosgood");
-    //     console.log("Asserted title for 'Login As' page is: " + title );
-    // });
+      // 'Login As' Verify Title
+      // Click on Gear Icon
+      await driver.findElement(By.id('pwTopGearIcon')).click();
+        await fs.appendFile('../logs/tests.txt', '\nSTEP 13: Clicked on the gear icon', function (err){
+          if (err) throw err;
+          console.log('STEP 13: Clicked on the gear icon')
+        });
+        // Select Login As
+      await driver.findElement(By.linkText('Login As')).click();
+      await fs.appendFile('../logs/tests.txt', '\nSTEP 14: Selected Login As', function (err){
+        if (err) throw err;
+        console.log('STEP 14: Selected Login As')
+      });
+      // Wait for page to load
+      await driver.sleep(6000); 
+      await fs.appendFile('../logs/tests.txt', '\nSTEP 15: Wait for page to load', function (err){
+        if (err) throw err;
+        console.log('STEP 15: Wait for page to load')
+      });
+      // Assert title Login As
+      await driver.getTitle().then(function(title) {
+          assert.equal(title, "Login As - Pharmacy Portal - mosgood");
+          console.log("STEP 16: Asserted title for 'Login As' page is: " + title );
+          fs.appendFile('../logs/tests.txt', '\nSTEP 16: Asserted title is: ' + title, function (err){
+            if (err) throw err;
+          });
+      });
 
-    // Template Managment Verify Title
-    // await driver.findElement(By.id('pwTopGearIcon')).click();
-    // console.log("Clicked on the gear icon √");
-    // await driver.findElement(By.linkText('Template Management')).click();
-    // console.log("Selected 'Template Management' √");
-    // await driver.findElement(By.className('k-pager-info k-label'));
-    // await driver.sleep(6000); // Wait for page to load
-    // console.log("Waited a couple seconds");
-    // await driver.getTitle().then(function(title) {
-    //     assert.equal(title, "Communication Templates - Pharmacy Portal - mosgood");
-    //     console.log("Asserted title for 'Template Management' page is: " + title );
-    // });
+    // 'Template Managment' Verify Title
+    // Click on Gear Icon
+    await driver.findElement(By.id('pwTopGearIcon')).click();
+    await fs.appendFile('../logs/tests.txt', '\nSTEP 17: Clicked on the gear icon', function (err){
+      if (err) throw err;
+      console.log('STEP 17: Clicked on the gear icon')
+    });
+    await driver.findElement(By.linkText('Template Management')).click();
+    console.log("Selected 'Template Management' √");
+    await driver.findElement(By.className('k-pager-info k-label'));
+    await driver.sleep(6000); // Wait for page to load
+    console.log("Waited a couple seconds");
+    await driver.getTitle().then(function(title) {
+        assert.equal(title, "Communication Templates - Pharmacy Portal - mosgood");
+        console.log("Asserted title for 'Template Management' page is: " + title );
+    });
 
-    // User Managment Verify Title
-    // await driver.findElement(By.id('pwTopGearIcon')).click();
-    // console.log("Clicked on the gear icon √");
-    // await driver.findElement(By.linkText('User Management')).click();
-    // console.log("Selected 'User Management' √");
-    // await driver.findElement(By.className('k-pager-info k-label'));
-    // await driver.sleep(6000); // Wait for page to load
-    // console.log("Waited a couple seconds");
-    // await driver.getTitle().then(function(title) {
-    //     assert.equal(title, "User Management - Pharmacy Portal - mosgood");
-    //     console.log("Asserted title for 'User Management' page is: " + title );
-    // }); 
+    // 'User Managment' Verify Title
+    await driver.findElement(By.id('pwTopGearIcon')).click();
+    console.log("Clicked on the gear icon √");
+    await driver.findElement(By.linkText('User Management')).click();
+    console.log("Selected 'User Management' √");
+    await driver.findElement(By.className('k-pager-info k-label'));
+    await driver.sleep(6000); // Wait for page to load
+    console.log("Waited a couple seconds");
+    await driver.getTitle().then(function(title) {
+        assert.equal(title, "User Management - Pharmacy Portal - mosgood");
+        console.log("Asserted title for 'User Management' page is: " + title );
+    }); 
 
      // Account Managment Verify Title
-    //  await driver.findElement(By.id('pwTopGearIcon')).click();
-    //  console.log("Clicked on the gear icon √");
-    //  await driver.findElement(By.linkText('Account Management')).click();
-    //  console.log("Selected 'Account Management' √");
-    //  await driver.findElement(By.className('k-pager-info k-label'));
-    //  await driver.sleep(6000); // Wait for page to load
-    //  console.log("Waited a couple seconds");
-    //  await driver.getTitle().then(function(title) {
-    //      assert.equal(title, "Account Management - Pharmacy Portal - mosgood");
-    //      console.log("Asserted title for 'Account Management' page is: " + title );
-    //  }); 
+     await driver.findElement(By.id('pwTopGearIcon')).click();
+     console.log("Clicked on the gear icon √");
+     await driver.findElement(By.linkText('Account Management')).click();
+     console.log("Selected 'Account Management' √");
+     await driver.findElement(By.className('k-pager-info k-label'));
+     await driver.sleep(6000); // Wait for page to load
+     console.log("Waited a couple seconds");
+     await driver.getTitle().then(function(title) {
+         assert.equal(title, "Account Management - Pharmacy Portal - mosgood");
+         console.log("Asserted title for 'Account Management' page is: " + title );
+     }); 
 
     // Partner Managment Verify Title
-    // await driver.findElement(By.id('pwTopGearIcon')).click();
-    // console.log("Clicked on the gear icon √");
-    // await driver.findElement(By.linkText('Partner Management')).click();
-    // console.log("Selected 'Partner Management' √");
-    // await driver.findElement(By.className('k-pager-info k-label'));
-    // await driver.sleep(6000); // Wait for page to load
-    // console.log("Waited a couple seconds");
-    // await driver.getTitle().then(function(title) {
-    //     assert.equal(title, "Partner Management - Pharmacy Portal - mosgood");
-    //     console.log("Asserted title for 'Partner Management' page is: " + title );
-    // }); 
+    await driver.findElement(By.id('pwTopGearIcon')).click();
+    console.log("Clicked on the gear icon √");
+    await driver.findElement(By.linkText('Partner Management')).click();
+    console.log("Selected 'Partner Management' √");
+    await driver.findElement(By.className('k-pager-info k-label'));
+    await driver.sleep(6000); // Wait for page to load
+    console.log("Waited a couple seconds");
+    await driver.getTitle().then(function(title) {
+        assert.equal(title, "Partner Management - Pharmacy Portal - mosgood");
+        console.log("Asserted title for 'Partner Management' page is: " + title );
+    }); 
 
     // Logout of Admin
     // await driver.findElement(By.id('pwTopGearIcon')).click();
@@ -313,5 +348,5 @@ const example = async function() {
     await driver.quit()
   }
 };
-//example();
-module.exports = example;
+//smoketest();
+module.exports = smoketest;
