@@ -218,7 +218,6 @@ const smoketest = async function() {
     });
     // Select Partner Management
     await driver.findElement(By.linkText('Partner Management')).click();
-    console.log("Selected Partner Management");
     await fs.appendFile(log, '\nSTEP 30: Selected Partner Management', function (err){
       if (err) throw err;
       console.log("STEP 30: Selected Partner Management")
@@ -229,6 +228,7 @@ const smoketest = async function() {
       if (err) throw err;
       console.log('STEP 31: Wait for page to load')
     });
+    // Assert title for 'Partner Management'
     await driver.getTitle().then(function(title) {
         assert.equal(title, "Partner Management - Pharmacy Portal - mosgood");
         console.log("STEP 32: Asserted title for 'Partner Management' page is: " + title );
@@ -238,10 +238,19 @@ const smoketest = async function() {
     }); 
 
     // Logout of Admin
-    // await driver.findElement(By.id('pwTopGearIcon')).click();
-    // console.log("Clicked on the gear icon √");
-    // await driver.findElement(By.linkText('Logout')).click();
-    // console.log("Selected 'Logout' √");
+     // Clicked on Gear Icon
+     await driver.findElement(By.id('pwTopGearIcon')).click();
+     await fs.appendFile(log, '\nSTEP 33: Clicked on the gear icon', function (err){
+       if (err) throw err;
+       console.log('STEP 33: Clicked on the gear icon')
+     });
+    // Select 'Logout'
+    await driver.findElement(By.linkText('Logout')).click();
+    await fs.appendFile(log, '\nSTEP 34: Selected Logout', function (err){
+      if (err) throw err;
+      console.log("STEP 34: Selected Logout")
+    });
+  
 
     // Login to H3N2 and Verify Title
     // await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.customer_user);
