@@ -51,8 +51,12 @@ const example = async function() {
         if (err) throw err;
         console.log('STEP 6: Selected Message Management')
       });
-    // await driver.findElement(By.className('k-pager-info k-label'));
-    // await driver.sleep(6000); // Wait for page to load
+
+      await driver.sleep(6000); // Wait for page to load
+      await fs.appendFile('../logs/tests.txt', '\nSTEP 7: Wait for page to load', function (err){
+        if (err) throw err;
+        console.log('STEP 6: Selected Message Management')
+      });
     // console.log("Waited a couple seconds");
     // await driver.getTitle().then(function(title) {
     //     assert.equal(title, "Message Management - Pharmacy Portal - mosgood");
