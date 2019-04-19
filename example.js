@@ -4,9 +4,10 @@ let credentials = require('./credentials.js');
 let environment = require('./environment.js');
 let assert = require("chai").assert;
 let date = new Date();
+const log = '../logs/tests.txt';
 
 const smoketest = async function() {
-  fs.appendFile('../logs/tests.txt', '\n\n_____Smoke Test Conducted on: ' + date +'_____', function (err){
+  fs.appendFile(log, '\n\n_____Smoke Test Conducted on: ' + date +'_____', function (err){
       if (err) throw err;
       console.log('Test Conducted on: '+ date)
   });
@@ -15,19 +16,19 @@ const smoketest = async function() {
 
       // Go to STG
       await driver.get(environment.stg);
-      await fs.appendFile('../logs/tests.txt', '\nSTEP 1: Went to Staging', function (err){
+      await fs.appendFile(log, '\nSTEP 1: Went to Staging', function (err){
         if (err) throw err;
         console.log('STEP 1: Went to Staging')
       });
       // Enter Username
       await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.internal_user);
-      await fs.appendFile('../logs/tests.txt', '\nSTEP 2: Entered internal username', function (err){
+      await fs.appendFile(log, '\nSTEP 2: Entered internal username', function (err){
         if (err) throw err;
         console.log('STEP 2: Entered internal username')
       });
       // Enter Password & Press Enter
       await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.internal_password, Key.RETURN);
-      await fs.appendFile('../logs/tests.txt', '\nSTEP 3: Entered password and clicked Enter', function (err){
+      await fs.appendFile(log, '\nSTEP 3: Entered password and clicked Enter', function (err){
         if (err) throw err;
         console.log('STEP 3: Entered password and clicked Enter')
       });
@@ -35,7 +36,7 @@ const smoketest = async function() {
       await driver.getTitle().then(function(title) {
           assert.equal(title, "Pharmacy Group Dashboard - Pharmacy Portal - mosgood");
           console.log("STEP 4: Asserted title is: " + title);
-          fs.appendFile('../logs/tests.txt', '\nSTEP 4: Asserted title is: ' + title, function (err) {
+          fs.appendFile(log, '\nSTEP 4: Asserted title is: ' + title, function (err) {
             if (err) throw err;
           });
       });
@@ -43,19 +44,19 @@ const smoketest = async function() {
       // 'Message Management' Verify Title
       // Click on Gear Icon
       await driver.findElement(By.id('pwTopGearIcon')).click();
-      await fs.appendFile('../logs/tests.txt', '\nSTEP 5: Clicked on the gear icon', function (err){
+      await fs.appendFile(log, '\nSTEP 5: Clicked on the gear icon', function (err){
         if (err) throw err;
         console.log('STEP 5: Clicked on the gear icon')
       });
       // Select Message Management
       await driver.findElement(By.linkText('Message Management')).click();
-      await fs.appendFile('../logs/tests.txt', '\nSTEP 6: Selected Message Management', function (err){
+      await fs.appendFile(log, '\nSTEP 6: Selected Message Management', function (err){
         if (err) throw err;
         console.log('STEP 6: Selected Message Management')
       });
       // Wait for page to load
       await driver.sleep(6000); 
-      await fs.appendFile('../logs/tests.txt', '\nSTEP 7: Wait for page to load', function (err){
+      await fs.appendFile(log, '\nSTEP 7: Wait for page to load', function (err){
         if (err) throw err;
         console.log('STEP 7: Wait for page to load')
       });
@@ -63,7 +64,7 @@ const smoketest = async function() {
       await driver.getTitle().then(function(title) {
         assert.equal(title, "Message Management - Pharmacy Portal - mosgood");
         console.log("STEP 8:Asserted title for Message Management is: " + title);
-        fs.appendFile('../logs/tests.txt', '\nSTEP 8: Asserted title is: ' + title, function (err){
+        fs.appendFile(log, '\nSTEP 8: Asserted title is: ' + title, function (err){
           if (err) throw err;
          });
       });
@@ -71,19 +72,19 @@ const smoketest = async function() {
       // 'Campaign Management' Verify Title
       // Click on Gear Icon
       await driver.findElement(By.id('pwTopGearIcon')).click();
-      await fs.appendFile('../logs/tests.txt', '\nSTEP 9: Clicked on the gear icon', function (err){
+      await fs.appendFile(log, '\nSTEP 9: Clicked on the gear icon', function (err){
         if (err) throw err;
         console.log('STEP 9: Clicked on the gear icon')
       });
       // Select Campaign Management
       await driver.findElement(By.linkText('Campaign Management')).click();
-      await fs.appendFile('../logs/tests.txt', '\nSTEP 10: Selected Campaign Management', function (err){
+      await fs.appendFile(log, '\nSTEP 10: Selected Campaign Management', function (err){
         if (err) throw err;
         console.log('STEP 10: Selected Campaign Management')
       });
       // Wait for page to load
       await driver.sleep(6000); 
-      await fs.appendFile('../logs/tests.txt', '\nSTEP 11: Wait for page to load', function (err){
+      await fs.appendFile(log, '\nSTEP 11: Wait for page to load', function (err){
         if (err) throw err;
         console.log('STEP 11: Wait for page to load')
       });
@@ -91,7 +92,7 @@ const smoketest = async function() {
       await driver.getTitle().then(function(title) {
           assert.equal(title, "Campaign Management - Pharmacy Portal - mosgood");
           console.log("STEP 12: Asserted title for 'Campaign Management' page is: " + title );
-          fs.appendFile('../logs/tests.txt', '\nSTEP 12: Asserted title is: ' + title, function (err){
+          fs.appendFile(log, '\nSTEP 12: Asserted title is: ' + title, function (err){
             if (err) throw err;
           });
       });
@@ -99,19 +100,19 @@ const smoketest = async function() {
       // 'Login As' Verify Title
       // Click on Gear Icon
       await driver.findElement(By.id('pwTopGearIcon')).click();
-        await fs.appendFile('../logs/tests.txt', '\nSTEP 13: Clicked on the gear icon', function (err){
+        await fs.appendFile(log, '\nSTEP 13: Clicked on the gear icon', function (err){
           if (err) throw err;
           console.log('STEP 13: Clicked on the gear icon')
         });
         // Select Login As
       await driver.findElement(By.linkText('Login As')).click();
-      await fs.appendFile('../logs/tests.txt', '\nSTEP 14: Selected Login As', function (err){
+      await fs.appendFile(log, '\nSTEP 14: Selected Login As', function (err){
         if (err) throw err;
         console.log('STEP 14: Selected Login As')
       });
       // Wait for page to load
       await driver.sleep(6000); 
-      await fs.appendFile('../logs/tests.txt', '\nSTEP 15: Wait for page to load', function (err){
+      await fs.appendFile(log, '\nSTEP 15: Wait for page to load', function (err){
         if (err) throw err;
         console.log('STEP 15: Wait for page to load')
       });
@@ -119,7 +120,7 @@ const smoketest = async function() {
       await driver.getTitle().then(function(title) {
           assert.equal(title, "Login As - Pharmacy Portal - mosgood");
           console.log("STEP 16: Asserted title for 'Login As' page is: " + title );
-          fs.appendFile('../logs/tests.txt', '\nSTEP 16: Asserted title is: ' + title, function (err){
+          fs.appendFile(log, '\nSTEP 16: Asserted title is: ' + title, function (err){
             if (err) throw err;
           });
       });
@@ -127,19 +128,19 @@ const smoketest = async function() {
       // 'Template Managment' Verify Title
       // Click on Gear Icon
       await driver.findElement(By.id('pwTopGearIcon')).click();
-      await fs.appendFile('../logs/tests.txt', '\nSTEP 17: Clicked on the gear icon', function (err){
+      await fs.appendFile(log, '\nSTEP 17: Clicked on the gear icon', function (err){
         if (err) throw err;
         console.log('STEP 17: Clicked on the gear icon')
       });
       // Select 'Template Managment'
       await driver.findElement(By.linkText('Template Management')).click();
-      await fs.appendFile('../logs/tests.txt', '\nSTEP 18: Selected Template Management', function (err){
+      await fs.appendFile(log, '\nSTEP 18: Selected Template Management', function (err){
         if (err) throw err;
         console.log('STEP 18: Selected Template Management')
       });  
       // Wait for page to load
       await driver.sleep(6000); 
-      await fs.appendFile('../logs/tests.txt', '\nSTEP 19: Wait for page to load', function (err){
+      await fs.appendFile(log, '\nSTEP 19: Wait for page to load', function (err){
         if (err) throw err;
         console.log('STEP 19: Wait for page to load')
       });
@@ -147,7 +148,7 @@ const smoketest = async function() {
       await driver.getTitle().then(function(title) {
           assert.equal(title, "Communication Templates - Pharmacy Portal - mosgood");
           console.log("STEP 20: Asserted title for 'Template Management' page is: " + title );
-          fs.appendFile('../logs/tests.txt', '\nSTEP 20: Asserted title is: ' + title, function (err){
+          fs.appendFile(log, '\nSTEP 20: Asserted title is: ' + title, function (err){
             if (err) throw err;
           });
       });
@@ -155,19 +156,19 @@ const smoketest = async function() {
       // 'User Managment' Verify Title
       // Clicked on Gear Icon
       await driver.findElement(By.id('pwTopGearIcon')).click();
-      await fs.appendFile('../logs/tests.txt', '\nSTEP 21: Clicked on the gear icon', function (err){
+      await fs.appendFile(log, '\nSTEP 21: Clicked on the gear icon', function (err){
         if (err) throw err;
         console.log('STEP 21: Clicked on the gear icon')
       });
       // Select 'User Managment'
       await driver.findElement(By.linkText('User Management')).click();
-      await fs.appendFile('../logs/tests.txt', '\nSTEP 22: Selected User Management', function (err){
+      await fs.appendFile(log, '\nSTEP 22: Selected User Management', function (err){
         if (err) throw err;
         console.log('STEP 22: Selected User Management')
       });  
       // Wait for page to load
       await driver.sleep(6000); 
-      await fs.appendFile('../logs/tests.txt', '\nSTEP 23: Wait for page to load', function (err){
+      await fs.appendFile(log, '\nSTEP 23: Wait for page to load', function (err){
         if (err) throw err;
         console.log('STEP 23: Wait for page to load')
       });
@@ -175,7 +176,7 @@ const smoketest = async function() {
       await driver.getTitle().then(function(title) {
           assert.equal(title, "User Management - Pharmacy Portal - mosgood");
           console.log("STEP 24: Asserted title for 'User Management' page is: " + title );
-          fs.appendFile('../logs/tests.txt', '\nSTEP 24: Asserted title is: ' + title, function (err){
+          fs.appendFile(log, '\nSTEP 24: Asserted title is: ' + title, function (err){
             if (err) throw err;
           });
       }); 
@@ -183,19 +184,19 @@ const smoketest = async function() {
       // Account Managment Verify Title
       // Clicked on Gear Icon
       await driver.findElement(By.id('pwTopGearIcon')).click();
-      await fs.appendFile('../logs/tests.txt', '\nSTEP 25: Clicked on the gear icon', function (err){
+      await fs.appendFile(log, '\nSTEP 25: Clicked on the gear icon', function (err){
         if (err) throw err;
         console.log('STEP 25: Clicked on the gear icon')
       });
       // Selected User Management
       await driver.findElement(By.linkText('Account Management')).click();
-      await fs.appendFile('../logs/tests.txt', '\nSTEP 26: Selected User Management', function (err){
+      await fs.appendFile(log, '\nSTEP 26: Selected User Management', function (err){
         if (err) throw err;
         console.log("STEP 26: Selected Account Management")
       }); 
       // Wait for page to load
       await driver.sleep(6000); 
-      await fs.appendFile('../logs/tests.txt', '\nSTEP 27: Wait for page to load', function (err){
+      await fs.appendFile(log, '\nSTEP 27: Wait for page to load', function (err){
         if (err) throw err;
         console.log('STEP 27: Wait for page to load')
       });
@@ -203,34 +204,35 @@ const smoketest = async function() {
       await driver.getTitle().then(function(title) {
           assert.equal(title, "Account Management - Pharmacy Portal - mosgood");
           console.log("STEP 28: Asserted title for 'Account Management' page is: " + title );
-          fs.appendFile('../logs/tests.txt', '\nSTEP 28: Asserted title is: ' + title, function (err){
+          fs.appendFile(log, '\nSTEP 28: Asserted title is: ' + title, function (err){
             if (err) throw err;
           });
       }); 
 
     // Partner Managment Verify Title
     // Clicked on Gear Icon
-    await fs.appendFile('../logs/tests.txt', '\nSTEP 29: Clicked on the gear icon', function (err){
+    await driver.findElement(By.id('pwTopGearIcon')).click();
+    await fs.appendFile(log, '\nSTEP 29: Clicked on the gear icon', function (err){
       if (err) throw err;
       console.log('STEP 29: Clicked on the gear icon')
     });
     // Select Partner Management
     await driver.findElement(By.linkText('Partner Management')).click();
     console.log("Selected Partner Management");
-    await fs.appendFile('../logs/tests.txt', '\nSTEP 30: Selected Partner Management', function (err){
+    await fs.appendFile(log, '\nSTEP 30: Selected Partner Management', function (err){
       if (err) throw err;
       console.log("STEP 30: Selected Partner Management")
     });
     // Wait for page to load
     await driver.sleep(6000); 
-    await fs.appendFile('../logs/tests.txt', '\nSTEP 31: Wait for page to load', function (err){
+    await fs.appendFile(log, '\nSTEP 31: Wait for page to load', function (err){
       if (err) throw err;
       console.log('STEP 31: Wait for page to load')
     });
     await driver.getTitle().then(function(title) {
         assert.equal(title, "Partner Management - Pharmacy Portal - mosgood");
         console.log("STEP 32: Asserted title for 'Partner Management' page is: " + title );
-        fs.appendFile('../logs/tests.txt', '\nSTEP 32: Asserted title is: ' + title, function (err){
+        fs.appendFile(log, '\nSTEP 32: Asserted title is: ' + title, function (err){
           if (err) throw err;
         })
     }); 
@@ -256,7 +258,7 @@ const smoketest = async function() {
     // console.log("Clicked on 'Active Patients'");
     // Wait for page to load
     // await driver.sleep(6000); 
-    // await fs.appendFile('../logs/tests.txt', '\nSTEP #: Wait for page to load', function (err){
+    // await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
     //   if (err) throw err;
     //   console.log('STEP #: Wait for page to load')
     // });
@@ -270,7 +272,7 @@ const smoketest = async function() {
     // console.log("Clicked on 'Drugs'");
     // Wait for page to load
     // await driver.sleep(6000); 
-    // await fs.appendFile('../logs/tests.txt', '\nSTEP #: Wait for page to load', function (err){
+    // await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
     //   if (err) throw err;
     //   console.log('STEP #: Wait for page to load')
     // });
@@ -284,7 +286,7 @@ const smoketest = async function() {
     // console.log("Clicked on 'Diseases'");
     // Wait for page to load
     // await driver.sleep(6000); 
-    // await fs.appendFile('../logs/tests.txt', '\nSTEP #: Wait for page to load', function (err){
+    // await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
     //   if (err) throw err;
     //   console.log('STEP #: Wait for page to load')
     // });
@@ -298,7 +300,7 @@ const smoketest = async function() {
     //  console.log("Clicked on 'Physicians'");
     //  Wait for page to load
     // await driver.sleep(6000); 
-    // await fs.appendFile('../logs/tests.txt', '\nSTEP #: Wait for page to load', function (err){
+    // await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
     //   if (err) throw err;
     //   console.log('STEP #: Wait for page to load')
     // });
@@ -312,7 +314,7 @@ const smoketest = async function() {
     //  console.log("Clicked on 'Physician Groups'");
     // Wait for page to load
     // await driver.sleep(6000); 
-    // await fs.appendFile('../logs/tests.txt', '\nSTEP #: Wait for page to load', function (err){
+    // await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
     //   if (err) throw err;
     //   console.log('STEP #: Wait for page to load')
     // });
@@ -328,7 +330,7 @@ const smoketest = async function() {
     // console.log("Selected 'Clinical Calendar' icon");
     // Wait for page to load
     // await driver.sleep(6000); 
-    // await fs.appendFile('../logs/tests.txt', '\nSTEP #: Wait for page to load', function (err){
+    // await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
     //   if (err) throw err;
     //   console.log('STEP #: Wait for page to load')
     // });
@@ -344,7 +346,7 @@ const smoketest = async function() {
     // console.log("Selected 'Social Calendar' icon");
     // Wait for page to load
     // await driver.sleep(6000); 
-    // await fs.appendFile('../logs/tests.txt', '\nSTEP #: Wait for page to load', function (err){
+    // await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
     //   if (err) throw err;
     //   console.log('STEP #: Wait for page to load')
     // });
@@ -360,7 +362,7 @@ const smoketest = async function() {
     // console.log("Selected 'Custom Calendar' icon");
     // Wait for page to load
     // await driver.sleep(6000); 
-    // await fs.appendFile('../logs/tests.txt', '\nSTEP #: Wait for page to load', function (err){
+    // await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
     //   if (err) throw err;
     //   console.log('STEP #: Wait for page to load')
     // });
@@ -374,7 +376,7 @@ const smoketest = async function() {
     // console.log("Selected 'Growth'");
     // Wait for page to load
     // await driver.sleep(6000); 
-    // await fs.appendFile('../logs/tests.txt', '\nSTEP #: Wait for page to load', function (err){
+    // await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
     //   if (err) throw err;
     //   console.log('STEP #: Wait for page to load')
     // });
@@ -389,7 +391,7 @@ const smoketest = async function() {
     // await driver.findElement(By.linkText('Synchronization')).click();
     // Wait for page to load
     // await driver.sleep(6000); 
-    // await fs.appendFile('../logs/tests.txt', '\nSTEP #: Wait for page to load', function (err){
+    // await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
     //   if (err) throw err;
     //   console.log('STEP #: Wait for page to load')
     // });
@@ -403,7 +405,7 @@ const smoketest = async function() {
     // console.log("Selected 'VaccineComplete'");
     // Wait for page to load
     // await driver.sleep(6000); 
-    // await fs.appendFile('../logs/tests.txt', '\nSTEP #: Wait for page to load', function (err){
+    // await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
     //   if (err) throw err;
     //   console.log('STEP #: Wait for page to load')
     // });
@@ -417,7 +419,7 @@ const smoketest = async function() {
     // console.log("Selected 'PrescribeMedicare'");
     /// Wait for page to load
     // await driver.sleep(6000); 
-    // await fs.appendFile('../logs/tests.txt', '\nSTEP #: Wait for page to load', function (err){
+    // await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
     //   if (err) throw err;
     //   console.log('STEP #: Wait for page to load')
     // });
@@ -431,7 +433,7 @@ const smoketest = async function() {
     // console.log("Selected 'PrescribeCare'");
     // Wait for page to load
     // await driver.sleep(6000); 
-    // await fs.appendFile('../logs/tests.txt', '\nSTEP #: Wait for page to load', function (err){
+    // await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
     //   if (err) throw err;
     //   console.log('STEP #: Wait for page to load')
     // });
@@ -441,7 +443,7 @@ const smoketest = async function() {
     // });
 
     // Send OnDemand via gear icon 
-    // await fs.appendFile('../logs/tests.txt', '\nSTEP #: Clicked on the gear icon', function (err){
+    // await fs.appendFile(log, '\nSTEP #: Clicked on the gear icon', function (err){
     //   if (err) throw err;
     //   console.log('STEP #: Clicked on the gear icon')
     // });
@@ -449,7 +451,7 @@ const smoketest = async function() {
     // console.log("Selected 'OnDemand' √");
     // Wait for page to load
     // await driver.sleep(6000); 
-    // await fs.appendFile('../logs/tests.txt', '\nSTEP #: Wait for page to load', function (err){
+    // await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
     //   if (err) throw err;
     //   console.log('STEP #: Wait for page to load')
     // });
@@ -457,7 +459,7 @@ const smoketest = async function() {
     // console.log("Entered a phone number √");
     /// Wait for page to load
     // await driver.sleep(6000); 
-    // await fs.appendFile('../logs/tests.txt', '\nSTEP #: Wait for page to load', function (err){
+    // await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
     //   if (err) throw err;
     //   console.log('STEP #: Wait for page to load')
     // });
@@ -465,7 +467,7 @@ const smoketest = async function() {
     // console.log("Clicked on 'Next' button");
     /// Wait for page to load
     // await driver.sleep(6000); 
-    // await fs.appendFile('../logs/tests.txt', '\nSTEP #: Wait for page to load', function (err){
+    // await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
     //   if (err) throw err;
     //   console.log('STEP #: Wait for page to load')
     // });
@@ -473,7 +475,7 @@ const smoketest = async function() {
     // console.log("Clicked on 'Select' button");
     // Wait for page to load
     // await driver.sleep(6000); 
-    // await fs.appendFile('../logs/tests.txt', '\nSTEP #: Wait for page to load', function (err){
+    // await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
     //   if (err) throw err;
     //   console.log('STEP #: Wait for page to load')
     // });
@@ -481,7 +483,7 @@ const smoketest = async function() {
     // console.log("Clicked on 'Send Message' button");
     // Wait for page to load
     // await driver.sleep(6000); 
-    // await fs.appendFile('../logs/tests.txt', '\nSTEP #: Wait for page to load', function (err){
+    // await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
     //   if (err) throw err;
     //   console.log('STEP #: Wait for page to load')
     // });
