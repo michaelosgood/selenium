@@ -63,7 +63,7 @@ const smoketest = async function() {
       // Assert Title for Msg Mgmt
       await driver.getTitle().then(function(title) {
         assert.equal(title, "Message Management - Pharmacy Portal - mosgood");
-        console.log("STEP 8:Asserted title for Message Management is: " + title);
+        console.log("STEP 8: Asserted title for Message Management is: " + title);
         fs.appendFile(log, '\nSTEP 8: Asserted title is: ' + title, function (err){
           if (err) throw err;
          });
