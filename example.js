@@ -1,5 +1,5 @@
 const {Builder, By, Key, until} = require('selenium-webdriver');
-let fs = require("fs");
+let fs = require('fs');
 let credentials = require('./credentials.js');
 let environment = require('./environment.js');
 let assert = require("chai").assert;
@@ -13,7 +13,7 @@ const smoketest = async function() {
   });
   let driver = await new Builder().forBrowser('chrome').build();
   try {
-
+      // 'Landing Page' Verify Title   
       // Go to STG
       await driver.get(environment.stg);
       await fs.appendFile(log, '\nSTEP 1: Went to Staging', function (err){
@@ -253,203 +253,236 @@ const smoketest = async function() {
   
 
     // Login to H3N2 and Verify Title
-    // await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.customer_user);
-    // console.log("Entered username: √");
-    // await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.customer_password, Key.RETURN);
-    // console.log("Entered password and clicked 'Enter': √");
-    // await driver.getTitle().then(function(title) {
-    //     assert.equal(title, "Pharmacy Dashboard - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
-    //     console.log("Asserted title is: " + title );
-    // });
+    // Enter Username
+    await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.customer_user);
+    await fs.appendFile(log, '\nSTEP 35: Entered username', function (err){
+      if (err) throw err;
+      console.log("STEP 35: Entered username")
+    });
+    // Enter Password & Press Enter
+    await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.customer_password, Key.RETURN);
+    await fs.appendFile(log, '\nSTEP 35: Entered password and clicked Enter', function (err){
+      if (err) throw err;
+      console.log('STEP 35: Entered password and clicked Enter')
+    });
+    // Wait for page to load
+    await driver.sleep(6000); 
+    await fs.appendFile(log, '\nSTEP 36: Wait for page to load', function (err){
+      if (err) throw err;
+        console.log('STEP 36: Wait for page to load')
+    });
+    // Assert title for Landing page
+    await driver.getTitle().then(function(title) {
+        assert.equal(title, "Pharmacy Dashboard - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
+        console.log("STEP 37: Asserted title is: " + title );
+        fs.appendFile(log, '\nSTEP 37: Asserted title is: ' + title, function (err){
+          if (err) throw err;
+        })
+    });
     
     // Verify Title for Active Patients page
-    // await driver.findElement(By.linkText('Active Patients')).click();
-    // console.log("Clicked on 'Active Patients'");
+    // Selected Active Patients
+    await driver.findElement(By.linkText('Active Patients')).click();
+    await fs.appendFile(log, '\nSTEP 38: Clicked on Active Patients', function (err){
+      if (err) throw err;
+      console.log("STEP 38: Clicked on Active Patients")
+    });
     // Wait for page to load
-    // await driver.sleep(6000); 
-    // await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
-    //   if (err) throw err;
-    //   console.log('STEP #: Wait for page to load')
-    // });
-    // await driver.getTitle().then(function(title) {
-    //     assert.equal(title, "Pharmacy Dashboard - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
-    //     console.log("Asserted title is: " + title );
-    // });
-
+    await driver.sleep(6000); 
+    await fs.appendFile(log, '\nSTEP 39: Wait for page to load', function (err){
+      if (err) throw err;
+      console.log('STEP 39: Wait for page to load')
+    });
+    // Assert title for 'Active Patients'
+    await driver.getTitle().then(function(title) {
+        assert.equal(title, "Pharmacy Dashboard - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
+        console.log("STEP 40: Asserted title is: " + title );
+        fs.appendFile(log, '\nSTEP 40: Asserted title is: ' + title, function (err){
+          if (err) throw err;
+        })
+    });
+    
     // Verify Title for Drugs page
-    // await driver.findElement(By.linkText('Drugs')).click();
-    // console.log("Clicked on 'Drugs'");
+    await driver.findElement(By.linkText('Drugs')).click();
+    await fs.appendFile(log, '\nSTEP 41: Clicked on Drugs', function (err){
+      if (err) throw err;
+      console.log("STEP 41: Clicked on Drugs")
+    });
     // Wait for page to load
-    // await driver.sleep(6000); 
-    // await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
-    //   if (err) throw err;
-    //   console.log('STEP #: Wait for page to load')
-    // });
-    // await driver.getTitle().then(function(title) {
-    //     assert.equal(title, "Pharmacy Dashboard - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
-    //     console.log("Asserted title is: " + title );
-    // });
+    await driver.sleep(6000); 
+    await fs.appendFile(log, '\nSTEP 42: Wait for page to load', function (err){
+      if (err) throw err;
+      console.log('STEP 42: Wait for page to load')
+    });
+    await driver.getTitle().then(function(title) {
+        assert.equal(title, "Pharmacy Dashboard - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
+        console.log("STEP 43: Asserted title is: " + title );
+        fs.appendFile(log, '\nSTEP 43: Asserted title is: ' + title, function (err){
+          if (err) throw err;
+        })
+    });
+// _______________________________________________Marker________________________________________________________
 
     // Verify Title for Diseases page
-    // await driver.findElement(By.linkText('Diseases')).click();
-    // console.log("Clicked on 'Diseases'");
+    await driver.findElement(By.linkText('Diseases')).click();
+    console.log("Clicked on 'Diseases'");
     // Wait for page to load
-    // await driver.sleep(6000); 
-    // await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
-    //   if (err) throw err;
-    //   console.log('STEP #: Wait for page to load')
-    // });
-    // await driver.getTitle().then(function(title) {
-    //     assert.equal(title, "Pharmacy Dashboard - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
-    //     console.log("Asserted title is: " + title );
-    // });
+    await driver.sleep(6000); 
+    await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
+      if (err) throw err;
+      console.log('STEP #: Wait for page to load')
+    });
+    await driver.getTitle().then(function(title) {
+        assert.equal(title, "Pharmacy Dashboard - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
+        console.log("Asserted title is: " + title );
+    });
 
     // Verify Title for Physicians page
-    //  await driver.findElement(By.linkText('Physicians')).click();
-    //  console.log("Clicked on 'Physicians'");
+     await driver.findElement(By.linkText('Physicians')).click();
+     console.log("Clicked on 'Physicians'");
     //  Wait for page to load
-    // await driver.sleep(6000); 
-    // await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
-    //   if (err) throw err;
-    //   console.log('STEP #: Wait for page to load')
-    // });
-    //  await driver.getTitle().then(function(title) {
-    //      assert.equal(title, "Pharmacy Dashboard - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
-    //      console.log("Asserted title is: " + title );
-    //  });
+    await driver.sleep(6000); 
+    await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
+      if (err) throw err;
+      console.log('STEP #: Wait for page to load')
+    });
+     await driver.getTitle().then(function(title) {
+         assert.equal(title, "Pharmacy Dashboard - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
+         console.log("Asserted title is: " + title );
+     });
 
     // Verify Title for Physician Groups page
-    //  await driver.findElement(By.linkText('Physician Groups')).click();
-    //  console.log("Clicked on 'Physician Groups'");
+     await driver.findElement(By.linkText('Physician Groups')).click();
+     console.log("Clicked on 'Physician Groups'");
     // Wait for page to load
-    // await driver.sleep(6000); 
-    // await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
-    //   if (err) throw err;
-    //   console.log('STEP #: Wait for page to load')
-    // });
-    //  await driver.getTitle().then(function(title) {
-    //      assert.equal(title, "Pharmacy Dashboard - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
-    //      console.log("Asserted title is: " + title );
-    //  });
+    await driver.sleep(6000); 
+    await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
+      if (err) throw err;
+      console.log('STEP #: Wait for page to load')
+    });
+     await driver.getTitle().then(function(title) {
+         assert.equal(title, "Pharmacy Dashboard - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
+         console.log("Asserted title is: " + title );
+     });
 
     // Verify Title for Clinical Calendar
-    // await driver.findElement(By.className('fa-calendar')).click();
-    // console.log("Clicked on the calendar icon");
-    // await driver.findElement(By.linkText('Clinical Calendar')).click();
-    // console.log("Selected 'Clinical Calendar' icon");
+    await driver.findElement(By.className('fa-calendar')).click();
+    console.log("Clicked on the calendar icon");
+    await driver.findElement(By.linkText('Clinical Calendar')).click();
+    console.log("Selected 'Clinical Calendar' icon");
     // Wait for page to load
-    // await driver.sleep(6000); 
-    // await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
-    //   if (err) throw err;
-    //   console.log('STEP #: Wait for page to load')
-    // });
-    // await driver.getTitle().then(function(title) {
-    //     assert.equal(title, "Pharmacy Calendar - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
-    //     console.log("Asserted title for 'Clinical Calendar' page is: " + title );
-    // });
+    await driver.sleep(6000); 
+    await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
+      if (err) throw err;
+      console.log('STEP #: Wait for page to load')
+    });
+    await driver.getTitle().then(function(title) {
+        assert.equal(title, "Pharmacy Calendar - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
+        console.log("Asserted title for 'Clinical Calendar' page is: " + title );
+    });
 
     // Verify Title for Social Calendar
-    // await driver.findElement(By.className('fa-calendar')).click();
-    // console.log("Clicked on the calendar icon");
-    // await driver.findElement(By.linkText('Social Calendar')).click();
-    // console.log("Selected 'Social Calendar' icon");
+    await driver.findElement(By.className('fa-calendar')).click();
+    console.log("Clicked on the calendar icon");
+    await driver.findElement(By.linkText('Social Calendar')).click();
+    console.log("Selected 'Social Calendar' icon");
     // Wait for page to load
-    // await driver.sleep(6000); 
-    // await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
-    //   if (err) throw err;
-    //   console.log('STEP #: Wait for page to load')
-    // });
-    // await driver.getTitle().then(function(title) {
-    //     assert.equal(title, "Pharmacy Calendar - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
-    //     console.log("Asserted title for 'Social Calendar' page is: " + title );
-    // });
+    await driver.sleep(6000); 
+    await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
+      if (err) throw err;
+      console.log('STEP #: Wait for page to load')
+    });
+    await driver.getTitle().then(function(title) {
+        assert.equal(title, "Pharmacy Calendar - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
+        console.log("Asserted title for 'Social Calendar' page is: " + title );
+    });
 
     // Verify Title for Custom Calendar
-    // await driver.findElement(By.className('fa-calendar')).click();
-    // console.log("Clicked on the calendar icon");
-    // await driver.findElement(By.linkText('Custom Calendar')).click();
-    // console.log("Selected 'Custom Calendar' icon");
+    await driver.findElement(By.className('fa-calendar')).click();
+    console.log("Clicked on the calendar icon");
+    await driver.findElement(By.linkText('Custom Calendar')).click();
+    console.log("Selected 'Custom Calendar' icon");
     // Wait for page to load
-    // await driver.sleep(6000); 
-    // await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
-    //   if (err) throw err;
-    //   console.log('STEP #: Wait for page to load')
-    // });
-    // await driver.getTitle().then(function(title) {
-    //     assert.equal(title, "Pharmacy Calendar - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
-    //     console.log("Asserted title for 'Social Calendar' page is: " + title );
-    // });
+    await driver.sleep(6000); 
+    await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
+      if (err) throw err;
+      console.log('STEP #: Wait for page to load')
+    });
+    await driver.getTitle().then(function(title) {
+        assert.equal(title, "Pharmacy Calendar - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
+        console.log("Asserted title for 'Social Calendar' page is: " + title );
+    });
 
     // Verify Title for 'Growth' Pt List
-    // await driver.findElement(By.linkText('Growth')).click();
-    // console.log("Selected 'Growth'");
+    await driver.findElement(By.linkText('Growth')).click();
+    console.log("Selected 'Growth'");
     // Wait for page to load
-    // await driver.sleep(6000); 
-    // await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
-    //   if (err) throw err;
-    //   console.log('STEP #: Wait for page to load')
-    // });
-    // await driver.getTitle().then(function(title) {
-    //     assert.equal(title, "Growth: Patients - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
-    //     console.log("Asserted title for 'Growth' page is: " + title );
-    // });
+    await driver.sleep(6000); 
+    await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
+      if (err) throw err;
+      console.log('STEP #: Wait for page to load')
+    });
+    await driver.getTitle().then(function(title) {
+        assert.equal(title, "Growth: Patients - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
+        console.log("Asserted title for 'Growth' page is: " + title );
+    });
 
     // Verify Title for 'StarWellness' Pt List
-    // await driver.findElement(By.linkText('StarWellness')).click();
-    // console.log("Selected 'StarWellness'");
-    // await driver.findElement(By.linkText('Synchronization')).click();
+    await driver.findElement(By.linkText('StarWellness')).click();
+    console.log("Selected 'StarWellness'");
+    await driver.findElement(By.linkText('Synchronization')).click();
     // Wait for page to load
-    // await driver.sleep(6000); 
-    // await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
-    //   if (err) throw err;
-    //   console.log('STEP #: Wait for page to load')
-    // });
-    // await driver.getTitle().then(function(title) {
-    //     assert.equal(title, "StarWellness: Synchronization - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
-    //     console.log("Asserted title for 'StarWellness Synchronization' page is: " + title );
-    // });
+    await driver.sleep(6000); 
+    await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
+      if (err) throw err;
+      console.log('STEP #: Wait for page to load')
+    });
+    await driver.getTitle().then(function(title) {
+        assert.equal(title, "StarWellness: Synchronization - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
+        console.log("Asserted title for 'StarWellness Synchronization' page is: " + title );
+    });
 
     // Verify Title for 'VaccineComplete' Pt List
-    // await driver.findElement(By.linkText('VaccineComplete')).click();
-    // console.log("Selected 'VaccineComplete'");
+    await driver.findElement(By.linkText('VaccineComplete')).click();
+    console.log("Selected 'VaccineComplete'");
     // Wait for page to load
-    // await driver.sleep(6000); 
-    // await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
-    //   if (err) throw err;
-    //   console.log('STEP #: Wait for page to load')
-    // });
-    // await driver.getTitle().then(function(title) {
-    //     assert.equal(title, "Vaccine Patient List - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
-    //     console.log("Asserted title for 'VaccineComplete' page is: " + title );
-    // });
+    await driver.sleep(6000); 
+    await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
+      if (err) throw err;
+      console.log('STEP #: Wait for page to load')
+    });
+    await driver.getTitle().then(function(title) {
+        assert.equal(title, "Vaccine Patient List - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
+        console.log("Asserted title for 'VaccineComplete' page is: " + title );
+    });
 
     // Verify Title for 'PrescribeMedicare' Pt List
-    // await driver.findElement(By.linkText('PrescribeMedicare')).click();
-    // console.log("Selected 'PrescribeMedicare'");
+    await driver.findElement(By.linkText('PrescribeMedicare')).click();
+    console.log("Selected 'PrescribeMedicare'");
     /// Wait for page to load
-    // await driver.sleep(6000); 
-    // await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
-    //   if (err) throw err;
-    //   console.log('STEP #: Wait for page to load')
-    // });
-    // await driver.getTitle().then(function(title) {
-    //     assert.equal(title, "Medicare Patient List - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
-    //     console.log("Asserted title for 'PrescribeMedicare' page is: " + title );
-    // });
+    await driver.sleep(6000); 
+    await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
+      if (err) throw err;
+      console.log('STEP #: Wait for page to load')
+    });
+    await driver.getTitle().then(function(title) {
+        assert.equal(title, "Medicare Patient List - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
+        console.log("Asserted title for 'PrescribeMedicare' page is: " + title );
+    });
 
     // Verify Title for 'PrescribeCare' Pt List
-    // await driver.findElement(By.linkText('PrescribeCare')).click();
-    // console.log("Selected 'PrescribeCare'");
+    await driver.findElement(By.linkText('PrescribeCare')).click();
+    console.log("Selected 'PrescribeCare'");
     // Wait for page to load
-    // await driver.sleep(6000); 
-    // await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
-    //   if (err) throw err;
-    //   console.log('STEP #: Wait for page to load')
-    // });
-    // await driver.getTitle().then(function(title) {
-    //     assert.equal(title, "PrescribeCare: Patients with Encounters - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
-    //     console.log("Asserted title for 'PrescribeCare' page is: " + title );
-    // });
+    await driver.sleep(6000); 
+    await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
+      if (err) throw err;
+      console.log('STEP #: Wait for page to load')
+    });
+    await driver.getTitle().then(function(title) {
+        assert.equal(title, "PrescribeCare: Patients with Encounters - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
+        console.log("Asserted title for 'PrescribeCare' page is: " + title );
+    });
 
     // Send OnDemand via gear icon 
     // await fs.appendFile(log, '\nSTEP #: Clicked on the gear icon', function (err){
