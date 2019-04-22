@@ -4,7 +4,7 @@ let credentials = require('./credentials.js');
 let environment = require('./environment.js');
 let assert = require("chai").assert;
 let date = new Date();
-const log = '../logs/tests.txt';
+const log = '../reports/tests.txt';
 
 const smoketest = async function() {
   fs.appendFile(log, '\n\n_____Smoke Test Conducted on: ' + date +'_____', function (err){
