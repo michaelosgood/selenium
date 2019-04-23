@@ -1,2 +1,2 @@
-let smoketest = require('../example.js');
+let smoketest = require('../pec-tests/google_stg_smoketest');
 smoketest();

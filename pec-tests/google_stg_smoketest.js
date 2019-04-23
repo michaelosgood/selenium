@@ -1,10 +1,10 @@
 const {Builder, By, Key, until} = require('selenium-webdriver');
 let fs = require('fs');
-let credentials = require('./credentials.js');
-let environment = require('./environment.js');
+let credentials = require('../credentials.js');
+let environment = require('../environment.js');
 let assert = require("chai").assert;
 let date = new Date();
-const log = '../reports/tests.txt';
+const log = '../reports/stg-tests.txt';
 
 const smoketest = async function() {
   fs.appendFile(log, '\n\n_____Staging Smoke Test Conducted on: ' + date +'_____', function (err){
@@ -587,4 +587,5 @@ const smoketest = async function() {
     await driver.quit()
   }
 };
-smoketest();
+//smoketest();
+module.exports = smoketest;
