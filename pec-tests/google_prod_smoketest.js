@@ -4,10 +4,10 @@ let credentials = require('../credentials.js');
 let environment = require('../environment.js');
 let assert = require("chai").assert;
 let date = new Date();
-const log = '../reports/stg-tests.txt';
+const log = '../reports/prod-tests.txt';
 
-const googleStgSmoketest = async function() {
-  fs.appendFile(log, '\n\n_____Google Staging Smoke Test Conducted on: ' + date +'_____', function (err){
+const smoketest = async function() {
+  fs.appendFile(log, '\n\n_____Staging Smoke Test Conducted on: ' + date +'_____', function (err){
       if (err) throw err;
       console.log('Test Conducted on: '+ date)
   });
@@ -15,10 +15,10 @@ const googleStgSmoketest = async function() {
   try {
       // 'Landing Page' Verify Title   
       // Go to STG
-      await driver.get(environment.stg);
-      await fs.appendFile(log, '\nSTEP 1: Went to Staging', function (err){
+      await driver.get(environment.prod);
+      await fs.appendFile(log, '\nSTEP 1: Went to Production', function (err){
         if (err) throw err;
-        console.log('STEP 1: Went to Staging')
+        console.log('STEP 1: Went to Production')
       });
       // Enter Username
       await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.internal_user);
@@ -588,4 +588,4 @@ const googleStgSmoketest = async function() {
   }
 };
 //smoketest();
-module.exports = googleStgSmoketest;
+module.exports = smoketest;

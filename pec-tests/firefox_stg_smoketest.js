@@ -6,12 +6,12 @@ let assert = require("chai").assert;
 let date = new Date();
 const log = '../reports/stg-tests.txt';
 
-const googleStgSmoketest = async function() {
-  fs.appendFile(log, '\n\n_____Google Staging Smoke Test Conducted on: ' + date +'_____', function (err){
+const firefoxStgSmoketest = async function() {
+  fs.appendFile(log, '\n\n_____Firefox Staging Smoke Test Conducted on: ' + date +'_____', function (err){
       if (err) throw err;
       console.log('Test Conducted on: '+ date)
   });
-  let driver = await new Builder().forBrowser('chrome').build();
+  let driver = await new Builder().forBrowser('firefox').build();
   try {
       // 'Landing Page' Verify Title   
       // Go to STG
@@ -31,6 +31,12 @@ const googleStgSmoketest = async function() {
       await fs.appendFile(log, '\nSTEP 3: Entered password and clicked Enter', function (err){
         if (err) throw err;
         console.log('STEP 3: Entered password and clicked Enter')
+      });
+      // Wait for page to load
+      await driver.sleep(6000); 
+      await fs.appendFile(log, '\nSTEP 7: Wait for page to load', function (err){
+        if (err) throw err;
+        console.log('STEP 7: Wait for page to load')
       });
       // Assert Title for Landing Page
       await driver.getTitle().then(function(title) {
@@ -587,5 +593,5 @@ const googleStgSmoketest = async function() {
     await driver.quit()
   }
 };
-//smoketest();
-module.exports = googleStgSmoketest;
+// firefoxStgSmoketest();
+module.exports = firefoxStgSmoketest;
