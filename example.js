@@ -234,7 +234,7 @@ const smoketest = async function() {
         console.log("STEP 32: Asserted title for 'Partner Management' page is: " + title );
         fs.appendFile(log, '\nSTEP 32: Asserted title is: ' + title, function (err){
           if (err) throw err;
-        })
+        });
     }); 
 
     // Logout of Admin
@@ -277,7 +277,7 @@ const smoketest = async function() {
         console.log("STEP 37: Asserted title is: " + title );
         fs.appendFile(log, '\nSTEP 37: Asserted title is: ' + title, function (err){
           if (err) throw err;
-        })
+        });
     });
     
     // Verify Title for Active Patients page
@@ -299,7 +299,7 @@ const smoketest = async function() {
         console.log("STEP 40: Asserted title is: " + title );
         fs.appendFile(log, '\nSTEP 40: Asserted title is: ' + title, function (err){
           if (err) throw err;
-        })
+        });
     });
     
     // Verify Title for Drugs page
@@ -319,216 +319,249 @@ const smoketest = async function() {
         console.log("STEP 43: Asserted title is: " + title );
         fs.appendFile(log, '\nSTEP 43: Asserted title is: ' + title, function (err){
           if (err) throw err;
-        })
+        });
     });
-// _______________________________________________Marker________________________________________________________
 
     // Verify Title for Diseases page
     await driver.findElement(By.linkText('Diseases')).click();
-    console.log("Clicked on 'Diseases'");
+    await fs.appendFile(log, '\nSTEP 44: Clicked on Diseases', function (err){
+      if (err) throw err;
+      console.log("STEP 44: Clicked on Diseases")
+    });
     // Wait for page to load
     await driver.sleep(6000); 
-    await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
+    await fs.appendFile(log, '\nSTEP 45: Wait for page to load', function (err){
       if (err) throw err;
-      console.log('STEP #: Wait for page to load')
+      console.log('STEP 45: Wait for page to load')
     });
     await driver.getTitle().then(function(title) {
         assert.equal(title, "Pharmacy Dashboard - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
-        console.log("Asserted title is: " + title );
+        console.log("STEP 46: Asserted title is: " + title );
+        fs.appendFile(log, '\nSTEP 46: Asserted title is: ' + title, function (err){
+          if (err) throw err;
+        });
     });
+// _______________________________________________Marker________________________________________________________
 
     // Verify Title for Physicians page
      await driver.findElement(By.linkText('Physicians')).click();
-     console.log("Clicked on 'Physicians'");
+     await fs.appendFile(log, '\nSTEP 47: Clicked on Physicians', function (err){
+      if (err) throw err;
+      console.log("STEP 47: Clicked on Physicians")
+    });
     //  Wait for page to load
     await driver.sleep(6000); 
-    await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
+    await fs.appendFile(log, '\nSTEP 48: Wait for page to load', function (err){
       if (err) throw err;
-      console.log('STEP #: Wait for page to load')
+      console.log('STEP 48: Wait for page to load')
     });
      await driver.getTitle().then(function(title) {
          assert.equal(title, "Pharmacy Dashboard - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
-         console.log("Asserted title is: " + title );
+         console.log('STEP 49: Asserted title is: ' + title );
+         fs.appendFile(log, '\nSTEP 49: Asserted title is: ' + title, function (err){
+          if (err) throw err;
+        });
      });
 
     // Verify Title for Physician Groups page
      await driver.findElement(By.linkText('Physician Groups')).click();
-     console.log("Clicked on 'Physician Groups'");
+     await fs.appendFile(log, '\nSTEP 50: Clicked on Physician Groups', function (err){
+      if (err) throw err;
+      console.log("STEP 50: Clicked on Physician Groups")
+    });
     // Wait for page to load
     await driver.sleep(6000); 
-    await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
+    await fs.appendFile(log, '\nSTEP 51: Wait for page to load', function (err){
       if (err) throw err;
-      console.log('STEP #: Wait for page to load')
+      console.log('STEP 51: Wait for page to load')
     });
      await driver.getTitle().then(function(title) {
          assert.equal(title, "Pharmacy Dashboard - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
-         console.log("Asserted title is: " + title );
+         console.log("STEP 52: Asserted title is: " + title );
+         fs.appendFile(log, '\nSTEP 52: Asserted title is: ' + title, function (err){
+          if (err) throw err;
+        });
      });
 
     // Verify Title for Clinical Calendar
     await driver.findElement(By.className('fa-calendar')).click();
-    console.log("Clicked on the calendar icon");
+    await fs.appendFile(log, '\nSTEP 53: Clicked on Calendar icon', function (err){
+      if (err) throw err;
+      console.log("STEP 53: Clicked on Calendar icon")
+    });
     await driver.findElement(By.linkText('Clinical Calendar')).click();
-    console.log("Selected 'Clinical Calendar' icon");
+    await fs.appendFile(log, '\nSTEP 54: Selected Clinical Calendar icon', function (err){
+      if (err) throw err;
+      console.log("STEP 54: Selected Clinical Calendar icon")
+    });
     // Wait for page to load
     await driver.sleep(6000); 
-    await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
+    await fs.appendFile(log, '\nSTEP 55: Wait for page to load', function (err){
       if (err) throw err;
-      console.log('STEP #: Wait for page to load')
+      console.log('STEP 55: Wait for page to load')
     });
     await driver.getTitle().then(function(title) {
         assert.equal(title, "Pharmacy Calendar - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
-        console.log("Asserted title for 'Clinical Calendar' page is: " + title );
+        console.log("STEP 56: Asserted title for 'Clinical Calendar' page is: " + title );
+        fs.appendFile(log, '\nSTEP 56: Asserted title is: ' + title, function (err){
+          if (err) throw err;
+        });
     });
 
     // Verify Title for Social Calendar
     await driver.findElement(By.className('fa-calendar')).click();
-    console.log("Clicked on the calendar icon");
+    await fs.appendFile(log, '\nSTEP 57: Clicked on Calendar icon', function (err){
+      if (err) throw err;
+      console.log("STEP 57: Clicked on Calendar icon")
+    });
     await driver.findElement(By.linkText('Social Calendar')).click();
-    console.log("Selected 'Social Calendar' icon");
+    await fs.appendFile(log, '\nSTEP 58: Selected Social Calendar', function (err){
+      if (err) throw err;
+      console.log("STEP 58: Selected Social Calendar")
+    });
     // Wait for page to load
     await driver.sleep(6000); 
-    await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
+    await fs.appendFile(log, '\nSTEP 59: Wait for page to load', function (err){
       if (err) throw err;
-      console.log('STEP #: Wait for page to load')
+      console.log('STEP 59: Wait for page to load')
     });
     await driver.getTitle().then(function(title) {
         assert.equal(title, "Pharmacy Calendar - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
-        console.log("Asserted title for 'Social Calendar' page is: " + title );
+        console.log("STEP 60: Asserted title for 'Social Calendar' page is: " + title );
+        fs.appendFile(log, '\nSTEP 60: Asserted title is: ' + title, function (err){
+          if (err) throw err;
+        });
     });
 
     // Verify Title for Custom Calendar
     await driver.findElement(By.className('fa-calendar')).click();
-    console.log("Clicked on the calendar icon");
+    await fs.appendFile(log, '\nSTEP 61: Clicked on the calendar icon', function (err){
+      if (err) throw err;
+      console.log('STEP 61: Clicked on the calendar icon');
+    });
     await driver.findElement(By.linkText('Custom Calendar')).click();
-    console.log("Selected 'Custom Calendar' icon");
+    await fs.appendFile(log, '\nSTEP 62: Selected Custom Calendar', function (err){
+      if (err) throw err;
+      console.log("STEP 62: Selected Custom Calendar")
+    });
     // Wait for page to load
     await driver.sleep(6000); 
-    await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
+    await fs.appendFile(log, '\nSTEP 63: Wait for page to load', function (err){
       if (err) throw err;
-      console.log('STEP #: Wait for page to load')
+      console.log('STEP 63: Wait for page to load')
     });
     await driver.getTitle().then(function(title) {
         assert.equal(title, "Pharmacy Calendar - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
-        console.log("Asserted title for 'Social Calendar' page is: " + title );
+        console.log('STEP 64: Asserted title is: ' + title );
+        fs.appendFile(log, '\nSTEP 64: Asserted title is: ' + title, function (err){
+          if (err) throw err;
+        });
     });
 
     // Verify Title for 'Growth' Pt List
     await driver.findElement(By.linkText('Growth')).click();
-    console.log("Selected 'Growth'");
+    await fs.appendFile(log, '\nSTEP 65: Selected Growth', function (err){
+      if (err) throw err;
+      console.log("STEP 65: Selected Growth")
+    });
     // Wait for page to load
     await driver.sleep(6000); 
-    await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
+    await fs.appendFile(log, '\nSTEP 66: Wait for page to load', function (err){
       if (err) throw err;
-      console.log('STEP #: Wait for page to load')
+      console.log('STEP 66: Wait for page to load')
     });
     await driver.getTitle().then(function(title) {
         assert.equal(title, "Growth: Patients - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
-        console.log("Asserted title for 'Growth' page is: " + title );
+        console.log("STEP 67: Asserted title is: " + title );
+        fs.appendFile(log, '\nSTEP 67: Asserted title is: ' + title, function (err){
+          if (err) throw err;
+        });
     });
 
     // Verify Title for 'StarWellness' Pt List
     await driver.findElement(By.linkText('StarWellness')).click();
-    console.log("Selected 'StarWellness'");
+    await fs.appendFile(log, '\nSTEP 68: Selected StarWellness', function (err){
+      if (err) throw err;
+      console.log("STEP 68: Selected StarWellness")
+    });
     await driver.findElement(By.linkText('Synchronization')).click();
+    await fs.appendFile(log, '\nSTEP 69: Selected Synchronization', function (err){
+      if (err) throw err;
+      console.log("STEP 69: Selected Synchronization")
+    });
     // Wait for page to load
     await driver.sleep(6000); 
-    await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
+    await fs.appendFile(log, '\nSTEP 70: Wait for page to load', function (err){
       if (err) throw err;
-      console.log('STEP #: Wait for page to load')
+      console.log('STEP 70: Wait for page to load')
     });
     await driver.getTitle().then(function(title) {
         assert.equal(title, "StarWellness: Synchronization - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
-        console.log("Asserted title for 'StarWellness Synchronization' page is: " + title );
+        console.log("STEP 71: Asserted title for 'StarWellness Synchronization' page is: " + title );
+        fs.appendFile(log, '\nSTEP 71: Asserted title is: ' + title, function (err){
+          if (err) throw err;
+        });
     });
 
     // Verify Title for 'VaccineComplete' Pt List
     await driver.findElement(By.linkText('VaccineComplete')).click();
-    console.log("Selected 'VaccineComplete'");
+    await fs.appendFile(log, '\nSTEP 72: Selected VaccineComplete', function (err){
+      if (err) throw err;
+      console.log("STEP 72: Selected VaccineComplete")
+    });
     // Wait for page to load
     await driver.sleep(6000); 
-    await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
+    await fs.appendFile(log, '\nSTEP 73: Wait for page to load', function (err){
       if (err) throw err;
-      console.log('STEP #: Wait for page to load')
+      console.log('STEP 73: Wait for page to load')
     });
     await driver.getTitle().then(function(title) {
         assert.equal(title, "Vaccine Patient List - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
-        console.log("Asserted title for 'VaccineComplete' page is: " + title );
+        console.log("STEP 74: Asserted title is: " + title );
+        fs.appendFile(log, '\nSTEP 74: Asserted title is: ' + title, function (err){
+          if (err) throw err;
+        });
     });
 
     // Verify Title for 'PrescribeMedicare' Pt List
     await driver.findElement(By.linkText('PrescribeMedicare')).click();
-    console.log("Selected 'PrescribeMedicare'");
+    await fs.appendFile(log, '\nSTEP 75: Selected PrescribeMedicare', function (err){
+      if (err) throw err;
+      console.log("STEP 75: Selected PrescribeMedicare")
+    });
     /// Wait for page to load
     await driver.sleep(6000); 
-    await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
+    await fs.appendFile(log, '\nSTEP 76: Wait for page to load', function (err){
       if (err) throw err;
-      console.log('STEP #: Wait for page to load')
+      console.log('STEP 76: Wait for page to load')
     });
     await driver.getTitle().then(function(title) {
         assert.equal(title, "Medicare Patient List - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
-        console.log("Asserted title for 'PrescribeMedicare' page is: " + title );
+        console.log("STEP 77: Asserted title is: " + title );
+        fs.appendFile(log, '\nSTEP 77: Asserted title is: ' + title, function (err){
+          if (err) throw err;
+        });
     });
 
     // Verify Title for 'PrescribeCare' Pt List
     await driver.findElement(By.linkText('PrescribeCare')).click();
-    console.log("Selected 'PrescribeCare'");
+    await fs.appendFile(log, '\nSTEP 78: Selected PrescribeCare', function (err){
+      if (err) throw err;
+      console.log("STEP 78: Selected PrescribeCare")
+    });
     // Wait for page to load
     await driver.sleep(6000); 
-    await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
+    await fs.appendFile(log, '\nSTEP 79: Wait for page to load', function (err){
       if (err) throw err;
-      console.log('STEP #: Wait for page to load')
+      console.log('STEP 79: Wait for page to load')
     });
     await driver.getTitle().then(function(title) {
         assert.equal(title, "PrescribeCare: Patients with Encounters - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
-        console.log("Asserted title for 'PrescribeCare' page is: " + title );
+        console.log("STEP 80: Asserted title is: " + title );
+        fs.appendFile(log, '\nSTEP 80: Asserted title is: ' + title, function (err){
+          if (err) throw err;
+        });
     });
-
-    // Send OnDemand via gear icon 
-    // await fs.appendFile(log, '\nSTEP #: Clicked on the gear icon', function (err){
-    //   if (err) throw err;
-    //   console.log('STEP #: Clicked on the gear icon')
-    // });
-    // await driver.findElement(By.linkText('OnDemand')).click();
-    // console.log("Selected 'OnDemand' √");
-    // Wait for page to load
-    // await driver.sleep(6000); 
-    // await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
-    //   if (err) throw err;
-    //   console.log('STEP #: Wait for page to load')
-    // });
-    // await driver.findElement(By.id('phone_numbers')).sendKeys('9494158370');
-    // console.log("Entered a phone number √");
-    /// Wait for page to load
-    // await driver.sleep(6000); 
-    // await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
-    //   if (err) throw err;
-    //   console.log('STEP #: Wait for page to load')
-    // });
-    // await driver.findElement(By.css('.btn-pw')).click();
-    // console.log("Clicked on 'Next' button");
-    /// Wait for page to load
-    // await driver.sleep(6000); 
-    // await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
-    //   if (err) throw err;
-    //   console.log('STEP #: Wait for page to load')
-    // });
-    // await driver.findElement(By.css('.btn-select-campaign')).click();
-    // console.log("Clicked on 'Select' button");
-    // Wait for page to load
-    // await driver.sleep(6000); 
-    // await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
-    //   if (err) throw err;
-    //   console.log('STEP #: Wait for page to load')
-    // });
-    // await driver.findElement(By.css('.fright')).click();
-    // console.log("Clicked on 'Send Message' button");
-    // Wait for page to load
-    // await driver.sleep(6000); 
-    // await fs.appendFile(log, '\nSTEP #: Wait for page to load', function (err){
-    //   if (err) throw err;
-    //   console.log('STEP #: Wait for page to load')
-    // });
 
   }
   catch(err) {
