@@ -7,7 +7,7 @@ let date = new Date();
 const log = '../reports/tests.txt';
 
 const smoketest = async function() {
-  fs.appendFile(log, '\n\n_____Smoke Test Conducted on: ' + date +'_____', function (err){
+  fs.appendFile(log, '\n\n_____Staging Smoke Test Conducted on: ' + date +'_____', function (err){
       if (err) throw err;
       console.log('Test Conducted on: '+ date)
   });
