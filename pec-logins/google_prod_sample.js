@@ -13,13 +13,7 @@ let assert = require("chai").assert;
         console.log("2. Entered internal username √");
         await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.sample_password, Key.RETURN);
         console.log("3. Entered password and clicked 'Enter': √");
-        await driver.getTitle().then(function(title) {
-            assert.equal(title, "Pharmacy Dashboard - Pharmacy Portal - Account: 86362 - NPI: 1234934850 - NCPDP: 8888888 - SampUser");
-            console.log("Asserted title is: " + title );
-        });
-        await driver.findElement(By.className('fa-calendar')).click();
-        console.log("4. Clicked on the calendar icon √");
-        await driver.findElement(By.linkText('Clinical Calendar')).click();
+        await driver.findElement(By.className(modal-content))
     } 
     catch(err) {
         console.log(err);
