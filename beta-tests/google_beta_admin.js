@@ -3,13 +3,13 @@ let credentials = require('../credentials.js');
 let environment = require('../environment.js');
 let assert = require("chai").assert;
 
-(async function AdminTest() {
+(async function betaAdminTest() {
   let driver = await new Builder().forBrowser('chrome').build();
     try {
         // Login to Admin User and Verify Title
         console.log("Starting Admin Test in Chrome");
-        await driver.get(environment.prod);
-        console.log("Went to PROD");
+        await driver.get(environment.beta);
+        console.log("Went to Beta");
         await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.internal_user);
         console.log("Entered internal username");
         await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.internal_password, Key.RETURN);
