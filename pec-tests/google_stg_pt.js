@@ -189,13 +189,23 @@ let assert = require("chai").assert;
 
         // Click on PrescribeCare tab
         // Commenting out for now because it's selecting the PrescribeCare from the pt list
-        await driver.findElement(By.linkText('PrescribeCare')).click();
-        console.log("Clicked on PrescribeCare tab");
-        await driver.sleep(6000); // wait for page to load
+        // await driver.findElement(By.linkText('PrescribeCare')).click();
+        // console.log("Clicked on PrescribeCare tab");
+        // await driver.sleep(6000);
 
         // Click on Care Campaigns tab
         await driver.findElement(By.linkText('Care Campaigns')).click();
         console.log("Clicked on Care Campaigns tab");
+        await driver.sleep(6000); // wait for page to load
+
+        // Click on Communications tab
+        await driver.findElement(By.linkText('Communications')).click();
+        console.log("Clicked on Communications tab");
+        await driver.sleep(6000); // wait for page to load
+
+        // Click on Log tab
+        await driver.findElement(By.linkText('Log')).click();
+        console.log("Clicked on Log tab");
         await driver.sleep(6000); // wait for page to load
 
     }
