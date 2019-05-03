@@ -151,7 +151,7 @@ let assert = require("chai").assert;
         console.log("Clicked on the search icon");
         await driver.findElement(By.className('o-kd-autocomplete-input o-search-icon c-kd__input u-input-chicklet-none karmadata__o-kd-autocomplete-input___30sJ9 karmadata__c-kd__input___1_1Yx karmadata__u-input-chicklet-none___15ugP')).sendKeys('Allen');
         console.log("Searched for Allen");
-        await driver.sleep(6000); // Wait for page to load
+        await driver.sleep(10000); // Wait for page to load
         await driver.findElement(By.className('o-options__option karmadata__o-options__option___2aNDg')).click();
         console.log("Selected on Carl Allen");
         await driver.sleep(6000); // Wait for page to load
@@ -168,7 +168,7 @@ let assert = require("chai").assert;
         await driver.findElement(By.linkText('Medication Allergies')).click();
         console.log("Clicked on Medication Allergies");
         await driver.sleep(6000); // wait for page to load
-        
+
         await driver.findElement(By.linkText('Medication History')).click();
         console.log("Clicked on Medication History");
         await driver.sleep(6000); // wait for page to load
@@ -194,9 +194,9 @@ let assert = require("chai").assert;
         // await driver.sleep(6000);
 
         // Click on Care Campaigns tab
-        await driver.findElement(By.linkText('Care Campaigns')).click();
-        console.log("Clicked on Care Campaigns tab");
-        await driver.sleep(6000); // wait for page to load
+        // await driver.findElement(By.linkText('Care Campaigns')).click();
+        // console.log("Clicked on Care Campaigns tab");
+        // await driver.sleep(6000); // wait for page to load
 
         // Click on Communications tab
         await driver.findElement(By.linkText('Communications')).click();
@@ -206,8 +206,7 @@ let assert = require("chai").assert;
         // Click on Log tab
         await driver.findElement(By.linkText('Log')).click();
         console.log("Clicked on Log tab");
-        await driver.sleep(6000); // wait for page to load
-
+        await driver.sleep(30000); // wait for page to load
     }
     catch(err) {
         console.log(err);

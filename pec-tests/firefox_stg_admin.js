@@ -14,6 +14,7 @@ let assert = require("chai").assert;
         console.log("Entered internal username");
         await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.internal_password, Key.RETURN);
         console.log("Entered password and clicked 'Enter'");
+        await driver.sleep(6000);
         await driver.getTitle().then(function (title) {
             assert.equal(title, "Pharmacy Group Dashboard - Pharmacy Portal - mosgood");
             console.log("Asserted title is: " + title);
@@ -24,6 +25,7 @@ let assert = require("chai").assert;
         console.log("Clicked on the gear icon");
         await driver.findElement(By.linkText('Message Management')).click();
         console.log("Selected 'Message Management'");
+        await driver.sleep(3000); // Wait for page to load
         await driver.findElement(By.className('k-pager-info k-label'));
         await driver.sleep(6000); // Wait for page to load
         console.log("Waited a couple seconds");
@@ -308,7 +310,7 @@ let assert = require("chai").assert;
         // Click on Log tab
         await driver.findElement(By.linkText('Log')).click();
         console.log("Clicked on Log tab");
-        await driver.sleep(6000); // wait for page to load
+        await driver.sleep(30000); // wait for page to load
 
         // Send Custom OnDemand SMS via gear icon 
         await driver.sleep(6000); // Wait for page to load

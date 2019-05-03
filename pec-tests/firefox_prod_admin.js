@@ -308,7 +308,7 @@ let assert = require("chai").assert;
         // Click on Log tab
         await driver.findElement(By.linkText('Log')).click();
         console.log("Clicked on Log tab");
-        await driver.sleep(6000); // wait for page to load
+        await driver.sleep(30000); // wait for page to load
 
         // Send Custom OnDemand SMS via gear icon 
         await driver.sleep(6000); // Wait for page to load
