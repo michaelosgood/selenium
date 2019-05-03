@@ -142,18 +142,18 @@ let assert = require("chai").assert;
             console.log("Asserted title is: " + title);
         });
 
-        // Verify Title for Diseases page
-        await driver.findElement(By.linkText('Diseases')).click();
-        console.log("Clicked on 'Diseases'");
+        // Verify Title for Physicians page
+        await driver.findElement(By.linkText('Physicians')).click();
+        console.log("Clicked on 'Physicians'");
         await driver.sleep(6000); // Wait for page to load
         await driver.getTitle().then(function (title) {
             assert.equal(title, "Pharmacy Dashboard - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
             console.log("Asserted title is: " + title);
         });
 
-        // Verify Title for Physicians page
-        await driver.findElement(By.linkText('Physicians')).click();
-        console.log("Clicked on 'Physicians'");
+        // Verify Title for Diseases page
+        await driver.findElement(By.linkText('Diseases')).click();
+        console.log("Clicked on 'Diseases'");
         await driver.sleep(6000); // Wait for page to load
         await driver.getTitle().then(function (title) {
             assert.equal(title, "Pharmacy Dashboard - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
@@ -296,9 +296,9 @@ let assert = require("chai").assert;
         // await driver.sleep(6000);
 
         // Click on Care Campaigns tab
-        await driver.findElement(By.linkText('Care Campaigns')).click();
-        console.log("Clicked on Care Campaigns tab");
-        await driver.sleep(6000); // wait for page to load
+        // await driver.findElement(By.linkText('Care Campaigns')).click();
+        // console.log("Clicked on Care Campaigns tab");
+        // await driver.sleep(6000); // wait for page to load
 
         // Click on Communications tab
         await driver.findElement(By.linkText('Communications')).click();
@@ -313,12 +313,12 @@ let assert = require("chai").assert;
         // Send Custom OnDemand SMS via gear icon 
         await driver.sleep(6000); // Wait for page to load
         await driver.findElement(By.id('pwTopGearIcon')).click();
-        console.log("Clicked on the gear icon: √");
+        console.log("Clicked on the gear icon");
         await driver.findElement(By.linkText('OnDemand')).click();
-        console.log("Selected 'OnDemand' √");
+        console.log("Selected OnDemand");
         await driver.sleep(3000); // Wait for page to load
         await driver.findElement(By.id('phone_numbers')).sendKeys('9494158370');
-        console.log("Entered a phone number √");
+        console.log("Entered a phone number");
         await driver.sleep(3000); // Wait for page to load
         await driver.findElement(By.css('.btn-pw')).click();
         console.log("Clicked on 'Next' button");
