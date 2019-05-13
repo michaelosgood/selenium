@@ -8,7 +8,6 @@ let environment = require('../environment.js');
         console.log("Initiating H3N2 Test in Chrome");
         await driver.get(environment.stg);
         console.log("Went to Staging");
-        await driver.manage().window().maximize();
         await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.customer_user);
         console.log("Entered username");
         await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.customer_password, Key.RETURN);
