@@ -29,6 +29,6 @@ let assert = require("chai").assert;
         console.log(err);
     }
     finally {
-        cconsole.log("User has been taken to 'Login As'");
+        console.log("User has been taken to 'Login As'");
     }
 })();
