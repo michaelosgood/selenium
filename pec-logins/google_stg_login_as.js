@@ -3,7 +3,7 @@ let credentials = require('../credentials.js');
 let environment = require('../environment.js');
 let assert = require("chai").assert;
 
-(async function Loginas() {
+(async function loginAs() {
   let driver = await new Builder().forBrowser('chrome').build();
     try {
         console.log("Initiating Login Test in Chrome");
