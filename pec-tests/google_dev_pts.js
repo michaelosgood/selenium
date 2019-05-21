@@ -8,8 +8,8 @@ let assert = require("chai").assert;
     try {
         // Login to User and Verify Title
         console.log("Starting Patient Test in Chrome");
-        await driver.get(environment.beta);
-        console.log("Went to Beta");
+        await driver.get(environment.dev);
+        console.log("Went to Development");
 
         // Login to H3N2 and Verify Title
         await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.customer_user);
