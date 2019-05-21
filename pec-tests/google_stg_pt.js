@@ -6,7 +6,7 @@ let assert = require("chai").assert;
 (async function ptProfileTest() {
   let driver = await new Builder().forBrowser('chrome').build();
     try {
-        // Login to Admin User and Verify Title
+        // Login to User and Verify Title
         console.log("Starting Patient Test in Chrome");
         await driver.get(environment.stg);
         console.log("Went to Staging ");

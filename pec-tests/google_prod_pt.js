@@ -6,8 +6,8 @@ let assert = require("chai").assert;
 (async function ptProfileTest() {
   let driver = await new Builder().forBrowser('chrome').build();
     try {
-        // Login to Admin User and Verify Title
-        console.log("Starting Admin Test in Chrome");
+        // Login to User and Verify Title
+        console.log("Starting Patient Test in Chrome");
         await driver.get(environment.prod);
         console.log("Went to Production");
 
@@ -22,6 +22,33 @@ let assert = require("chai").assert;
             console.log("Asserted title is: " + title );
         });
         
+        //  Verify Title for Scheduled tab
+        await driver.findElement(By.partialLinkText('Scheduled')).click();
+        console.log("Clicked on 'Scheduled' tab");
+        await driver.sleep(6000); // Wait for page to load
+        await driver.getTitle().then(function(title) {
+            assert.equal(title, "Pharmacy Dashboard - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
+            console.log("Asserted title is: " + title );
+        });
+
+        //  Verify Title for In Progress tab
+        await driver.findElement(By.partialLinkText('In Progress')).click();
+        console.log("Clicked on 'In Progress' tab");
+        await driver.sleep(6000); // Wait for page to load
+        await driver.getTitle().then(function(title) {
+            assert.equal(title, "Pharmacy Dashboard - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
+            console.log("Asserted title is: " + title );
+        });
+
+        //  Verify Title for In Progress tab
+        await driver.findElement(By.partialLinkText('Not Connected')).click();
+        console.log("Clicked on 'Not Connected' tab");
+        await driver.sleep(6000); // Wait for page to load
+        await driver.getTitle().then(function(title) {
+            assert.equal(title, "Pharmacy Dashboard - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
+            console.log("Asserted title is: " + title );
+        });
+
         // Verify Title for Active Patients page
         await driver.findElement(By.linkText('Active Patients')).click();
         console.log("Clicked on 'Active Patients'");
@@ -40,6 +67,15 @@ let assert = require("chai").assert;
             console.log("Asserted title is: " + title );
         });
 
+        // Verify Title for Physicians page
+        await driver.findElement(By.linkText('Physicians')).click();
+        console.log("Clicked on 'Physicians'");
+        await driver.sleep(6000); // Wait for page to load
+        await driver.getTitle().then(function(title) {
+            assert.equal(title, "Pharmacy Dashboard - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
+            console.log("Asserted title is: " + title );
+        });
+
         // Verify Title for Diseases page
         await driver.findElement(By.linkText('Diseases')).click();
         console.log("Clicked on 'Diseases'");
@@ -49,23 +85,14 @@ let assert = require("chai").assert;
             console.log("Asserted title is: " + title );
         });
 
-         // Verify Title for Physicians page
-         await driver.findElement(By.linkText('Physicians')).click();
-         console.log("Clicked on 'Physicians'");
-         await driver.sleep(6000); // Wait for page to load
-         await driver.getTitle().then(function(title) {
-             assert.equal(title, "Pharmacy Dashboard - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
-             console.log("Asserted title is: " + title );
-         });
-
-         // Verify Title for Physician Groups page
-         await driver.findElement(By.linkText('Physician Groups')).click();
-         console.log("Clicked on 'Physician Groups'");
-         await driver.sleep(6000); // Wait for page to load
-         await driver.getTitle().then(function(title) {
-             assert.equal(title, "Pharmacy Dashboard - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
-             console.log("Asserted title is: " + title );
-         });
+        // Verify Title for Physician Groups page
+        await driver.findElement(By.linkText('Physician Groups')).click();
+        console.log("Clicked on 'Physician Groups'");
+        await driver.sleep(6000); // Wait for page to load
+        await driver.getTitle().then(function (title) {
+            assert.equal(title, "Pharmacy Dashboard - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
+            console.log("Asserted title is: " + title);
+        });
 
         // Verify Title for Clinical Calendar
         await driver.findElement(By.className('fa-calendar')).click();
