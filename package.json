@@ -19,10 +19,10 @@
   "dependencies": {
     "chai": "^4.2.0",
     "chai-webdriver": "^1.2.0",
-    "chromedriver": "^2.45.0",
-    "geckodriver": "^1.14.1",
+    "chromedriver": "^2.46.0",
+    "geckodriver": "^1.16.2",
     "mocha": "^5.2.0",
-    "npm": "^6.7.0",
+    "npm": "^6.9.0",
     "selenium-webdriver": "^4.0.0-alpha.1"
   }
 }

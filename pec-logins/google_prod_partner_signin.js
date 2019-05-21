@@ -9,6 +9,7 @@ let environment = require('../environment.js');
         await driver.manage().window().maximize();
         await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.partner_user);
         await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.partner_password, Key.RETURN);
+        await driver.sleep(6000); // Wait for page to load
         await driver.findElement(By.id('pwTopGearIcon')).click();
     } 
     catch(err) {
