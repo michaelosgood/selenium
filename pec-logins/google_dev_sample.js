@@ -13,7 +13,9 @@ let assert = require("chai").assert;
         console.log("Entered internal username");
         await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.sample_password, Key.RETURN);
         console.log("Entered password and clicked 'Enter'");
-        await driver.findElement(By.className(modal-content))
+        await driver.sleep(10000);
+        //click on close button in merck modal
+        await driver.findElement(By.xpath("//button[@class = 'btn btn-default']")).click();
     } 
     catch(err) {
         console.log(err);
