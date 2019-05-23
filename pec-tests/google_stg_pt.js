@@ -40,7 +40,7 @@ let assert = require("chai").assert;
             console.log("Asserted title is: " + title );
         });
 
-        //  Verify Title for In Progress tab
+        //  Verify Title for Not Connected tab
         await driver.findElement(By.partialLinkText('Not Connected')).click();
         console.log("Clicked on 'Not Connected' tab");
         await driver.sleep(6000); // Wait for page to load

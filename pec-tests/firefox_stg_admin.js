@@ -9,7 +9,7 @@ let assert = require("chai").assert;
         // Login to Admin User and Verify Title
         console.log("Starting Admin Test in Firefox");
         await driver.get(environment.stg);
-        console.log("Went to Staging ");
+        console.log("Went to Staging");
         await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.internal_user);
         console.log("Entered internal username");
         await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.internal_password, Key.RETURN);
@@ -26,9 +26,7 @@ let assert = require("chai").assert;
         console.log("Clicked on the gear icon");
         await driver.findElement(By.linkText('Message Management')).click();
         console.log("Selected 'Message Management'");
-        await driver.sleep(3000); // Wait for page to load
-        await driver.findElement(By.className('k-pager-info k-label'));
-        await driver.sleep(6000); // Wait for page to load
+        await driver.sleep(9000); // Wait for page to load
         console.log("Waited a couple seconds");
         await driver.getTitle().then(function (title) {
             assert.equal(title, "Message Management - Pharmacy Portal - mosgood");
@@ -39,7 +37,6 @@ let assert = require("chai").assert;
         console.log("Clicked on the gear icon");
         await driver.findElement(By.linkText('Campaign Management')).click();
         console.log("Selected 'Campaign Managment'");
-        await driver.findElement(By.className('k-pager-info k-label'));
         await driver.sleep(6000); // Wait for page to load
         console.log("Waited a couple seconds");
         await driver.getTitle().then(function (title) {
@@ -52,7 +49,6 @@ let assert = require("chai").assert;
         console.log("Clicked on the gear icon");
         await driver.findElement(By.linkText('Login As')).click();
         console.log("Selected 'Login As'");
-        await driver.findElement(By.className('k-pager-info k-label'));
         await driver.sleep(6000); // Wait for page to load
         console.log("Waited a couple seconds");
         await driver.getTitle().then(function (title) {
@@ -64,8 +60,7 @@ let assert = require("chai").assert;
         await driver.findElement(By.id('pwTopGearIcon')).click();
         console.log("Clicked on the gear icon");
         await driver.findElement(By.linkText('Template Management')).click();
-        console.log("Selected 'Template Management' √");
-        await driver.findElement(By.className('k-pager-info k-label'));
+        console.log("Selected 'Template Management'");
         await driver.sleep(6000); // Wait for page to load
         console.log("Waited a couple seconds");
         await driver.getTitle().then(function (title) {
@@ -77,7 +72,6 @@ let assert = require("chai").assert;
         console.log("Clicked on the gear icon");
         await driver.findElement(By.linkText('User Management')).click();
         console.log("Selected 'User Management'");
-        await driver.findElement(By.className('k-pager-info k-label'));
         await driver.sleep(6000); // Wait for page to load
         console.log("Waited a couple seconds");
         await driver.getTitle().then(function (title) {
@@ -89,7 +83,6 @@ let assert = require("chai").assert;
         console.log("Clicked on the gear icon");
         await driver.findElement(By.linkText('Account Management')).click();
         console.log("Selected 'Account Management'");
-        await driver.findElement(By.className('k-pager-info k-label'));
         await driver.sleep(6000); // Wait for page to load
         console.log("Waited a couple seconds");
         await driver.getTitle().then(function (title) {
@@ -102,7 +95,6 @@ let assert = require("chai").assert;
         console.log("Clicked on the gear icon");
         await driver.findElement(By.linkText('Partner Management')).click();
         console.log("Selected 'Partner Management'");
-        await driver.findElement(By.className('k-pager-info k-label'));
         await driver.sleep(6000); // Wait for page to load
         console.log("Waited a couple seconds");
         await driver.getTitle().then(function (title) {
@@ -121,6 +113,33 @@ let assert = require("chai").assert;
         console.log("Entered username");
         await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.customer_password, Key.RETURN);
         console.log("Entered password and clicked 'Enter'");
+        await driver.sleep(6000); // Wait for page to load
+        await driver.getTitle().then(function (title) {
+            assert.equal(title, "Pharmacy Dashboard - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
+            console.log("Asserted title is: " + title);
+        });
+
+        //  Verify Title for Scheduled tab
+        await driver.findElement(By.partialLinkText('Scheduled')).click();
+        console.log("Clicked on 'Scheduled' tab");
+        await driver.sleep(6000); // Wait for page to load
+        await driver.getTitle().then(function (title) {
+            assert.equal(title, "Pharmacy Dashboard - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
+            console.log("Asserted title is: " + title);
+        });
+
+        //  Verify Title for In Progress tab
+        await driver.findElement(By.partialLinkText('In Progress')).click();
+        console.log("Clicked on 'In Progress' tab");
+        await driver.sleep(6000); // Wait for page to load
+        await driver.getTitle().then(function (title) {
+            assert.equal(title, "Pharmacy Dashboard - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
+            console.log("Asserted title is: " + title);
+        });
+
+        //  Verify Title for Not Connected tab
+        await driver.findElement(By.partialLinkText('Not Connected')).click();
+        console.log("Clicked on 'Not Connected' tab");
         await driver.sleep(6000); // Wait for page to load
         await driver.getTitle().then(function (title) {
             assert.equal(title, "Pharmacy Dashboard - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
