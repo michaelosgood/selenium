@@ -14,13 +14,14 @@ let assert = require("chai").assert;
         console.log("Entered internal username");
         await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.internal_password, Key.RETURN);
         console.log("Entered password and clicked 'Enter'");
-        await driver.sleep(6000);
+        await driver.sleep(10000);
         await driver.getTitle().then(function (title) {
             assert.equal(title, "Pharmacy Group Dashboard - Pharmacy Portal - mosgood");
             console.log("Asserted title is: " + title);
         });
 
         // Message Management Verify Title
+        await driver.sleep(6000);
         await driver.findElement(By.id('pwTopGearIcon')).click();
         console.log("Clicked on the gear icon");
         await driver.findElement(By.linkText('Message Management')).click();
