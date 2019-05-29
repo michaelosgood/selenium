@@ -6,12 +6,12 @@ let assert = require("chai").assert;
 (async function ptProfileTest() {
   let driver = await new Builder().forBrowser('chrome').build();
     try {
-        // Login to User and Verify Title
+        // Login to User
         console.log("Starting Patient Test in Chrome");
         await driver.get(environment.stg);
         console.log("Went to Staging ");
 
-        // Login to H3N2 and Verify Title
+        // Verify Title
         await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.customer_user);
         console.log("Entered username");
         await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.customer_password, Key.RETURN);
@@ -215,10 +215,9 @@ let assert = require("chai").assert;
         await driver.sleep(6000); // wait for page to load
 
         // Click on PrescribeCare tab
-        // Commenting out for now because it's selecting the PrescribeCare from the pt list
-        // await driver.findElement(By.linkText('PrescribeCare')).click();
-        // console.log("Clicked on PrescribeCare tab");
-        // await driver.sleep(6000);
+        await driver.findElement(By.xpath("//a[@href = '/Patient/PrescribeCare?patientId=AB6002230683436188168042F8DF9D88&timer=true']")).click();
+        console.log("Clicked on PrescribeCare tab");
+        await driver.sleep(6000);
 
         // Click on Care Campaigns tab
         await driver.findElement(By.linkText('Care Campaigns')).click();

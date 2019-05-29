@@ -312,10 +312,9 @@ let assert = require("chai").assert;
         await driver.sleep(6000); // wait for page to load
 
         // Click on PrescribeCare tab
-        // Commenting out for now because it's selecting the PrescribeCare from the pt list
-        // await driver.findElement(By.linkText('PrescribeCare')).click();
-        // console.log("Clicked on PrescribeCare tab");
-        // await driver.sleep(6000);
+        await driver.findElement(By.xpath("//a[@href = '/Patient/PrescribeCare?patientId=AB6002230683436188168042F8DF9D88&timer=true']")).click();
+        console.log("Clicked on PrescribeCare tab");
+        await driver.sleep(6000);
 
         // Click on Care Campaigns tab
         await driver.findElement(By.linkText('Care Campaigns')).click();
