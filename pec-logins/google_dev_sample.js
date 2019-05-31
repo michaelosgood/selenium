@@ -16,6 +16,7 @@ let assert = require("chai").assert;
         await driver.sleep(10000);
         //click on close button in merck modal
         await driver.findElement(By.xpath("//button[@class = 'btn btn-default']")).click();
+        console.log("Closed out Merck Modal");
     } 
     catch(err) {
         console.log(err);
