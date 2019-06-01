@@ -7,8 +7,8 @@ let assert = require("chai").assert;
   let driver = await new Builder().forBrowser('chrome').build();
     try {
         console.log("Initiating Login Test in Chrome");
-        await driver.get(environment.prod);
-        console.log("Went to Production");
+        await driver.get(environment.stg);
+        console.log("Went to Staging");
         await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.sample_user);
         console.log("Entered internal username");
         await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.sample_password, Key.RETURN);
@@ -22,6 +22,6 @@ let assert = require("chai").assert;
         console.log(err);
     }
     finally {
-        console.log("Sample user signed into Production with Chrome");
+        console.log("Sample user signed into Staging with Chrome");
     }
 })();
