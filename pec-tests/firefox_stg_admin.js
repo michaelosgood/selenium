@@ -120,6 +120,7 @@ let assert = require("chai").assert;
         });
 
         //  Verify Title for Scheduled tab
+        await driver.sleep(6000); // Wait for page to load
         await driver.findElement(By.partialLinkText('Scheduled')).click();
         console.log("Clicked on 'Scheduled' tab");
         await driver.sleep(6000); // Wait for page to load
