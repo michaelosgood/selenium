@@ -2,15 +2,15 @@ const {Builder, By, Key, until} = require('selenium-webdriver');
 let credentials = require('../credentials.js');
 let environment = require('../environment.js');
 
-(async function betaHeb229SignIn() {
+(async function betaHeb178SignIn() {
   let driver = await new Builder().forBrowser('chrome').build();
     try {
         console.log("Initiating Login Test in Chrome");
         await driver.get(environment.beta);
         console.log("Went to BETA");
-        await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.betaHeb229_user);
+        await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.betaHeb178_user);
         console.log("Entered username");
-        await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.betaHeb229_password, Key.RETURN);
+        await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.betaHeb178_password, Key.RETURN);
         console.log("Entered password and clicked 'Enter'");
     } 
     catch(err) {
