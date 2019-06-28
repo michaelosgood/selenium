@@ -17,6 +17,6 @@ let environment = require('../environment.js');
         console.log(err);
     }
     finally {
-        console.log("Beta user signed in with Chrome");
+        console.log("Eden user signed in with Chrome");
     }
 })();
