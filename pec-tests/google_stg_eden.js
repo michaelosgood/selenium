@@ -2,6 +2,7 @@ const {Builder, By, Key, actions, until} = require('selenium-webdriver');
 let credentials = require('../credentials.js');
 let environment = require('../environment.js');
 let assert = require("chai").assert;
+let date = new Date();
 
 (async function ptProfileTest() {
   let driver = await new Builder().forBrowser('chrome').build();
@@ -219,7 +220,7 @@ let assert = require("chai").assert;
         await driver.sleep(6000); // wait for page to load
 
         // Click on PrescribeCare tab
-        await driver.findElement(By.xpath("//a[@href = '/Patient/PrescribeCare?patientId=AB6002230683436188168042F8DF9D88&timer=true']")).click();
+        await driver.findElement(By.xpath("//a[@href = '/Patient/PrescribeCare?patientId=EP101868887&timer=true']")).click();
         console.log("Clicked on PrescribeCare tab");
         await driver.sleep(6000);
 
