@@ -8,7 +8,7 @@ let date = new Date();
   let driver = await new Builder().forBrowser('chrome').build();
     try {
         // Login to User
-        console.log("Starting Eden Client Test in Chrome");
+        console.log("Starting Eden Client Test in Chrome on " + date);
         await driver.get(environment.stg);
         console.log("Went to Staging ");
 
@@ -243,7 +243,7 @@ let date = new Date();
         console.log(err);
     }
     finally {
-        console.log("Test Completed!!");
+        console.log("Test Completed on " + date);
         await driver.quit()
     }
 })();
