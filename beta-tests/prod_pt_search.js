@@ -22,6 +22,7 @@ let assert = require("chai").assert;
             console.log("Asserted title is: " + title );
         });
         
+/* ------------ Uncommented out to 
         //  Verify Title for Scheduled tab
         await driver.findElement(By.partialLinkText('Scheduled')).click();
         console.log("Clicked on 'Scheduled' tab");
@@ -172,6 +173,7 @@ let assert = require("chai").assert;
             assert.equal(title, "PrescribeCare: Patients with Encounters - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
             console.log("Asserted title for 'PrescribeCare' page is: " + title );
         });
+-------------*/
 
         // Use magnifying glass to search for 'Allen' and click on name
         await driver.findElement(By.className('fa-search')).click();
