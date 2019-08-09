@@ -8,9 +8,9 @@ let environment = require('../environment.js');
         console.log("Initiating Login Test in Chrome");
         await driver.get(environment.beta);
         console.log("Went to BETA");
-        await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.betaChain_user);
+        await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.chainPartner_user);
         console.log("Entered username");
-        await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.betaChain_password, Key.RETURN);
+        await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.chainPartner_password, Key.RETURN);
         console.log("Entered password and clicked 'Enter'");
     } 
     catch(err) {
