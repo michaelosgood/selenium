@@ -16,13 +16,13 @@ let assert = require("chai").assert;
         await driver.sleep(6000); // Wait for page to load
         await driver.findElement(By.id('pwTopGearIcon')).click();
         console.log("Clicked on the gear icon");
-        await driver.findElement(By.linkText('User Management')).click();
-        console.log("Selected 'User Management'");
+        await driver.findElement(By.linkText('Campaign Management')).click();
+        console.log("Selected 'Campaign Management'");
         await driver.sleep(6000); // Wait for page to load
         console.log("Waited a couple seconds");
         await driver.getTitle().then(function (title) {
-            assert.equal(title, "User Management - Pharmacy Portal - mosgood");
-            console.log("Asserted title for 'User Management' page is: " + title);
+            assert.equal(title, "Campaign Management - Pharmacy Portal - mosgood");
+            console.log("Asserted title for 'Campaign Management' page is: " + title);
         });
     } 
     catch(err) {
