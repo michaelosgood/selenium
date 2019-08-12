@@ -274,11 +274,14 @@ let assert = require("chai").assert;
         // Use magnifying glass to search for 'Allen' and click on name
         await driver.findElement(By.className('fa-search')).click();
         console.log("Clicked on the search icon");
-        await driver.findElement(By.className('o-kd-autocomplete-input o-search-icon c-kd__input u-input-chicklet-none karmadata__o-kd-autocomplete-input___30sJ9 karmadata__c-kd__input___1_1Yx karmadata__u-input-chicklet-none___15ugP')).sendKeys('Allen');
+        await driver.findElement(By.className('input flex mb0 field SearchBar_searchInput_3xheg')).sendKeys('Allen');
         console.log("Searched for Allen");
+        await driver.findElement(By.className('input flex mb0 field SearchBar_searchInput_3xheg')).click();
+        await driver.sleep(3000); // Wait for page to load
+        await driver.findElement(By.className('pc-btn SearchBar_searchButton_1DHpv')).click();
+        console.log("Clicked on 'Search' button");
         await driver.sleep(6000); // Wait for page to load
-        await driver.findElement(By.className('o-options__option karmadata__o-options__option___2aNDg')).click();
-        console.log("Selected on Carl Allen");
+        await driver.findElement(By.className('SearchBar_resultItem__bolder_1jHZM')).click();
         await driver.sleep(6000); // Wait for page to load
 
         // Click on Medication tab and respective sub-tabs
