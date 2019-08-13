@@ -105,7 +105,7 @@ let assert = require("chai").assert;
         // Logout of Admin
         await driver.findElement(By.id('pwTopGearIcon')).click();
         console.log("Clicked on the gear icon");
-        await driver.findElement(By.linkText('Logout')).click();
+        await driver.findElement(By.className('btn-link')).click();
         console.log("Selected 'Logout'");
 
         // Login to H3N2 and Verify Title
