@@ -179,7 +179,6 @@ let assert = require("chai").assert;
         console.log("Clicked on the search icon");
         await driver.findElement(By.className('input flex mb0 field SearchBar_searchInput_3xheg')).sendKeys('Allen');
         console.log("Searched for Allen");
-        await driver.sleep(3000); // Wait for page to load
         await driver.findElement(By.className('input flex mb0 field SearchBar_searchInput_3xheg')).click();
         await driver.sleep(6000); // Wait for page to load
         await driver.findElement(By.className('pc-btn SearchBar_searchButton_1DHpv')).click();
@@ -237,7 +236,7 @@ let assert = require("chai").assert;
         // Click on Log tab
         await driver.findElement(By.linkText('Log')).click();
         console.log("Clicked on Log tab");
-        await driver.sleep(40000); // wait for page to load
+        await driver.sleep(60000); // wait for page to load
     }
     catch(err) {
         console.log(err);
