@@ -109,6 +109,7 @@ let assert = require("chai").assert;
         console.log("Selected 'Logout'");;
 
         // Login to H3N2 and Verify Title
+        await driver.sleep(6000); // Wait for page to load
         await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.customer_user);
         console.log("Entered username");
         await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.customer_password, Key.RETURN);
