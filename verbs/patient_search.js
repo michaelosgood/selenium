@@ -2,10 +2,11 @@ const {Builder, By, Key, actions, until} = require('selenium-webdriver');
 let credentials = require('../credentials.js');
 let environment = require('../environment.js');
 let assert = require("chai").assert;
+let driver;
 
 const patientSearch = async function() {
     try {
-        let driver = await new Builder().forBrowser('chrome').build();
+         driver = await new Builder().forBrowser('chrome').build();
         // Use magnifying glass to search for 'Allen' and click on name
         await driver.findElement(By.className('fa-search')).click();
         console.log("Clicked on the search icon");
