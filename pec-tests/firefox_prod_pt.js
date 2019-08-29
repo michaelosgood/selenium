@@ -187,26 +187,32 @@ let assert = require("chai").assert;
         await driver.findElement(By.className('SearchBar_resultItem__bolder_1jHZM')).click();
         await driver.sleep(6000); // Wait for page to load
 
+        // Overview tab and respective sub-tabs
+        await driver.sleep(8000); // wait for page to load
+        await driver.findElement(By.linkText('Programs')).click();
+        console.log("Clicked on Programs sub-tab");
+        await driver.sleep(6000); // wait for page to load
+
         // Click on Medication tab and respective sub-tabs
-        // await driver.findElement(By.linkText('Medications')).click();
-        // console.log("Clicked on Medication tab");
-        // await driver.sleep(6000); // wait for page to load
+        await driver.findElement(By.linkText('Medications')).click();
+        console.log("Clicked on Medication tab");
+        await driver.sleep(6000); // wait for page to load
 
-        // await driver.findElement(By.linkText('Patient-Reported Medication')).click();
-        // console.log("Clicked on Patient-Reported Medication");
-        // await driver.sleep(6000); // wait for page to load
+        await driver.findElement(By.linkText('Patient-Reported Medication')).click();
+        console.log("Clicked on Patient-Reported Medication");
+        await driver.sleep(6000); // wait for page to load
 
-        // await driver.findElement(By.linkText('Medication Allergies')).click();
-        // console.log("Clicked on Medication Allergies");
-        // await driver.sleep(10000); // wait for page to load
+        await driver.findElement(By.linkText('Medication Allergies')).click();
+        console.log("Clicked on Medication Allergies");
+        await driver.sleep(10000); // wait for page to load
 
-        // await driver.findElement(By.linkText('Medication History')).click();
-        // console.log("Clicked on Medication History");
-        // await driver.sleep(10000); // wait for page to load
+        await driver.findElement(By.linkText('Medication History')).click();
+        console.log("Clicked on Medication History");
+        await driver.sleep(10000); // wait for page to load
 
-        // await driver.findElement(By.linkText('Med Time Reminders')).click();
-        // console.log("Clicked on Med Time Reminders");
-        // await driver.sleep(10000); // wait for page to load
+        await driver.findElement(By.linkText('Med Time Reminders')).click();
+        console.log("Clicked on Med Time Reminders");
+        await driver.sleep(10000); // wait for page to load
 
         // Click on Medicare tab 
         await driver.findElement(By.linkText('Medicare')).click();

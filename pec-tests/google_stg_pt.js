@@ -187,6 +187,7 @@ let assert = require("chai").assert;
         await driver.sleep(6000); // Wait for page to load
 
          // Overview tab and respective sub-tabs
+         await driver.sleep(6000); // wait for page to load
          await driver.findElement(By.linkText('Programs')).click();
          console.log("Clicked on Programs sub-tab");
          await driver.sleep(6000); // wait for page to load
