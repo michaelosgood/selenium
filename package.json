@@ -24,6 +24,6 @@
     "lodash.update": "^4.10.2",
     "mocha": "^6.1.4",
     "npm": "^6.10.3",
-    "selenium-webdriver": "^4.0.0-alpha.1"
+    "selenium-webdriver": "^4.0.0-alpha.4"
   }
 }
