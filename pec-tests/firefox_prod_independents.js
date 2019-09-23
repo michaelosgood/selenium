@@ -4,10 +4,10 @@ let environment = require('../environment.js');
 let assert = require("chai").assert;
 
 const googleProdIndependents = async function() {
-  let driver = await new Builder().forBrowser('chrome').build();
+  let driver = await new Builder().forBrowser('firefox').build();
     try {
         // Login to User and Verify Title
-        console.log("Starting Patient Test in Chrome");
+        console.log("Starting Patient Test in Firefox");
         await driver.get(environment.prod);
         console.log("Went to Production");
 
