@@ -3,13 +3,13 @@ let credentials = require('../credentials.js');
 let environment = require('../environment.js');
 let assert = require("chai").assert;
 
-const firefoxProdIndependents = async function() {
+const firefoxStgIndependents = async function() {
   let driver = await new Builder().forBrowser('firefox').build();
     try {
         // Login to User and Verify Title
         console.log("Starting Patient Test in Firefox");
-        await driver.get(environment.prod);
-        console.log("Went to Production");
+        await driver.get(environment.stg);
+        console.log("Went to Staging");
 
         // Login to H3N2 and Verify Title
         await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.customer_user);
@@ -252,4 +252,4 @@ const firefoxProdIndependents = async function() {
         await driver.quit()
     }
 };
-module.exports = firefoxProdIndependents;
+module.exports = firefoxStgIndependents;

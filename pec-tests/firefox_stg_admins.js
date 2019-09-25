@@ -3,13 +3,13 @@ let credentials = require('../credentials.js');
 let environment = require('../environment.js');
 let assert = require("chai").assert;
 
-const firefoxProdAdmins = async function() {
+const firefoxStgAdmins = async function() {
     let driver = await new Builder().forBrowser('firefox').build();
     try {
         // Login to Admin User and Verify Title
         console.log("Starting Admin Test in Firefox");
-        await driver.get(environment.prod);
-        console.log("Went to Production ");
+        await driver.get(environment.staging);
+        console.log("Went to Staging");
         await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.internal_user);
         console.log("Entered internal username");
         await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.internal_password, Key.RETURN);
@@ -116,4 +116,4 @@ const firefoxProdAdmins = async function() {
         await driver.quit()
     }
 };
-module.exports = firefoxProdAdmins;
+module.exports = firefoxStgAdmins;
