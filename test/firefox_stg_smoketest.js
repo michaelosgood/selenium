@@ -4,7 +4,7 @@ let firefoxStgIndependents = require('../pec-tests/firefox_stg_independents.js')
 
 (async function stgSmoketest() { 
     try {
-        await firefoxstgAdmins();
+        await firefoxStgAdmins();
         await firefoxStgIndependents();
     } catch (error) {
         throw error;
