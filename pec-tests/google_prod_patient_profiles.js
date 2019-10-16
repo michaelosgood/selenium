@@ -3,7 +3,7 @@ let credentials = require('../credentials.js');
 let environment = require('../environment.js');
 let assert = require("chai").assert;
 
-const googleStgPtProfiles = async function() {
+const googleProdPtProfiles = async function() {
   let driver = await new Builder().forBrowser('chrome').build();
     try {
         // Login to User and Verify Title
@@ -100,4 +100,4 @@ const googleStgPtProfiles = async function() {
         await driver.quit()
     }
 };
-module.exports = googleStgPtProfiles;
+module.exports = googleProdPtProfiles;
