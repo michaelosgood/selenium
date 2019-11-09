@@ -1,5 +1,5 @@
-let googleStgSmoketest = require('../pec-tests/google_stg_smoketest');
-let firefoxStgSmoketest = require('../pec-tests/firefox_stg_smoketest');
+let googleStgSmoketest = require('../tests/google_stg_smoketest.js');
+let firefoxStgSmoketest = require('../tests/firefox_stg_smoketest.js');
 
 (async function stgSmoketest() { 
     try {
