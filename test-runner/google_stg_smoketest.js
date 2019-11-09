@@ -1,7 +1,7 @@
 let googleStgIndependents = require('../tests/google_stg_independents.js');
 let googleStgAdmins = require('../tests/google_stg_admins.js');
 let googleStgPtProfiles = require('../tests/google_stg_patient_profiles.js');
-let googleStgPublic = requre('../tests/google_stg_public.js');
+let googleStgPublic = require('../tests/google_stg_public.js');
 
 (async function stgSmoketest() { 
     try {
