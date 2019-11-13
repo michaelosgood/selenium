@@ -5,7 +5,6 @@
 .DS_Store
 
 #sensitive info
-/config.js
 /credentials.js
 /environment.js
 /tmp
