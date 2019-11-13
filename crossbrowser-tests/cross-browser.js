@@ -17,16 +17,16 @@ suite(function(env) {
           try {
             console.log("INITIATING CROSS BROWSER TEST");
             await driver.get(environment.prod);
-            console.log("1. Went to PROD √");
+            console.log("1. Went to PROD");
             await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.internal_user);
-            console.log("2. Entered username √");
+            console.log("2. Entered username");
             await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.internal_password, Key.RETURN);
-            console.log("3. Entered password and clicked 'Enter' √");
+            console.log("3. Entered password and clicked 'Enter'");
             await driver.sleep(5000); // Wait for page to load
             await driver.findElement(By.id('pwTopGearIcon')).click();
-            console.log("4. Clicked on the gear icon √");
+            console.log("4. Clicked on the gear icon");
             await driver.findElement(By.linkText('Message Management')).click();
-            console.log("5. Selected 'Message Management' √");
+            console.log("5. Selected 'Message Management'");
             await driver.findElement(By.className('k-pager-info k-label'));
             await driver.sleep(4000); // Wait for page to load
             console.log("6. Waited a couple seconds");
