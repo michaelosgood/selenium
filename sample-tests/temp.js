@@ -39,7 +39,8 @@ let assert = require("chai").assert;
 
          // Overview tab and respective sub-tabs
          await driver.sleep(6000); // wait for page to load
-         await driver.findElement(By.partialLinkText('Programs')).click();
+         await driver.findElement(By.xpath("//a[@href = '/Patient/Programs?patientId=AB6002230683436188168042F8DF9D88&timer=true']")).click();
+        // await driver.findElement(By.linkText('Programs')).click();
          console.log("Clicked on Programs sub-tab");
          await driver.sleep(6000); // wait for page to load
         
