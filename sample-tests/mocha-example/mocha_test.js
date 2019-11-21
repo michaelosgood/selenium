@@ -1,6 +1,6 @@
 // type 'mocha mocha_test.js' in the command line to run test
 const {Builder, By, Key, until} = require('selenium-webdriver');
-let environment = require('../environment.js');
+let environment = require('../../environment.js');
 let assert = require('assert');
 let driver = new Builder().forBrowser('chrome').build();
 

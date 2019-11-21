@@ -4,8 +4,8 @@ const assert = require('assert');
 
 const {Browser, By, Key, until} = require('selenium-webdriver');
 const {ignore, suite} = require('selenium-webdriver/testing');
-let credentials = require('../credentials.js');
-let environment = require('../environment.js');
+let credentials = require('../../credentials.js');
+let environment = require('../../environment.js');
 
 suite(function(env) {
     describe('Sign in to Production, go to msg mgmt, & verify title', async function() {

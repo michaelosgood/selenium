@@ -1,9 +1,9 @@
 const {Builder, By, Key, until} = require('selenium-webdriver');
-let credentials = require('../credentials.js');
-let environment = require('../environment.js');
+let credentials = require('../../credentials.js');
+let environment = require('../../environment.js');
 let assert = require("chai").assert;
 
-(async function goToPatientList() {
+(async function goToSwPatientList() {
   let driver = await new Builder().forBrowser('chrome').build();
     try {
         console.log("Initiating Test in Chrome");
@@ -34,6 +34,6 @@ let assert = require("chai").assert;
         console.log(err);
     }
     finally {
-        console.log("User has been taken to the patient list"); 
+        console.log("User has been taken to the SW patient list"); 
     }
 })();
