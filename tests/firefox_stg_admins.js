@@ -21,6 +21,7 @@ const firefoxStgAdmins = async function() {
         });
 
         // Message Management Verify Title
+        await driver.sleep(6000); // Wait for page to load
         await driver.findElement(By.id('pwTopGearIcon')).click();
         console.log("Clicked on the gear icon");
         await driver.findElement(By.linkText('Message Management')).click();
