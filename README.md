@@ -1,3 +1,4 @@
 # selenium
 
-## Automated Scripts using Selenium WebDriver and ChromeDriver
+## Automated Scripts using Selenium Webdriver, ChromeDriver, and Geckodriver
+
