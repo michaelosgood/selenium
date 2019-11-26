@@ -1,6 +1,6 @@
 const {Builder, By, Key, actions, until} = require('selenium-webdriver');
-let credentials = require('../credentials.js');
-let environment = require('../environment.js');
+let credentials = require('../../credentials.js');
+let environment = require('../../environment.js');
 let assert = require("chai").assert;
 // let driver = new Builder().forBrowser('chrome').build();
 

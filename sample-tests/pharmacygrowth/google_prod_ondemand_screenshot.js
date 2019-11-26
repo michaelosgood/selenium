@@ -1,7 +1,7 @@
 const {Builder, By, Key, until} = require('selenium-webdriver');
 let fs = require('fs');
-let credentials = require('../credentials.js');
-let environment = require('../environment.js');
+let credentials = require('../../credentials.js');
+let environment = require('../../environment.js');
 
 (async function ondemandScreenshot() {
   let driver = await new Builder().forBrowser('chrome').build();
