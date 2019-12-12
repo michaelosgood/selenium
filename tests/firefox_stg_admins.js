@@ -102,6 +102,42 @@ const firefoxStgAdmins = async function() {
             console.log("Asserted title for 'Partner Management' page is: " + title);
         });
 
+        // Call History Verify Title
+        await driver.findElement(By.id('pwTopGearIcon')).click();
+        console.log("Clicked on the gear icon");
+        await driver.findElement(By.linkText('Call History')).click();
+        console.log("Selected 'Call History'");
+        await driver.sleep(6000); // Wait for page to load
+        console.log("Waited a couple seconds");
+        await driver.getTitle().then(function (title) {
+            assert.equal(title, "Call History - Pharmacy Portal - mosgood");
+            console.log("Asserted title for 'Call History' page is: " + title);
+        });
+
+        // Developer Tools Verify Title
+        await driver.findElement(By.id('pwTopGearIcon')).click();
+        console.log("Clicked on the gear icon");
+        await driver.findElement(By.linkText('Developer Tools')).click();
+        console.log("Selected 'Developer Tools'");
+        await driver.sleep(6000); // Wait for page to load
+        console.log("Waited a couple seconds");
+        await driver.getTitle().then(function (title) {
+            assert.equal(title, "Developer Tools - Pharmacy Portal - mosgood");
+            console.log("Asserted title for 'Developer Tools' page is: " + title);
+        });
+
+        // Settings Verify Title
+        await driver.findElement(By.id('pwTopGearIcon')).click();
+        console.log("Clicked on the gear icon");
+        await driver.findElement(By.linkText('Settings')).click();
+        console.log("Selected 'Settings'");
+        await driver.sleep(6000); // Wait for page to load
+        console.log("Waited a couple seconds");
+        await driver.getTitle().then(function (title) {
+            assert.equal(title, "Profile Settings - Pharmacy Portal - mosgood");
+            console.log("Asserted title for 'Settings' page is: " + title);
+        });
+
         // Logout of Admin
         await driver.findElement(By.id('pwTopGearIcon')).click();
         console.log("Clicked on the gear icon");

@@ -174,6 +174,7 @@ let assert = require("chai").assert;
         // });
 
         // Use magnifying glass to search for 'Allen' and click on name
+        await driver.sleep(6000); // Wait for page to load
         await driver.findElement(By.className('fa-search')).click();
         console.log("Clicked on the search icon");
         await driver.findElement(By.className('input flex mb0 field SearchBar_searchInput_3xheg')).sendKeys('Allen');
