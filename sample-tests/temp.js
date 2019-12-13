@@ -25,6 +25,7 @@ let assert = require("chai").assert;
         });
         
         // Use magnifying glass to search for 'Allen' and click on name
+        await driver.sleep(3000); // Wait for page to load
         await driver.findElement(By.className('fa-search')).click();
         console.log("Clicked on the search icon");
         await driver.findElement(By.className('input flex mb0 field SearchBar_searchInput_3xheg')).sendKeys('Allen');
@@ -37,17 +38,17 @@ let assert = require("chai").assert;
         await driver.findElement(By.className('SearchBar_resultItem__bolder_1jHZM')).click();
         await driver.sleep(6000); // Wait for page to load
 
-         // Overview tab and respective sub-tabs
-         await driver.sleep(6000); // wait for page to load
-         await driver.findElement(By.xpath("//a[@href = '/Patient/Programs?patientId=AB6002230683436188168042F8DF9D88&timer=true']")).click();
+        // Overview tab and respective sub-tabs
+        await driver.sleep(6000); // wait for page to load
+        // await driver.findElement(By.xpath("//a[@href = '/Patient/Programs?patientId=AB6002230683436188168042F8DF9D88&timer=true']")).click();
         // await driver.findElement(By.linkText('Programs')).click();
-         console.log("Clicked on Programs sub-tab");
-         await driver.sleep(6000); // wait for page to load
+        // console.log("Clicked on Programs sub-tab");
+        // await driver.sleep(6000); // wait for page to load
         
         // Click on Medication tab and respective sub-tabs
-        await driver.findElement(By.linkText('Medications')).click();
-        console.log("Clicked on Medication tab");
-        await driver.sleep(6000); // wait for page to load
+        // await driver.findElement(By.linkText('Medications')).click();
+        // console.log("Clicked on Medication tab");
+        // await driver.sleep(6000); // wait for page to load
 
         await driver.findElement(By.linkText('Patient-Reported Medication')).click();
         console.log("Clicked on Patient-Reported Medication sub-tab");
