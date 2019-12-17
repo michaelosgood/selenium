@@ -22,7 +22,7 @@ let assert = require("chai").assert;
         await driver.sleep(6000); // Wait for page to load
         console.log("Waited a couple seconds");
         await driver.getTitle().then(function(title) {
-            assert.equal(title, "Login As - Pharmacy Portal - mosgood");
+            assert.equal(title, titles.login_as);
             console.log("Title for 'Login As' is: " + title );
         });
     } 

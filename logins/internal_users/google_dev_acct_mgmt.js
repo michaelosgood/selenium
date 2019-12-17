@@ -1,6 +1,7 @@
 const {Builder, By, Key, actions, until} = require('selenium-webdriver');
 let credentials = require('../../credentials.js');
 let environment = require('../../environment.js');
+let titles = require('../../components/titles.js');
 let assert = require("chai").assert;
 
 (async function acctMgmt() {
@@ -20,7 +21,7 @@ let assert = require("chai").assert;
         await driver.sleep(6000); // Wait for page to load
         console.log("Waited a couple seconds");
         await driver.getTitle().then(function (title) {
-            assert.equal(title, "Account Management - Pharmacy Portal - mosgood");
+            assert.equal(title, titles.account_mgmt);
             console.log("Asserted title for 'Account Management' page is: " + title);
         });
     } 
