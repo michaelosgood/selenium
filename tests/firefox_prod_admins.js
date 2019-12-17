@@ -8,21 +8,20 @@ const firefoxProdAdmins = async function() {
     let driver = await new Builder().forBrowser('firefox').build();
     try {
         // Login to Admin User and Verify Title
-        console.log("Starting Admin Test in Firefox");
-        await driver.get(environment.prod);
-        console.log("Went to Production ");
+        console.log("Starting Admin Test in Chrome");
+        await driver.get(environment.stg);
+        console.log("Went to Staging");
         await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.internal_user);
         console.log("Entered internal username");
         await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.internal_password, Key.RETURN);
         console.log("Entered password and clicked 'Enter'");
         await driver.sleep(6000); // Wait for page to load
         await driver.getTitle().then(function (title) {
-            assert.equal(title, "Pharmacy Group Dashboard - Pharmacy Portal - mosgood");
+            assert.equal(title, titles.dashboard);
             console.log("Asserted title is: " + title);
         });
 
         // Message Management Verify Title
-        await driver.sleep(6000); // Wait for page to load
         await driver.findElement(By.id('pwTopGearIcon')).click();
         console.log("Clicked on the gear icon");
         await driver.findElement(By.linkText('Message Management')).click();
@@ -30,7 +29,7 @@ const firefoxProdAdmins = async function() {
         await driver.sleep(6000); // Wait for page to load
         console.log("Waited a couple seconds");
         await driver.getTitle().then(function (title) {
-            assert.equal(title, "Message Management - Pharmacy Portal - mosgood");
+            assert.equal(title, titles.msg_mgmt);
             console.log("Asserted title for Message Managment is: " + title);
         });
         // Campaign Management Verify Title
@@ -41,7 +40,7 @@ const firefoxProdAdmins = async function() {
         await driver.sleep(6000); // Wait for page to load
         console.log("Waited a couple seconds");
         await driver.getTitle().then(function (title) {
-            assert.equal(title, "Campaign Management - Pharmacy Portal - mosgood");
+            assert.equal(title, titles.camp_mgmt);
             console.log("Asserted title for 'Campaign Managment' page is: " + title);
         });
 
@@ -53,7 +52,7 @@ const firefoxProdAdmins = async function() {
         await driver.sleep(6000); // Wait for page to load
         console.log("Waited a couple seconds");
         await driver.getTitle().then(function (title) {
-            assert.equal(title, "Login As - Pharmacy Portal - mosgood");
+            assert.equal(title, titles.login_as);
             console.log("Asserted title for 'Login As' page is: " + title);
         });
 
@@ -65,7 +64,7 @@ const firefoxProdAdmins = async function() {
         await driver.sleep(6000); // Wait for page to load
         console.log("Waited a couple seconds");
         await driver.getTitle().then(function (title) {
-            assert.equal(title, "Communication Templates - Pharmacy Portal - mosgood");
+            assert.equal(title, titles.template_mgmt);
             console.log("Asserted title for 'Template Management' page is: " + title);
         });
         // User Managment Verify Title
@@ -76,7 +75,7 @@ const firefoxProdAdmins = async function() {
         await driver.sleep(6000); // Wait for page to load
         console.log("Waited a couple seconds");
         await driver.getTitle().then(function (title) {
-            assert.equal(title, "User Management - Pharmacy Portal - mosgood");
+            assert.equal(title, titles.user_mgmt);
             console.log("Asserted title for 'User Management' page is: " + title);
         });
         // Account Managment Verify Title
@@ -87,7 +86,7 @@ const firefoxProdAdmins = async function() {
         await driver.sleep(6000); // Wait for page to load
         console.log("Waited a couple seconds");
         await driver.getTitle().then(function (title) {
-            assert.equal(title, "Account Management - Pharmacy Portal - mosgood");
+            assert.equal(title, titles.account_mgmt);
             console.log("Asserted title for 'Account Management' page is: " + title);
         });
 
@@ -99,7 +98,7 @@ const firefoxProdAdmins = async function() {
         await driver.sleep(6000); // Wait for page to load
         console.log("Waited a couple seconds");
         await driver.getTitle().then(function (title) {
-            assert.equal(title, "Partner Management - Pharmacy Portal - mosgood");
+            assert.equal(title, titles.partner_mgmt);
             console.log("Asserted title for 'Partner Management' page is: " + title);
         });
 
@@ -111,7 +110,7 @@ const firefoxProdAdmins = async function() {
         await driver.sleep(6000); // Wait for page to load
         console.log("Waited a couple seconds");
         await driver.getTitle().then(function (title) {
-            assert.equal(title, "Call History - Pharmacy Portal - mosgood");
+            assert.equal(title, titles.call_history);
             console.log("Asserted title for 'Call History' page is: " + title);
         });
 
@@ -123,7 +122,7 @@ const firefoxProdAdmins = async function() {
         await driver.sleep(6000); // Wait for page to load
         console.log("Waited a couple seconds");
         await driver.getTitle().then(function (title) {
-            assert.equal(title, "Developer Tools - Pharmacy Portal - mosgood");
+            assert.equal(title, titles.dev_tools);
             console.log("Asserted title for 'Developer Tools' page is: " + title);
         });
 
@@ -135,7 +134,7 @@ const firefoxProdAdmins = async function() {
         await driver.sleep(6000); // Wait for page to load
         console.log("Waited a couple seconds");
         await driver.getTitle().then(function (title) {
-            assert.equal(title, "Profile Settings - Pharmacy Portal - mosgood");
+            assert.equal(title, titles.settings);
             console.log("Asserted title for 'Settings' page is: " + title);
         });
 

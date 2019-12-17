@@ -98,7 +98,7 @@ const firefoxStgAdmins = async function() {
         await driver.sleep(6000); // Wait for page to load
         console.log("Waited a couple seconds");
         await driver.getTitle().then(function (title) {
-            assert.equal(title, titles.account_mgmt);
+            assert.equal(title, titles.partner_mgmt);
             console.log("Asserted title for 'Partner Management' page is: " + title);
         });
 
