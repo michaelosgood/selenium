@@ -20,10 +20,10 @@
     "chai": "^4.2.0",
     "chai-webdriver": "^1.2.0",
     "chromedriver": "^74.0.0",
-    "geckodriver": "^1.16.2",
+    "geckodriver": "^1.19.1",
     "lodash.update": "^4.10.2",
     "mocha": "^6.1.4",
-    "npm": "^6.10.3",
+    "npm": "^6.13.4",
     "selenium-webdriver": "^4.0.0-alpha.4"
   }
 }
