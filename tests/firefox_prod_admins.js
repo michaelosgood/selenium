@@ -1,6 +1,7 @@
 const { Builder, By, Key, actions, until } = require('selenium-webdriver');
 let credentials = require('../credentials.js');
 let environment = require('../environment.js');
+let titles = require('../components/titles.js.js');
 let assert = require("chai").assert;
 
 const firefoxProdAdmins = async function() {
