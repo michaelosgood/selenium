@@ -7,10 +7,10 @@ let firefoxStgPublic = require('../tests/firefox_stg_public.js');
 
 (async function stgSmoketest() { 
     try {
-        // await firefoxStgAdmins();
-        // await firefoxStgIndependents();
-        // await firefoxStgPtProfiles();
-        // await firefoxStgChainPartner();
+        await firefoxStgAdmins();
+        await firefoxStgIndependents();
+        await firefoxStgPtProfiles();
+        await firefoxStgChainPartner();
         await firefoxStgPublic()
     } catch (error) {
         throw error;
