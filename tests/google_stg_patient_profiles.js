@@ -1,6 +1,7 @@
 const {Builder, By, Key, actions, until} = require('selenium-webdriver');
 let credentials = require('../credentials.js');
 let environment = require('../environment.js');
+let pt_search = require('../components/patient_search.js');
 let assert = require("chai").assert;
 
 const googleStgPtProfiles = async function() {
@@ -23,16 +24,17 @@ const googleStgPtProfiles = async function() {
         });
         
         // Use magnifying glass to search for 'Allen' and click on name
-        await driver.findElement(By.className('fa-search')).click();
+        await driver.sleep(3000); // Wait for page to load
+        await driver.findElement(By.className(pt_search.search)).click();
         console.log("Clicked on the search icon");
-        await driver.findElement(By.className('input flex mb0 field SearchBar_searchInput_3xheg')).sendKeys('Allen');
+        await driver.findElement(By.className(pt_search.input)).sendKeys('Allen');
         console.log("Searched for Allen");
-        await driver.findElement(By.className('input flex mb0 field SearchBar_searchInput_3xheg')).click();
-        await driver.sleep(6000); // Wait for page to load
-        await driver.findElement(By.className('pc-btn SearchBar_searchButton_1DHpv')).click();
+        await driver.findElement(By.className(pt_search.input)).click();
+        await driver.sleep(3000); // Wait for page to load
+        await driver.findElement(By.className(pt_search.button)).click();
         console.log("Clicked on 'Search' button");
         await driver.sleep(6000); // Wait for page to load
-        await driver.findElement(By.className('SearchBar_resultItem__bolder_1jHZM')).click();
+        await driver.findElement(By.className(pt_search.result)).click();
         await driver.sleep(6000); // Wait for page to load
 
         // Overview tab and respective sub-tabs
