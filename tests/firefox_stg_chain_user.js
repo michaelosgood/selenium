@@ -103,7 +103,7 @@ const firefoxStgChainUser = async function() {
         console.log("Selected 'Clinical Calendar' icon");
         await driver.sleep(10000); // Wait for page to load
         await driver.getTitle().then(function(title) {
-            assert.equal(title, "Pharmacy Calendar - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
+            assert.equal(title, titles.chain_clinical_calendar);
             console.log("Asserted title for 'Clinical Calendar' page is: " + title );
         });
 
@@ -114,8 +114,8 @@ const firefoxStgChainUser = async function() {
         console.log("Selected 'Custom Calendar' icon");
         await driver.sleep(10000); // Wait for page to load
         await driver.getTitle().then(function(title) {
-            assert.equal(title, "Pharmacy Calendar - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
-            console.log("Asserted title for 'Social Calendar' page is: " + title );
+            assert.equal(title, titles.chain_clinical_calendar);
+            console.log("Asserted title for 'Custom Calendar' page is: " + title );
         });
 
         // Verify Title for 'Growth' Pt List
