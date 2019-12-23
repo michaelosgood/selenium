@@ -1,6 +1,6 @@
 let googleDevCache = require("../tests/google_dev_cache.js");
 
-(async function devCachetest() { 
+(async function devCacheTest() { 
     try {
         let startTime = new Date();
         console.log("Caching Test Started at: " + startTime);

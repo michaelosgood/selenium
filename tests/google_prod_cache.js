@@ -4,13 +4,13 @@ let environment = require('../environment.js');
 let titles = require('../components/titles.js');
 let assert = require("chai").assert;
 
-const googleDevCache = async function() {
+const googleProdCache = async function() {
   let driver = await new Builder().forBrowser('chrome').build();
     try {
         // Login to User and Verify Title
         console.log("Starting Patient Test in Chrome");
-        await driver.get(environment.dev);
-        console.log("Went to DEV");
+        await driver.get(environment.prod);
+        console.log("Went to PROD");
 
         // Login as a Chain Sample User and Verify Title
         await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.chainSample_user);
@@ -88,4 +88,4 @@ const googleDevCache = async function() {
         await driver.quit()
     }
 };
-module.exports = googleDevCache;
+module.exports = googleProdCache;
