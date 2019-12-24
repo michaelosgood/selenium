@@ -4,11 +4,11 @@ let googleProdPtProfiles = require('../tests/google_prod_patient_profiles.js');
 let googleProdChainPartner = require('../tests/google_prod_chain_partner.js');
 let googleProdChainUser = require('../tests/google_prod_chain_user.js');
 let googleProdPublic = require('../tests/google_prod_public.js');
-let date = new Date();
 
 (async function prodSmoketest() { 
     try {
-        console.log("Smoke Test Started at: " + date);
+        let startTime = new Date();
+        console.log("Smoke Test Started at: " + startTime);
         await googleProdAdmins();
         await googleProdIndependents();
         await googleProdPtProfiles();
@@ -19,6 +19,7 @@ let date = new Date();
         throw error;
     }
     finally {
-        console.log("Smoke Test Completed at: " + date);
+        let endTime = new Date();
+        console.log("Smoke Test Completed at: " + endTime);
       }
 })();

@@ -4,11 +4,11 @@ let googleStgPtProfiles = require('../tests/google_stg_patient_profiles.js');
 let googleStgChainPartner = require('../tests/google_stg_chain_partner.js');
 let googleStgChainUser = require('../tests/google_stg_chain_user.js');
 let googleStgPublic = require('../tests/google_stg_public.js');
-let date = new Date();
 
 (async function stgSmoketest() { 
     try {
-        console.log("Smoke Test Started at: " + date);
+        let startTime = new Date();
+        console.log("Smoke Test Started at: " + startTime);
         await googleStgAdmins();
         await googleStgIndependents();
         await googleStgPtProfiles();
@@ -19,6 +19,7 @@ let date = new Date();
         throw error;
     }
     finally {
-        console.log("Smoke Test Completed at: " + date);
+        let endTime = new Date();
+        console.log("Smoke Test Completed at: " + endTime);
       }
 })();
