@@ -28,7 +28,7 @@ const googleDevPtProfiles = async function() {
         });
 
         // Go to Patient Profile
-        await driver.get(pt_profile.link);
+        await driver.get(pt_profile.dev_link);
         
         // Click on the Overview tab
         await driver.findElement(By.linkText('Overview')).click();

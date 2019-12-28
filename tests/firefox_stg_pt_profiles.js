@@ -21,16 +21,17 @@ const firefoxStgPtProfiles = async function() {
         await driver.sleep(6000); // Wait for page to load
         
         //Verify Dashboard Title
-        await driver.sleep(6000); // Wait for page to load
+        await driver.sleep(10000); // Wait for page to load
         await driver.getTitle().then(function(title) {
             assert.equal(title, titles.independent_dashboard);
             console.log("Asserted title is: " + title );
         });
 
         // Go to Patient Profile
-        await driver.get(pt_profile.link);
+        await driver.get(pt_profile.stg_link);
         
         // Click on the Overview tab
+        await driver.sleep(6000); // Wait for page to load
         await driver.findElement(By.linkText('Overview')).click();
         console.log("Clicked on Overview tab");
         await driver.sleep(6000); // wait for page to load
