@@ -1,7 +1,6 @@
 const {Builder, By, Key, actions, until} = require('selenium-webdriver');
 let credentials = require('../credentials.js');
 let environment = require('../environment.js');
-let pt_search = require('../components/patient_search.js');
 let pt_profile = require('../components/patient_profile.js');
 let assert = require("chai").assert;
 
@@ -28,7 +27,7 @@ let assert = require("chai").assert;
         });
 
         // Go to Patient Profile
-        await driver.get("https://web.prescribewellness.com/StarWellness/MedicationReconciliationEnroll?patientId=AB6002230683436188168042F8DF9D88&timer=true");
+        await driver.get(pt_profile.link);
         
         // Click on the Overview tab
         await driver.findElement(By.linkText('Overview')).click();
