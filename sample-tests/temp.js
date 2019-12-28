@@ -2,6 +2,7 @@ const {Builder, By, Key, actions, until} = require('selenium-webdriver');
 let credentials = require('../credentials.js');
 let environment = require('../environment.js');
 let pt_search = require('../components/patient_search.js');
+let pt_profile = require('../components/patient_profile.js');
 let assert = require("chai").assert;
 
 (async function ptProfilesTest() {
@@ -17,36 +18,29 @@ let assert = require("chai").assert;
         console.log("Entered username");
         await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.customer_password, Key.RETURN);
         console.log("Entered password and clicked 'Enter'");
+        await driver.sleep(6000); // Wait for page to load
         
-        //Verify Title
+        //Verify Dashboard Title
         await driver.sleep(6000); // Wait for page to load
         await driver.getTitle().then(function(title) {
             assert.equal(title, "Pharmacy Dashboard - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
             console.log("Asserted title is: " + title );
         });
-        
-        // Use magnifying glass to search for 'Allen' and click on name
-        await driver.sleep(3000); // Wait for page to load
-        await driver.findElement(By.className(pt_search.search)).click();
-        console.log("Clicked on the search icon");
-        await driver.findElement(By.className(pt_search.input)).sendKeys('Allen');
-        console.log("Searched for Allen");
-        await driver.findElement(By.className(pt_search.input)).click();
-        await driver.sleep(3000); // Wait for page to load
-        await driver.findElement(By.className(pt_search.button)).click();
-        console.log("Clicked on 'Search' button");
-        await driver.sleep(6000); // Wait for page to load
-        await driver.findElement(By.className(pt_search.result)).click();
-        await driver.sleep(6000); // Wait for page to load
 
-        // Overview tab and respective sub-tabs
-        await driver.sleep(6000); // wait for page to load
-        // await driver.findElement(By.xpath("//a[@href = '/Patient/Programs?patientId=AB6002230683436188168042F8DF9D88&timer=true']")).click();
-        // await driver.findElement(By.linkText('Programs')).click();
-        // console.log("Clicked on Programs sub-tab");
-        // await driver.sleep(6000); // wait for page to load
+        // Go to Patient Profile
+        await driver.get("https://web.prescribewellness.com/StarWellness/MedicationReconciliationEnroll?patientId=AB6002230683436188168042F8DF9D88&timer=true");
         
-        // Click on Medication tab and respective sub-tabs
+        // Click on the Overview tab
+        await driver.findElement(By.linkText('Overview')).click();
+        console.log("Clicked on Overview tab");
+        await driver.sleep(6000); // wait for page to load
+        
+        // Click on the Programs tab
+        await driver.findElement(By.linkText('Programs')).click();
+        console.log("Clicked on Programs sub-tab");
+        await driver.sleep(6000); // wait for page to load
+        
+        // Click on the 'Medications' tab
         await driver.findElement(By.linkText('Medications')).click();
         console.log("Clicked on Medication tab");
         await driver.sleep(6000); // wait for page to load
@@ -99,7 +93,7 @@ let assert = require("chai").assert;
         // Click on Log tab
         await driver.findElement(By.linkText('Log')).click();
         console.log("Clicked on Log tab");
-        await driver.sleep(30000); // wait for page to load
+        await driver.sleep(6000); // wait for page to load
     }
     catch(err) {
         console.log(err);
