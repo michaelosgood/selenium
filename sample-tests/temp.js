@@ -2,6 +2,7 @@ const {Builder, By, Key, actions, until} = require('selenium-webdriver');
 let credentials = require('../credentials.js');
 let environment = require('../environment.js');
 let pt_profile = require('../components/patient_profile.js');
+let titles = require('../components/titles.js');
 let assert = require("chai").assert;
 
 (async function ptProfilesTest() {
@@ -22,7 +23,7 @@ let assert = require("chai").assert;
         //Verify Dashboard Title
         await driver.sleep(6000); // Wait for page to load
         await driver.getTitle().then(function(title) {
-            assert.equal(title, "Pharmacy Dashboard - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
+            assert.equal(title, titles.independent_dashboard);
             console.log("Asserted title is: " + title );
         });
 

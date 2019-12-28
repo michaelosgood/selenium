@@ -24,4 +24,7 @@ titles.chain_pmed = "Medicare Patient List - Pharmacy Portal - Account: 20435500
 titles.chain_vaccines = "Vaccine Patient List - Pharmacy Portal - Account: 2043550027 - NPI: 9000000001 - NCPDP: 9000001 - ChainSample";
 titles.chain_pcare = "PrescribeCare: Patients with Encounters - Pharmacy Portal - Account: 2043550027 - NPI: 9000000001 - NCPDP: 9000001 - ChainSample";
 
+// Independents
+titles.independent_dashboard = "Pharmacy Dashboard - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2";
+
 module.exports = titles;
