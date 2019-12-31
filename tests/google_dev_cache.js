@@ -2,6 +2,7 @@ const {Builder, By, Key, actions, until} = require('selenium-webdriver');
 let credentials = require('../credentials.js');
 let environment = require('../environment.js');
 let titles = require('../components/titles.js');
+let pt_profile = require('../components/patient_profile.js');
 let assert = require("chai").assert;
 
 const googleDevCache = async function() {
@@ -12,14 +13,14 @@ const googleDevCache = async function() {
         await driver.get(environment.dev);
         console.log("Went to DEV");
 
-        // Login as a Chain Sample User and Verify Title
-        await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.chainSample_user);
+        // Login as a Customer User and Verify Title
+        await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.customer_user);
         console.log("Entered username");
-        await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.chainSample_password, Key.RETURN);
+        await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.customer_password, Key.RETURN);
         console.log("Entered password and clicked 'Enter'");
         await driver.sleep(5000); // Wait for page to load
         await driver.getTitle().then(function(title) {
-            assert.equal(title, titles.chain_dashboard);
+            assert.equal(title, titles.independent_dashboard);
             console.log("Asserted title is: " + title );
         });
         
@@ -29,7 +30,7 @@ const googleDevCache = async function() {
         console.log("Clicked on 'Active Patients'");
         await driver.sleep(3000); // Wait for page to load
         await driver.getTitle().then(function(title) {
-            assert.equal(title, titles.chain_dashboard);
+            assert.equal(title, titles.independent_dashboard);
             console.log("Asserted title is: " + title );
         });
 
@@ -38,7 +39,7 @@ const googleDevCache = async function() {
         console.log("Selected 'Growth'");
         await driver.sleep(3000); // Wait for page to load
         await driver.getTitle().then(function(title) {
-            assert.equal(title, titles.chain_growth);
+            assert.equal(title, titles.independent_growth);
             console.log("Asserted title for 'Growth' page is: " + title );
         });
 
@@ -48,7 +49,7 @@ const googleDevCache = async function() {
         await driver.findElement(By.linkText('Synchronization')).click();
         await driver.sleep(3000); // Wait for page to load
         await driver.getTitle().then(function(title) {
-            assert.equal(title, titles.chain_starwellness);
+            assert.equal(title, titles.independent_starwellness);
             console.log("Asserted title for 'StarWellness Synchronization' page is: " + title );
         });
 
@@ -57,7 +58,7 @@ const googleDevCache = async function() {
         console.log("Selected 'VaccineComplete'");
         await driver.sleep(3000); // Wait for page to load
         await driver.getTitle().then(function(title) {
-            assert.equal(title, titles.chain_vaccines);
+            assert.equal(title, titles.independent_vaccines);
             console.log("Asserted title for 'VaccineComplete' page is: " + title );
         });
 
@@ -66,7 +67,7 @@ const googleDevCache = async function() {
         console.log("Selected 'PrescribeMedicare'");
         await driver.sleep(3000); // Wait for page to load
         await driver.getTitle().then(function(title) {
-            assert.equal(title, titles.chain_pmed);
+            assert.equal(title, titles.independent_pmed);
             console.log("Asserted title for 'PrescribeMedicare' page is: " + title );
         });
 
@@ -75,7 +76,7 @@ const googleDevCache = async function() {
         console.log("Selected 'PrescribeCare'");
         await driver.sleep(3000); // Wait for page to load
         await driver.getTitle().then(function(title) {
-            assert.equal(title, titles.chain_pcare);
+            assert.equal(title, titles.independent_pcare);
             console.log("Asserted title for 'PrescribeCare' page is: " + title );
         });
 

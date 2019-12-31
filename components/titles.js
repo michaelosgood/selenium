@@ -26,5 +26,13 @@ titles.chain_pcare = "PrescribeCare: Patients with Encounters - Pharmacy Portal 
 
 // Independents
 titles.independent_dashboard = "Pharmacy Dashboard - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2";
+titles.independent_clinical_calendar = "Pharmacy Calendar - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2";
+titles.independent_active_patients = "Pharmacy Dashboard - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2";
+titles.independent_growth = "Growth: Patients - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2";
+titles.independent_starwellness = "StarWellness: Synchronization - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2";
+titles.independent_eld_hrm = "StarWellness: Elderly on HRM - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2";
+titles.independent_pmed= "Medicare Patient List - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2";
+titles.independent_vaccines = "Vaccine Patient List - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2";
+titles.independent_pcare = "PrescribeCare: Patients with Encounters - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2";
 
 module.exports = titles;
