@@ -9,8 +9,8 @@ const googleProdAdmins = async function() {
     try {
         // Login to Admin User and Verify Title
         console.log("Starting Admin Test in Chrome");
-        await driver.get(environment.stg);
-        console.log("Went to Staging");
+        await driver.get(environment.prod);
+        console.log("Went to PROD");
         await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.internal_user);
         console.log("Entered internal username");
         await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.internal_password, Key.RETURN);
