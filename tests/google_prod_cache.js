@@ -10,7 +10,7 @@ const googleProdCache = async function() {
         // Login to User and Verify Title
         console.log("Starting Patient Test in Chrome");
         await driver.get(environment.prod);
-        console.log("Went to PROD");
+        console.log("Went to Prod");
 
         // Login as a Chain Sample User and Verify Title
         await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.chainSample_user);

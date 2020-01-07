@@ -9,7 +9,7 @@ const googleStgCache = async function() {
   let driver = await new Builder().forBrowser('chrome').build();
     try {
         // Login to User and Verify Title
-        console.log("Starting Patient Test in Chrome");
+        console.log("Starting Caching Test in Chrome");
         await driver.get(environment.stg);
         console.log("Went to STG");
 

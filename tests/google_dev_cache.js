@@ -9,7 +9,7 @@ const googleDevCache = async function() {
   let driver = await new Builder().forBrowser('chrome').build();
     try {
         // Login to User and Verify Title
-        console.log("Starting Patient Test in Chrome");
+        console.log("Starting Caching Test in Chrome");
         await driver.get(environment.dev);
         console.log("Went to DEV");
 
