@@ -4,7 +4,7 @@ let environment = require('../environment.js');
 let titles = require('../components/titles.js');
 let assert = require("chai").assert;
 
-const googleStgChainUser = async function() {
+const googleStgChainUserA = async function() {
   let driver = await new Builder().forBrowser('chrome').build();
     try {
         // Login to User and Verify Title
@@ -173,4 +173,4 @@ const googleStgChainUser = async function() {
         await driver.quit()
     }
 };
-module.exports = googleStgChainUser;
+module.exports = googleStgChainUserA;

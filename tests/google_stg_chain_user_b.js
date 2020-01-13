@@ -4,12 +4,12 @@ let pt_profile = require('../components/patient_profile.js');
 let credentials = require('../credentials.js');
 let environment = require('../environment.js');
 
-const googleDevChainUserB = async function() {
+const googleStgChainUserB = async function() {
   let driver = await new Builder().forBrowser('chrome').build();
     try {
         console.log("Initiating Chain User Patient Profile Test");
-        await driver.get(environment.dev);
-        console.log("Went to dev");
+        await driver.get(environment.stg);
+        console.log("Went to Staging");
         await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.chainSample_user);
         console.log("Entered username");
         await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.chainSample_password, Key.RETURN);
@@ -18,7 +18,7 @@ const googleDevChainUserB = async function() {
         console.log("Waited 5 Seconds for page to load");
 
         // Go to Patient Profile
-        await driver.get(pt_profile.dev_chain_link);
+        await driver.get(pt_profile.stg_chain_link);
         await console.log("Pulled up the patient profile");
         await driver.sleep(5000); // wait for page to load
         console.log("Waited 5 Seconds for page to load");
@@ -117,4 +117,4 @@ const googleDevChainUserB = async function() {
         await driver.quit()
     };
 }
-module.exports = googleDevChainUserB;
+module.exports = googleStgChainUserB;

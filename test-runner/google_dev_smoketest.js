@@ -10,13 +10,13 @@ let googleDevPublic = require('../tests/google_dev_public.js');
     try {
         let startTime = new Date();
         console.log("Smoke Test Started at: " + startTime);
-        // await googleDevAdmins();
-        // await googleDevIndependents();
-        // await googleDevPtProfiles();
-        // await googleDevChainPartner();
+        await googleDevAdmins();
+        await googleDevIndependents();
+        await googleDevPtProfiles();
+        await googleDevChainPartner();
         await googleDevChainUserA();
         await googleDevChainUserB();
-        // await googleDevPublic();
+        await googleDevPublic();
     } catch (error) {
         throw error;
     }
