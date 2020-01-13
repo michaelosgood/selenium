@@ -2,7 +2,8 @@ let googleProdIndependents = require('../tests/google_prod_independents.js');
 let googleProdAdmins = require('../tests/google_prod_admins.js');
 let googleProdPtProfiles = require('../tests/google_prod_patient_profiles.js');
 let googleProdChainPartner = require('../tests/google_prod_chain_partner.js');
-let googleProdChainUser = require('../tests/google_prod_chain_user.js');
+let googleProdChainUserA = require('../tests/google_prod_chain_user_a.js');
+let googleProdChainUserB = require('../tests/google_prod_chain_user_b.js');
 let googleProdPublic = require('../tests/google_prod_public.js');
 
 (async function prodSmoketest() { 
@@ -13,7 +14,8 @@ let googleProdPublic = require('../tests/google_prod_public.js');
         await googleProdIndependents();
         await googleProdPtProfiles();
         await googleProdChainPartner();
-        await googleProdChainUser();
+        await googleProdChainUserA();
+        await googleProdChainUserB();
         await googleProdPublic();
     } catch (error) {
         throw error;

@@ -4,7 +4,7 @@ let environment = require('../environment.js');
 let titles = require('../components/titles.js');
 let assert = require("chai").assert;
 
-const googleProdChainUser = async function() {
+const googleProdChainUserA = async function() {
   let driver = await new Builder().forBrowser('chrome').build();
     try {
         // Login to User and Verify Title
@@ -173,4 +173,4 @@ const googleProdChainUser = async function() {
         await driver.quit()
     }
 };
-module.exports = googleProdChainUser;
+module.exports = googleProdChainUserA;
