@@ -4,11 +4,12 @@ let environment = require('../environment.js');
 let titles = require('../components/titles.js');
 let assert = require("chai").assert;
 
-const googleDevChainUser = async function() {
+
+const googleDevChainUserA = async function() {
   let driver = await new Builder().forBrowser('chrome').build();
     try {
         // Login to User and Verify Title
-        console.log("Starting Patient Test in Chrome");
+        console.log("Initiating Chain User Test in Chrome");
         await driver.get(environment.dev);
         console.log("Went to DEV");
 
@@ -173,4 +174,4 @@ const googleDevChainUser = async function() {
         await driver.quit()
     }
 };
-module.exports = googleDevChainUser;
+module.exports = googleDevChainUserA;
