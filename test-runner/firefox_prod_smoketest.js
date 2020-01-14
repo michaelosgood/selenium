@@ -10,13 +10,13 @@ let firefoxProdPublic = require('../tests/firefox_prod_public.js');
     try {
         let startTime = new Date();
         console.log("Smoke Test Started at: " + startTime);
-        // await firefoxProdAdmins();
-        // await firefoxProdIndependents();
-        // await firefoxProdPtProfiles();
-        // await firefoxProdChainPartner();
-        // await firefoxProdChainUserA();
+        await firefoxProdAdmins();
+        await firefoxProdIndependents();
+        await firefoxProdPtProfiles();
+        await firefoxProdChainPartner();
+        await firefoxProdChainUserA();
         await firefoxProdChainUserB();
-        // await firefoxProdPublic();
+        await firefoxProdPublic();
     } catch (error) {
         throw error;
     }

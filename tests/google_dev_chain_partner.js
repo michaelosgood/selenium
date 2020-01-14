@@ -128,9 +128,8 @@ const googleDevChainPartner = async function() {
         await driver.findElement(By.linkText('Log')).click();
         console.log("Clicked on Log tab");
         await driver.sleep(5000); // wait for page to load
-        console.log("Waited 5 Seconds for page to load");
-         
-
+        console.log("Waited 5 Seconds for page to load");  
+        
     } 
     catch(err) {
         console.log(err);
