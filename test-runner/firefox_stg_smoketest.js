@@ -2,7 +2,8 @@ let firefoxStgAdmins = require('../tests/firefox_stg_admins.js');
 let firefoxStgIndependents = require('../tests/firefox_stg_independents.js');
 let firefoxStgPtProfiles = require('../tests/firefox_stg_pt_profiles.js');
 let firefoxStgChainPartner = require('../tests/firefox_stg_chain_partner.js');
-let firefoxStgChainUser = require('../tests/firefox_stg_chain_user.js');
+let firefoxStgChainUserA = require('../tests/firefox_stg_chain_user_a.js');
+let firefoxStgChainUserB = require('../tests/firefox_stg_chain_user_b.js');
 let firefoxStgPublic = require('../tests/firefox_stg_public.js');
 
 (async function stgSmoketest() { 
@@ -13,7 +14,8 @@ let firefoxStgPublic = require('../tests/firefox_stg_public.js');
         await firefoxStgIndependents();
         await firefoxStgPtProfiles();
         await firefoxStgChainPartner();
-        await firefoxStgChainUser();
+        await firefoxStgChainUserA();
+        await firefoxStgChainUserB();
         await firefoxStgPublic()
     } catch (error) {
         throw error;

@@ -4,7 +4,7 @@ let environment = require('../environment.js');
 let titles = require('../components/titles.js');
 let assert = require("chai").assert;
 
-const firefoxProdChainUser = async function() {
+const firefoxProdChainUserA = async function() {
   let driver = await new Builder().forBrowser('firefox').build();
     try {
         // Login to User and Verify Title
@@ -173,4 +173,4 @@ const firefoxProdChainUser = async function() {
         await driver.quit()
     }
 };
-module.exports = firefoxProdChainUser;
+module.exports = firefoxProdChainUserA;
