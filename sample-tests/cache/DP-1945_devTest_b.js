@@ -16,7 +16,7 @@ let environment = require('../../environment.js');
         await driver.sleep(5000); // wait for page to load
         console.log("Waited 5 Seconds for page to load");
 
-        // Use magnifying glass to search for 'Bawell' and click on name
+        // Use magnifying glass to search for 'Bagwell' and click on name
         await driver.findElement(By.className(pt_search.search)).click();
         console.log("Clicked on the search icon");
         await driver.findElement(By.className(pt_search.input)).sendKeys('Bagwell');
