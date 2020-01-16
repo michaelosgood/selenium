@@ -1,4 +1,5 @@
 const {Builder, By, Key, actions, until} = require('selenium-webdriver');
+let login = require('../components/login.js');
 let credentials = require('../credentials.js');
 let environment = require('../environment.js');
 let titles = require('../components/titles.js');
@@ -14,11 +15,12 @@ const googleStgCache = async function() {
         console.log("Went to STG");
 
         // Login as a Customer User and Verify Title
-        await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.customer_user);
+        await driver.findElement(By.id(login.id)).sendKeys(credentials.customer_user);
         console.log("Entered username");
-        await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.customer_password, Key.RETURN);
+        await driver.findElement(By.id(login.pw)).sendKeys(credentials.customer_password, Key.RETURN);
         console.log("Entered password and clicked 'Enter'");
-        await driver.sleep(5000); // Wait for page to load
+        await driver.sleep(5000);
+        console.log("Waited 5 seconds for page to load")
         await driver.getTitle().then(function(title) {
             assert.equal(title, titles.independent_dashboard);
             console.log("Asserted title is: " + title );

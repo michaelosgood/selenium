@@ -1,4 +1,5 @@
 const { Builder, By, Key, actions, until } = require('selenium-webdriver');
+let login = require('../components/login.js');
 let credentials = require('../credentials.js');
 let environment = require('../environment.js');
 let titles = require('../components/titles.js');
@@ -11,9 +12,9 @@ const firefoxProdAdmins = async function() {
         console.log("Starting Admin Test in Chrome");
         await driver.get(environment.stg);
         console.log("Went to Staging");
-        await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.internal_user);
+        await driver.findElement(By.id(login.id)).sendKeys(credentials.internal_user);
         console.log("Entered internal username");
-        await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.internal_password, Key.RETURN);
+        await driver.findElement(By.id(login.pw)).sendKeys(credentials.internal_password, Key.RETURN);
         console.log("Entered password and clicked 'Enter'");
         await driver.sleep(6000); // Wait for page to load
         await driver.getTitle().then(function (title) {

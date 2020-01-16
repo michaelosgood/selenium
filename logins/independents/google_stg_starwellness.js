@@ -14,7 +14,7 @@ let assert = require("chai").assert;
         await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.customer_password, Key.RETURN);
         console.log("Entered password and clicked 'Enter'");
         await driver.sleep(6000); 
-        console.log("Waited for page to load");
+        console.log("Waited 6 seconds");
         await driver.getTitle().then(function(title) {
             assert.equal(title, "Pharmacy Dashboard - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
             console.log("Asserted title is: '" + title +"'");
@@ -24,7 +24,7 @@ let assert = require("chai").assert;
         await driver.findElement(By.linkText('Synchronization')).click();
         console.log("Clicked on the Synchronization link");
         await driver.sleep(6000); 
-        console.log("Waited for page to load");
+        console.log("Waited 6 seconds");
         await driver.getTitle().then(function(title) {
             assert.equal(title, "StarWellness: Synchronization - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2");
             console.log("Asserted title is: '" + title +"'");
