@@ -17,8 +17,8 @@ let assert = require("chai").assert;
         console.log("Clicked on the gear icon");
         await driver.findElement(By.linkText('Call History')).click();
         console.log("Selected 'Call History'");
-        await driver.sleep(6000); // Wait for page to load
-        console.log("Waited a couple seconds");
+        await driver.sleep(6000); 
+        console.log("Waited 6 seconds");
         await driver.getTitle().then(function (title) {
             assert.equal(title, "Call History - Pharmacy Portal - mosgood");
             console.log("Asserted title for 'Call History' page is: " + title);

@@ -17,8 +17,8 @@ let assert = require("chai").assert;
         console.log("Clicked on the gear icon");
         await driver.findElement(By.linkText('Developer Tools')).click();
         console.log("Selected 'Developer Tools'");
-        await driver.sleep(6000); // Wait for page to load
-        console.log("Waited a couple seconds");
+        await driver.sleep(6000); 
+        console.log("Waited 6 seconds");
         await driver.getTitle().then(function (title) {
             assert.equal(title, "Developer Tools - Pharmacy Portal - mosgood");
             console.log("Asserted title for 'Developer Tools' page is: " + title);

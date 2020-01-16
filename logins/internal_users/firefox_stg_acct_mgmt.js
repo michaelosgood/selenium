@@ -14,13 +14,14 @@ let assert = require("chai").assert;
         console.log("Entered internal username");
         await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.internal_password, Key.RETURN);
         console.log("Entered password and clicked 'Enter'");
-        await driver.sleep(6000); // Wait for page to load
+        await driver.sleep(6000); 
+        console.log("Waited 6 seconds");
         await driver.findElement(By.id('pwTopGearIcon')).click();
         console.log("Clicked on the gear icon");
         await driver.findElement(By.linkText('Account Management')).click();
         console.log("Selected 'Account Managment'");
-        await driver.sleep(6000); // Wait for page to load
-        console.log("Waited a couple seconds");
+        await driver.sleep(6000); 
+        console.log("Waited 6 seconds");
         await driver.getTitle().then(function (title) {
             assert.equal(title, titles.account_mgmt);
             console.log("Asserted title for 'Account Management' page is: " + title);
