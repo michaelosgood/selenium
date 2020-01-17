@@ -1,13 +1,14 @@
 const {Builder, By, Key, actions, until} = require('selenium-webdriver');
-let credentials = require('../credentials.js');
-let environment = require('../environment.js');
-let pt_profile = require('../components/patient_profile.js');
-let login = require('../components/login.js');
-let pt_list = require('../components/patient_list.js');
-let titles = require('../components/titles.js');
 let assert = require("chai").assert;
+let credentials = require('../../credentials.js');
+let environment = require('../../environment.js');
+let pt_profile = require('../../components/patient_profile.js');
+let login = require('../../components/login.js');
+let pt_list = require('../../components/patient_list.js');
+let titles = require('../../components/titles.js');
 
-(async function tempTest() {
+
+(async function dp_2184() {
   let driver = await new Builder().forBrowser('chrome').build();
     try {
         
@@ -55,16 +56,17 @@ let assert = require("chai").assert;
         await driver.sleep(5000);
         console.log("Waited 5 seconds");
 
-        // // Go to Patient Profile
-        // await driver.get(pt_profile.dev_link);
-        // await driver.sleep(5000);
-        // console.log("Waited 5 seconds");
+        // Go to Patient Profile
+        await driver.get(pt_profile.dev_link);
+        console.log("Pull up the patient's profile");
+        await driver.sleep(5000);
+        console.log("Waited 5 seconds");
 
-        // // Click on Vaccines tab
-        // await driver.findElement(By.linkText('Vaccines')).click();
-        // console.log("Clicked on Vaccines tab");
-        // await driver.sleep(5000);
-        // console.log("Waited 5 seconds");
+        // Click on Vaccines tab
+        await driver.findElement(By.linkText('Vaccines')).click();
+        console.log("Clicked on Vaccines tab");
+        await driver.sleep(5000);
+        console.log("Waited 5 seconds");
     }
     catch(err) {
         console.log(err);
