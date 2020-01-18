@@ -25,8 +25,6 @@ let titles = require('../../components/titles.js');
         console.log("Waited 5 seconds");
         
         //Verify Dashboard Title
-        await driver.sleep(5000);
-        console.log("Waited 5 seconds");
         await driver.getTitle().then(function(title) {
             assert.equal(title, titles.independent_dashboard);
             console.log("Asserted title is: " + title );

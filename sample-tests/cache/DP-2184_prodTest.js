@@ -24,9 +24,7 @@ let titles = require('../../components/titles.js');
         await driver.sleep(5000);
         console.log("Waited 5 seconds");
         
-        //Verify Dashboard Title
-        await driver.sleep(5000);
-        console.log("Waited 5 seconds");
+        //Verify Dashboard Title;
         await driver.getTitle().then(function(title) {
             assert.equal(title, titles.independent_dashboard);
             console.log("Asserted title is: " + title );
@@ -45,7 +43,7 @@ let titles = require('../../components/titles.js');
         console.log("Waited 5 seconds");
         
         // Click on the Vaccinated tab
-        await driver.findElement(By.partialLinkText(pt_list.vc_vaccinated)).click();
+        await driver.findElement(By.partialLinkText("16 Vaccinated")).click();
         console.log("Clicked on Vaccinated sub-tab");
         await driver.sleep(5000);
         console.log("Waited 5 seconds");
