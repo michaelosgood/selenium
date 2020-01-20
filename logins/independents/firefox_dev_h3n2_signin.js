@@ -1,4 +1,5 @@
 const {Builder, By, Key, until} = require('selenium-webdriver');
+let login = require('../../components/login.js');
 let credentials = require('../../credentials.js');
 let environment = require('../../environment.js');
 
@@ -8,11 +9,12 @@ let environment = require('../../environment.js');
         console.log("Initiating H3N2 Test in Firefox");
         await driver.get(environment.dev);
         console.log("Went to DEV");
-        await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.customer_user);
+        await driver.findElement(By.id(login.id)).sendKeys(credentials.customer_user);
         console.log("Entered username");
-        await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.customer_password, Key.RETURN);
+        await driver.findElement(By.id(login.pw)).sendKeys(credentials.customer_password, Key.RETURN);
         console.log("Entered password and clicked 'Enter'");
-        await driver.sleep(6000); // Wait for page to load
+        await driver.sleep(5000);
+        console.log("Waited 5 seconds");
         await driver.findElement(By.id('pwTopGearIcon')).click();
         console.log("Clicked on the gear icon");
     } 

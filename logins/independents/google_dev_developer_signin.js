@@ -1,4 +1,5 @@
 const {Builder, By, Key, until} = require('selenium-webdriver');
+let login = require('../../components/login.js');
 let credentials = require('../../credentials.js');
 let environment = require('../../environment.js');
 
@@ -7,9 +8,9 @@ let environment = require('../../environment.js');
     try {
         await driver.get(environment.dev);
         console.log("Went to DEV");
-        await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.dev_user);
+        await driver.findElement(By.id(login.id)).sendKeys(credentials.dev_user);
         console.log("Entered username");
-        await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.dev_password, Key.RETURN);
+        await driver.findElement(By.id(login.pw)).sendKeys(credentials.dev_password, Key.RETURN);
         console.log("Entered password and pressed 'Enter'");
         await driver.get(environment.chain);
         console.log("Went to Chain CDN");
