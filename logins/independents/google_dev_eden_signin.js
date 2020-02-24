@@ -13,6 +13,8 @@ let environment = require('../../environment.js');
         console.log("Entered username");
         await driver.findElement(By.id(login.pw)).sendKeys(credentials.betaEden_password, Key.RETURN);
         console.log("Entered password and clicked 'Enter'");
+        await driver.sleep(5000);
+        console.log("Waited 5 seconds");
     } 
     catch(err) {
         console.log(err);

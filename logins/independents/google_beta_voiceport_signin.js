@@ -13,6 +13,8 @@ let environment = require('../../environment.js');
         console.log("Entered VoicePort username");
         await driver.findElement(By.id(login.pw)).sendKeys(credentials.voiceport_password, Key.RETURN);
         console.log("Entered password and clicked 'Enter'");
+        await driver.sleep(5000);
+        console.log("Waited 5 seconds");
         await driver.findElement(By.id('pwTopGearIcon')).click();
         console.log("Clicked on the gear icon");
     } 
