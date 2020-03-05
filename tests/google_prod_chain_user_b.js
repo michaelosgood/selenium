@@ -113,7 +113,7 @@ const googleProdChainUserB = async function() {
         console.log(err);
     }
     finally {
-        console.log("Chain User Patient Profile Test has concluded");
+        console.log("Test Completed!!\n");
         await driver.quit()
     };
 }

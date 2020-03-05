@@ -150,7 +150,7 @@ const googleProdAdmins = async function() {
         console.log(err);
     }
     finally {
-        console.log("Test Completed!!");
+        console.log("Test Completed!!\n");
         await driver.quit()
     }
 };

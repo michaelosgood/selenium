@@ -241,7 +241,7 @@ let assert = require("chai").assert;
         console.log(err);
     }
     finally {
-        console.log("Test Completed!!");
+        console.log("Test Completed!!\n");
         await driver.quit()
     }
 })();
