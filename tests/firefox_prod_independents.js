@@ -8,7 +8,7 @@ const firefoxProdIndependents = async function() {
   let driver = await new Builder().forBrowser('firefox').build();
     try {
         // Login to User and Verify Title
-        console.log("Starting Independent Pharmacy test in Firefox");
+        console.log("Starting Independent Pharmacy Patient Lists Test");
         await driver.get(environment.prod);
         console.log("Went to Production");
 

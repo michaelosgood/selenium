@@ -7,7 +7,7 @@ let assert = require("chai").assert;
 const firefoxProdChainPartner = async function() {
   let driver = await new Builder().forBrowser('firefox').build();
     try {
-        console.log("Initiating Login Test in Firefox");
+        console.log("Starting Chain Partner Test");
         await driver.get(environment.prod);
         console.log("Went to PROD");
         await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.chainPartner_user);

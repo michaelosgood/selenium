@@ -7,7 +7,7 @@ const googleDevPublic = async function() {
     let driver = await new Builder().forBrowser('chrome').build();
         try {
             // Go to Publis Site and Verify Title
-            console.log("Starting Admin Test in Chrome");
+            console.log("Starting Public Site Test");
             await driver.get(environment.dev_public);
             console.log("Went to DEV's Public Site");
             await driver.sleep(6000); // Wait for page to load

@@ -9,7 +9,7 @@ const googleDevChainUserA = async function() {
   let driver = await new Builder().forBrowser('chrome').build();
     try {
         // Login to User and Verify Title
-        console.log("Initiating Chain User Test in Chrome");
+        console.log("Starting Chain User Patient List Test");
         await driver.get(environment.dev);
         console.log("Went to DEV");
 

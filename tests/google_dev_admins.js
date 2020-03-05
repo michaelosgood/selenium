@@ -9,7 +9,7 @@ const googleDevAdmins = async function() {
     let driver = await new Builder().forBrowser('chrome').build();
     try {
         // Login to Admin User and Verify Title
-        console.log("Starting Internal User Test");
+        console.log("Starting Internal Admin Test");
         await driver.get(environment.dev);
         console.log("Went to Dev");
         await driver.findElement(By.id(login.id)).sendKeys(credentials.internal_user);

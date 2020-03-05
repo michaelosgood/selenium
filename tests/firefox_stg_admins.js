@@ -8,7 +8,7 @@ const firefoxStgAdmins = async function() {
     let driver = await new Builder().forBrowser('firefox').build();
     try {
         // Login to Admin User and Verify Title
-        console.log("Starting Admin Test in Chrome");
+        console.log("Starting Internal Admin Test");
         await driver.get(environment.stg);
         console.log("Went to Staging");
         await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.internal_user);

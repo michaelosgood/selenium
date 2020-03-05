@@ -8,7 +8,7 @@ const googleProdChainUserA = async function() {
   let driver = await new Builder().forBrowser('chrome').build();
     try {
         // Login to User and Verify Title
-        console.log("Starting Patient Test in Chrome");
+        console.log("Starting Chain User Patient List Test");
         await driver.get(environment.prod);
         console.log("Went to PROD");
 

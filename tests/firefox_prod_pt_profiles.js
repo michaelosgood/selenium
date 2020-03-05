@@ -10,7 +10,7 @@ const firefoxProdPtProfiles = async function() {
   let driver = await new Builder().forBrowser('firefox').build();
     try {
         // Go to Prod
-        console.log("Starting Patient Test in Firefox");
+        console.log("Starting Independent Pharmacy Patient Profile Test");
         await driver.get(environment.prod);
         console.log("Went to Production");
 

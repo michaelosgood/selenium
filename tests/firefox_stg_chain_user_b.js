@@ -7,7 +7,7 @@ let environment = require('../environment.js');
 const firefoxStgChainUserB = async function() {
   let driver = await new Builder().forBrowser('firefox').build();
     try {
-        console.log("Initiating Chain User Patient Profile Test");
+        console.log("Starting Chain User Patient Profile Test");
         await driver.get(environment.stg);
         console.log("Went to Staging");
         await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.chainSample_user);

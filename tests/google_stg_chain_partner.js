@@ -7,7 +7,7 @@ let assert = require("chai").assert;
 const googleStgChainPartner = async function() {
   let driver = await new Builder().forBrowser('chrome').build();
     try {
-        console.log("Initiating Login Test in Chrome");
+        console.log("Starting Chain Partner Test");
         await driver.get(environment.stg);
         console.log("Went to Stg");
         await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.chainPartner_user);

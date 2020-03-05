@@ -10,7 +10,7 @@ const googleProdPtProfiles = async function() {
   let driver = await new Builder().forBrowser('chrome').build();
     try {
         // Go to Prod
-        console.log("Starting Patient Test in Chrome");
+        console.log("Starting Independent Pharmacy Patient Profile Test");
         await driver.get(environment.prod);
         console.log("Went to Production");
         

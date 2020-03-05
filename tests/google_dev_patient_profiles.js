@@ -9,7 +9,7 @@ const googleDevPtProfiles = async function() {
   let driver = await new Builder().forBrowser('chrome').build();
     try {
         // Go to Dev
-        console.log("Starting Patient Test in Chrome");
+        console.log("Starting Independent Pharmacy Patient Profile Test");
         await driver.get(environment.dev);
         console.log("Went to DEV");
        

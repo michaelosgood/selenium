@@ -8,7 +8,7 @@ const googleProdIndependents = async function() {
   let driver = await new Builder().forBrowser('chrome').build();
     try {
         // Login to User and Verify Title
-        console.log("Starting Patient Test in Chrome");
+        console.log("Starting Independent Pharmacy Patient Lists Test");
         await driver.get(environment.prod);
         console.log("Went to Production");
 

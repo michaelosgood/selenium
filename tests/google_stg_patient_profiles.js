@@ -10,7 +10,7 @@ const googleStgPtProfiles = async function() {
   let driver = await new Builder().forBrowser('chrome').build();
     try {
         // Go to Stg
-        console.log("Starting Patient Profile Test");
+        console.log("Starting Independent Pharmacy Patient Profile Test");
         await driver.get(environment.stg);
         console.log("Went to Staging");
    

@@ -8,7 +8,7 @@ const firefoxProdChainUserA = async function() {
   let driver = await new Builder().forBrowser('firefox').build();
     try {
         // Login to User and Verify Title
-        console.log("Starting Patient Test in Firefox");
+        console.log("Starting Chain User Patient List Test");
         await driver.get(environment.prod);
         console.log("Went to PROD");
 

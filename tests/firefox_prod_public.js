@@ -7,7 +7,7 @@ const firefoxProdPublic = async function() {
     let driver = await new Builder().forBrowser('firefox').build();
         try {
             // Go to Publis Site and Verify Title
-            console.log("Starting Staging Public Site in Firefox");
+            console.log("Starting Public Site Test");
             await driver.get(environment.prod_public);
             console.log("Went to Production's Public Site");
             await driver.sleep(6000); // Wait for page to load

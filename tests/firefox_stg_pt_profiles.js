@@ -10,7 +10,7 @@ const firefoxStgPtProfiles = async function() {
   let driver = await new Builder().forBrowser('firefox').build();
     try {
         // Go to Stg
-        console.log("Starting Patient Test in Firefox");
+        console.log("Starting Independent Pharmacy Patient Profile Test");
         await driver.get(environment.stg);
         console.log("Went to Staging");
 
