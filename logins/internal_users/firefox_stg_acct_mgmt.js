@@ -3,6 +3,7 @@ let credentials = require('../../credentials.js');
 let environment = require('../../environment.js');
 let titles = require('../../components/titles.js');
 let login = require('../../components/login.js');
+let gear = require('../../components/gear.js');
 let assert = require("chai").assert;
 
 (async function acctMgmt() {
@@ -17,9 +18,9 @@ let assert = require("chai").assert;
         console.log("Entered password and clicked 'Enter'");
         await driver.sleep(6000); 
         console.log("Waited 6 seconds");
-        await driver.findElement(By.id('pwTopGearIcon')).click();
+        await driver.findElement(By.id(gear.icon)).click();
         console.log("Clicked on the gear icon");
-        await driver.findElement(By.linkText('Account Management')).click();
+        await driver.findElement(By.linkText(gear.acct_mgmt)).click();
         console.log("Selected 'Account Managment'");
         await driver.sleep(6000); 
         console.log("Waited 6 seconds");
