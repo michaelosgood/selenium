@@ -22,7 +22,7 @@ const googleStgPtProfiles = async function() {
         await driver.sleep(6000);
         console.log("Waited 6 seconds");
         
-        //Verify Dashboard Title
+        // Verify Dashboard Title
         await driver.getTitle().then(function(title) {
             assert.equal(title, titles.independent_dashboard);
             console.log("Asserted title is: " + title );
