@@ -42,7 +42,6 @@ const googleStgChainPartner = async function() {
             console.log("Asserted title is: " + title);
         });
 
-
         // Go to Patient Profile
         await driver.get(pt_profile.stg_chain_link);
         console.log("Went to the patient's profile")
@@ -127,7 +126,6 @@ const googleStgChainPartner = async function() {
         console.log("Clicked on Log tab");
         await driver.sleep(5000);
         console.log("Waited 5 seconds");  
-        
 
     } 
     catch(err) {
