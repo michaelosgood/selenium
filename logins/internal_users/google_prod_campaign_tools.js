@@ -18,19 +18,19 @@ let assert = require("chai").assert;
         console.log("Waited 6 seconds");
         await driver.findElement(By.id('pwTopGearIcon')).click();
         console.log("Clicked on the gear icon");
-        await driver.findElement(By.linkText('Developer Tools')).click();
+        await driver.findElement(By.linkText('Campaign Tools')).click();
         console.log("Selected 'Developer Tools'");
         await driver.sleep(6000); 
         console.log("Waited 6 seconds");
         await driver.getTitle().then(function (title) {
-            assert.equal(title, titles.dev_tools);
-            console.log("Asserted title for 'Developer Tools' page is: " + title);
+            assert.equal(title, titles.camp_tools);
+            console.log("Asserted title for 'Campaign Tools' page is: " + title);
         });
     } 
     catch(err) {
         console.log(err);
     }
     finally {
-        console.log("User has been taken to 'Developer Tools'");
+        console.log("User has been taken to 'Campaign Tools'");
     }
 })();
