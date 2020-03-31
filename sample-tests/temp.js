@@ -1,10 +1,10 @@
 const {Builder, By, Key, actions, until} = require('selenium-webdriver');
 let credentials = require('../credentials.js');
 let environment = require('../environment.js');
-let pt_profile = require('../components/patient_profile.js');
 let login = require('../components/login.js');
 let pt_list = require('../components/patient_list.js');
 let titles = require('../components/titles.js');
+let nav = require('../components/nav.js');
 let assert = require("chai").assert;
 
 (async function tempTest() {
@@ -12,8 +12,8 @@ let assert = require("chai").assert;
     try {
         
         console.log("\nStarting DP-2184 Test");
-        await driver.get(environment.dev);
-        console.log("Went to DEV");
+        await driver.get(environment.stg);
+        console.log("Went to STG");
 
         // Login to User
         await driver.findElement(By.id(login.id)).sendKeys(credentials.customer_user);
@@ -31,29 +31,41 @@ let assert = require("chai").assert;
             console.log("Asserted title is: " + title );
         });
         
-        // Click on the VC Patient List
-        await driver.findElement(By.linkText(pt_list.vc)).click();
-        console.log("Clicked on VaccineComplete patient list");
+        // Verify Title for Message Center
+        await driver.findElement(By.id(nav.message_center_icon)).click();
+        console.log("Clicked on Message Center icon");
+        await driver.findElement(By.linkText(nav.message_center)).click();
+        console.log("Clicked on Message Center");
         await driver.sleep(5000);
         console.log("Waited 5 seconds");
+        await driver.getTitle().then(function(title) {
+            assert.equal(title, titles.indedpenent_message_center);
+            console.log("Asserted title is: " + title );
+        });
 
-        // Click on the Not Vaccinated tab
-        await driver.findElement(By.partialLinkText(pt_list.vc_notvaccinated)).click();
-        console.log("Clicked on Not Vaccinated tab");
-        await driver.sleep(5000);
-        console.log("Waited 5 seconds");
+        // // Click on the VC Patient List
+        // await driver.findElement(By.linkText(pt_list.vc)).click();
+        // console.log("Clicked on VaccineComplete patient list");
+        // await driver.sleep(5000);
+        // console.log("Waited 5 seconds");
+
+        // // Click on the Not Vaccinated tab
+        // await driver.findElement(By.partialLinkText(pt_list.vc_notvaccinated)).click();
+        // console.log("Clicked on Not Vaccinated tab");
+        // await driver.sleep(5000);
+        // console.log("Waited 5 seconds");
         
-        // Click on the Vaccinated tab
-        await driver.findElement(By.partialLinkText(pt_list.vc_vaccinated)).click();
-        console.log("Clicked on Vaccinated sub-tab");
-        await driver.sleep(5000);
-        console.log("Waited 5 seconds");
+        // // Click on the Vaccinated tab
+        // await driver.findElement(By.partialLinkText(pt_list.vc_vaccinated)).click();
+        // console.log("Clicked on Vaccinated sub-tab");
+        // await driver.sleep(5000);
+        // console.log("Waited 5 seconds");
         
-        // Click on the Declined tab
-        await driver.findElement(By.partialLinkText(pt_list.vc_declined)).click();
-        console.log("Clicked on Declined tab");
-        await driver.sleep(5000);
-        console.log("Waited 5 seconds");
+        // // Click on the Declined tab
+        // await driver.findElement(By.partialLinkText(pt_list.vc_declined)).click();
+        // console.log("Clicked on Declined tab");
+        // await driver.sleep(5000);
+        // console.log("Waited 5 seconds");
 
         // // Go to Patient Profile
         // await driver.get(pt_profile.dev_link);

@@ -10,13 +10,13 @@ let googleStgPublic = require('../tests/google_stg_public.js');
     try {
         let startTime = new Date();
         console.log("Smoke Test Started at: " + startTime);
-        await googleStgAdmins();
+        // await googleStgAdmins();
         await googleStgIndependents();
-        await googleStgPtProfiles();
-        await googleStgChainPartner();
-        await googleStgChainUserA();
-        await googleStgChainUserB();
-        await googleStgPublic();
+        // await googleStgPtProfiles();
+        // await googleStgChainPartner();
+        // await googleStgChainUserA();
+        // await googleStgChainUserB();
+        // await googleStgPublic();
     } catch (error) {
         throw error;
     }
