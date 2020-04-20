@@ -19,8 +19,8 @@ const googleDevIndependents = async function() {
         console.log("Entered username");
         await driver.findElement(By.id(login.pw)).sendKeys(credentials.customer_password, Key.RETURN);
         console.log("Entered password and clicked 'Enter'");
-        await driver.sleep(6000);
-        console.log("Waited 6 seconds");
+        await driver.sleep(10000);
+        console.log("Waited 10 seconds");
         await driver.getTitle().then(function(title) {
             assert.equal(title, titles.independent_dashboard);
             console.log("Asserted title is: " + title );

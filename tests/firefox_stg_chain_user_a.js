@@ -17,7 +17,8 @@ const firefoxStgChainUserA = async function() {
         console.log("Entered username");
         await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.chainSample_password, Key.RETURN);
         console.log("Entered password and clicked 'Enter'");
-        await driver.sleep(10000); // Wait for page to load
+        await driver.sleep(10000);
+        console.log("Waited 10 seconds");
         await driver.getTitle().then(function(title) {
             assert.equal(title, titles.chain_dashboard);
             console.log("Asserted title is: " + title );
