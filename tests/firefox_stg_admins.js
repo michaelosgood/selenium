@@ -16,8 +16,8 @@ const firefoxStgAdmins = async function() {
         console.log("Entered internal username");
         await driver.findElement(By.id(login.pw)).sendKeys(credentials.internal_password, Key.RETURN);
         console.log("Entered password and clicked 'Enter'");
-        await driver.sleep(6000);
-        console.log("Waited 6 seconds");
+        await driver.sleep(30000);
+        console.log("Waited 30 seconds");
         await driver.getTitle().then(function (title) {
             assert.equal(title, titles.dashboard);
             console.log("Asserted title is: " + title);
@@ -127,12 +127,43 @@ const firefoxStgAdmins = async function() {
         console.log("Clicked on the gear icon");
         await driver.findElement(By.linkText(gear.camp_tools)).click();
         console.log("Selected 'Campaign Tools'");
-        await driver.sleep(6000); // Wait for page to load
-        console.log("Waited a couple seconds");
+        await driver.sleep(6000);
+        console.log("Waited 6 seconds");
         await driver.getTitle().then(function (title) {
             assert.equal(title, titles.camp_tools);
             console.log("Asserted title for 'Campaigns Tools' page is: " + title);
         });
+
+        // Campaign Tools - Campaign Template Editor
+        await driver.findElement(By.linkText(gear.camp_tools_cte)).click();
+        console.log("Selected 'Campaign Template Editor'");
+        await driver.sleep(6000);
+        console.log("Waited 6 seconds");
+
+        // Campaign Tools - Test Criteria
+        await driver.findElement(By.linkText(gear.camp_tools_ct)).click();
+        console.log("Selected 'Test Criteria'");
+        await driver.sleep(6000);
+        console.log("Waited 6 seconds");
+
+        // Campaign Tools - Scrubbed Contacts
+        await driver.findElement(By.linkText(gear.camp_tools_sc)).click();
+        console.log("Selected 'Scrubbed Contacts'");
+        await driver.sleep(6000);
+        console.log("Waited 6 seconds");
+
+        // Campaign Tools - Twilio Logs
+        await driver.findElement(By.linkText(gear.camp_tools_tl)).click();
+        console.log("Selected 'Twilio Logs'");
+        await driver.sleep(6000);
+        console.log("Waited 6 seconds");
+
+        // Campaign Tools - API Health Check
+        await driver.findElement(By.linkText(gear.camp_tools_ahc)).click();
+        console.log("Selected 'API Health Check'");
+        await driver.sleep(6000);
+        console.log("Waited 6 seconds");
+
 
         // Settings Verify Title
         await driver.findElement(By.id(gear.icon)).click();
