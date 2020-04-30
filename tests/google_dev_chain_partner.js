@@ -15,18 +15,9 @@ const googleDevChainPartner = async function() {
         console.log("Entered username");
         await driver.findElement(By.id(login.pw)).sendKeys(credentials.chainPartner_password, Key.RETURN);
         console.log("Entered password and clicked 'Enter'");
-        await driver.sleep(6000); // Wait for page to load
+        await driver.sleep(15000);
+        console.log("Waited 15 seconds");
         await driver.getTitle().then(function (title) {
-            assert.equal(title, "Enterprise Dashboard");
-            console.log("Asserted title is: " + title);
-        });
-
-        // Verify Title for 'Pharmacies' Page
-        await driver.findElement(By.linkText('Pharmacies')).click();
-        console.log("Selected 'Pharmacies'");
-        await driver.sleep(6000);
-        console.log("Waited 6 seconds");
-        await driver.getTitle().then(function(title) {
             assert.equal(title, "Enterprise Dashboard");
             console.log("Asserted title is: " + title);
         });
