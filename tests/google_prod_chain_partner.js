@@ -22,6 +22,16 @@ const googleProdChainPartner = async function() {
             console.log("Asserted title is: " + title);
         });
 
+        // Verify Title for 'Pharmacies' Page
+        await driver.findElement(By.linkText('Pharmacies')).click();
+        console.log("Selected 'Pharmacies'");
+        await driver.sleep(6000);
+        console.log("Waited 6 seconds");
+        await driver.getTitle().then(function(title) {
+            assert.equal(title, "Enterprise Dashboard");
+            console.log("Asserted title is: " + title);
+        });
+
         // Verify Title for 'Active Patients' Page
         await driver.findElement(By.linkText('Active Patients')).click();
         console.log("Selected 'Active Patients'");
