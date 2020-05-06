@@ -47,7 +47,6 @@ const googleProdChainPartner = async function() {
         console.log("Went to the patient's profile")
         await driver.sleep(8000);
         console.log("Waited 8 seconds");
-       
 
         // Click on the Overview tab
         await driver.findElement(By.linkText('Overview')).click();
