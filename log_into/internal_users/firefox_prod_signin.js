@@ -14,8 +14,8 @@ let gear = require('../../components/gear.js');
         console.log("Entered internal username");
         await driver.findElement(By.id(login.pw)).sendKeys(credentials.internal_password, Key.RETURN);
         console.log("Entered password and clicked 'Enter'");
-        await driver.sleep(6000);
-        console.log("Waited 6 seconds");
+        await driver.sleep(15000); 
+        console.log("Waited 15 seconds");
         await driver.findElement(By.id(gear.icon)).click();
         console.log("Clicked on the gear icon");
     } 
