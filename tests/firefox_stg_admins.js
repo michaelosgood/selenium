@@ -1,4 +1,5 @@
 const { Builder, By, Key, actions, until } = require('selenium-webdriver');
+let login = require('../components/login.js');
 let credentials = require('../credentials.js');
 let environment = require('../environment.js');
 let titles = require('../components/titles.js');
