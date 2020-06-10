@@ -1,6 +1,6 @@
 let googleBetaAdmins = require('../tests/google_beta_admins.js')
 let googleBetaIndependents = require('../tests/google_beta_independents.js');
-let googleBetatProfiles = require('../tests/google_beta_patient_profiles.js');
+let googleBetaPtProfiles = require('../tests/google_beta_patient_profiles.js');
 let googleBetaChainPartner = require('../tests/google_beta_chain_partner.js');
 let googleBetaChainUserA = require('../tests/google_beta_chain_user_a.js');
 let googleBetaChainUserB = require('../tests/google_beta_chain_user_b.js');
