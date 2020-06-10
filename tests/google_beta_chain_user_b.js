@@ -117,4 +117,4 @@ const googleBetaChainUserB = async function() {
         await driver.quit()
     };
 }
-module.exports = googleStgChainUserB;
+module.exports = googleBetaChainUserB;
