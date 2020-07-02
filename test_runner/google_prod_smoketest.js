@@ -1,6 +1,7 @@
 let googleProdIndependents = require('../tests/google_prod_independents.js');
 let googleProdAdmins = require('../tests/google_prod_admins.js');
 let googleProdPtProfiles = require('../tests/google_prod_patient_profiles.js');
+let googleProdPartnerPartner = require('../tests/google_prod_partner_partner.js');
 let googleProdChainPartner = require('../tests/google_prod_chain_partner.js');
 let googleProdChainUserA = require('../tests/google_prod_chain_user_a.js');
 let googleProdChainUserB = require('../tests/google_prod_chain_user_b.js');
@@ -13,6 +14,7 @@ let googleProdPublic = require('../tests/google_prod_public.js');
         await googleProdAdmins();
         await googleProdIndependents();
         await googleProdPtProfiles();
+        await googleProdPartnerPartner();
         await googleProdChainPartner();
         await googleProdChainUserA();
         await googleProdChainUserB();
