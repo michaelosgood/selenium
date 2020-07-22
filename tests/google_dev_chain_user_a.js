@@ -2,8 +2,9 @@ const {Builder, By, Key, actions, until} = require('selenium-webdriver');
 let credentials = require('../credentials.js');
 let environment = require('../environment.js');
 let titles = require('../components/titles.js');
+let home = require('../components/home.js');
+let login = require('../components/login.js');
 let assert = require("chai").assert;
-
 
 const googleDevChainUserA = async function() {
   let driver = await new Builder().forBrowser('chrome').build();
@@ -14,16 +15,24 @@ const googleDevChainUserA = async function() {
         console.log("Went to DEV");
 
         // Login as a Chain Sample User and Verify Title
-        await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.chainSample_user);
+        await driver.findElement(By.id(login.id)).sendKeys(credentials.chainSample_user);
         console.log("Entered username");
-        await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.chainSample_password, Key.RETURN);
+        await driver.findElement(By.id(login.pw)).sendKeys(credentials.chainSample_password, Key.RETURN);
         console.log("Entered password and clicked 'Enter'");
         await driver.sleep(10000);
         console.log("Waited 10 seconds");
+
+        // Verify Title for 'VaccineComplete' Pt List
         await driver.getTitle().then(function(title) {
-            assert.equal(title, titles.chain_dashboard);
-            console.log("Asserted title is: " + title );
+            assert.equal(title, titles.chain_vaccines);
+            console.log("Asserted title for 'VaccineComplete' page is: " + title);
         });
+
+        // Go to Home Page
+        await driver.get(home.dev);
+        await console.log("Pulled up the patient profile");
+        await driver.sleep(5000); // wait for page to load
+        console.log("Waited 5 Seconds for page to load");
         
         //  Verify Title for Scheduled tab
         await driver.sleep(4000); // Wait for page to load
@@ -137,15 +146,6 @@ const googleDevChainUserA = async function() {
         await driver.getTitle().then(function(title) {
             assert.equal(title, titles.chain_starwellness);
             console.log("Asserted title for 'StarWellness Synchronization' page is: " + title );
-        });
-
-        // Verify Title for 'VaccineComplete' Pt List
-        await driver.findElement(By.linkText('VaccineComplete')).click();
-        console.log("Selected 'VaccineComplete'");
-        await driver.sleep(10000); // Wait for page to load
-        await driver.getTitle().then(function(title) {
-            assert.equal(title, titles.chain_vaccines);
-            console.log("Asserted title for 'VaccineComplete' page is: " + title );
         });
 
         // Verify Title for 'PrescribeMedicare' Pt List

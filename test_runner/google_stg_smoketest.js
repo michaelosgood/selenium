@@ -14,7 +14,7 @@ let googleStgPublic = require('../tests/google_stg_public.js');
         await googleStgAdmins();
         await googleStgIndependents();
         await googleStgPtProfiles();
-        await googleStgPartnerPartner(); // still need to finish and add to other smoketests
+        await googleStgPartnerPartner();
         await googleStgChainPartner();
         await googleStgChainUserA();
         await googleStgChainUserB();
