@@ -26,7 +26,7 @@ titles.chain_pcare = "PrescribeCare: Patients with Encounters - Pharmacy Portal 
 
 // Independent titles
 titles.independent_dashboard = "Pharmacy Dashboard - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - HthreeNtwo";
-titles.indedpenent_message_center = "Message Center - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2";
+titles.indedpenent_message_center = "Message Center - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - HthreeNtwo";
 titles.independent_clinical_calendar = "Pharmacy Calendar - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - HthreeNtwo";
 titles.independent_active_patients = "Pharmacy Dashboard - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - HthreeNtwo";
 titles.independent_growth = "Growth: Patients - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - HthreeNtwo";
