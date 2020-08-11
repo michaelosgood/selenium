@@ -14,7 +14,7 @@ const firefoxProdPtProfiles = async function() {
         await driver.get(environment.prod);
         console.log("Went to Production");
 
- // Login to User
+        // Login to User
         await driver.findElement(By.id(login.id)).sendKeys(credentials.customer_user);
         console.log("Entered username");
         await driver.findElement(By.id(login.pw)).sendKeys(credentials.customer_password, Key.RETURN);
@@ -68,6 +68,12 @@ const firefoxProdPtProfiles = async function() {
         console.log("Clicked on Med Time Reminders sub-tab");
         await driver.sleep(6000);
         console.log("Waited 6 seconds");
+
+        // Click on MedWise™ Tab
+        await driver.findElement(By.linkText('MedWise™')).click();
+        console.log("Clicked on MedWise™ tab");
+        await driver.sleep(5000);
+        console.log("Waited 5 seconds");  
 
         // Click on Medicare tab 
         await driver.findElement(By.linkText('Medicare')).click();

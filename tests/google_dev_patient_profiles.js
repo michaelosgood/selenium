@@ -61,6 +61,12 @@ const googleDevPtProfiles = async function() {
         console.log("Clicked on Med Time Reminders sub-tab");
         await driver.sleep(6000); // wait for page to load
 
+        // Click on MedWise™ Tab
+        await driver.findElement(By.linkText('MedWise™')).click();
+        console.log("Clicked on MedWise™ tab");
+        await driver.sleep(5000);
+        console.log("Waited 5 seconds");  
+
         // Click on Med    // Click on Vaccines tab
         await driver.findElement(By.linkText('Vaccines')).click();
         console.log("Clicked on Vaccines tab");

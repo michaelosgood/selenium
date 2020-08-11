@@ -69,6 +69,12 @@ const googleProdPtProfiles = async function() {
         await driver.sleep(6000);
         console.log("Waited 6 seconds");
 
+        // Click on MedWise™ Tab
+        await driver.findElement(By.linkText('MedWise™')).click();
+        console.log("Clicked on MedWise™ tab");
+        await driver.sleep(5000);
+        console.log("Waited 5 seconds");  
+
         // Click on Medicare tab 
         await driver.findElement(By.linkText('Medicare')).click();
         console.log("Clicked on Medicare tab");

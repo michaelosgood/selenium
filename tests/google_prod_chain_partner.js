@@ -81,10 +81,10 @@ const googleProdChainPartner = async function() {
         await driver.sleep(5000);
         console.log("Waited 5 seconds");
 
-        await driver.findElement(By.linkText('Med Time Reminders')).click();
-        console.log("Clicked on Med Time Reminders sub-tab");
-        await driver.sleep(5000);
-        console.log("Waited 5 seconds");
+        // await driver.findElement(By.linkText('Med Time Reminders')).click();
+        // console.log("Clicked on Med Time Reminders sub-tab");
+        // await driver.sleep(5000);
+        // console.log("Waited 5 seconds");
 
         // Click on the Medicare tab
         await driver.findElement(By.linkText('Medicare')).click();
