@@ -3,7 +3,7 @@ let login = require('../components/login.js');
 let credentials = require('../credentials.js');
 let environment = require('../environment.js');
 let titles = require('../components/titles.js');
-let left_nav = require('../components/left_nav.js');
+let nav = require('../gui/components/nav.js');
 let assert = require("chai").assert;
 
 const googleStgRebrandingIndependents = async function() {
@@ -59,7 +59,7 @@ const googleStgRebrandingIndependents = async function() {
         });
 
         // Verify Title for Active Patients page
-        await driver.findElement(By.linkText('Active Patients')).click();
+        await driver.findElement(By.linkText(nav.act_pts)).click();
         console.log("Clicked on 'Active Patients'");
         await driver.sleep(10000);
         console.log("Waited 10 seconds");
@@ -69,7 +69,7 @@ const googleStgRebrandingIndependents = async function() {
         });
 
         // Verify Title for Drugs page
-        await driver.findElement(By.linkText('Drugs')).click();
+        await driver.findElement(By.linkText(nav.drugs)).click();
         console.log("Clicked on 'Drugs'");
         await driver.sleep(10000);
         console.log("Waited 10 seconds");
@@ -80,7 +80,7 @@ const googleStgRebrandingIndependents = async function() {
         
 
         // Verify Title for Physicians page
-        await driver.findElement(By.linkText('Physicians')).click();
+        await driver.findElement(By.linkText(nav.physicians)).click();
         console.log("Clicked on 'Physicians'");
         await driver.sleep(10000);
         console.log("Waited 10 seconds");
@@ -90,7 +90,7 @@ const googleStgRebrandingIndependents = async function() {
         });
 
         // Verify Title for Physician Groups page
-        await driver.findElement(By.linkText('Physician Groups')).click();
+        await driver.findElement(By.linkText(nav.physician_groups)).click();
         console.log("Clicked on 'Physician Groups'");
         await driver.sleep(10000);
         console.log("Waited 10 seconds");
@@ -100,7 +100,7 @@ const googleStgRebrandingIndependents = async function() {
         });
            
         // Verify Title for Diseases page
-        await driver.findElement(By.linkText('Diseases')).click();
+        await driver.findElement(By.linkText(nav.diseases)).click();
         console.log("Clicked on 'Diseases'");
         await driver.sleep(10000);
         console.log("Waited 10 seconds");
@@ -108,105 +108,6 @@ const googleStgRebrandingIndependents = async function() {
             assert.equal(title, titles.independent_dashboard);
             console.log("Asserted title is: " + title );
         });
-
-        // Verify Title for Message Center
-        // await driver.findElement(By.id(nav.message_center_icon)).click();
-        // console.log("Clicked on Message Center icon");
-        // await driver.findElement(By.linkText(nav.message_center)).click();
-        // console.log("Clicked on Message Center");
-        // await driver.sleep(5000);
-        // console.log("Waited 5 seconds");
-        // await driver.getTitle().then(function(title) {
-        //     assert.equal(title, titles.indedpenent_message_center);
-        //     console.log("Asserted title is: " + title );
-        // });
-
-        // Verify Title for Clinical Calendar
-        // await driver.findElement(By.className('fa-calendar')).click();
-        // console.log("Clicked on the calendar icon");
-        // await driver.findElement(By.linkText('Clinical Calendar')).click();
-        // console.log("Selected 'Clinical Calendar' icon");
-        // await driver.sleep(10000);
-        // console.log("Waited 10 seconds");
-        // await driver.getTitle().then(function(title) {
-        //     assert.equal(title, titles.independent_clinical_calendar);
-        //     console.log("Asserted title for 'Clinical Calendar' page is: " + title );
-        // });
-
-        // Verify Title for Social Calendar
-        // await driver.findElement(By.className('fa-calendar')).click();
-        // console.log("Clicked on the calendar icon");
-        // await driver.findElement(By.linkText('Social Calendar')).click();
-        // console.log("Selected 'Social Calendar' icon");
-        // await driver.sleep(10000);
-        // console.log("Waited 10 seconds");
-        // await driver.getTitle().then(function(title) {
-        //     assert.equal(title, titles.independent_clinical_calendar);
-        //     console.log("Asserted title for 'Social Calendar' page is: " + title );
-        // });
-
-        // Verify Title for Custom Calendar
-        // await driver.findElement(By.className('fa-calendar')).click();
-        // console.log("Clicked on the calendar icon");
-        // await driver.findElement(By.linkText('Custom Calendar')).click();
-        // console.log("Selected 'Custom Calendar' icon");
-        // await driver.sleep(10000);
-        // console.log("Waited 10 seconds");
-        // await driver.getTitle().then(function(title) {
-        //     assert.equal(title, titles.independent_clinical_calendar);
-        //     console.log("Asserted title for 'Social Calendar' page is: " + title );
-        // });
-
-        // Verify Title for 'Growth' Pt List
-        // await driver.findElement(By.linkText('Growth')).click();
-        // console.log("Selected 'Growth'");
-        // await driver.sleep(10000);
-        // console.log("Waited 10 seconds");
-        // await driver.getTitle().then(function(title) {
-        //     assert.equal(title, titles.independent_growth);
-        //     console.log("Asserted title for 'Growth' page is: " + title );
-        // });
-
-        // Verify Title for 'StarWellness' Pt List
-        // await driver.findElement(By.linkText('StarWellness')).click();
-        // console.log("Selected 'StarWellness'");
-        // await driver.findElement(By.linkText('Synchronization')).click();
-        // await driver.sleep(10000);
-        // console.log("Waited 10 seconds");
-        // await driver.getTitle().then(function(title) {
-        //     assert.equal(title, titles.independent_starwellness);
-        //     console.log("Asserted title for 'StarWellness Synchronization' page is: " + title );
-        // });
-
-        // Verify Title for 'VaccineComplete' Pt List
-        // await driver.findElement(By.linkText('VaccineComplete')).click();
-        // console.log("Selected 'VaccineComplete'");
-        // await driver.sleep(10000);
-        // console.log("Waited 10 seconds");
-        // await driver.getTitle().then(function(title) {
-        //     assert.equal(title, titles.independent_vaccines);
-        //     console.log("Asserted title for 'VaccineComplete' page is: " + title );
-        // });
-
-        // Verify Title for 'PrescribeMedicare' Pt List
-        // await driver.findElement(By.linkText('PrescribeMedicare')).click();
-        // console.log("Selected 'PrescribeMedicare'");
-        // await driver.sleep(10000);
-        // console.log("Waited 10 seconds");
-        // await driver.getTitle().then(function(title) {
-        //     assert.equal(title, titles.independent_pmed);
-        //     console.log("Asserted title for 'PrescribeMedicare' page is: " + title );
-        // });
-
-        // Verify Title for 'PrescribeCare' Pt List
-        // await driver.findElement(By.linkText('PrescribeCare')).click();
-        // console.log("Selected 'PrescribeCare'");
-        // await driver.sleep(10000);
-        // console.log("Waited 10 seconds");
-        // await driver.getTitle().then(function(title) {
-        //     assert.equal(title, titles.independent_pcare);
-        //     console.log("Asserted title for 'PrescribeCare' page is: " + title );
-        // });
 
     }
     catch(err) {
