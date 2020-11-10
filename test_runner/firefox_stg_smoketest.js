@@ -16,7 +16,7 @@ let firefoxStgPublic = require('../tests/firefox_stg_public.js');
         await firefoxStgChainPartner();
         await firefoxStgChainUserA();
         await firefoxStgChainUserB();
-        await firefoxStgPublic()
+       // await firefoxStgPublic()
     } catch (error) {
         throw error;
     }
