@@ -1,11 +1,11 @@
-let googleStgRebrandingIndependentss = require('../tests/google_stg_rebranding_independents.js');
+let googleStgRebrandingIndependents = require('../tests/google_stg_rebranding_independents.js');
 
 
 (async function stgSmoketest() { 
     try {
         let startTime = new Date();
         console.log("Smoke Test Started at: " + startTime);
-        await googleStgRebrandingIndependentss();
+        await googleStgRebrandingIndependents();
 
     } catch (error) {
         throw error;
