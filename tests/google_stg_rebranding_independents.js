@@ -6,6 +6,8 @@ let titles = require('../components/titles.js');
 let nav = require('../gui/components/nav.js');
 let assert = require("chai").assert;
 let sync = require('../gui/pages/sync.js');
+let home = require('../gui/pages/home.js');
+let eld_hrm = require('../gui/pages/eld_hrm.js');
 
 const googleStgRebrandingIndependents = async function() {
   let driver = await new Builder().forBrowser('chrome').build();
@@ -30,7 +32,7 @@ const googleStgRebrandingIndependents = async function() {
         //  Verify Title for Scheduled tab
         await driver.sleep(4000);
         console.log("Waited 4 seconds");
-        await driver.findElement(By.partialLinkText('Scheduled')).click();
+        await driver.findElement(By.partialLinkText(home.scheduled)).click();
         console.log("Clicked on 'Scheduled' tab");
         await driver.sleep(4000);
         console.log("Waited 4 seconds");
@@ -40,7 +42,7 @@ const googleStgRebrandingIndependents = async function() {
         });
 
         //  Verify Title for In Progress tab
-        await driver.findElement(By.partialLinkText('In Progress')).click();
+        await driver.findElement(By.partialLinkText(home.in_progress)).click();
         console.log("Clicked on 'In Progress' tab");
         await driver.sleep(5000);
         console.log("Waited 5 seconds");
@@ -50,7 +52,7 @@ const googleStgRebrandingIndependents = async function() {
         });
 
         //  Verify Title for Not Connected tab
-        await driver.findElement(By.partialLinkText('Not Connected')).click();
+        await driver.findElement(By.partialLinkText(home.not_connected)).click();
         console.log("Clicked on 'Not Connected' tab");
         await driver.sleep(5000);
         console.log("Waited 5 seconds");
@@ -120,8 +122,8 @@ const googleStgRebrandingIndependents = async function() {
         });
 
         // Verify Title for 'Med Sync' page
-        await driver.get(sync.url);
-        console.log("Clicked on 'Synchronization'");
+        await driver.get(sync.stg);
+        console.log("Went to 'Synchronization'");
         await driver.sleep(5000);
         console.log("Waited 5 seconds");
         await driver.getTitle().then(function(title) {
@@ -149,16 +151,17 @@ const googleStgRebrandingIndependents = async function() {
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
 
-        // Verify Title for 'Elderly on HRM' page
-        // await driver.findElement(By.className('LeftNav_linkWrapper__QT16H')).click();
-        // console.log("Clicked on 'Elderly on HRM");
-        // await driver.sleep(5000);
-        // console.log("Waited 5 seconds");
-        // await driver.getTitle().then(function(title) {
-        //     assert.equal(title, titles.independent_dashboard);
-        //     console.log("Asserted title for 'Med Sync' page is: " + title );
-        // });
 
+         // Verify Title for 'Elderly on HRM' page
+         await driver.get(eld_hrm.stg);
+         console.log("Went to 'Elderly on HRM'");
+         await driver.sleep(5000);
+         console.log("Waited 5 seconds");
+         await driver.getTitle().then(function(title) {
+             assert.equal(title, eld_hrm.title);
+             console.log("Asserted title for 'Elderly on HRM' page is: " + title );
+         });
+       
 
     }
     catch(err) {
