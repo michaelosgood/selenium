@@ -108,7 +108,7 @@ const googleStgRebrandingIndependents = async function() {
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function (title) {
             assert.equal(title, home.title);
-            console.log("Asserted title is: " + title);
+            console.log("Asserted title");
         });
            
         // Verify Title for Diseases page
@@ -172,7 +172,7 @@ const googleStgRebrandingIndependents = async function() {
              console.log("Asserted title");
          });
 
-        // Verfiy Title for 'Vaccinations' page
+        // Verfiy Title for 'Vaccinations' page 'Not Vaccinated' tab
         await driver.get(vaccinations.stg);
         console.log("Went to 'Vaccinations' page")
         await driver.sleep(3000);
@@ -181,33 +181,28 @@ const googleStgRebrandingIndependents = async function() {
             assert.equal(title, vaccinations.title);
             console.log("Asserted title");
         });
-        // Not Vaccinated Tab
-        await driver.findElement(By.css(vaccinations.tab1)).click();
-        console.log("Clicked on'Not Vaccinated' tab")
-        await driver.sleep(3000);
-        console.log("Waited 3 seconds");
         // Vaccinated Tab
         await driver.findElement(By.css('[href="#vac-tab2"]')).click();
         console.log("Clicked on 'Vaccinated' tab")
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         // Declined Tab
-        await driver.findElement(By.css('[href="#vac-tab3"]')).click();
+        await driver.findElement(By.css('[href="#vac-tab5"]')).click();
         console.log("Clicked on 'Declined' tab")
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         // IIS Pending Tab
-        await driver.findElement(By.css('[href="#vac-tab4"]')).click();
+        await driver.findElement(By.css('[href="#vac-tab6"]')).click();
         console.log("Clicked on 'IIS Pending' tab")
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         // IIS Accepted Tab
-        await driver.findElement(By.css('[href="#vac-tab5"]')).click();
+        await driver.findElement(By.css('[href="#vac-tab3"]')).click();
         console.log("Clicked on'IIS Accepted' tab")
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         // IIS Rejected Tab
-        await driver.findElement(By.css('[href="#vac-tab6"]')).click();
+        await driver.findElement(By.css('[href="#vac-tab4"]')).click();
         console.log("Clicked on 'IIS Rjected' tab")
         await driver.sleep(3000);
         console.log("Waited 3 seconds");

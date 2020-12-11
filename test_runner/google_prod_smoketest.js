@@ -6,11 +6,16 @@ let googleProdChainPartner = require('../tests/google_prod_chain_partner.js');
 let googleProdChainUserA = require('../tests/google_prod_chain_user_a.js');
 let googleProdChainUserB = require('../tests/google_prod_chain_user_b.js');
 let googleProdPublic = require('../tests/google_prod_public.js');
+let startTime ;
+let start ;
+let endTime ;
+let end ;
 
 (async function prodSmoketest() { 
     try {
-        let startTime = new Date();
-        console.log("Smoke Test Started at: " + startTime);
+        start = new Date();
+        startTime = new Date().getTime();
+        console.log("Smoketest Started at: " + start);
         await googleProdAdmins();
         await googleProdIndependents();
         await googleProdPtProfiles();
@@ -23,7 +28,9 @@ let googleProdPublic = require('../tests/google_prod_public.js');
         throw error;
     }
     finally {
-        let endTime = new Date();
-        console.log("Smoke Test Completed at: " + endTime);
+        end = new Date();
+        endTime = new Date().getTime();
+        console.log("Smoketest Completed at: " + end);
+        console.log("Smoketest total time = " + ((endTime - startTime )/1000) + " seconds");
       }
 })();

@@ -6,11 +6,16 @@ let googleDevChainPartner = require('../tests/google_dev_chain_partner.js');
 let googleDevChainUserA = require("../tests/google_dev_chain_user_a.js");
 let googleDevChainUserB = require("../tests/google_dev_chain_user_b.js");
 let googleDevPublic = require('../tests/google_dev_public.js');
+let startTime ;
+let start ;
+let endTime ;
+let end ;
 
 (async function devSmoketest() { 
     try {
-        let startTime = new Date();
-        console.log("Smoke Test Started at: " + startTime);
+        lstart = new Date();
+        startTime = new Date().getTime();
+        console.log("Smoketest Started at: " + start);
         await googleDevAdmins();
         await googleDevIndependents();
         await googleDevPtProfiles();
@@ -23,7 +28,9 @@ let googleDevPublic = require('../tests/google_dev_public.js');
         throw error;
     }
     finally {
-        let endTime = new Date();
-        console.log("Smoke Test Completed at: " + endTime);
+        end = new Date();
+        endTime = new Date().getTime();
+        console.log("Smoketest Completed at: " + end);
+        console.log("Smoketest total time = " + ((endTime - startTime )/1000) + " seconds");
       }
 })();
