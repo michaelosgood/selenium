@@ -23,7 +23,7 @@ const googleStgRebrandingIndependents = async function() {
     try {
         start = new Date().getTime();
         // Login to User and Verify Title
-        console.log("Starting Rebranding Patient List Test at " + start);
+        console.log("Starting Rebranding Patient List Test");
         await driver.get(environment.stg_rebranding);
         console.log("Went to Staging Rebranding");
 
@@ -36,141 +36,141 @@ const googleStgRebrandingIndependents = async function() {
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function(title) {
             assert.equal(title, home.title);
-            console.log("Asserted title is: " + title );
+            console.log("Asserted title");
         });
         
-        // //  Verify Title for Scheduled tab
-        // await driver.sleep(3000);
-        // console.log("Waited 3 seconds");
-        // await driver.findElement(By.partialLinkText(home.scheduled)).click();
-        // console.log("Clicked on 'Scheduled' tab");
-        // await driver.sleep(3000);
-        // console.log("Waited 3 seconds");
-        // await driver.getTitle().then(function(title) {
-        //     assert.equal(title, home.title);
-        //     console.log("Asserted title is: " + title );
-        // });
+        //  Verify Title for Scheduled tab
+        await driver.sleep(3000);
+        console.log("Waited 3 seconds");
+        await driver.findElement(By.partialLinkText(home.scheduled)).click();
+        console.log("Clicked on 'Scheduled' tab");
+        await driver.sleep(3000);
+        console.log("Waited 3 seconds");
+        await driver.getTitle().then(function(title) {
+            assert.equal(title, home.title);
+            console.log("Asserted title");
+        });
 
-        // //  Verify Title for In Progress tab
-        // await driver.findElement(By.partialLinkText(home.in_progress)).click();
-        // console.log("Clicked on 'In Progress' tab");
-        // await driver.sleep(3000);
-        // console.log("Waited 3 seconds");
-        // await driver.getTitle().then(function(title) {
-        //     assert.equal(title, home.title);
-        //     console.log("Asserted title is: " + title );
-        // });
+        //  Verify Title for In Progress tab
+        await driver.findElement(By.partialLinkText(home.in_progress)).click();
+        console.log("Clicked on 'In Progress' tab");
+        await driver.sleep(3000);
+        console.log("Waited 3 seconds");
+        await driver.getTitle().then(function(title) {
+            assert.equal(title, home.title);
+            console.log("Asserted title");
+        });
 
-        // //  Verify Title for Not Connected tab
-        // await driver.findElement(By.partialLinkText(home.not_connected)).click();
-        // console.log("Clicked on 'Not Connected' tab");
-        // await driver.sleep(3000);
-        // console.log("Waited 3 seconds");
-        // await driver.getTitle().then(function(title) {
-        //     assert.equal(title, home.title);
-        //     console.log("Asserted title is: " + title );
-        // });
+        //  Verify Title for Not Connected tab
+        await driver.findElement(By.partialLinkText(home.not_connected)).click();
+        console.log("Clicked on 'Not Connected' tab");
+        await driver.sleep(3000);
+        console.log("Waited 3 seconds");
+        await driver.getTitle().then(function(title) {
+            assert.equal(title, home.title);
+            console.log("Asserted title");
+        });
 
-        // // Verify Title for Active Patients page
-        // await driver.findElement(By.linkText(home.act_pat)).click();
-        // console.log("Clicked on 'Active Patients'");
-        // await driver.sleep(3000);
-        // console.log("Waited 3 seconds");
-        // await driver.getTitle().then(function(title) {
-        //     assert.equal(title, home.title);
-        //     console.log("Asserted title is: " + title );
-        // });
+        // Verify Title for Active Patients page
+        await driver.findElement(By.linkText(home.act_pat)).click();
+        console.log("Clicked on 'Active Patients'");
+        await driver.sleep(3000);
+        console.log("Waited 3 seconds");
+        await driver.getTitle().then(function(title) {
+            assert.equal(title, home.title);
+            console.log("Asserted title");
+        });
 
-        // // Verify Title for Drugs page
-        // await driver.findElement(By.linkText(home.drugs)).click();
-        // console.log("Clicked on 'Drugs'");
-        // await driver.sleep(3000);
-        // console.log("Waited 3 seconds");
-        // await driver.getTitle().then(function(title) {
-        //     assert.equal(title, home.title);
-        //     console.log("Asserted title is: " + title );
-        // });
+        // Verify Title for Drugs page
+        await driver.findElement(By.linkText(home.drugs)).click();
+        console.log("Clicked on 'Drugs'");
+        await driver.sleep(3000);
+        console.log("Waited 3 seconds");
+        await driver.getTitle().then(function(title) {
+            assert.equal(title, home.title);
+            console.log("Asserted title");
+        });
 
-        // // Verify Title for Physicians page
-        // await driver.findElement(By.linkText(home.phys)).click();
-        // console.log("Clicked on 'Physicians'");
-        // await driver.sleep(3000);
-        // console.log("Waited 3 seconds");
-        // await driver.getTitle().then(function(title) {
-        //     assert.equal(title, home.title);
-        //     console.log("Asserted title is: " + title );
-        // });
+        // Verify Title for Physicians page
+        await driver.findElement(By.linkText(home.phys)).click();
+        console.log("Clicked on 'Physicians'");
+        await driver.sleep(3000);
+        console.log("Waited 3 seconds");
+        await driver.getTitle().then(function(title) {
+            assert.equal(title, home.title);
+            console.log("Asserted title");
+        });
 
-        // // Verify Title for Physician Groups page
-        // await driver.findElement(By.linkText(home.phys_grp)).click();
-        // console.log("Clicked on 'Physician Groups'");
-        // await driver.sleep(3000);
-        // console.log("Waited 3 seconds");
-        // await driver.getTitle().then(function (title) {
-        //     assert.equal(title, home.title);
-        //     console.log("Asserted title is: " + title);
-        // });
+        // Verify Title for Physician Groups page
+        await driver.findElement(By.linkText(home.phys_grp)).click();
+        console.log("Clicked on 'Physician Groups'");
+        await driver.sleep(3000);
+        console.log("Waited 3 seconds");
+        await driver.getTitle().then(function (title) {
+            assert.equal(title, home.title);
+            console.log("Asserted title is: " + title);
+        });
            
-        // // Verify Title for Diseases page
-        // await driver.findElement(By.linkText(home.dis)).click();
-        // console.log("Clicked on 'Diseases'");
-        // await driver.sleep(3000);
-        // console.log("Waited 3 seconds");
-        // await driver.getTitle().then(function(title) {
-        //     assert.equal(title, home.title);
-        //     console.log("Asserted title is: " + title );
-        // });
+        // Verify Title for Diseases page
+        await driver.findElement(By.linkText(home.dis)).click();
+        console.log("Clicked on 'Diseases'");
+        await driver.sleep(3000);
+        console.log("Waited 3 seconds");
+        await driver.getTitle().then(function(title) {
+            assert.equal(title, home.title);
+            console.log("Asserted title");
+        });
 
-        // // Verify Title for Patient Communications page
-        // await driver.findElement(By.linkText(pt_comm.pt_comm)).click();
-        // console.log("Clicked on 'Patient Communications'");
-        // await driver.sleep(3000);
-        // console.log("Waited 3 seconds");
-        // await driver.getTitle().then(function(title) {
-        //     assert.equal(title, pt_comm.title);
-        //     console.log("Asserted title is: " + title );
-        // });
+        // Verify Title for Patient Communications page
+        await driver.findElement(By.linkText(pt_comm.pt_comm)).click();
+        console.log("Clicked on 'Patient Communications'");
+        await driver.sleep(3000);
+        console.log("Waited 3 seconds");
+        await driver.getTitle().then(function(title) {
+            assert.equal(title, pt_comm.title);
+            console.log("Asserted title");
+        });
 
-        // // Verify Title for 'Med Sync' page
-        // await driver.get(sync.stg);
-        // console.log("Went to 'Synchronization'");
-        // await driver.sleep(3000);
-        // console.log("Waited 3 seconds");
-        // await driver.getTitle().then(function(title) {
-        //     assert.equal(title, sync.title);
-        //     console.log("Asserted title for 'Med Sync' page is: " + title );
-        // });
-        // // Enrolled Tab
-        // await driver.findElement(By.linkText(sync.enrolled)).click();
-        // console.log("Clicked on 'Enrolled' tab");
-        // await driver.sleep(3000);
-        // console.log("Waited 3 seconds");
-        // // Resync Tab
-        // await driver.findElement(By.linkText(sync.resync)).click();
-        // console.log("Clicked on 'Resync' tab");
-        // await driver.sleep(3000);
-        // console.log("Waited 3 seconds");
-        //  // UnEnrolled Tab
-        //  await driver.findElement(By.linkText(sync.unenrolled)).click();
-        //  console.log("Clicked on 'UnEnrolled' tab");
-        //  await driver.sleep(3000);
-        //  console.log("Waited 3 seconds");
-        //   // Declined Tab
-        // await driver.findElement(By.linkText(sync.declined)).click();
-        // console.log("Clicked on 'Declined' tab");
-        // await driver.sleep(3000);
-        // console.log("Waited 3 seconds");
+        // Verify Title for 'Med Sync' page
+        await driver.get(sync.stg);
+        console.log("Went to 'Synchronization'");
+        await driver.sleep(3000);
+        console.log("Waited 3 seconds");
+        await driver.getTitle().then(function(title) {
+            assert.equal(title, sync.title);
+            console.log("Asserted title");
+        });
+        // Enrolled Tab
+        await driver.findElement(By.linkText(sync.enrolled)).click();
+        console.log("Clicked on 'Enrolled' tab");
+        await driver.sleep(3000);
+        console.log("Waited 3 seconds");
+        // Resync Tab
+        await driver.findElement(By.linkText(sync.resync)).click();
+        console.log("Clicked on 'Resync' tab");
+        await driver.sleep(3000);
+        console.log("Waited 3 seconds");
+         // UnEnrolled Tab
+         await driver.findElement(By.linkText(sync.unenrolled)).click();
+         console.log("Clicked on 'UnEnrolled' tab");
+         await driver.sleep(3000);
+         console.log("Waited 3 seconds");
+          // Declined Tab
+        await driver.findElement(By.linkText(sync.declined)).click();
+        console.log("Clicked on 'Declined' tab");
+        await driver.sleep(3000);
+        console.log("Waited 3 seconds");
 
 
-        //  // Verify Title for 'Elderly on HRM' page
-        //  await driver.get(eld_hrm.stg);
-        //  console.log("Went to 'Elderly on HRM'");
-        //  await driver.sleep(3000);
-        //  console.log("Waited 3 seconds");
-        //  await driver.getTitle().then(function(title) {
-        //      assert.equal(title, eld_hrm.title);
-        //      console.log("Asserted title for 'Elderly on HRM' page is: " + title );
-        //  });
+         // Verify Title for 'Elderly on HRM' page
+         await driver.get(eld_hrm.stg);
+         console.log("Went to 'Elderly on HRM'");
+         await driver.sleep(3000);
+         console.log("Waited 3 seconds");
+         await driver.getTitle().then(function(title) {
+             assert.equal(title, eld_hrm.title);
+             console.log("Asserted title");
+         });
 
         // Verfiy Title for 'Vaccinations' page
         await driver.get(vaccinations.stg);
@@ -179,41 +179,41 @@ const googleStgRebrandingIndependents = async function() {
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function(title) {
             assert.equal(title, vaccinations.title);
-            console.log("Asserted title for 'Vaccinations' page is: " + title );
+            console.log("Asserted title");
         });
         // Not Vaccinated Tab
-        await driver.findElement(By.partialLinkText(" Not Vaccinated")).click();
-        console.log("Went to 'Not Vaccinated' tab")
+        await driver.findElement(By.css(vaccinations.tab1)).click();
+        console.log("Clicked on'Not Vaccinated' tab")
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         // Vaccinated Tab
-        await driver.findElement(By.partialLinkText(" Vaccinated")).click();
-        console.log("Went to 'Vaccinated' tab")
+        await driver.findElement(By.css('[href="#vac-tab2"]')).click();
+        console.log("Clicked on 'Vaccinated' tab")
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         // Declined Tab
-        await driver.findElement(By.partialLinkText(" Declined")).click();
-        console.log("Went to 'Declined' tab")
+        await driver.findElement(By.css('[href="#vac-tab3"]')).click();
+        console.log("Clicked on 'Declined' tab")
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         // IIS Pending Tab
-        await driver.findElement(By.partialLinkText(" IIS Pending")).click();
-        console.log("Went to 'IIS Pending' tab")
+        await driver.findElement(By.css('[href="#vac-tab4"]')).click();
+        console.log("Clicked on 'IIS Pending' tab")
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         // IIS Accepted Tab
-        await driver.findElement(By.partialLinkText(" IIS Accepted")).click();
-        console.log("Went to 'IIS Accepted' tab")
+        await driver.findElement(By.css('[href="#vac-tab5"]')).click();
+        console.log("Clicked on'IIS Accepted' tab")
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         // IIS Rejected Tab
-        await driver.findElement(By.partialLinkText(" IIS Rejected")).click();
-        console.log("Went to 'IIS Rjected' tab")
+        await driver.findElement(By.css('[href="#vac-tab6"]')).click();
+        console.log("Clicked on 'IIS Rjected' tab")
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         // Immunizations Tab
-        await driver.findElement(By.partialLinkText(" Immunizations")).click();
-        console.log("Went to 'Immunizations' tab")
+        await driver.findElement(By.css('[href="#vac-tab7"]')).click();
+        console.log("Clicked on 'Immunizations' tab")
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
 
