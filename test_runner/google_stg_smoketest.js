@@ -14,7 +14,7 @@ let end ;
 
 (async function stgSmoketest() { 
     try {
-        tart = new Date();
+        start = new Date();
         startTime = new Date().getTime();
         console.log("Smoketest Started at: " + start);
         await googleStgAdmins();

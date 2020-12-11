@@ -13,7 +13,7 @@ let end ;
 
 (async function devSmoketest() { 
     try {
-        lstart = new Date();
+        start = new Date();
         startTime = new Date().getTime();
         console.log("Smoketest Started at: " + start);
         await googleDevAdmins();
