@@ -30,6 +30,8 @@ const googleProdPtProfiles = async function() {
 
         // Go to Patient Profile
         await driver.get(pt_profile.prod_link);
+        await driver.sleep(3000);
+        console.log("Waited 3 seconds");
         
         // Click on the Overview tab
         await driver.findElement(By.linkText('Overview')).click();

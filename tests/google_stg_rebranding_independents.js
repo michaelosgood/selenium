@@ -212,6 +212,19 @@ const googleStgRebrandingIndependents = async function() {
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
 
+        // Verify title for Medicare Plan Reviews page
+        // await driver.findElement(By.linkText('Medicare Plan Reviews')).click();
+        // Plan Review Eligible Tab
+        // Completed Tab
+        // Declined Tab
+
+        // Verify title for eCare Plans page
+        // With Encounters tab
+        // Without Encounter tab
+        // Encopunters tab
+
+
+
     }
     catch(err) {
         console.log(err);
