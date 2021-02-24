@@ -161,18 +161,17 @@ const googleStgRebrandingIndependents = async function() {
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
 
+        // Verify Title for 'Elderly on HRM' page
+        await driver.get(eld_hrm.stg);
+        console.log("Went to 'Elderly on HRM'");
+        await driver.sleep(3000);
+        console.log("Waited 3 seconds");
+        await driver.getTitle().then(function(title) {
+            assert.equal(title, eld_hrm.title);
+            console.log("Asserted title");
+        });
 
-         // Verify Title for 'Elderly on HRM' page
-         await driver.get(eld_hrm.stg);
-         console.log("Went to 'Elderly on HRM'");
-         await driver.sleep(3000);
-         console.log("Waited 3 seconds");
-         await driver.getTitle().then(function(title) {
-             assert.equal(title, eld_hrm.title);
-             console.log("Asserted title");
-         });
-
-        // Verfiy Title for 'Vaccinations' page 'Not Vaccinated' tab
+        // Verfiy Title for 'Vaccinations' page 'Rejected' tab
         await driver.get(vaccinations.stg);
         console.log("Went to 'Vaccinations' page")
         await driver.sleep(3000);
@@ -181,48 +180,65 @@ const googleStgRebrandingIndependents = async function() {
             assert.equal(title, vaccinations.title);
             console.log("Asserted title");
         });
-        // Vaccinated Tab
-        await driver.findElement(By.css('[href="#vac-tab2"]')).click();
-        console.log("Clicked on 'Vaccinated' tab")
-        await driver.sleep(3000);
-        console.log("Waited 3 seconds");
-        // Declined Tab
-        await driver.findElement(By.css('[href="#vac-tab5"]')).click();
-        console.log("Clicked on 'Declined' tab")
-        await driver.sleep(3000);
-        console.log("Waited 3 seconds");
-        // IIS Pending Tab
-        await driver.findElement(By.css('[href="#vac-tab6"]')).click();
-        console.log("Clicked on 'IIS Pending' tab")
-        await driver.sleep(3000);
-        console.log("Waited 3 seconds");
-        // IIS Accepted Tab
-        await driver.findElement(By.css('[href="#vac-tab3"]')).click();
-        console.log("Clicked on'IIS Accepted' tab")
-        await driver.sleep(3000);
-        console.log("Waited 3 seconds");
-        // IIS Rejected Tab
-        await driver.findElement(By.css('[href="#vac-tab4"]')).click();
-        console.log("Clicked on 'IIS Rjected' tab")
-        await driver.sleep(3000);
-        console.log("Waited 3 seconds");
-        // Immunizations Tab
-        await driver.findElement(By.css('[href="#vac-tab7"]')).click();
-        console.log("Clicked on 'Immunizations' tab")
-        await driver.sleep(3000);
-        console.log("Waited 3 seconds");
 
         // Verify title for Medicare Plan Reviews page
-        // await driver.findElement(By.linkText('Medicare Plan Reviews')).click();
-        // Plan Review Eligible Tab
-        // Completed Tab
-        // Declined Tab
+        await driver.findElement(By.linkText('Medicare Plan Reviews')).click();
+        console.log("Clicked on 'Medicare Plan Reviews'");
+        await driver.sleep(3000);
+        console.log("Waited 3 seconds");
+
 
         // Verify title for eCare Plans page
-        // With Encounters tab
-        // Without Encounter tab
-        // Encopunters tab
+        await driver.findElement(By.linkText('eCare Plans')).click();
+        console.log("Clicked on 'eCare Plans'");
+        await driver.sleep(3000);
+        console.log("Waited 3 seconds");
+        
+        // Verfiy title for Messages page
+        await driver.findElement(By.linkText('Messages')).click();
+        console.log("Clicked on 'Messages'");
+        await driver.sleep(3000);
+        console.log("Waited 3 seconds");
 
+        // Calendar
+        await driver.get('https://stg-rebranding.prescribewellness.com/Calendar');
+        console.log("Went to 'Clinical Calendar' page");
+        await driver.sleep(3000);
+        console.log("Waited 3 seconds");
+        await driver.getTitle().then(function(title) {
+            assert.equal(title, 'Pharmacy Calendar - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - HthreeNtwo');
+            console.log("Asserted title");
+        });
+
+        // Social Calendar
+        await driver.get('https://stg-rebranding.prescribewellness.com/SocialCalendar');
+        console.log("Went to 'Sociale Calendar' page");
+        await driver.sleep(3000);
+        console.log("Waited 3 seconds");
+        await driver.getTitle().then(function(title) {
+            assert.equal(title, 'Pharmacy Calendar - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - HthreeNtwo');
+            console.log("Asserted title");
+        });
+
+        /// Custom Calendar
+        await driver.get('https://stg-rebranding.prescribewellness.com/Calendar/CustomCalendar');
+        await driver.sleep(3000);
+        console.log("Went to 'Custom Calendar' page");
+        console.log("Waited 3 seconds");
+        await driver.getTitle().then(function(title) {
+            assert.equal(title, 'Pharmacy Calendar - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - HthreeNtwo');
+            console.log("Asserted title");
+        });
+
+        // Opportunities
+        await driver.get('https://stg-rebranding.prescribewellness.com/Opportunities');
+        console.log("Went to 'Opportunities' page");
+        await driver.sleep(3000);
+        console.log("Waited 3 seconds");
+        await driver.getTitle().then(function(title) {
+            assert.equal(title, 'Now - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - HthreeNtwo');
+            console.log("Asserted title");
+        });
 
 
     }
