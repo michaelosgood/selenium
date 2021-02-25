@@ -11,4 +11,5 @@ home.phys = "Physicians";
 home.phys_grp = "Physician Groups";
 home.dis = "Diseases";
 
+
 module.exports = home; 
