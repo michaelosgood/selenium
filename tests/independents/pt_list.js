@@ -12,7 +12,7 @@ let nav = require('../../gui/components/nav.js');
 let opp = require('../../gui/pages/opp.js');
 let pt_comm = require('../../gui/pages/pt_comm.js');
 let sync = require('../../gui/pages/sync.js');
-let titles = require('../../components/titles.js');
+let titles = require('../../gui/components/titles.js');
 let vaccinations = require('../../gui/pages/vaccinations.js');
 let start ;
 let stop ; 
