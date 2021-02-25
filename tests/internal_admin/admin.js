@@ -30,6 +30,7 @@ const admin_test = async function() {
 
         // Message Management Verify Title
         await driver.get('https://stg-rebranding.prescribewellness.com/MessageManagement');
+        console.log("Went to Message Management");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function (title) {
@@ -39,6 +40,7 @@ const admin_test = async function() {
 
         // Template Managment Verify Title
         await driver.get('https://stg-rebranding.prescribewellness.com/CommunicationTemplates');
+        console.log("Went to Template Management");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function (title) {
@@ -48,6 +50,7 @@ const admin_test = async function() {
 
         // Campaign Management Verify Title
         await driver.get('https://stg-rebranding.prescribewellness.com/CampaignManagement');
+        console.log("Went to Campaign Management");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function (title) {
@@ -57,6 +60,7 @@ const admin_test = async function() {
 
         // Communication Plan Templates Verify Title
         await driver.get('https://stg-rebranding.prescribewellness.com/CampaignManagement/CommPlanTemplates');
+        console.log("Went to Communication Plan Templates");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function (title) {
@@ -66,6 +70,7 @@ const admin_test = async function() {
 
         // Bulk Campaign Management
         await driver.get('https://stg-rebranding.prescribewellness.com/BulkCampaignManagement');
+        console.log("Went to Campaign Management");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function (title) {
@@ -75,6 +80,7 @@ const admin_test = async function() {
 
         // Mass Operations
         await driver.get('https://stg-rebranding.prescribewellness.com/Admin/BatchOperation');
+        console.log("Went to Mass Operations");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function (title) {
@@ -84,6 +90,7 @@ const admin_test = async function() {
 
         // Campaign Tools Verify Title
         await driver.get('https://stg-rebranding.prescribewellness.com/CampaignManagement/CampaignTools');
+        console.log("Went to Campaign Tools");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function (title) {
@@ -135,6 +142,7 @@ const admin_test = async function() {
 
         // Call History Verify Title
         await driver.get('https://stg-rebranding.prescribewellness.com/CallHistory');
+        console.log("Went to Call History");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function (title) {
@@ -144,6 +152,7 @@ const admin_test = async function() {
 
         // Global NCL Management
         await driver.get('https://stg-rebranding.prescribewellness.com/Ncl/Global');
+        console.log("Went to Global NCL");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function (title) {
@@ -153,6 +162,7 @@ const admin_test = async function() {
 
         // Login As Verify Title
         await driver.get('https://stg-rebranding.prescribewellness.com/Admin/AdminAccount/LoginAs');
+        console.log("Went to Login As");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function (title) {
@@ -163,6 +173,7 @@ const admin_test = async function() {
 
         // User Managment Verify Title
         await driver.get('https://stg-rebranding.prescribewellness.com/Admin/AdminAccount/UserManagement');
+        console.log("Went to User Management");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function (title) {
@@ -172,6 +183,7 @@ const admin_test = async function() {
 
         // Partner Managment Verify Title
         await driver.get('https://stg-rebranding.prescribewellness.com/Admin/AdminPartner/PartnerManagement');
+        console.log("Went to Partner Management");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function (title) {
@@ -181,6 +193,7 @@ const admin_test = async function() {
 
         // Account Managment Verify Title
         await driver.get('https://stg-rebranding.prescribewellness.com/Admin/AdminDealer/DealerManagement');
+        console.log("Went to Account Management");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function (title) {
@@ -189,7 +202,8 @@ const admin_test = async function() {
         });
 
         // Settings Verify Title
-        await driver.get('https://stg-rebranding.prescribewellness.com/MessageManagement');
+        await driver.get('https://stg-rebranding.prescribewellness.com/Account/Manage#information');
+        console.log("Went to Settings");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function (title) {
