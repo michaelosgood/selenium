@@ -5,7 +5,7 @@ let googleStgPartnerPartner = require('../tests/google_stg_partner_partner.js');
 let googleStgChainPartner = require('../tests/google_stg_chain_partner.js');
 let googleStgChainUserA = require('../tests/google_stg_chain_user_a.js');
 let googleStgChainUserB = require('../tests/google_stg_chain_user_b.js');
-let googleStgRebrandingIndependents = require('../tests/google_stg_rebranding_independents.js');
+let pt_list_test = require('../tests/independents/pt_list.js');
 let googleStgPublic = require('../tests/google_stg_public.js');
 let startTime ;
 let start ;
@@ -24,7 +24,7 @@ let end ;
         await googleStgChainPartner();
         await googleStgChainUserA();
         await googleStgChainUserB();
-        await googleStgRebrandingIndependents();
+        await pt_list_test();
         // await googleStgPublic(); 
     } catch (error) {
         throw error;

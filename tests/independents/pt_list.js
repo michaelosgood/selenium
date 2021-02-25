@@ -1,24 +1,24 @@
 const {Builder, By, Key, actions, until} = require('selenium-webdriver');
 let assert = require("chai").assert;
-let calendar = require('../gui/pages/calendar.js');
-let credentials = require('../credentials.js');
-let eld_hrm = require('../gui/pages/eld_hrm.js');
-let ecare = require('../gui/pages/ecare.js');
-let environment = require('../environment.js');
-let home = require('../gui/pages/home.js');
-let login = require('../gui/pages/login.js');
-let medicare = require('../gui/pages/medicare.js');
-let nav = require('../gui/components/nav.js');
-let opp = require('../gui/pages/opp.js');
-let pt_comm = require('../gui/pages/pt_comm.js');
-let sync = require('../gui/pages/sync.js');
-let titles = require('../components/titles.js');
-let vaccinations = require('../gui/pages/vaccinations.js');
+let calendar = require('../../gui/pages/calendar.js');
+let credentials = require('../../credentials.js');
+let eld_hrm = require('../../gui/pages/eld_hrm.js');
+let ecare = require('../../gui/pages/ecare.js');
+let environment = require('../../environment.js');
+let home = require('../../gui/pages/home.js');
+let login = require('../../gui/pages/login.js');
+let medicare = require('../../gui/pages/medicare.js');
+let nav = require('../../gui/components/nav.js');
+let opp = require('../../gui/pages/opp.js');
+let pt_comm = require('../../gui/pages/pt_comm.js');
+let sync = require('../../gui/pages/sync.js');
+let titles = require('../../components/titles.js');
+let vaccinations = require('../../gui/pages/vaccinations.js');
 let start ;
 let stop ; 
 
 
-const pt_list = async function() {
+const pt_list_test = async function() {
   let driver = await new Builder().forBrowser('chrome').build();
     try {
         start = new Date().getTime();
@@ -248,8 +248,8 @@ const pt_list = async function() {
     finally {
        stop = new Date().getTime();
        let totalTime = (stop - start);
-       console.log("Total Time = " +  (totalTime / 1000 ) + " seconds");
+       console.log("Pt List Test Time = " +  (totalTime / 1000 ) + " seconds");
        await driver.quit()
     }
 };
-module.exports = pt_list;
+module.exports = pt_list_test;
