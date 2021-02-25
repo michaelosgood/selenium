@@ -12,7 +12,6 @@ const pt_profile_test = async function() {
   let driver = await new Builder().forBrowser('chrome').build();
     try {
         start = new Date().getTime();
-        // Login to User and Verify Title
         console.log("Starting Rebranding Patient Profile Test");
         await driver.get(environment.stg_rebranding);
         console.log("Went to Staging Rebranding");

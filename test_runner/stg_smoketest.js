@@ -1,6 +1,6 @@
-let pt_list_test = require('../tests/independents/pt_list.js');
+let admin_test = require('../tests/internal_admin/admin.js');
+let startTime ;let pt_list_test = require('../tests/independents/pt_list.js');
 let pt_profile_test = require('../tests/independents/pt_profile.js');
-let startTime ;
 let start ;
 let endTime ;
 let end ;
@@ -10,6 +10,7 @@ let end ;
         start = new Date();
         startTime = new Date().getTime();
         console.log("Smoketest Started at: " + start);
+        await admin_test();
         await pt_list_test();
         await pt_profile_test();
 
