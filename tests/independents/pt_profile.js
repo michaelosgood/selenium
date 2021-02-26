@@ -54,7 +54,7 @@ const pt_profile_test = async function() {
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function(title) {
-            assert.equal(title, pt_profile.title);
+            assert.equal(title, pt_profile.p_title);
             console.log("Asserted title");
         });
         
@@ -64,7 +64,7 @@ const pt_profile_test = async function() {
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function(title) {
-            assert.equal(title, pt_profile.title);
+            assert.equal(title, pt_profile.meds_title);
             console.log("Asserted title");
         });
         
@@ -74,7 +74,7 @@ const pt_profile_test = async function() {
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function(title) {
-            assert.equal(title, pt_profile.title);
+            assert.equal(title, pt_profile.meds_title);
             console.log("Asserted title");
         });
         
@@ -84,7 +84,7 @@ const pt_profile_test = async function() {
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function(title) {
-            assert.equal(title, pt_profile.title);
+            assert.equal(title, pt_profile.meds_title);
             console.log("Asserted title");
         });
         
@@ -94,7 +94,7 @@ const pt_profile_test = async function() {
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function(title) {
-            assert.equal(title, pt_profile.title);
+            assert.equal(title, pt_profile.meds_title);
             console.log("Asserted title");
         });
         
@@ -104,18 +104,17 @@ const pt_profile_test = async function() {
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function(title) {
-            assert.equal(title, pt_profile.title);
+            assert.equal(title, pt_profile.meds_title);
             console.log("Asserted title");
         });
         
-
         // MedWise™ tab
         await driver.findElement(By.linkText(pt_profile.mw)).click();
         console.log("Clicked on MedWise™ tab");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function(title) {
-            assert.equal(title, pt_profile.title);
+            assert.equal(title, pt_profile.mw_title);
             console.log("Asserted title");
         });
                                          
@@ -126,7 +125,7 @@ const pt_profile_test = async function() {
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function(title) {
-            assert.equal(title, pt_profile.title);
+            assert.equal(title, pt_profile.m_title);
             console.log("Asserted title");
         });
         
@@ -137,7 +136,7 @@ const pt_profile_test = async function() {
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function(title) {
-            assert.equal(title, pt_profile.title);
+            assert.equal(title, pt_profile.v_title);
             console.log("Asserted title");
         });
         
@@ -148,7 +147,7 @@ const pt_profile_test = async function() {
          await driver.sleep(3000);
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function(title) {
-            assert.equal(title, pt_profile.title);
+            assert.equal(title, pt_profile.ec_title);
             console.log("Asserted title");
         });
         
@@ -159,18 +158,18 @@ const pt_profile_test = async function() {
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function(title) {
-            assert.equal(title, pt_profile.title);
+            assert.equal(title, pt_profile.cc_title);
             console.log("Asserted title");
         });
         
 
-        // Communications tab and respective sub-tabs
+        // Communications tab 
         await driver.findElement(By.linkText(pt_profile.c)).click();
         console.log("Clicked on Communications tab");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function(title) {
-            assert.equal(title, pt_profile.title);
+            assert.equal(title, pt_profile.c_title);
             console.log("Asserted title");
         });
         
@@ -180,18 +179,18 @@ const pt_profile_test = async function() {
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function(title) {
-            assert.equal(title, pt_profile.title);
+            assert.equal(title, pt_profile.c_title);
             console.log("Asserted title");
         });
 
 
-        // Click on Log tab
+        // Log tab
         await driver.findElement(By.linkText(pt_profile.l)).click();
         console.log("Clicked on Log tab");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function(title) {
-            assert.equal(title, pt_profile.title);
+            assert.equal(title, pt_profile.l_title);
             console.log("Asserted title");
         });
         
@@ -203,7 +202,7 @@ const pt_profile_test = async function() {
     finally {
         stop = new Date().getTime();
         let totalTime = (stop - start);
-        console.log("Pt Profile Test Time = " +  (totalTime / 1000 ) + " seconds");
+        console.log("Pt Profile Test Time = " +  (totalTime / 1000 ) + " seconds"+"/n");
         await driver.quit()
     }
 };
