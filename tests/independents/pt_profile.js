@@ -29,95 +29,172 @@ const pt_profile_test = async function() {
         });
 
         // Go to Patient Profile
-        await driver.get(pt_profile.stg_link);
+        await driver.get(pt_profile.stg);
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
+        await driver.getTitle().then(function(title) {
+            assert.equal(title, pt_profile.title);
+            console.log("Asserted title");
+        });
         
         // Click on the Overview tab
-        await driver.findElement(By.linkText('Overview')).click();
+        await driver.findElement(By.linkText(pt_profile.o)).click();
         console.log("Clicked on Overview tab");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
+        await driver.getTitle().then(function(title) {
+            assert.equal(title, pt_profile.title);
+            console.log("Asserted title");
+        });
+        
         
         // Click on the Programs tab
-        await driver.findElement(By.linkText('Programs')).click();
+        await driver.findElement(By.linkText(pt_profile.p)).click();
         console.log("Clicked on Programs sub-tab");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
+        await driver.getTitle().then(function(title) {
+            assert.equal(title, pt_profile.title);
+            console.log("Asserted title");
+        });
         
-        // Click on the 'Medications' tab
-        // await driver.findElement(By.linkText('Medications')).click();
-        await driver.get("https://stg-rebranding.prescribewellness.com/MedSync/MedicationSynchronizationEnroll?patientId=129634.AB6002230683436188168042F8DF9D88");
+        // Click on the Medications tab
+        await driver.get(pt_profile.stg_medsync);
         console.log("Clicked on Medication tab");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
-
-        await driver.findElement(By.linkText('Patient-Reported Medication')).click();
+        await driver.getTitle().then(function(title) {
+            assert.equal(title, pt_profile.title);
+            console.log("Asserted title");
+        });
+        
+        // Patieint Repoted Meds subtab
+        await driver.findElement(By.linkText(pt_profile.prm)).click();
         console.log("Clicked on Patient-Reported Medication sub-tab");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
-
-        await driver.findElement(By.linkText('Medication Allergies')).click();
+        await driver.getTitle().then(function(title) {
+            assert.equal(title, pt_profile.title);
+            console.log("Asserted title");
+        });
+        
+        // Medication Allergies subtab
+        await driver.findElement(By.linkText(pt_profile.ma)).click();
         console.log("Clicked on Medication Allergies sub-tab");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
-
-        await driver.findElement(By.linkText('Medication History')).click();
+        await driver.getTitle().then(function(title) {
+            assert.equal(title, pt_profile.title);
+            console.log("Asserted title");
+        });
+        
+        // Medication History subtab
+        await driver.findElement(By.linkText(pt_profile.mh)).click();
         console.log("Clicked on Medication History sub-tab");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
-
-        await driver.findElement(By.linkText('Med Time Reminders')).click();
+        await driver.getTitle().then(function(title) {
+            assert.equal(title, pt_profile.title);
+            console.log("Asserted title");
+        });
+        
+        // Med Time Reminder subtab
+        await driver.findElement(By.linkText(pt_profile.mtr)).click();
         console.log("Clicked on Med Time Reminders sub-tab");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
+        await driver.getTitle().then(function(title) {
+            assert.equal(title, pt_profile.title);
+            console.log("Asserted title");
+        });
+        
 
-        // Click on MedWise™ Tab
-        await driver.findElement(By.linkText('MedWise™')).click();
+        // MedWise™ tab
+        await driver.findElement(By.linkText(pt_profile.mw)).click();
         console.log("Clicked on MedWise™ tab");
         await driver.sleep(3000);
-        console.log("Waited 3 seconds");                                    
+        console.log("Waited 3 seconds");
+        await driver.getTitle().then(function(title) {
+            assert.equal(title, pt_profile.title);
+            console.log("Asserted title");
+        });
+                                         
 
-        // Click on Medicare tab 
-        await driver.findElement(By.linkText('Medicare')).click();
+        // Medicare tab 
+        await driver.findElement(By.linkText(pt_profile.m)).click();
         console.log("Clicked on Medicare tab");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
+        await driver.getTitle().then(function(title) {
+            assert.equal(title, pt_profile.title);
+            console.log("Asserted title");
+        });
+        
 
-        // Click on Vaccines tab
-        await driver.findElement(By.linkText('Vaccines')).click();
+        // Vaccines tab
+        await driver.findElement(By.linkText(pt_profile.v)).click();
         console.log("Clicked on Vaccines tab");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
+        await driver.getTitle().then(function(title) {
+            assert.equal(title, pt_profile.title);
+            console.log("Asserted title");
+        });
+        
 
-        // Click on eCare tab
-        await driver.findElement(By.xpath("//a[@href = '/Patient/PrescribeCare?patientId=AB6002230683436188168042F8DF9D88&timer=true']")).click();
+        // eCare tab
+        await driver.findElement(By.xpath(pt_profile.ec_path)).click();
         console.log("Clicked on Care tab");
          await driver.sleep(3000);
         console.log("Waited 3 seconds");
+        await driver.getTitle().then(function(title) {
+            assert.equal(title, pt_profile.title);
+            console.log("Asserted title");
+        });
+        
 
-        // Click on Care Campaigns tab
-        await driver.findElement(By.linkText('Care Campaigns')).click();
+        // Care Campaigns tab
+        await driver.findElement(By.linkText(pt_profile.cc)).click();
         console.log("Clicked on Care Campaigns tab");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
+        await driver.getTitle().then(function(title) {
+            assert.equal(title, pt_profile.title);
+            console.log("Asserted title");
+        });
+        
 
-        // Click on Communications tab and respective sub-tabs
-        await driver.findElement(By.linkText('Communications')).click();
+        // Communications tab and respective sub-tabs
+        await driver.findElement(By.linkText(pt_profile.c)).click();
         console.log("Clicked on Communications tab");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
-
-        await driver.findElement(By.linkText('Fax History')).click();
+        await driver.getTitle().then(function(title) {
+            assert.equal(title, pt_profile.title);
+            console.log("Asserted title");
+        });
+        
+        // Fax History subtab
+        await driver.findElement(By.linkText(pt_profile.fh)).click();
         console.log("Clicked on Fax History sub-tab");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
+        await driver.getTitle().then(function(title) {
+            assert.equal(title, pt_profile.title);
+            console.log("Asserted title");
+        });
+
 
         // Click on Log tab
-        await driver.findElement(By.linkText('Log')).click();
+        await driver.findElement(By.linkText(pt_profile.l)).click();
         console.log("Clicked on Log tab");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
+        await driver.getTitle().then(function(title) {
+            assert.equal(title, pt_profile.title);
+            console.log("Asserted title");
+        });
+        
     }
     catch(err) {
         console.log(err);

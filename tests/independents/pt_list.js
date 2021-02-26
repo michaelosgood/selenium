@@ -8,11 +8,10 @@ let environment = require('../../environment.js');
 let home = require('../../gui/pages/home.js');
 let login = require('../../gui/pages/login.js');
 let medicare = require('../../gui/pages/medicare.js');
-let nav = require('../../gui/components/nav.js');
+let messages = require('../../gui/pages/messages.js');
 let opp = require('../../gui/pages/opp.js');
 let pt_comm = require('../../gui/pages/pt_comm.js');
 let sync = require('../../gui/pages/sync.js');
-let titles = require('../../gui/components/titles.js');
 let vaccinations = require('../../gui/pages/vaccinations.js');
 let start ;
 let stop ; 
@@ -181,61 +180,72 @@ const pt_list_test = async function() {
         });
 
         // Verify title for Medicare Plan Reviews page
-        await driver.findElement(By.linkText('Medicare Plan Reviews')).click();
+        await driver.findElement(By.linkText(medicare.txt)).click();
         console.log("Clicked on 'Medicare Plan Reviews'");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
-
+        await driver.getTitle().then(function(title) {
+            assert.equal(title, medicare.title);
+            console.log("Asserted title");
+        });
 
         // Verify title for eCare Plans page
-        await driver.findElement(By.linkText('eCare Plans')).click();
+        await driver.findElement(By.linkText(ecare.txt)).click();
         console.log("Clicked on 'eCare Plans'");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
+        await driver.getTitle().then(function(title) {
+            assert.equal(title, ecare.title);
+            console.log("Asserted title");
+        });
         
         // Verfiy title for Messages page
-        await driver.findElement(By.linkText('Messages')).click();
+        await driver.findElement(By.linkText(messages.txt)).click();
         console.log("Clicked on 'Messages'");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
+        await driver.getTitle().then(function(title) {
+            assert.equal(title, messages.title);
+            console.log("Asserted title");
+        });
 
         // Calendar
-        await driver.get('https://stg-rebranding.prescribewellness.com/Calendar');
+        await driver.get(calendar.stg);
         console.log("Went to 'Clinical Calendar' page");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function(title) {
-            assert.equal(title, 'Pharmacy Calendar - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - HthreeNtwo');
+            assert.equal(title, calendar.title);
             console.log("Asserted title");
         });
 
         // Social Calendar
-        await driver.get('https://stg-rebranding.prescribewellness.com/SocialCalendar');
-        console.log("Went to 'Sociale Calendar' page");
+        await driver.get(calendar.stg_social);
+        console.log("Went to 'Social Calendar' page");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function(title) {
-            assert.equal(title, 'Pharmacy Calendar - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - HthreeNtwo');
+            assert.equal(title, calendar.title);
             console.log("Asserted title");
         });
 
         /// Custom Calendar
-        await driver.get('https://stg-rebranding.prescribewellness.com/Calendar/CustomCalendar');
+        await driver.get(calendar.stg_custom);
         await driver.sleep(3000);
         console.log("Went to 'Custom Calendar' page");
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function(title) {
-            assert.equal(title, 'Pharmacy Calendar - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - HthreeNtwo');
+            assert.equal(title, calendar.title);
             console.log("Asserted title");
         });
 
         // Opportunities
-        await driver.get('https://stg-rebranding.prescribewellness.com/Opportunities');
+        await driver.get(opp.stg);
         console.log("Went to 'Opportunities' page");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function(title) {
-            assert.equal(title, 'Now - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - HthreeNtwo');
+            assert.equal(title, opp.title);
             console.log("Asserted title");
         });
 
