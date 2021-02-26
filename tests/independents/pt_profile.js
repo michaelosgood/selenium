@@ -142,7 +142,7 @@ const pt_profile_test = async function() {
         
 
         // eCare tab
-        await driver.findElement(By.xpath(pt_profile.ec_path)).click();
+        await driver.findElement(By.xpath("//a[@href = '/Patient/PrescribeCare?patientId=AB6002230683436188168042F8DF9D88&timer=true']")).click();
         console.log("Clicked on Care tab");
          await driver.sleep(3000);
         console.log("Waited 3 seconds");
@@ -202,7 +202,7 @@ const pt_profile_test = async function() {
     finally {
         stop = new Date().getTime();
         let totalTime = (stop - start);
-        console.log("Pt Profile Test Time = " +  (totalTime / 1000 ) + " seconds"+"/n");
+        console.log("Pt Profile Test Time = " +  (totalTime / 1000 ) + " seconds /n");
         await driver.quit()
     }
 };

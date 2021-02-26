@@ -11,8 +11,8 @@ let end ;
         start = new Date();
         startTime = new Date().getTime();
         console.log("Smoketest Started at: " + start);
-        // await admin_test();
-        // await pt_list_test();
+        await admin_test();
+        await pt_list_test();
         await pt_profile_test();
 
     } catch (error) {
