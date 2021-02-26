@@ -6,7 +6,7 @@ pt_profile.stg = "https://stg-rebranding.prescribewellness.com/Patient/Details?p
 pt_profile.stg_medsync = "https://stg-rebranding.prescribewellness.com/MedSync/MedicationSynchronizationEnroll?patientId=129634.AB6002230683436188168042F8DF9D88";
 pt_profile.dev = "https://dev-rebranding.prescribewellness.com/Patient/Details?patientId=AB6002230683436188168042F8DF9D88";
 pt_profile.beta_link = "https://beta-web.prescribewellness.com/Patient/Details?patientId=AB6002230683436188168042F8DF9D88";
-pt_profile.title = "Patient - Profile - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - H3N2";
+pt_profile.title = "Patient - Profile - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - HthreeNtwo";
 
 // Brent Bagwell's pt profile in Sample Chain Store 1 (Account 2043550027)
 pt_profile.dev_chain = "https://dev-web.prescribewellness.com/Patient/Details?patientId=204355.01DDDB4C6ECD41D3A3DFCA37E613147A";
