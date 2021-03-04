@@ -103,42 +103,80 @@ const admin_test = async function() {
         console.log("Selected 'Campaign Template Editor'");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
+        await driver.getTitle().then(function (title) {
+            assert.equal(title, titles.camp_tools);
+            console.log("Asserted title");
+        });
 
         // Campaign Tools - Campaign Category Management
         await driver.findElement(By.linkText(gear.camp_tools_ccm)).click();
         console.log("Selected 'Campaign Category Management'");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
+        await driver.getTitle().then(function (title) {
+            assert.equal(title, titles.camp_tools);
+            console.log("Asserted title");
+        });
 
         // Campaign Tools - Test Criteria
         await driver.findElement(By.linkText(gear.camp_tools_ct)).click();
         console.log("Selected 'Test Criteria'");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
+        await driver.getTitle().then(function (title) {
+            assert.equal(title, titles.camp_tools);
+            console.log("Asserted title");
+        });
+
+        // Campaign Tools - Criteria Parameters
+        await driver.findElement(By.linkText(gear.camp_tools_cp)).click();
+        console.log("Selected 'Criteria Parameters'");
+        await driver.sleep(3000);
+        console.log("Waited 3 seconds");
+        await driver.getTitle().then(function (title) {
+            assert.equal(title, titles.camp_tools);
+            console.log("Asserted title");
+        });
 
         // Campaign Tools - Scrubbed Contacts
         await driver.findElement(By.linkText(gear.camp_tools_sc)).click();
         console.log("Selected 'Scrubbed Contacts'");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
+        await driver.getTitle().then(function (title) {
+            assert.equal(title, titles.camp_tools);
+            console.log("Asserted title");
+        });
 
         // Campaign Tools - Twilio Logs
         await driver.findElement(By.linkText(gear.camp_tools_tl)).click();
         console.log("Selected 'Twilio Logs'");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
+        await driver.getTitle().then(function (title) {
+            assert.equal(title, titles.camp_tools);
+            console.log("Asserted title");
+        });
 
         // Campaign Tools - API Health Check
         await driver.findElement(By.linkText(gear.camp_tools_ahc)).click();
         console.log("Selected 'API Health Check'");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
+        await driver.getTitle().then(function (title) {
+            assert.equal(title, titles.camp_tools);
+            console.log("Asserted title");
+        });
 
         // Campaign Tools - Machine Learning
         await driver.findElement(By.linkText(gear.camp_tools_ml)).click();
         console.log("Selected 'Machine Learning'");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
+        await driver.getTitle().then(function (title) {
+            assert.equal(title, titles.camp_tools);
+            console.log("Asserted title");
+        });
 
         // Call History Verify Title
         await driver.get('https://stg-rebranding.prescribewellness.com/CallHistory');
@@ -169,7 +207,6 @@ const admin_test = async function() {
             assert.equal(title, titles.login_as);
             console.log("Asserted title");
         });
-
 
         // User Managment Verify Title
         await driver.get('https://stg-rebranding.prescribewellness.com/Admin/AdminAccount/UserManagement');

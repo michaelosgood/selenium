@@ -12,7 +12,7 @@ let end ;
     try {
         start = new Date();
         startTime = new Date().getTime();
-        console.log("Smoketest Started at: " + start);
+        console.log("Rebranding Smoketest Started at: " + start);
         await admin_test();
         await pt_list_test();
         await pt_profile_test();
@@ -25,7 +25,7 @@ let end ;
     finally {
         end = new Date();
         endTime = new Date().getTime();
-        console.log("Smoketest Completed at: " + end);
-        console.log("Smoketest total time = " + ((endTime - startTime )/1000) + " seconds");
+        console.log("Rebranding Smoketest Completed at: " + end);
+        console.log("Rebranding Smoketest total time = " + ((endTime - startTime )/1000) + " seconds");
       }
 })();

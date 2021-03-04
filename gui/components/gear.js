@@ -12,6 +12,7 @@ gear.camp_tools = "Campaign Tools";
 gear.camp_tools_cte = "Campaign Template Editor";
 gear.camp_tools_ccm = "Campaign Category Management";
 gear.camp_tools_ct = "Test Criteria";
+gear.camp_tools_cp = "Criteria Parameters";
 gear.camp_tools_sc = "Scrubbed Contacts";
 gear.camp_tools_tl = "Twilio Logs";
 gear.camp_tools_ahc = "API Health Check";
