@@ -202,7 +202,7 @@ const pt_profile_test = async function() {
     finally {
         stop = new Date().getTime();
         let totalTime = (stop - start);
-        console.log("Pt Profile Test Time = " +  (totalTime / 1000 ) + " seconds /n");
+        console.log("Pt Profile Test Time = " +  (totalTime / 1000 ) + " seconds\n");
         await driver.quit()
     }
 };
