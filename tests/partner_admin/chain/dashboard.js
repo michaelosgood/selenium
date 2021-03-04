@@ -1,43 +1,49 @@
-const {Builder, By, Key, actions, until} = require('selenium-webdriver');
-let login = require("../../gui/pages/login.js");
-let credentials = require('../../credentials.js');
-let environment = require('../../environment.js');
-let pt_profile = require('../../gui/pages/carl.js');
-let home = require('../../gui/pages/home.js');
+const {Builder, By, Key, until} = require('selenium-webdriver');
+let credentials = require('../../../credentials.js');
+let environment = require('../../../environment.js');
+let login = require("../../../gui/pages/login.js");
+let pt_profile = require('../../../gui/pages/brent.js');
 let assert = require("chai").assert;
 let start;
 let stop; 
 
-const pt_profile_test = async function() {
+const chain_partner = async function() {
   let driver = await new Builder().forBrowser('chrome').build();
     try {
         start = new Date().getTime();
-        console.log("Starting Rebranding Patient Profile Test");
+        console.log("Starting Chain Partner Test");
         await driver.get(environment.stg_rebranding);
         console.log("Went to Staging Rebranding");
-   
-         // Login to PW Community and Verify Title
-        await driver.findElement(By.id(login.id)).sendKeys(credentials.customer_user);
+
+        // Login to Enterprise Dashboard
+        await driver.findElement(By.id(login.id)).sendKeys(credentials.chainPartner_user);
         console.log("Entered username");
-        await driver.findElement(By.id(login.pw)).sendKeys(credentials.customer_password, Key.RETURN);
+        await driver.findElement(By.id(login.pw)).sendKeys(credentials.chainPartner_password, Key.RETURN);
         console.log("Entered password and clicked 'Enter'");
+        await driver.sleep(5000);
+        console.log("Waited 5 seconds");
+        await driver.getTitle().then(function (title) {
+            assert.equal(title, "Enterprise Dashboard");
+            console.log("Asserted title");
+        });
+
+        // Verify Title for 'Enterprise  Active Patients' Page
+        await driver.findElement(By.linkText('Enterprise Active Patients')).click();
+        console.log("Selected 'Enterprise Active Patients'");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function(title) {
-            assert.equal(title, home.title);
+            assert.equal(title, "Enterprise Dashboard");
             console.log("Asserted title");
         });
 
         // Go to Patient Profile
-        await driver.get(pt_profile.stg);
-        await driver.sleep(3000);
-        console.log("Waited 3 seconds");
-        await driver.getTitle().then(function(title) {
-            assert.equal(title, pt_profile.title);
-            console.log("Asserted title");
-        });
-        
-        // Click on the Overview tab
+        await driver.get("https://stg-rebranding.prescribewellness.com/Patient/Details?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A");
+        console.log("Went to the patient's profile")
+        await driver.sleep(8000);
+        console.log("Waited 8 seconds");
+
+       // Click on the Overview tab
         await driver.findElement(By.linkText(pt_profile.o)).click();
         console.log("Clicked on Overview tab");
         await driver.sleep(3000);
@@ -97,25 +103,7 @@ const pt_profile_test = async function() {
             console.log("Asserted title");
         });
         
-        // Med Time Reminder subtab
-        await driver.findElement(By.linkText(pt_profile.mtr)).click();
-        console.log("Clicked on Med Time Reminders sub-tab");
-        await driver.sleep(3000);
-        console.log("Waited 3 seconds");
-        await driver.getTitle().then(function(title) {
-            assert.equal(title, pt_profile.meds_title);
-            console.log("Asserted title");
-        });
-        
-        // MedWise™ tab
-        await driver.findElement(By.linkText(pt_profile.mw)).click();
-        console.log("Clicked on MedWise™ tab");
-        await driver.sleep(3000);
-        console.log("Waited 3 seconds");
-        await driver.getTitle().then(function(title) {
-            assert.equal(title, pt_profile.mw_title);
-            console.log("Asserted title");
-        });                            
+                           
 
         // Medicare tab 
         await driver.findElement(By.linkText(pt_profile.m)).click();
@@ -136,7 +124,6 @@ const pt_profile_test = async function() {
             assert.equal(title, pt_profile.v_title);
             console.log("Asserted title");
         });
-        
 
         // eCare tab
         await driver.findElement(By.xpath("//a[@href = '/Patient/PrescribeCare?patientId=AB6002230683436188168042F8DF9D88&timer=true']")).click();
@@ -187,17 +174,16 @@ const pt_profile_test = async function() {
             assert.equal(title, pt_profile.l_title);
             console.log("Asserted title");
         });
-        
-    }
+
+    } 
     catch(err) {
         console.log(err);
     }
-
     finally {
         stop = new Date().getTime();
         let totalTime = (stop - start);
-        console.log("Pt Profile Test Time = " +  (totalTime / 1000 ) + " seconds\n");
+        console.log("Chain Partner Test Time = " +  (totalTime / 1000 ) + " seconds\n");
         await driver.quit()
     }
 };
-module.exports = pt_profile_test;
+module.exports = chain_partner;

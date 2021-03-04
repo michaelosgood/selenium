@@ -1,7 +1,7 @@
 const {Builder, By, Key, until} = require('selenium-webdriver');
 let credentials = require('../../../credentials.js');
 let environment = require('../../../environment.js');
-let login = require('../../../components/login.js');
+let login = require('../../../gui/pages/login.js');
 let assert = require("chai").assert;
 let start ;
 let stop ; 
@@ -44,7 +44,7 @@ const psao_partner = async function() {
     finally {
         stop = new Date().getTime();
         let totalTime = (stop - start);
-        console.log("PSAO Parnter Test Time = " +  (totalTime / 1000 ) + " seconds\n");
+        console.log("PSAO Partner Test Time = " +  (totalTime / 1000 ) + " seconds\n");
         await driver.quit()
     }
 };
