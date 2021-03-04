@@ -1,7 +1,7 @@
 let admin_test = require('../tests/internal_admin/admin.js');
 let pt_list_test = require('../tests/independents/pt_list.js');
 let pt_profile_test = require('../tests/independents/pt_profile.js');
-let psao_partner_test = require('../tests/partner_admin/psao/pt_list.js');
+let psao_partner_test = require('../tests/partner_admin/psao/dashboard.js');
 let startTime ;
 let start ;
 let endTime ;

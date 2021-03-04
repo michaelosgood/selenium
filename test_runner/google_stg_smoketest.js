@@ -8,8 +8,8 @@ let googleStgChainUserB = require('../tests/google_stg_chain_user_b.js');
 let pt_list_test = require('../tests/independents/pt_list.js');
 let admin_test = require('../tests/internal_admin/admin.js');
 let pt_profile_test = require('../tests/independents/pt_profile.js');
+let psao_partner_dashboard_test = require('../tests/partner_admin/psao/dashboard.js');
 let googleStgPublic = require('../tests/google_stg_public.js');
-const pt_profile = require('../gui/pages/patient_profile.js');
 let startTime ;
 let start ;
 let endTime ;
@@ -30,6 +30,7 @@ let end ;
         await admin_test();
         await pt_list_test();
         await pt_profile_test();
+        await psao_partner_dashboard_test();
         // await googleStgPublic(); 
     } catch (error) {
         throw error;
