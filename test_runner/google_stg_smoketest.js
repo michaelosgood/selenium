@@ -9,6 +9,7 @@ let pt_list_test = require('../tests/independents/pt_list.js');
 let admin_test = require('../tests/internal_admin/admin.js');
 let pt_profile_test = require('../tests/independents/pt_profile.js');
 let psao_partner_dashboard_test = require('../tests/partner_admin/psao/dashboard.js');
+let chain_partner_test = require('../tests/partner_admin/chain/dashboard.js');
 let googleStgPublic = require('../tests/google_stg_public.js');
 let startTime ;
 let start ;
@@ -31,6 +32,7 @@ let end ;
         await pt_list_test();
         await pt_profile_test();
         await psao_partner_dashboard_test();
+        await chain_partner_test();
         // await googleStgPublic(); 
     } catch (error) {
         throw error;
