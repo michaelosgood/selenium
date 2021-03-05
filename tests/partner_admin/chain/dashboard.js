@@ -102,7 +102,6 @@ const chain_partner = async function() {
             assert.equal(title, pt_profile.meds_title);
             console.log("Asserted title");
         });
-        
                            
 
         // Medicare tab 
@@ -126,9 +125,9 @@ const chain_partner = async function() {
         });
 
         // eCare tab
-        await driver.findElement(By.xpath("//a[@href = '/Patient/PrescribeCare?patientId=AB6002230683436188168042F8DF9D88&timer=true']")).click();
+        await driver.get(pt_profile.stg_ecare);
         console.log("Clicked on Care tab");
-         await driver.sleep(3000);
+        await driver.sleep(3000);
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function(title) {
             assert.equal(title, pt_profile.ec_title);

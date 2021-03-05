@@ -4,6 +4,7 @@ let brent = {};
 brent.prod = "";
 brent.stg = "https://stg-rebranding.prescribewellness.com/Patient/Details?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A";
 brent.stg_medsync = "https://stg-rebranding.prescribewellness.com/MedSync/MedicationSynchronizationEnroll?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A&timer=true";
+brent.stg_ecare = "https://stg-rebranding.prescribewellness.com/Patient/PrescribeCare?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A&timer=true";
 brent.dev = "https://dev-rebranding.prescribewellness.com/Patient/Details?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A";
 brent.title = "Patient - Profile - Pharmacy Portal - Account: 2043550027 - NPI: 9000000001 - NCPDP: 9000001 - chainPartner";
 brent.p_title = "Patient - Programs - Pharmacy Portal - Account: 2043550027 - NPI: 9000000001 - NCPDP: 9000001 - chainPartner";
