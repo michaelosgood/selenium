@@ -1,6 +1,6 @@
 let login = {};
 
-// Loogin Page 
+// Login Page 
 login.id = 'mbr-uid';
 login.pw = 'mbr-pwd';
 

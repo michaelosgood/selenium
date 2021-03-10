@@ -1,42 +1,51 @@
 const {Builder, By, Key, actions, until} = require('selenium-webdriver');
 let assert = require("chai").assert;
-let calendar = require('../../gui/pages/calendar.js');
-let credentials = require('../../credentials.js');
-let eld_hrm = require('../../gui/pages/eld_hrm.js');
-let ecare = require('../../gui/pages/ecare.js');
-let environment = require('../../environment.js');
-let home = require('../../gui/pages/home.js');
-let login = require('../../gui/pages/login.js');
-let medicare = require('../../gui/pages/medicare.js');
-let messages = require('../../gui/pages/messages.js');
-let opp = require('../../gui/pages/opp.js');
-let pt_comm = require('../../gui/pages/pt_comm.js');
-let sync = require('../../gui/pages/sync.js');
-let vaccinations = require('../../gui/pages/vaccinations.js');
+let calendar = require('../../../gui/pages/calendar.js');
+let credentials = require('../../../credentials.js');
+let eld_hrm = require('../../../gui/pages/eld_hrm.js');
+let ecare = require('../../../gui/pages/ecare.js');
+let environment = require('../../../environment.js');
+let home = require('../../../gui/pages/home.js');
+let medicare = require('../../../gui/pages/medicare.js');
+let messages = require('../../../gui/pages/messages.js');
+let opp = require('../../../gui/pages/opp.js');
+let pt_comm = require('../../../gui/pages/pt_comm.js');
+let sync = require('../../../gui/pages/sync.js');
+let vaccinations = require('../../../gui/pages/vaccinations.js');
 let start ;
 let stop ; 
 
 
-const pt_list_test = async function() {
+const chain_pt_list_test = async function() {
   let driver = await new Builder().forBrowser('chrome').build();
     try {
         start = new Date().getTime();
-        console.log("Starting Rebranding Patient List Test");
-        await driver.get(environment.stg_rebranding);
+        console.log("Starting Rebranding Chain Patient List Test");
+        await driver.get(environment.stg);
         console.log("Went to Staging Rebranding");
 
-        // Login to PW Community and Verify Title
-        await driver.findElement(By.id(login.id)).sendKeys(credentials.customer_user);
+        // Login as a Chain Sample User and Verify Title
+        await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.chainSample_user);
         console.log("Entered username");
-        await driver.findElement(By.id(login.pw)).sendKeys(credentials.customer_password, Key.RETURN);
+        await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.chainSample_password, Key.RETURN);
         console.log("Entered password and clicked 'Enter'");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function(title) {
-            assert.equal(title, home.title);
+            assert.equal(title, home.chain_title);
             console.log("Asserted title");
         });
-        
+
+        // Verfiy Title for 'Vaccinations' page 'Rejected' tab
+        await driver.get(vaccinations.stg);
+        console.log("Went to 'Vaccinations' page")
+        await driver.sleep(3000);
+        console.log("Waited 3 seconds");
+        await driver.getTitle().then(function(title) {
+            assert.equal(title, vaccinations.chain_title);
+            console.log("Asserted title");
+        });
+
         //  Verify Title for Scheduled tab
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
@@ -45,7 +54,7 @@ const pt_list_test = async function() {
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function(title) {
-            assert.equal(title, home.title);
+            assert.equal(title, home.chain_title);
             console.log("Asserted title");
         });
 
@@ -55,7 +64,7 @@ const pt_list_test = async function() {
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function(title) {
-            assert.equal(title, home.title);
+            assert.equal(title, home.chain_title);
             console.log("Asserted title");
         });
 
@@ -65,7 +74,7 @@ const pt_list_test = async function() {
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function(title) {
-            assert.equal(title, home.title);
+            assert.equal(title, home.chain_title);
             console.log("Asserted title");
         });
 
@@ -75,7 +84,7 @@ const pt_list_test = async function() {
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function(title) {
-            assert.equal(title, home.title);
+            assert.equal(title, home.chain_title);
             console.log("Asserted title");
         });
 
@@ -85,7 +94,7 @@ const pt_list_test = async function() {
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function(title) {
-            assert.equal(title, home.title);
+            assert.equal(title, home.chain_title);
             console.log("Asserted title");
         });
 
@@ -95,7 +104,7 @@ const pt_list_test = async function() {
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function(title) {
-            assert.equal(title, home.title);
+            assert.equal(title, home.chain_title);
             console.log("Asserted title");
         });
 
@@ -105,7 +114,7 @@ const pt_list_test = async function() {
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function (title) {
-            assert.equal(title, home.title);
+            assert.equal(title, home.chain_title);
             console.log("Asserted title");
         });
            
@@ -115,7 +124,7 @@ const pt_list_test = async function() {
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function(title) {
-            assert.equal(title, home.title);
+            assert.equal(title, home.chain_title);
             console.log("Asserted title");
         });
 
@@ -125,7 +134,7 @@ const pt_list_test = async function() {
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function(title) {
-            assert.equal(title, pt_comm.title);
+            assert.equal(title, pt_comm.chain_title);
             console.log("Asserted title");
         });
 
@@ -135,7 +144,7 @@ const pt_list_test = async function() {
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function(title) {
-            assert.equal(title, sync.title);
+            assert.equal(title, sync.chain_title);
             console.log("Asserted title");
         });
         // Enrolled Tab
@@ -165,17 +174,7 @@ const pt_list_test = async function() {
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function(title) {
-            assert.equal(title, eld_hrm.title);
-            console.log("Asserted title");
-        });
-
-        // Verfiy Title for 'Vaccinations' page 'Rejected' tab
-        await driver.get(vaccinations.stg);
-        console.log("Went to 'Vaccinations' page")
-        await driver.sleep(3000);
-        console.log("Waited 3 seconds");
-        await driver.getTitle().then(function(title) {
-            assert.equal(title, vaccinations.title);
+            assert.equal(title, eld_hrm.chain_title);
             console.log("Asserted title");
         });
 
@@ -185,7 +184,7 @@ const pt_list_test = async function() {
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function(title) {
-            assert.equal(title, medicare.title);
+            assert.equal(title, medicare.chain_title);
             console.log("Asserted title");
         });
 
@@ -195,7 +194,7 @@ const pt_list_test = async function() {
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function(title) {
-            assert.equal(title, ecare.title);
+            assert.equal(title, ecare.chain_title);
             console.log("Asserted title");
         });
         
@@ -205,7 +204,7 @@ const pt_list_test = async function() {
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function(title) {
-            assert.equal(title, messages.title);
+            assert.equal(title, messages.chain_title);
             console.log("Asserted title");
         });
 
@@ -215,7 +214,7 @@ const pt_list_test = async function() {
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function(title) {
-            assert.equal(title, calendar.title);
+            assert.equal(title, calendar.chain_title);
             console.log("Asserted title");
         });
 
@@ -225,7 +224,7 @@ const pt_list_test = async function() {
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function(title) {
-            assert.equal(title, calendar.title);
+            assert.equal(title, calendar.chain_title);
             console.log("Asserted title");
         });
 
@@ -235,7 +234,7 @@ const pt_list_test = async function() {
         console.log("Went to 'Custom Calendar' page");
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function(title) {
-            assert.equal(title, calendar.title);
+            assert.equal(title, calendar.chain_title);
             console.log("Asserted title");
         });
 
@@ -245,20 +244,19 @@ const pt_list_test = async function() {
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function(title) {
-            assert.equal(title, opp.title);
+            assert.equal(title, opp.chain_title);
             console.log("Asserted title");
         });
-
 
     }
     catch(err) {
         console.log(err);
     }
     finally {
-       stop = new Date().getTime();
-       let totalTime = (stop - start);
-       console.log("Pt List Test Time = " +  (totalTime / 1000 ) + " seconds\n");
-       await driver.quit()
+        stop = new Date().getTime();
+        let totalTime = (stop - start);
+        console.log("Rebranding Chain Patient List Time = " +  (totalTime / 1000 ) + " seconds\n");
+        await driver.quit()
     }
 };
-module.exports = pt_list_test;
+module.exports = chain_pt_list_test;
