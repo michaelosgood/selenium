@@ -21,7 +21,7 @@ const chain_pt_list_test = async function() {
     try {
         start = new Date().getTime();
         console.log("Starting Rebranding Chain Patient List Test");
-        await driver.get(environment.stg);
+        await driver.get(environment.stg_rebranding);
         console.log("Went to Staging Rebranding");
 
         // Login as a Chain Sample User and Verify Title
@@ -32,22 +32,31 @@ const chain_pt_list_test = async function() {
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function(title) {
-            assert.equal(title, home.chain_title);
-            console.log("Asserted title");
-        });
-
-        // Verfiy Title for 'Vaccinations' page 'Rejected' tab
-        await driver.get(vaccinations.stg);
-        console.log("Went to 'Vaccinations' page")
-        await driver.sleep(3000);
-        console.log("Waited 3 seconds");
-        await driver.getTitle().then(function(title) {
             assert.equal(title, vaccinations.chain_title);
             console.log("Asserted title");
         });
 
-        //  Verify Title for Scheduled tab
+        // Verfiy Title for 'Vaccinations' page 'Rejected' tab
+        // await driver.get(vaccinations.stg);
+        // console.log("Went to 'Vaccinations' page")
+        // await driver.sleep(3000);
+        // console.log("Waited 3 seconds");
+        // await driver.getTitle().then(function(title) {
+        //     assert.equal(title, vaccinations.chain_title);
+        //     console.log("Asserted title");
+        // });
+
+        //  Verify Title for Home tab
+        await driver.get(home.stg);
         await driver.sleep(3000);
+        console.log("Waited 3 seconds");
+        await driver.sleep(3000);
+        await driver.getTitle().then(function(title) {
+            assert.equal(title, home.chain_title);
+            console.log("Asserted title");
+        });
+
+        // Verify Title for 'Scheduled' tab
         console.log("Waited 3 seconds");
         await driver.findElement(By.partialLinkText(home.scheduled)).click();
         console.log("Clicked on 'Scheduled' tab");
@@ -211,16 +220,6 @@ const chain_pt_list_test = async function() {
         // Calendar
         await driver.get(calendar.stg);
         console.log("Went to 'Clinical Calendar' page");
-        await driver.sleep(3000);
-        console.log("Waited 3 seconds");
-        await driver.getTitle().then(function(title) {
-            assert.equal(title, calendar.chain_title);
-            console.log("Asserted title");
-        });
-
-        // Social Calendar
-        await driver.get(calendar.stg_social);
-        console.log("Went to 'Social Calendar' page");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function(title) {
