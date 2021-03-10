@@ -1,9 +1,9 @@
 const {Builder, By, Key, actions, until} = require('selenium-webdriver');
-let login = require("../../gui/pages/login.js");
-let credentials = require('../../credentials.js');
-let environment = require('../../environment.js');
-let pt_profile = require('../../gui/pages/carl.js');
-let home = require('../../gui/pages/home.js');
+let login = require("../../../gui/pages/login.js");
+let credentials = require('../../../credentials.js');
+let environment = require('../../../environment.js');
+let pt_profile = require('../../../gui/pages/carl.js');
+let home = require('../../../gui/pages/home.js');
 let assert = require("chai").assert;
 let start;
 let stop; 
