@@ -21,7 +21,7 @@ const pt_list_test = async function() {
   let driver = await new Builder().forBrowser('chrome').build();
     try {
         start = new Date().getTime();
-        console.log("Starting Rebranding Patient List Test");
+        console.log("Starting Patient List Test");
         await driver.get(environment.dev);
         console.log("Went to Dev");
 
