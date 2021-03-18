@@ -14,7 +14,7 @@ const psao_partner = async function() {
         start = new Date().getTime();
         console.log("Starting PSAO Partner Test");
         await driver.get(environment.stg);
-        console.log("Went to Staging Rebranding");
+        console.log("Went to Staging");
 
         // Login to Enterprise Dashboard
         await driver.findElement(By.id(login.id)).sendKeys(credentials.partner_user);
