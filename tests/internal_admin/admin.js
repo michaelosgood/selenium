@@ -5,6 +5,7 @@ let login = require("../../gui/pages/login.js");
 let titles = require('../../gui/components/titles.js');
 let gear = require('../../gui/components/gear.js');
 let assert = require("chai").assert;
+let admin = require('../../gui/pages/admin.js')
 let start ;
 let stop ; 
 
@@ -29,7 +30,7 @@ const admin_test = async function() {
         });
 
         // Message Management Verify Title
-        await driver.get('https://stg-rebranding.prescribewellness.com/MessageManagement');
+        await driver.get("https://stg-rebranding.prescribewellness.com/MessageManagement");
         console.log("Went to Message Management");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
