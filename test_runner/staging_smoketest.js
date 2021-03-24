@@ -27,6 +27,6 @@ let end ;
         end = new Date();
         endTime = new Date().getTime();
         console.log("Staging Smoketest Completed at: " + end);
-        console.log("Staging Smoketest Total Time = " + ((endTime - startTime )/1000) + " seconds");
+        console.log("Staging Smoketest Total Time = " + (((endTime - startTime )/1000)/60) + " minutes");
       }
 })();
