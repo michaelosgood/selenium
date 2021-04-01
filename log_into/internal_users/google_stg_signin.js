@@ -11,10 +11,9 @@ let environment = require('../../environment.js');
         console.log("Entered internal username");
         await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.internal_password, Key.RETURN);
         console.log("Entered password and clicked 'Enter'");
-        await driver.sleep(15000); 
-        console.log("Waited 15 seconds");
-        await driver.findElement(By.id('pwTopGearIcon')).click();
-        console.log("Clicked on the gear icon");
+        await driver.sleep(5000); 
+        console.log("Waited 5 seconds");
+      
     } 
     catch(err) {
         console.log(err);

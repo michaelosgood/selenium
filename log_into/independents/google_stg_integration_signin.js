@@ -15,8 +15,7 @@ let environment = require('../../environment.js');
         console.log("Entered password and clicked 'Enter'");
         await driver.sleep(5000);
         console.log("Waited 5 seconds");
-        await driver.findElement(By.id('pwTopGearIcon')).click();
-        console.log("Clicked on the gear icon");
+   
     } 
     catch(err) {
         console.log(err);
