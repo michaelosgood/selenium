@@ -130,7 +130,7 @@ const pt_list_test = async function() {
         });
 
         // Verify Title for 'Med Sync' page
-        await driver.get(sync.stg);
+        await driver.get(sync.prod);
         console.log("Went to 'Synchronization'");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
