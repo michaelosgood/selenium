@@ -4,10 +4,12 @@ let carl = {};
 carl.dev = "https://dev-web.prescribewellness.com/Patient/Details?patientId=AB6002230683436188168042F8DF9D88&pharmacyId=129634";
 carl.stg = "https://webstg.prescribewellness.com/Patient/Details?patientId=AB6002230683436188168042F8DF9D88&pharmacyId=129634";
 carl.prod = "https://web.prescribewellness.com/Patient/Details?patientId=AB6002230683436188168042F8DF9D88&pharmacyId=129634";
+carl.beta = "https://beta-web.prescribewellness.com/Patient/Details?patientId=AB6002230683436188168042F8DF9D88&pharmacyId=129634";
 
 carl.dev_medsync = "https://dev-web.prescribewellness.com/MedSync/MedicationSynchronizationEnroll?patientId=129634.AB6002230683436188168042F8DF9D88";
 carl.stg_medsync = "https://webstg.prescribewellness.com/MedSync/MedicationSynchronizationEnroll?patientId=129634.AB6002230683436188168042F8DF9D88";
 carl.prod_medsync = "https://web.prescribewellness.com/MedSync/MedicationSynchronizationEnroll?patientId=129634.AB6002230683436188168042F8DF9D88";
+carl.beta_medsync = "https://beta-web.prescribewellness.com/MedSync/MedicationSynchronizationEnroll?patientId=129634.AB6002230683436188168042F8DF9D88";
 
 carl.title = "Patient - Profile - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - HthreeNtwo";
 carl.p_title = "Patient - Programs - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - HthreeNtwo";

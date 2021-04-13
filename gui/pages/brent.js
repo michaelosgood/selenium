@@ -4,14 +4,17 @@ let brent = {};
 brent.dev = "https://dev-web.prescribewellness.com/Patient/Details?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A";
 brent.stg = "https://webstg.prescribewellness.com/Patient/Details?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A";
 brent.prod = "https://web.prescribewellness.com/Patient/Details?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A";
+brent.beta = "https://beta-web.prescribewellness.com/Patient/Details?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A";
 
 brent.dev_medsync = "https://dev-web.prescribewellness.com/MedSync/MedicationSynchronizationEnroll?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A&timer=true";
 brent.stg_medsync = "https://webstg.prescribewellness.com/MedSync/MedicationSynchronizationEnroll?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A&timer=true";
 brent.prod_medsync = "https://web.prescribewellness.com/MedSync/MedicationSynchronizationEnroll?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A&timer=true";
+brent.beta_medsync = "https://beta-web.prescribewellness.com/MedSync/MedicationSynchronizationEnroll?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A&timer=true";
 
 brent.dev_ecare = "https://dev-web.prescribewellness.com/Patient/eCarePlans?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A&timer=true";
 brent.stg_ecare = "https://webstg.prescribewellness.com/Patient/eCarePlans?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A&timer=true";
 brent.prod_ecare = "https://web.prescribewellness.com/Patient/eCarePlans?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A&timer=true";
+brent.beta_ecare = "https://beta-web.prescribewellness.com/Patient/eCarePlans?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A&timer=true";
 
 
 brent.title = "Patient - Profile - Pharmacy Portal - Account: 2043550027 - NPI: 9000000001 - NCPDP: 9000001 - chainPartner";

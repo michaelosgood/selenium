@@ -3,14 +3,17 @@ let calendar = {};
 calendar.dev = "https://dev-web.prescribewellness.com/Calendar";
 calendar.stg = "https://webstg.prescribewellness.com/Calendar";
 calendar.prod = "https://web.prescribewellness.com/Calendar";
+calendar.beta = "https://beta-web.prescribewellness.com/Calendar";
 
 calendar.dev_social = "https://dev-web.prescribewellness.com/SocialCalendar";
 calendar.stg_social = "https://webstg.prescribewellness.com/SocialCalendar";
 calendar.prod_social = "https://web.prescribewellness.com/SocialCalendar";
+calendar.beta_social = "https://beta-web.prescribewellness.com/SocialCalendar";
 
 calendar.dev_custom = "https://dev-web.prescribewellness.com/Calendar/CustomCalendar";
 calendar.stg_custom = "https://webstg.prescribewellness.com/Calendar/CustomCalendar";
 calendar.prod_custom = "https://web.prescribewellness.com/Calendar/CustomCalendar";
+calendar.beta_custom = "https://beta-web.prescribewellness.com/Calendar/CustomCalendar";
 
 
 calendar.title = "Pharmacy Calendar - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - HthreeNtwo";
