@@ -22,8 +22,8 @@ const admin_test = async function() {
         console.log("Entered username");
         await driver.findElement(By.id(login.pw)).sendKeys(credentials.internal_password, Key.RETURN);
         console.log("Entered password and clicked 'Enter'");
-        await driver.sleep(3000);
-        console.log("Waited 3 seconds");
+        await driver.sleep(5000);
+        console.log("Waited 5 seconds");
         await driver.getTitle().then(function (title) {
             assert.equal(title, titles.dashboard);
             console.log("Asserted title");
