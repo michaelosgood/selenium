@@ -138,7 +138,7 @@ const chain_pt_list_test = async function() {
         });
 
         // Verify Title for 'Med Sync' page
-        await driver.get(sync.prod);
+        await driver.get(sync.beta);
         console.log("Went to 'Synchronization'");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
