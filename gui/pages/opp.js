@@ -1,5 +1,6 @@
 let opp = {};
 
+opp.local = "https://localhost:44340/Opportunities";
 opp.dev = "https://dev-web.prescribewellness.com/Opportunities";
 opp.stg = "https://webstg.prescribewellness.com/Opportunities";
 opp.prod = "https://web.prescribewellness.com/Opportunities";

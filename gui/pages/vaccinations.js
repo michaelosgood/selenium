@@ -1,5 +1,6 @@
 let vaccinations = {};
 
+vaccinations.local = "https://localhost:44340/Vaccinations";
 vaccinations.dev = "https://dev-web.prescribewellness.com/Vaccinations";
 vaccinations.stg = "https://webstg.prescribewellness.com/Vaccinations";
 vaccinations.prod = "https://web.prescribewellness.com/Vaccinations";
