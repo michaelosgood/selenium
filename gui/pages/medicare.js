@@ -1,5 +1,6 @@
 let medicare = {};
 
+medicare.local = "https://localhost:44340/MedicarePlanReviews";
 medicare.stg = "https://stg-rebranding.prescribewellness.com/MedicarePlanReviews";
 medicare.txt = "Medicare Plan Reviews";
 medicare.title = "Medicare Patient List - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - HthreeNtwo";

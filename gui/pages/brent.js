@@ -1,16 +1,19 @@
 let brent = {};
 
 // Brent Bagwells's pt profile
+brent.local = "https://localhost:44340/Patient/Details?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A";
 brent.dev = "https://dev-web.prescribewellness.com/Patient/Details?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A";
 brent.stg = "https://webstg.prescribewellness.com/Patient/Details?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A";
 brent.prod = "https://web.prescribewellness.com/Patient/Details?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A";
 brent.beta = "https://beta-web.prescribewellness.com/Patient/Details?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A";
 
+brent.local_medsync = "https://localhost:44340/MedSync/MedicationSynchronizationEnroll?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A&timer=true";
 brent.dev_medsync = "https://dev-web.prescribewellness.com/MedSync/MedicationSynchronizationEnroll?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A&timer=true";
 brent.stg_medsync = "https://webstg.prescribewellness.com/MedSync/MedicationSynchronizationEnroll?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A&timer=true";
 brent.prod_medsync = "https://web.prescribewellness.com/MedSync/MedicationSynchronizationEnroll?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A&timer=true";
 brent.beta_medsync = "https://beta-web.prescribewellness.com/MedSync/MedicationSynchronizationEnroll?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A&timer=true";
 
+brent.local_ecare = "https://localhost:44340/Patient/eCarePlans?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A&timer=true";
 brent.dev_ecare = "https://dev-web.prescribewellness.com/Patient/eCarePlans?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A&timer=true";
 brent.stg_ecare = "https://webstg.prescribewellness.com/Patient/eCarePlans?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A&timer=true";
 brent.prod_ecare = "https://web.prescribewellness.com/Patient/eCarePlans?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A&timer=true";
@@ -28,6 +31,7 @@ brent.c_title = "Patient - Profile - Pharmacy Portal - Account: 2043550027 - NPI
 brent.l_title = "Patient - Timer Log - Pharmacy Portal - Account: 2043550027 - NPI: 9000000001 - NCPDP: 9000001 - chainPartner";
 
 // Brent Bagwell's pt profile in Sample Chain Store 1 (Account 2043550027)
+brent.local_chain = "https://localhost:44340/Patient/Details?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A";
 brent.dev_chain = "https://dev-web.prescribewellness.com/Patient/Details?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A";
 brent.stg_chain = "https://webstg.prescribewellness.com/Patient/Details?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A";
 brent.prod_chain_link = "https://web.prescribewellness.com/Patient/Details?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A";

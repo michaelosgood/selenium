@@ -1,5 +1,6 @@
 let eld_hrm = {};
 
+eld_hrm.local = "https://localhost:44340/MedSync/HighRiskMedications";
 eld_hrm.dev = "https://dev-web.prescribewellness.com/MedSync/HighRiskMedications";
 eld_hrm.stg = "https://webstg.prescribewellness.com/MedSync/HighRiskMedications";
 eld_hrm.prod = "https://web.prescribewellness.com/MedSync/HighRiskMedications";

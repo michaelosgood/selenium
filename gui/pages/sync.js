@@ -1,5 +1,6 @@
 let sync = {};
 
+sync.local = "https://localhost:44340/MedSync/MedicationSynchronization";
 sync.dev = "https://dev-web.prescribewellness.com/MedSync/MedicationSynchronization";
 sync.stg = "https://webstg.prescribewellness.com/MedSync/MedicationSynchronization";
 sync.prod = "https://web.prescribewellness.com/MedSync/MedicationSynchronization";

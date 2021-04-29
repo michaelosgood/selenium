@@ -1,11 +1,13 @@
 let carl = {};
 
 // Carl Allen's pt profile in PW Community (Account 129634)
+carl.local = "https://localhost:44340/Patient/Details?patientId=AB6002230683436188168042F8DF9D88&pharmacyId=129634";
 carl.dev = "https://dev-web.prescribewellness.com/Patient/Details?patientId=AB6002230683436188168042F8DF9D88&pharmacyId=129634";
 carl.stg = "https://webstg.prescribewellness.com/Patient/Details?patientId=AB6002230683436188168042F8DF9D88&pharmacyId=129634";
 carl.prod = "https://web.prescribewellness.com/Patient/Details?patientId=AB6002230683436188168042F8DF9D88&pharmacyId=129634";
 carl.beta = "https://beta-web.prescribewellness.com/Patient/Details?patientId=AB6002230683436188168042F8DF9D88&pharmacyId=129634";
 
+carl.local_medsync = "https://localhost:44340/MedSync/MedicationSynchronizationEnroll?patientId=129634.AB6002230683436188168042F8DF9D88";
 carl.dev_medsync = "https://dev-web.prescribewellness.com/MedSync/MedicationSynchronizationEnroll?patientId=129634.AB6002230683436188168042F8DF9D88";
 carl.stg_medsync = "https://webstg.prescribewellness.com/MedSync/MedicationSynchronizationEnroll?patientId=129634.AB6002230683436188168042F8DF9D88";
 carl.prod_medsync = "https://web.prescribewellness.com/MedSync/MedicationSynchronizationEnroll?patientId=129634.AB6002230683436188168042F8DF9D88";
@@ -23,6 +25,7 @@ carl.c_title = "Patient - Profile - Pharmacy Portal - Account: 129634 - NPI: 987
 carl.l_title = "Patient - Timer Log - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - HthreeNtwo";
 
 // Carl Allen's pt profile in Sample Chain Store 1 (Account 2043550027)
+carl.local_chain = "https://localhost:44340/Patient/Details?patientId=204355.01DDDB4C6ECD41D3A3DFCA37E613147A";
 carl.dev_chain = "https://dev-web.prescribewellness.com/Patient/Details?patientId=204355.01DDDB4C6ECD41D3A3DFCA37E613147A";
 carl.stg_chain = "https://webstg.prescribewellness.com/Patient/Details?patientId=204355.01DDDB4C6ECD41D3A3DFCA37E613147A";
 carl.prod_chain_link = "https://web.prescribewellness.com/Patient/Details?patientId=204355.01DDDB4C6ECD41D3A3DFCA37E613147A";

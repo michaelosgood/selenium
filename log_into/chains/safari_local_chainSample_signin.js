@@ -6,8 +6,8 @@ let environment = require('../../environment.js');
   let driver = await new Builder().forBrowser('safari').build();
     try {
         console.log("Initiating Login Test in Safari");
-        await driver.get(environment.dev);
-        console.log("Went to Dev");
+        await driver.get(environment.local);
+        console.log("Went to LOCAL");
         await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.chainSample_user);
         console.log("Entered username");
         await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.chainSample_password, Key.RETURN);
