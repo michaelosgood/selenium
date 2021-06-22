@@ -1,8 +1,8 @@
 const {Builder, By, Key, actions, until} = require('selenium-webdriver');
 let credentials = require('../../credentials.js');
 let environment = require('../../environment.js');
-let titles = require('../../components/titles.js');
-let login = require('../../components/login.js');
+let titles = require('../../gui/components/titles.js');
+let login = require('../../gui/components/login.js');
 
 (async function loginAs() {
   let driver = await new Builder().forBrowser('chrome').build();

@@ -1,7 +1,7 @@
 const {Builder, By, Key, until} = require('selenium-webdriver');
 let credentials = require('../../credentials.js');
 let environment = require('../../environment.js');
-let login = require('../../components/login.js');
+let login = require('../../gui/components/login.js');
 
 (async function GoogleSignIn() {
   let driver = await new Builder().forBrowser('chrome').build();
