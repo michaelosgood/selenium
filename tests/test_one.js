@@ -1,9 +1,9 @@
 const { Builder, By, Key, actions, until } = require('selenium-webdriver');
-let login = require('../components/login.js');
+let login = require('../gui/components/login.js');
 let credentials = require('../credentials.js');
 let environment = require('../environment.js');
-let titles = require('../components/titles.js');
-let gear = require('../components/gear.js');
+let titles = require('../gui/components/titles.js');
+let gear = require('../gui/components/gear.js');
 let assert = require("chai").assert;
 
 const testOne = async function() {
