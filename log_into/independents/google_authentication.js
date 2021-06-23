@@ -1,6 +1,6 @@
 // Updated Test
 const {Builder, By, Key, until} = require('selenium-webdriver');
-let login = require('../../components/login.js');
+let login = require('../../gui/components/login.js');
 let environment = require('../../environment.js');
 let credentials = require('../../credentials.js');
 let assert = require('assert');
