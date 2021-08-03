@@ -13,7 +13,7 @@ let end ;
     try {
         start = new Date();
         startTime = new Date().getTime();
-        console.log("Staging Smoketest Started at: " + start);
+        console.log("Staging Smoketest Started at: 1:00" + start);
         await admin_test();
         await pt_list_test();
         await pt_profile_test();
