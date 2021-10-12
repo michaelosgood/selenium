@@ -28,6 +28,8 @@ const chain_partner = async function() {
         });
 
         // Verify Title for 'Enterprise  Active Patients' Page
+        await driver.sleep(3000);
+        console.log("Waited 3 seconds");
         await driver.findElement(By.linkText('Enterprise Active Patients')).click();
         console.log("Selected 'Enterprise Active Patients'");
         await driver.sleep(3000);

@@ -29,6 +29,8 @@ const psao_partner = async function() {
         });
 
         // Verify Title for 'Enterpise Active Patients' Page
+        await driver.sleep(3000);
+        console.log("Waited 3 seconds");
         await driver.findElement(By.linkText('Enterprise Active Patients')).click();
         console.log("Selected 'Enterpise Active Patients'");
         await driver.sleep(3000);
