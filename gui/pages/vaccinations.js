@@ -5,6 +5,7 @@ vaccinations.dev = "https://dev-web.prescribewellness.com/Vaccinations";
 vaccinations.stg = "https://webstg.prescribewellness.com/Vaccinations";
 vaccinations.prod = "https://web.prescribewellness.com/Vaccinations";
 vaccinations.beta = "https://beta-web.prescribewellness.com/Vaccinations";
+vaccinations.aws = "https://aws-web-staging.prescribewellness.com/Vaccinations";
 
 vaccinations.title = "Vaccine Patient List - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - HthreeNtwo";
 vaccinations.chain_title = "Vaccine Patient List - Pharmacy Portal - Account: 2043550027 - NPI: 9000000001 - NCPDP: 9000001 - ChainSample";
