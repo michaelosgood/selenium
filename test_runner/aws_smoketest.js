@@ -9,7 +9,7 @@ let start ;
 let endTime ;
 let end ;
 
-(async function stgSmoketest() { 
+(async function awsSmoketest() { 
     try {
         start = new Date();
         startTime = new Date().getTime();

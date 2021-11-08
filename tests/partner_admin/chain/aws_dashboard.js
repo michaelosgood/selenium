@@ -18,7 +18,7 @@ const chain_partner = async function() {
         // Login to Enterprise Dashboard
         await driver.findElement(By.id(login.id)).sendKeys(credentials.chainPartner_user);
         console.log("Entered username");
-        await driver.findElement(By.id(login.pw)).sendKeys(credentials.chainPartner_password, Key.RETURN);
+        await driver.findElement(By.id(login.pw)).sendKeys(credentials.chainPartner_aws_password, Key.RETURN);
         console.log("Entered password and clicked 'Enter'");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
