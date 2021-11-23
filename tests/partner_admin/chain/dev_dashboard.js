@@ -32,8 +32,8 @@ const chain_partner = async function() {
         console.log("Waited 3 seconds");
         await driver.findElement(By.linkText('Enterprise Active Patients')).click();
         console.log("Selected 'Enterprise Active Patients'");
-        await driver.sleep(3000);
-        console.log("Waited 3 seconds");
+        await driver.sleep(5000);
+        console.log("Waited 5 seconds");
         await driver.getTitle().then(function(title) {
             assert.equal(title, "Enterprise Dashboard");
             console.log("Asserted title");

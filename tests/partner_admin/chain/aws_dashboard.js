@@ -18,18 +18,18 @@ const chain_partner = async function() {
         // Login to Enterprise Dashboard
         await driver.findElement(By.id(login.id)).sendKeys(credentials.chainPartner_user);
         console.log("Entered username");
-        await driver.findElement(By.id(login.pw)).sendKeys(credentials.chainPartner_aws_password, Key.RETURN);
+        await driver.findElement(By.id(login.pw)).sendKeys(credentials.chainPartner_password, Key.RETURN);
         console.log("Entered password and clicked 'Enter'");
-        await driver.sleep(3000);
-        console.log("Waited 3 seconds");
+        await driver.sleep(5000);
+        console.log("Waited 5 seconds");
         await driver.getTitle().then(function (title) {
             assert.equal(title, "Enterprise Dashboard");
             console.log("Asserted title");
         });
 
         // Verify Title for 'Enterprise  Active Patients' Page
-        await driver.sleep(3000);
-        console.log("Waited 3 seconds");
+        await driver.sleep(5000);
+        console.log("Waited 5 seconds");
         await driver.findElement(By.partialLinkText('Active Patients')).click();
         console.log("Selected 'Enterprise Active Patients'");
         await driver.sleep(3000);

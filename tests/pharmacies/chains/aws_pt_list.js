@@ -27,7 +27,7 @@ const chain_pt_list_test = async function() {
         // Login as a Chain Sample User and Verify Title
         await driver.findElement(By.id('mbr-uid')).sendKeys(credentials.chainSample_user);
         console.log("Entered username");
-        await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.chainSample_aws_password, Key.RETURN);
+        await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.chainSample_password, Key.RETURN);
         console.log("Entered password and clicked 'Enter'");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
