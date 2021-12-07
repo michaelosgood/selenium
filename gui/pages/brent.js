@@ -6,21 +6,24 @@ brent.dev = "https://dev-web.prescribewellness.com/Patient/Details?patientId=01D
 brent.stg = "https://webstg.prescribewellness.com/Patient/Details?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A";
 brent.prod = "https://web.prescribewellness.com/Patient/Details?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A";
 brent.beta = "https://beta-web.prescribewellness.com/Patient/Details?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A";
-brent.aws = "https://aws-web-staging.prescribewellness.com/Patient/Details?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A";
+brent.aws_dev = "https://aws-web-dev.prescribewellness.com/Patient/Details?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A";
+brent.aws_stg = "https://aws-web-staging.prescribewellness.com/Patient/Details?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A";
 
 brent.local_medsync = "https://localhost:44340/MedSync/MedicationSynchronizationEnroll?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A&timer=true";
 brent.dev_medsync = "https://dev-web.prescribewellness.com/MedSync/MedicationSynchronizationEnroll?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A&timer=true";
 brent.stg_medsync = "https://webstg.prescribewellness.com/MedSync/MedicationSynchronizationEnroll?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A&timer=true";
 brent.prod_medsync = "https://web.prescribewellness.com/MedSync/MedicationSynchronizationEnroll?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A&timer=true";
 brent.beta_medsync = "https://beta-web.prescribewellness.com/MedSync/MedicationSynchronizationEnroll?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A&timer=true";
-brent.aws_medsync = "https://aws-web-staging.prescribewellness.com/MedSync/MedicationSynchronizationEnroll?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A&timer=true";
+brent.aws_dev_medsync = "https://aws-web-dev.prescribewellness.com/MedSync/MedicationSynchronizationEnroll?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A&timer=true";
+brent.aws_stg_medsync = "https://aws-web-staging.prescribewellness.com/MedSync/MedicationSynchronizationEnroll?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A&timer=true";
 
 brent.local_ecare = "https://localhost:44340/Patient/eCarePlans?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A&timer=true";
 brent.dev_ecare = "https://dev-web.prescribewellness.com/Patient/eCarePlans?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A&timer=true";
 brent.stg_ecare = "https://webstg.prescribewellness.com/Patient/eCarePlans?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A&timer=true";
 brent.prod_ecare = "https://web.prescribewellness.com/Patient/eCarePlans?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A&timer=true";
 brent.beta_ecare = "https://beta-web.prescribewellness.com/Patient/eCarePlans?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A&timer=true";
-brent.aws_ecare = "https://aws-web-staging.prescribewellness.com/Patient/eCarePlans?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A&timer=true";
+brent.aws_dev_ecare = "https://aws-web-dev.prescribewellness.com/Patient/eCarePlans?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A&timer=true";
+brent.aws_stg_ecare = "https://aws-web-staging.prescribewellness.com/Patient/eCarePlans?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A&timer=true";
 
 brent.title = "Patient - Profile - Pharmacy Portal - Account: 2043550027 - NPI: 9000000001 - NCPDP: 9000001 - chainPartner";
 brent.p_title = "Patient - Programs - Pharmacy Portal - Account: 2043550027 - NPI: 9000000001 - NCPDP: 9000001 - chainPartner";
@@ -35,11 +38,13 @@ brent.l_title = "Patient - Timer Log - Pharmacy Portal - Account: 2043550027 - N
 // Brent Bagwell's pt profile in Sample Chain Store 1 (Account 2043550027)
 brent.local_chain = "https://localhost:44340/Patient/Details?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A";
 brent.dev_chain = "https://dev-web.prescribewellness.com/Patient/Details?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A";
-brent.aws_chain = "https://aws-web-staging.prescribewellness.com/Patient/Details?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A";
+brent.aws_dev_chain = "https://aws-web-dev.prescribewellness.com/Patient/Details?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A";
+brent.aws_stg_chain = "https://aws-web-staging.prescribewellness.com/Patient/Details?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A";
 brent.stg_chain = "https://webstg.prescribewellness.com/Patient/Details?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A";
 brent.prod_chain_link = "https://web.prescribewellness.com/Patient/Details?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A";
 brent.beta_chain_link = "https://beta-web.prescribewellness.com/Patient/Details?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A";
-brent.aws_chain_link = "https://aws-web-staging.prescribewellness.com/Patient/Details?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A";
+brent.aws_dev_chain_link = "https://aws-web-dev.prescribewellness.com/Patient/Details?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A";
+brent.aws_stg_chain_link = "https://aws-web-staging.prescribewellness.com/Patient/Details?patientId=01DDDB4C6ECD41D3A3DFCA37E613147A";
 
 // In All pt profiles
 brent.o = "Overview";

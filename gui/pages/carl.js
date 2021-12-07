@@ -6,14 +6,16 @@ carl.dev = "https://dev-web.prescribewellness.com/Patient/Details?patientId=AB60
 carl.stg = "https://webstg.prescribewellness.com/Patient/Details?patientId=AB6002230683436188168042F8DF9D88&pharmacyId=129634";
 carl.prod = "https://web.prescribewellness.com/Patient/Details?patientId=AB6002230683436188168042F8DF9D88&pharmacyId=129634";
 carl.beta = "https://beta-web.prescribewellness.com/Patient/Details?patientId=AB6002230683436188168042F8DF9D88&pharmacyId=129634";
-carl.aws = "https://aws-web-staging.prescribewellness.com/Patient/Details?patientId=AB6002230683436188168042F8DF9D88&pharmacyId=129634";
+carl.aws_dev = "https://aws-web-dev.prescribewellness.com/Patient/Details?patientId=AB6002230683436188168042F8DF9D88&pharmacyId=129634";
+carl.aws_stg = "https://aws-web-staging.prescribewellness.com/Patient/Details?patientId=AB6002230683436188168042F8DF9D88&pharmacyId=129634";
 
 carl.local_medsync = "https://localhost:44340/MedSync/MedicationSynchronizationEnroll?patientId=129634.AB6002230683436188168042F8DF9D88";
 carl.dev_medsync = "https://dev-web.prescribewellness.com/MedSync/MedicationSynchronizationEnroll?patientId=129634.AB6002230683436188168042F8DF9D88";
 carl.stg_medsync = "https://webstg.prescribewellness.com/MedSync/MedicationSynchronizationEnroll?patientId=129634.AB6002230683436188168042F8DF9D88";
 carl.prod_medsync = "https://web.prescribewellness.com/MedSync/MedicationSynchronizationEnroll?patientId=129634.AB6002230683436188168042F8DF9D88";
 carl.beta_medsync = "https://beta-web.prescribewellness.com/MedSync/MedicationSynchronizationEnroll?patientId=129634.AB6002230683436188168042F8DF9D88";
-carl.aws_medsync = "https://aws-web-staging.prescribewellness.com/MedSync/MedicationSynchronizationEnroll?patientId=129634.AB6002230683436188168042F8DF9D88";
+carl.aws_dev_medsync = "https://aws-web-dev.prescribewellness.com/MedSync/MedicationSynchronizationEnroll?patientId=129634.AB6002230683436188168042F8DF9D88";
+carl.aws_stg_medsync = "https://aws-web-staging.prescribewellness.com/MedSync/MedicationSynchronizationEnroll?patientId=129634.AB6002230683436188168042F8DF9D88";
 
 carl.title = "Patient - Profile - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - HthreeNtwo";
 carl.p_title = "Patient - Programs - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - HthreeNtwo";
@@ -30,10 +32,12 @@ carl.l_title = "Patient - Timer Log - Pharmacy Portal - Account: 129634 - NPI: 9
 carl.local_chain = "https://localhost:44340/Patient/Details?patientId=204355.01DDDB4C6ECD41D3A3DFCA37E613147A";
 carl.dev_chain = "https://dev-web.prescribewellness.com/Patient/Details?patientId=204355.01DDDB4C6ECD41D3A3DFCA37E613147A";
 carl.stg_chain = "https://webstg.prescribewellness.com/Patient/Details?patientId=204355.01DDDB4C6ECD41D3A3DFCA37E613147A";
-carl.aws_chain = "https://aws-web-staging.prescribewellness.com/Patient/Details?patientId=204355.01DDDB4C6ECD41D3A3DFCA37E613147A";
+carl.aws_dev_chain = "https://aws-web-dev.prescribewellness.com/Patient/Details?patientId=204355.01DDDB4C6ECD41D3A3DFCA37E613147A";
+carl.aws_stg_chain = "https://aws-web-staging.prescribewellness.com/Patient/Details?patientId=204355.01DDDB4C6ECD41D3A3DFCA37E613147A";
 carl.prod_chain_link = "https://web.prescribewellness.com/Patient/Details?patientId=204355.01DDDB4C6ECD41D3A3DFCA37E613147A";
 carl.beta_chain_link = "https://beta-web.prescribewellness.com/Patient/Details?patientId=204355.01DDDB4C6ECD41D3A3DFCA37E613147A";
-carl.aws_chain_link = "https://aws-web-staging.prescribewellness.com/Patient/Details?patientId=204355.01DDDB4C6ECD41D3A3DFCA37E613147A";
+carl.aws_dev_chain_link = "https://aws-web-dev.prescribewellness.com/Patient/Details?patientId=204355.01DDDB4C6ECD41D3A3DFCA37E613147A";
+carl.aws_stg_chain_link = "https://aws-web-staging.prescribewellness.com/Patient/Details?patientId=204355.01DDDB4C6ECD41D3A3DFCA37E613147A";
 
 // In All pt profiles
 carl.o = "Overview";

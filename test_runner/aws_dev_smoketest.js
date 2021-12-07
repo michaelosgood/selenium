@@ -1,19 +1,19 @@
-let admin_test = require('../tests/internal_admin/aws_admin.js');
-let pt_list_test = require('../tests/pharmacies/independents/aws_pt_list.js');
-let pt_profile_test = require('../tests/pharmacies/independents/aws_pt_profile.js');
-let psao_partner_test = require('../tests/partner_admin/psao/aws_dashboard.js');
-let chain_partner_test = require('../tests/partner_admin/chain/aws_dashboard.js');
-let chain_pt_list_test = require('../tests/pharmacies/chains/aws_pt_list.js');
+let admin_test = require('../tests/internal_admin/aws_dev_admin.js');
+let pt_list_test = require('../tests/pharmacies/independents/aws_dev_pt_list.js');
+let pt_profile_test = require('../tests/pharmacies/independents/aws_dev_pt_profile.js');
+let psao_partner_test = require('../tests/partner_admin/psao/aws_dev_dashboard.js');
+let chain_partner_test = require('../tests/partner_admin/chain/aws_dev_dashboard.js');
+let chain_pt_list_test = require('../tests/pharmacies/chains/aws_dev_pt_list.js');
 let startTime ;
 let start ;
 let endTime ;
 let end ;
 
-(async function awsSmoketest() { 
+(async function awsDevSmoketest() { 
     try {
         start = new Date();
         startTime = new Date().getTime();
-        console.log("AWS Smoketest Started at: 1:00" + start);
+        console.log("AWS Dev Smoketest Started at: " + start);
         await admin_test();
         await pt_list_test();
         await pt_profile_test();

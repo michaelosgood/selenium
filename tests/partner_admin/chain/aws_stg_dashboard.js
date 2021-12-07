@@ -12,7 +12,7 @@ const chain_partner = async function() {
     try {
         start = new Date().getTime();
         console.log("Starting Chain Partner Test");
-        await driver.get(environment.aws);
+        await driver.get(environment.aws_stg);
         console.log("Went to AWS");
 
         // Login to Enterprise Dashboard

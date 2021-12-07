@@ -13,7 +13,7 @@ const admin_test = async function() {
     try {
         start = new Date().getTime();
         console.log("Starting Admin Test");
-        await driver.get(environment.aws);
+        await driver.get(environment.aws_stg);
         console.log("Went to AWS");
         
         // Login to User and Verify Title

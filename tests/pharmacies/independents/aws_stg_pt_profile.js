@@ -13,7 +13,7 @@ const pt_profile_test = async function() {
     try {
         start = new Date().getTime();
         console.log("Starting Patient Profile Test");
-        await driver.get(environment.aws);
+        await driver.get(environment.aws_stg);
         console.log("Went to AWS");
    
          // Login to PW Community and Verify Title
@@ -29,7 +29,7 @@ const pt_profile_test = async function() {
         });
 
         // Go to Patient Profile
-        await driver.get(pt_profile.aws);
+        await driver.get(pt_profile.aws_stg);
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function(title) {
@@ -58,7 +58,7 @@ const pt_profile_test = async function() {
         });
         
         // Click on the Medications tab
-        await driver.get(pt_profile.aws_medsync);
+        await driver.get(pt_profile.aws_stg_medsync);
         console.log("Clicked on Medication tab");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");

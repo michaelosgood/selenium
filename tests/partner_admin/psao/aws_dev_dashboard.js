@@ -13,7 +13,7 @@ const psao_partner = async function() {
     try {
         start = new Date().getTime();
         console.log("Starting PSAO Partner Test");
-        await driver.get(environment.aws);
+        await driver.get(environment.aws_dev);
         console.log("Went to AWS");
 
         // Login to Enterprise Dashboard

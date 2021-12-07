@@ -22,7 +22,7 @@ const pt_list_test = async function() {
     try {
         start = new Date().getTime();
         console.log("Starting Patient List Test");
-        await driver.get(environment.aws);
+        await driver.get(environment.aws_stg);
         console.log("Went to AWS");
 
         // Login to PW Community and Verify Title
@@ -160,7 +160,7 @@ const pt_list_test = async function() {
         console.log("Waited 3 seconds");
 
         // Verify Title for 'Elderly on HRM' page
-        await driver.get(eld_hrm.aws);
+        await driver.get(eld_hrm.aws_stg);
         console.log("Went to 'Elderly on HRM'");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
@@ -170,7 +170,7 @@ const pt_list_test = async function() {
         });
 
         // Verfiy Title for 'Vaccinations' page 'Rejected' tab
-        await driver.get(vaccinations.aws);
+        await driver.get(vaccinations.aws_stg);
         console.log("Went to 'Vaccinations' page")
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
@@ -220,7 +220,7 @@ const pt_list_test = async function() {
         });
 
         // Social Calendar
-        await driver.get(calendar.aws_social);
+        await driver.get(calendar.aws_stg_social);
         console.log("Went to 'Social Calendar' page");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
@@ -230,7 +230,7 @@ const pt_list_test = async function() {
         });
 
         /// Custom Calendar
-        await driver.get(calendar.aws_custom);
+        await driver.get(calendar.aws_dev_custom);
         await driver.sleep(3000);
         console.log("Went to 'Custom Calendar' page");
         console.log("Waited 3 seconds");
@@ -240,7 +240,7 @@ const pt_list_test = async function() {
         });
 
         // Opportunities
-        await driver.get(opp.aws);
+        await driver.get(opp.aws_stg);
         console.log("Went to 'Opportunities' page");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
