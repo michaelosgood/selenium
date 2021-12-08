@@ -210,7 +210,7 @@ const pt_list_test = async function() {
         });
 
         // Calendar
-        await driver.get(calendar.aws);
+        await driver.get(calendar.aws_stg);
         console.log("Went to 'Clinical Calendar' page");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
@@ -230,7 +230,7 @@ const pt_list_test = async function() {
         });
 
         /// Custom Calendar
-        await driver.get(calendar.aws_dev_custom);
+        await driver.get(calendar.aws_stg_custom);
         await driver.sleep(3000);
         console.log("Went to 'Custom Calendar' page");
         console.log("Waited 3 seconds");
