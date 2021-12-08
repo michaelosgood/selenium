@@ -66,7 +66,7 @@ const chain_partner = async function() {
         });
         
         // Click on the Medications tab
-        await driver.get(pt_profile.aws_medsync);
+        await driver.get(pt_profile.aws_stg_medsync);
         console.log("Clicked on Medication tab");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
@@ -127,7 +127,7 @@ const chain_partner = async function() {
         });
 
         // eCare tab
-        await driver.get(pt_profile.aws_ecare);
+        await driver.get(pt_profile.aws_stg_ecare);
         console.log("Clicked on Care tab");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
