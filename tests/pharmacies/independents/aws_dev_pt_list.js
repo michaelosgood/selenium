@@ -170,7 +170,7 @@ const pt_list_test = async function() {
         });
 
         // Verfiy Title for 'Vaccinations' page 'Rejected' tab
-        await driver.get(vaccinations.aws_stg);
+        await driver.get(vaccinations.aws_dev);
         console.log("Went to 'Vaccinations' page")
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
@@ -210,7 +210,7 @@ const pt_list_test = async function() {
         });
 
         // Calendar
-        await driver.get(calendar.aws);
+        await driver.get(calendar.aws_dev);
         console.log("Went to 'Clinical Calendar' page");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
@@ -240,7 +240,7 @@ const pt_list_test = async function() {
         });
 
         // Opportunities
-        await driver.get(opp.aws_stg);
+        await driver.get(opp.aws_dev);
         console.log("Went to 'Opportunities' page");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
