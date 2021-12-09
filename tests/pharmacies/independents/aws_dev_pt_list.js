@@ -240,7 +240,7 @@ const pt_list_test = async function() {
         });
 
         // Opportunities
-        await driver.get(opp.aws_dev);
+        await driver.get(opclep.aws_dev);
         console.log("Went to 'Opportunities' page");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
