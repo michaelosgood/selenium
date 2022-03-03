@@ -6,7 +6,7 @@ let login = require('../../gui/components/login.js');
 (async function SignIn() {
   let driver = await new Builder().forBrowser('chrome').build();
     try {
-        await driver.get(environment.dev);
+        await driver.get(environment.aws_dev);
         console.log("Went to Develoment");
         await driver.findElement(By.id(login.id)).sendKeys(credentials.eden_user);
         console.log("Entered internal username");

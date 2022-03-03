@@ -7,6 +7,7 @@ calendar.prod = "https://web.prescribewellness.com/Calendar";
 calendar.beta = "https://beta-web.prescribewellness.com/Calendar";
 calendar.aws_dev = "https://aws-web-dev.prescribewellness.com/Calendar";
 calendar.aws_stg = "https://aws-web-staging.prescribewellness.com/Calendar";
+calendar.aws_prod = "https://aws-web.prescribewellness.com/Calendar";
 
 calendar.local_social = "https://localhost:44340/SocialCalendar";
 calendar.dev_social = "https://dev-web.prescribewellness.com/SocialCalendar";
@@ -15,6 +16,7 @@ calendar.prod_social = "https://web.prescribewellness.com/SocialCalendar";
 calendar.beta_social = "https://beta-web.prescribewellness.com/SocialCalendar";
 calendar.aws_dev_social = "https://aws-web-dev.prescribewellness.com/SocialCalendar";
 calendar.aws_stg_social = "https://aws-web-staging.prescribewellness.com/SocialCalendar";
+calendar.aws_prod_social = "https://aws-web.prescribewellness.com/SocialCalendar";
 
 calendar.local_custom = "https://localhost:44340/Calendar/CustomCalendar";
 calendar.dev_custom = "https://dev-web.prescribewellness.com/Calendar/CustomCalendar";
@@ -23,6 +25,7 @@ calendar.prod_custom = "https://web.prescribewellness.com/Calendar/CustomCalenda
 calendar.beta_custom = "https://beta-web.prescribewellness.com/Calendar/CustomCalendar";
 calendar.aws_dev_custom = "https://aws-web-dev.prescribewellness.com/Calendar/CustomCalendar";
 calendar.aws_stg_custom = "https://aws-web-staging.prescribewellness.com/Calendar/CustomCalendar";
+calendar.aws_prod_custom = "https://aws-web.prescribewellness.com/Calendar/CustomCalendar";
 
 calendar.title = "Pharmacy Calendar - Pharmacy Portal - Account: 129634 - NPI: 9876543210 - NCPDP: 1296341 - HthreeNtwo";
 calendar.chain_title = "Pharmacy Calendar - Pharmacy Portal - Account: 2043550027 - NPI: 9000000001 - NCPDP: 9000001 - ChainSample";
