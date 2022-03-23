@@ -220,14 +220,14 @@ const pt_list_test = async function() {
         });
 
         // Social Calendar
-        await driver.get(calendar.aws_dev_social);
-        console.log("Went to 'Social Calendar' page");
-        await driver.sleep(3000);
-        console.log("Waited 3 seconds");
-        await driver.getTitle().then(function(title) {
-            assert.equal(title, calendar.title);
-            console.log("Asserted title");
-        });
+        // await driver.get(calendar.aws_dev_social);
+        // console.log("Went to 'Social Calendar' page");
+        // await driver.sleep(3000);
+        // console.log("Waited 3 seconds");
+        // await driver.getTitle().then(function(title) {
+        //     assert.equal(title, calendar.title);
+        //     console.log("Asserted title");
+        // });
 
         /// Custom Calendar
         await driver.get(calendar.aws_dev_custom);
