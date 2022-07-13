@@ -8,9 +8,9 @@ let login = require('../../gui/components/login.js');
     try {
         await driver.get(environment.aws_dev);
         console.log("Went to Develoment");
-        await driver.findElement(By.id(login.id)).sendKeys(credentials.voiceport_user);
+        await driver.findElement(By.id(login.id)).sendKeys(credentials.integration_user);
         console.log("Entered internal username");
-        await driver.findElement(By.id(login.pw)).sendKeys(credentials.voiceport_password, Key.RETURN);
+        await driver.findElement(By.id(login.pw)).sendKeys(credentials.integration_password, Key.RETURN);
         console.log("Entered password and clicked 'Enter'");
         await driver.sleep(5000); 
         console.log("Waited 5 seconds");
