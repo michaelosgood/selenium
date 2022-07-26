@@ -14,12 +14,12 @@ let end ;
         start = new Date();
         startTime = new Date().getTime();
         console.log("AWS Stg Smoketest Started at: " + start);
-        await admin_test();
-        await pt_list_test();
+        // await admin_test();
+        // await pt_list_test();
         await pt_profile_test();
-        await psao_partner_test();
-        await chain_partner_test();
-        await chain_pt_list_test();
+        // await psao_partner_test();
+        // await chain_partner_test();
+        // await chain_pt_list_test();
     } catch (error) {
         throw error;
     }

@@ -21,8 +21,8 @@ const pt_profile_test = async function() {
         console.log("Entered username");
         await driver.findElement(By.id(login.pw)).sendKeys(credentials.customer_password, Key.RETURN);
         console.log("Entered password and clicked 'Enter'");
-        await driver.sleep(6000);
-        console.log("Waited 6 seconds");
+        await driver.sleep(15000);
+        console.log("Waited 15 seconds");
         await driver.getTitle().then(function(title) {
             assert.equal(title, home.title);
             console.log("Asserted title");
