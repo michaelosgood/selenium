@@ -30,8 +30,8 @@ const pt_list_test = async function() {
         console.log("Entered username");
         await driver.findElement(By.id(login.pw)).sendKeys(credentials.customer_password, Key.RETURN);
         console.log("Entered password and clicked 'Enter'");
-        await driver.sleep(5000);
-        console.log("Waited 5 seconds");
+        await driver.sleep(6000);
+        console.log("Waited 6 seconds");
         await driver.getTitle().then(function(title) {
             assert.equal(title, home.title);
             console.log("Asserted title");
@@ -240,7 +240,7 @@ const pt_list_test = async function() {
         });
 
         // Opportunities
-        await driver.get(opclep.aws_dev);
+        await driver.get(opp.aws_dev);
         console.log("Went to 'Opportunities' page");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
