@@ -1,9 +1,9 @@
-let admin_test = require('../tests/internal_admin/aws_dev_admin.js');
-let pt_list_test = require('../tests/pharmacies/independents/aws_dev_pt_list.js');
-let pt_profile_test = require('../tests/pharmacies/independents/aws_dev_pt_profile.js');
-let psao_partner_test = require('../tests/partner_admin/psao/aws_dev_dashboard.js');
-let chain_partner_test = require('../tests/partner_admin/chain/aws_dev_dashboard.js');
-let chain_pt_list_test = require('../tests/pharmacies/chains/aws_dev_pt_list.js');
+let admin_test = require('../tests/internal_admin/dev_admin.js');
+let pt_list_test = require('../tests/pharmacies/independents/dev_pt_list.js');
+let pt_profile_test = require('../tests/pharmacies/independents/dev_pt_profile.js');
+let psao_partner_test = require('../tests/partner_admin/psao/dev_dashboard.js');
+let chain_partner_test = require('../tests/partner_admin/chain/dev_dashboard.js');
+let chain_pt_list_test = require('../tests/pharmacies/chains/dev_pt_list.js');
 let startTime ;
 let start ;
 let endTime ;
