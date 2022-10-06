@@ -70,7 +70,7 @@ const pt_list_test = async function() {
         });
 
         // Verify Title for Active Patients page
-        await driver.findElement(By.linkText(home.act_pat)).click();
+        await driver.get('https://web.prescribewellness.com/Home/Dashboard/ActivePatients');
         console.log("Clicked on 'Active Patients'");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
