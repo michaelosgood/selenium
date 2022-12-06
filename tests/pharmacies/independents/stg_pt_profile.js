@@ -128,7 +128,7 @@ const pt_profile_test = async function() {
         });
 
         // Vaccines tab
-        await driver.get('https://aws-web-staging.prescribewellness.com/Patient/Vaccinations?patientId=AB6002230683436188168042F8DF9D88&timer=true');
+        await driver.get('https://aws-web-staging.prescribewellness.com/Patient/Vaccinations?patientId=4C879922FBAB456B8D3BE60036742939&timer=true');
         console.log("Went to Vaccines tab");
         await driver.sleep(3000);
         console.log("Waited 3 seconds");
@@ -139,7 +139,7 @@ const pt_profile_test = async function() {
         
 
         // eCare tab
-        await driver.get('https://aws-web-staging.prescribewellness.com/Patient/eCarePlans?patientId=AB6002230683436188168042F8DF9D88&timer=true');
+        await driver.get('https://aws-web-staging.prescribewellness.com/Patient/eCarePlans?patientId=4C879922FBAB456B8D3BE60036742939&timer=true');
         console.log("Went to eCare tab");
          await driver.sleep(3000);
         console.log("Waited 3 seconds");
