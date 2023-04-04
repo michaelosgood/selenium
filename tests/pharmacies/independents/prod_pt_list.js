@@ -242,7 +242,7 @@ const pt_list_test = async function() {
         // Opportunities
         await driver.get(opp.prod);
         console.log("Went to 'Opportunities' page");
-        await driver.sleep(3000);
+        await driver.sleep(10000);
         console.log("Waited 3 seconds");
         await driver.getTitle().then(function(title) {
             assert.equal(title, opp.title);
