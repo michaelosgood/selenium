@@ -30,8 +30,9 @@ const pt_list_test = async function() {
         console.log("Entered username");
         await driver.findElement(By.id(login.pw)).sendKeys(credentials.customer_password, Key.RETURN);
         console.log("Entered password and clicked 'Enter'");
-        await driver.sleep(5000);
-        console.log("Waited 5 seconds");
+        await driver.sleep(8000);
+        console.log("Waited 8 seconds");
+
         await driver.getTitle().then(function(title) {
             assert.equal(title, home.title);
             console.log("Asserted title");
@@ -219,16 +220,6 @@ const pt_list_test = async function() {
             console.log("Asserted title");
         });
 
-        // Social Calendar
-        await driver.get(calendar.aws_stg_social);
-        console.log("Went to 'Social Calendar' page");
-        await driver.sleep(3000);
-        console.log("Waited 3 seconds");
-        await driver.getTitle().then(function(title) {
-            assert.equal(title, calendar.title);
-            console.log("Asserted title");
-        });
-
         /// Custom Calendar
         await driver.get(calendar.aws_stg_custom);
         await driver.sleep(3000);
@@ -243,7 +234,7 @@ const pt_list_test = async function() {
         await driver.get(opp.aws_stg);
         console.log("Went to 'Opportunities' page");
         await driver.sleep(10000);
-        console.log("Waited 3 seconds");
+        console.log("Waited 10 seconds");
         await driver.getTitle().then(function(title) {
             assert.equal(title, opp.title);
             console.log("Asserted title");

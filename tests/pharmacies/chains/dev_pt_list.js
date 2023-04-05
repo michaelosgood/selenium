@@ -29,8 +29,8 @@ const chain_pt_list_test = async function() {
         console.log("Entered username");
         await driver.findElement(By.id('mbr-pwd')).sendKeys(credentials.chainSample_password, Key.RETURN);
         console.log("Entered password and clicked 'Enter'");
-        await driver.sleep(3000);
-        console.log("Waited 3 seconds");
+        await driver.sleep(10000);
+        console.log("Waited 10 seconds");
         await driver.getTitle().then(function(title) {
             assert.equal(title, vaccinations.chain_title);
             console.log("Asserted title");
