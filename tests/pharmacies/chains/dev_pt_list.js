@@ -38,8 +38,8 @@ const chain_pt_list_test = async function() {
 
         //  Verify Title for Home tab
         await driver.get(home.aws_dev);
-        await driver.sleep(3000);
-        console.log("Waited 3 seconds");
+        await driver.sleep(10000);
+        console.log("Waited 10 seconds");
         await driver.sleep(3000);
         await driver.getTitle().then(function(title) {
             assert.equal(title, home.chain_title);

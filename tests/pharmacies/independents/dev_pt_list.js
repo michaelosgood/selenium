@@ -38,8 +38,8 @@ const pt_list_test = async function() {
         });
         
         //  Verify Title for Scheduled tab
-        await driver.sleep(4000);
-        console.log("Waited 4 seconds");
+        await driver.sleep(10000);
+        console.log("Waited 10 seconds");
         await driver.findElement(By.partialLinkText(home.scheduled)).click();
         console.log("Clicked on 'Scheduled' tab");
         await driver.sleep(3000);

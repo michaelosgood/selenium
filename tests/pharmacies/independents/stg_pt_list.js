@@ -30,8 +30,8 @@ const pt_list_test = async function() {
         console.log("Entered username");
         await driver.findElement(By.id(login.pw)).sendKeys(credentials.customer_password, Key.RETURN);
         console.log("Entered password and clicked 'Enter'");
-        await driver.sleep(8000);
-        console.log("Waited 8 seconds");
+        await driver.sleep(10000);
+        console.log("Waited 10 seconds");
 
         await driver.getTitle().then(function(title) {
             assert.equal(title, home.title);
@@ -39,8 +39,8 @@ const pt_list_test = async function() {
         });
         
         //  Verify Title for Scheduled tab
-        await driver.sleep(4000);
-        console.log("Waited 4 seconds");
+        await driver.sleep(10000);
+        console.log("Waited 10 seconds");
         await driver.findElement(By.partialLinkText(home.scheduled)).click();
         console.log("Clicked on 'Scheduled' tab");
         await driver.sleep(3000);
